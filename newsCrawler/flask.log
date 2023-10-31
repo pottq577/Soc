@@ -1,0 +1,207 @@
+[2023-10-31 18:13:49,200] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:13:49,201] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:13:50,939] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:13:50,939] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:13:59,801] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:13:59,803] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:14:11,290] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:14:11,291] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:14:20,249] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:14:20,250] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:14:27,195] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:14:27,196] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:14:30,577] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:14:30,578] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:14:34,466] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:14:34,468] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:14:46,023] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:14:46,024] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:15:00,604] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:15:00,605] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:15:10,103] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:15:10,104] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:15:36,150] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:15:36,152] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:15:45,375] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:15:45,376] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:17:03,493] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:17:03,495] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:18:19,290] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:18:19,291] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:18:37,046] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:18:37,046] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:22:00,034] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:22:00,036] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:22:17,925] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:22:17,926] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:22:37,079] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:22:37,081] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:22:42,130] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:22:42,131] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:22:48,647] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:22:48,648] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:24:38,871] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:24:38,872] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-10-31 18:28:05,264] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+Accept: */*
+Accept-Language: ko-KR,ko;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+
+
+[2023-10-31 18:28:05,265] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
