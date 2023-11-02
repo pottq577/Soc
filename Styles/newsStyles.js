@@ -1,5 +1,10 @@
 import { Dimensions } from "react-native";
 
+const dynamicImageStyle = (height = 200) => ({
+  width: "100%",
+  height: height,
+});
+
 const { width: SCREEN_WIWDTH, height: SCREEN_HEIGHT } =
   Dimensions.get("window");
 const centerConstant = 200;
@@ -11,18 +16,21 @@ const styles = {
     borderRadius: 10,
     overflow: "hidden",
   },
-  image: {
-    width: "100%",
-    height: 200,
-  },
   title: {
+    // width: SCREEN_WIWDTH - imageWidth,
     fontSize: 18,
     fontWeight: "bold",
     margin: 10,
   },
   desc: {
+    // width: SCREEN_WIWDTH - imageWidth,
     margin: 10,
     fontSize: 16,
+    paddingRight: 10,
+  },
+  time: {
+    justifyContent: "flex-end",
+    // backgroundColor: "blue",
   },
   loading: {
     flex: 1,
@@ -46,4 +54,4 @@ const styles = {
   },
 };
 
-export { styles };
+export { styles, dynamicImageStyle };

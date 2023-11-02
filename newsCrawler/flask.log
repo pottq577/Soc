@@ -1,4 +1,63 @@
-[2023-10-31 18:13:49,200] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+[2023-11-02 14:09:25,029] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.102.135:5001
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+[2023-11-02 14:09:25,032] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-11-02 14:09:25,032] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:32} ERROR - Error occurred: Object of type coroutine is not JSON serializable
+[2023-11-02 14:34:59,544] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.102.135:5001
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+[2023-11-02 14:34:59,545] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-11-02 14:34:59,545] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:32} ERROR - Error occurred: name 'get_news' is not defined
+[2023-11-02 14:35:12,930] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.102.135:5001
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+[2023-11-02 14:35:12,931] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-11-02 14:35:12,931] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:32} ERROR - Error occurred: Object of type coroutine is not JSON serializable
+[2023-11-02 14:37:43,724] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Headers: Host: 10.20.102.135:5001
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+[2023-11-02 14:37:43,725] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:24} INFO - Body: b''
+[2023-11-02 14:37:43,726] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:39} ERROR - Error occurred: WebDriver.__init__() got an unexpected keyword argument 'executable_path'
+[2023-11-02 14:40:24,264] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Headers: Host: 10.20.102.135:5001
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+[2023-11-02 14:40:24,265] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:24} INFO - Body: b''
+[2023-11-02 14:41:00,453] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Headers: Host: 10.20.102.135:5001
 Accept: */*
 Accept-Language: ko-KR,ko;q=0.9
 Connection: keep-alive
@@ -6,8 +65,8 @@ Accept-Encoding: gzip, deflate
 User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
 
 
-[2023-10-31 18:13:49,201] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:13:50,939] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
+[2023-11-02 14:41:00,455] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:24} INFO - Body: b''
+[2023-11-02 14:51:34,311] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Headers: Host: 10.20.102.135:5001
 Accept: */*
 Accept-Language: ko-KR,ko;q=0.9
 Connection: keep-alive
@@ -15,193 +74,50 @@ Accept-Encoding: gzip, deflate
 User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
 
 
-[2023-10-31 18:13:50,939] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:13:59,801] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
+[2023-11-02 14:51:34,312] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:24} INFO - Body: b''
+[2023-11-02 14:51:35,401] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Headers: Host: 10.20.102.135:5001
 Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
 Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
 
 
-[2023-10-31 18:13:59,803] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:14:11,290] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
+[2023-11-02 14:51:35,401] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:24} INFO - Body: b''
+[2023-11-02 15:13:51,525] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Headers: Host: 10.20.102.135:5001
 Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
 Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
 
 
-[2023-10-31 18:14:11,291] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:14:20,249] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
+[2023-11-02 15:13:51,526] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:24} INFO - Body: b''
+[2023-11-02 15:14:04,259] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:39} ERROR - Error occurred: An asyncio.Future, a coroutine or an awaitable is required
+[2023-11-02 15:17:01,754] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Headers: Host: 10.20.102.135:5001
 Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
 Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
 
 
-[2023-10-31 18:14:20,250] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:14:27,195] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
+[2023-11-02 15:17:01,755] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:24} INFO - Body: b''
+[2023-11-02 15:17:04,824] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:39} ERROR - Error occurred: This event loop is already running
+[2023-11-02 15:18:49,146] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Headers: Host: 10.20.102.135:5001
 Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
 Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
 
 
-[2023-10-31 18:14:27,196] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:14:30,577] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
-Connection: keep-alive
-Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
-
-
-[2023-10-31 18:14:30,578] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:14:34,466] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
-Connection: keep-alive
-Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
-
-
-[2023-10-31 18:14:34,468] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:14:46,023] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
-Connection: keep-alive
-Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
-
-
-[2023-10-31 18:14:46,024] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:15:00,604] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
-Connection: keep-alive
-Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
-
-
-[2023-10-31 18:15:00,605] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:15:10,103] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
-Connection: keep-alive
-Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
-
-
-[2023-10-31 18:15:10,104] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:15:36,150] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
-Connection: keep-alive
-Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
-
-
-[2023-10-31 18:15:36,152] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:15:45,375] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
-Connection: keep-alive
-Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
-
-
-[2023-10-31 18:15:45,376] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:17:03,493] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
-Connection: keep-alive
-Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
-
-
-[2023-10-31 18:17:03,495] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:18:19,290] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
-Connection: keep-alive
-Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
-
-
-[2023-10-31 18:18:19,291] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:18:37,046] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
-Connection: keep-alive
-Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
-
-
-[2023-10-31 18:18:37,046] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:22:00,034] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
-Connection: keep-alive
-Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
-
-
-[2023-10-31 18:22:00,036] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:22:17,925] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
-Connection: keep-alive
-Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
-
-
-[2023-10-31 18:22:17,926] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:22:37,079] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
-Connection: keep-alive
-Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
-
-
-[2023-10-31 18:22:37,081] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:22:42,130] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
-Connection: keep-alive
-Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
-
-
-[2023-10-31 18:22:42,131] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:22:48,647] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
-Connection: keep-alive
-Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
-
-
-[2023-10-31 18:22:48,648] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:24:38,871] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
-Connection: keep-alive
-Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
-
-
-[2023-10-31 18:24:38,872] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
-[2023-10-31 18:28:05,264] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:22} INFO - Headers: Host: 10.20.103.45:5001
-Accept: */*
-Accept-Language: ko-KR,ko;q=0.9
-Connection: keep-alive
-Accept-Encoding: gzip, deflate
-User-Agent: Expo/1017565 CFNetwork/1474 Darwin/23.0.0
-
-
-[2023-10-31 18:28:05,265] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:23} INFO - Body: b''
+[2023-11-02 15:18:49,147] {/Users/hyun2y00/Documents/Soc/newsCrawler/app.py:24} INFO - Body: b''

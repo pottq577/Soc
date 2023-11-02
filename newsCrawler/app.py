@@ -8,13 +8,13 @@ app = Flask(__name__)
 portNum = '5001'
 
 # 로깅 설정
-logging.basicConfig(level=logging.DEBUG)
-logHandler = RotatingFileHandler('flask.log', maxBytes=10000, backupCount=1)
-logHandler.setLevel(logging.INFO)
-formatter = logging.Formatter(
-    "[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s")
-logHandler.setFormatter(formatter)
-app.logger.addHandler(logHandler)
+# logging.basicConfig(level=logging.DEBUG)
+# logHandler = RotatingFileHandler('flask.log', maxBytes=10000, backupCount=1)
+# logHandler.setLevel(logging.INFO)
+# formatter = logging.Formatter(
+#     "[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s")
+# logHandler.setFormatter(formatter)
+# app.logger.addHandler(logHandler)
 
 
 @app.before_request

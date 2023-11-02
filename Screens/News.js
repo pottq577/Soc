@@ -7,21 +7,26 @@ import {
   ActivityIndicator,
   RefreshControl,
   TouchableOpacity,
+  Dimensions,
 } from "react-native";
 import { WebView } from "react-native-webview";
-import { styles } from "../Styles/newsStyles";
+import { styles, dynamicImageStyle } from "../Styles/newsStyles";
+
+const { width: SCREEN_WIWDTH, height: SCREEN_HEIGHT } =
+  Dimensions.get("window");
 
 const ICONS = {
   BACK: require("../constants/icons/back-button.png"),
 };
 
-const baseURL = "http://10.20.103.45:5001";
+const baseURL = "http://10.20.102.135:5001";
 
 export default function NewsScreen() {
   const [news, setNews] = useState([]);
   const [selectedUrl, setSelectedUrl] = useState(null); // 선택된 뉴스 URL 상태
   const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
+  const [imageHeights, setImageHeights] = useState({});
 
   const fetchNews = () => {
     setIsLoading(true);
@@ -37,6 +42,15 @@ export default function NewsScreen() {
         setIsLoading(false); // 에러 발생 시에도 isLoading을 false로 설정
         setIsRefreshing(false);
       });
+  };
+
+  const onImageLoad = (event, imageUrl) => {
+    const { width, height } = event.nativeEvent.source;
+    const newImageHeights = {
+      ...imageHeights,
+      [imageUrl]: SCREEN_WIWDTH * (height / width),
+    };
+    setImageHeights(newImageHeights);
   };
 
   useEffect(() => {
@@ -85,9 +99,14 @@ export default function NewsScreen() {
             onPress={() => setSelectedUrl(item.news_url)}
           >
             <View style={styles.card}>
-              <Image source={{ uri: item.image_url }} style={styles.image} />
+              <Image
+                source={{ uri: item.image_url }}
+                style={dynamicImageStyle(imageHeights[item.image_url] || 200)} // newsStyles.js의 dynamicImageStyle 함수 사용
+                onLoad={(event) => onImageLoad(event, item.image_url)}
+              />
               <Text style={styles.title}>{item.title}</Text>
               <Text style={styles.desc}>{item.desc}</Text>
+              <Text style={styles.time}>{item.time_published}</Text>
             </View>
           </TouchableOpacity>
         ))

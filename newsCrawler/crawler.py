@@ -27,16 +27,31 @@ def get_news():
     for item in news_items:
         title = item.select_one("div.text > a.title span").text
         desc = item.select_one("div.text > p.desc").text
-        image_url = item.select_one("a.thmb img")["src"] if item.select_one(
-            "a.thmb img") else "No Image"
         news_url = "https://sports.news.naver.com" + \
             item.select_one("div.text > a.title").get("href")
+        time_published = item.select_one("div.source span.time").text
+
+        image_url = item.select_one("a.thmb img")["src"] if item.select_one(
+            "a.thmb img") else "No Image"
+
+        # 뉴스 URL로 접속하여 첫 번째 이미지를 가져온다.
+        # browser.get(news_url)
+        # browser.implicitly_wait(3)
+        # news_html = browser.page_source
+        # news_soup = BeautifulSoup(news_html, 'html.parser')
+
+        # first_image = news_soup.select_one("span.end_photo_org img")
+        # if first_image:
+        #     image_url = first_image["src"]
+        # else:
+        #     image_url = "No Image"
 
         news_list.append({
             "title": title,
             "desc": desc,
             "image_url": image_url,
-            "news_url": news_url
+            "news_url": news_url,
+            "time_published": time_published,
         })
 
     browser.quit()
