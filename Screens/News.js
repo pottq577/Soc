@@ -15,8 +15,9 @@ import { styles, dynamicImageStyle } from "../Styles/newsStyles";
 const { width: SCREEN_WIWDTH, height: SCREEN_HEIGHT } =
   Dimensions.get("window");
 
-const ICONS = {
+const IMAGES = {
   BACK: require("../constants/icons/back-button.png"),
+  NO_IMAGE: require("../constants/image_not_found.png"),
 };
 
 const baseURL = "http://10.20.102.135:5001";
@@ -70,7 +71,7 @@ export default function NewsScreen() {
           style={styles.backButton}
           onPress={() => setSelectedUrl(null)}
         >
-          <Image style={styles.backIcon} source={ICONS.BACK} />
+          <Image style={styles.backIcon} source={IMAGES.BACK} />
         </TouchableOpacity>
       </View>
     );
@@ -100,9 +101,21 @@ export default function NewsScreen() {
           >
             <View style={styles.card}>
               <Image
-                source={{ uri: item.image_url }}
-                style={dynamicImageStyle(imageHeights[item.image_url] || 200)} // newsStyles.js의 dynamicImageStyle 함수 사용
-                onLoad={(event) => onImageLoad(event, item.image_url)}
+                source={
+                  item.image_url && item.image_url !== "No Image"
+                    ? { uri: item.image_url }
+                    : IMAGES.NO_IMAGE
+                }
+                style={
+                  item.image_url && item.image_url !== "No Image"
+                    ? dynamicImageStyle(imageHeights[item.image_url] || 200)
+                    : styles.noImageStyle
+                }
+                onLoad={
+                  item.image_url && item.image_url !== "No Image"
+                    ? (event) => onImageLoad(event, item.image_url)
+                    : undefined
+                }
               />
               <Text style={styles.title}>{item.title}</Text>
               <Text style={styles.desc}>{item.desc}</Text>

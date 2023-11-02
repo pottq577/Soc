@@ -52,6 +52,14 @@ const styles = {
     borderRadius: 15,
     zIndex: 10,
   },
+  noImageStyle: {
+    width: "50%",
+    height: 100,
+    resizeMode: "contain",
+    marginTop: 100,
+    marginBottom: 100,
+    marginLeft: 95,
+  },
 };
 
 export { styles, dynamicImageStyle };
