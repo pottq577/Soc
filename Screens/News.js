@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { WebView } from "react-native-webview";
 import { styles, dynamicImageStyle } from "../Styles/newsStyles";
+import { SERVER_ADDRESS } from "../constants/config";
 
 const { width: SCREEN_WIWDTH, height: SCREEN_HEIGHT } =
   Dimensions.get("window");
@@ -20,7 +21,8 @@ const IMAGES = {
   NO_IMAGE: require("../constants/image_not_found.png"),
 };
 
-const baseURL = "http://10.20.102.135:5001";
+const baseURL = SERVER_ADDRESS;
+const NO_IMAGE = "No Image";
 
 export default function NewsScreen() {
   const [news, setNews] = useState([]);
@@ -102,17 +104,17 @@ export default function NewsScreen() {
             <View style={styles.card}>
               <Image
                 source={
-                  item.image_url && item.image_url !== "No Image"
+                  item.image_url && item.image_url !== NO_IMAGE
                     ? { uri: item.image_url }
                     : IMAGES.NO_IMAGE
                 }
                 style={
-                  item.image_url && item.image_url !== "No Image"
+                  item.image_url && item.image_url !== NO_IMAGE
                     ? dynamicImageStyle(imageHeights[item.image_url] || 200)
                     : styles.noImageStyle
                 }
                 onLoad={
-                  item.image_url && item.image_url !== "No Image"
+                  item.image_url && item.image_url !== NO_IMAGE
                     ? (event) => onImageLoad(event, item.image_url)
                     : undefined
                 }

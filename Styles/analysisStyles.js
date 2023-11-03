@@ -20,7 +20,7 @@ const styles = {
 };
 
 const switchStyle = {
-  switchContainer: {
+  container: {
     justifyContent: "space-around",
     alignItems: "center",
     flexDirection: "row",
@@ -38,11 +38,36 @@ const switchStyle = {
     borderRadius: "5px",
   },
   selected: {
-    backgroundColor: "red",
+    backgroundColor: "#e0ccff",
   },
   unselected: {
     backgroundColor: "white",
   },
 };
 
-export { styles, switchStyle };
+const seasonStyle = {
+  container: {
+    flex: 1,
+  },
+  button: {
+    padding: 10,
+    borderWidth: 1,
+    borderColor: "grey",
+    borderRadius: 5,
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  menuItem: {
+    padding: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: "#ddd",
+    marginLeft: 10,
+    marginRight: 10,
+  },
+};
+
+const cardStyle = {
+  container: { flex: 1 },
+};
+
+export { styles, switchStyle, seasonStyle, cardStyle };
