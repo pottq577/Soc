@@ -1,6 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Main from "./Screens/Main";
+import playerList from "./Screens/playerList";
 import { LogBox } from "react-native";
 
 LogBox.ignoreLogs(["Could not find image"]);
@@ -18,6 +19,7 @@ export default function App() {
             headerShown: false,
           }}
         />
+        {/* <Stack.Screen name="선수 목록" component={playerList} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -10,13 +10,13 @@ import {
   Dimensions,
 } from "react-native";
 import { WebView } from "react-native-webview";
-import { styles, dynamicImageStyle } from "../Styles/newsStyles";
-import { SERVER_ADDRESS } from "../constants/config";
+import { styles, dynamicImageStyle } from "../../../Styles/newsStyles";
+import { SERVER_ADDRESS } from "../../../constants/config";
 
 const { width: SCREEN_WIWDTH } = Dimensions.get("window");
 const IMAGES = {
-  BACK: require("../constants/icons/back-button.png"),
-  NO_IMAGE: require("../constants/image_not_found.png"),
+  BACK: require("../../../constants/icons/back-button.png"),
+  NO_IMAGE: require("../../../constants/image_not_found.png"),
 };
 const NO_IMAGE_TEXT = "No Image";
 const ActionTypes = {

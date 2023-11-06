@@ -7,15 +7,25 @@ const styles = {
   container: {
     flex: 1,
   },
-  separator: {
-    marginVertical: 8,
-    borderBottomColor: "#737373",
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    marginHorizontal: 10,
-  },
   icon: {
     height: 30,
     width: 30,
+  },
+  noContentStyle: {
+    view: {
+      alignItems: "center",
+      justifyContent: "center",
+      marginTop: SCREEN_HEIGHT / 5,
+    },
+    icon: {
+      width: 120,
+      height: 120,
+    },
+    text: {
+      fontSize: 20,
+      fontWeight: "bold",
+      marginVertical: 30,
+    },
   },
 };
 
@@ -45,12 +55,20 @@ const seasonStyle = {
     flex: 1,
   },
   button: {
-    padding: 10,
-    borderWidth: 1,
-    borderColor: "grey",
-    borderRadius: 5,
-    marginLeft: 10,
-    marginRight: 10,
+    menu: {
+      padding: 10,
+      borderWidth: 1,
+      borderColor: "grey",
+      borderRadius: 5,
+      marginLeft: 10,
+      marginRight: 10,
+      flexDirection: "row",
+      justifyContent: "space-between",
+    },
+    icon: {
+      width: 20,
+      height: 20,
+    },
   },
   menuItem: {
     padding: 10,
@@ -70,30 +88,56 @@ const cardStyle = {
     flex: 1,
     padding: 10,
   },
-  headText: {
-    fontSize: 35,
-    fontWeight: "bold",
+  card: {
+    container: {
+      marginTop: 20,
+      justifyContent: "space-between",
+      borderWidth: 1,
+      borderRadius: 10,
+    },
+    text: {
+      head: {
+        fontSize: 35,
+        fontWeight: "bold",
+      },
+      name: {
+        fontSize: 20,
+        fontWeight: "bold",
+      },
+      score: {
+        fontSize: 38,
+        fontWeight: "bold",
+      },
+      teamName: {
+        fontSize: 17,
+        marginLeft: 5,
+        fontWeight: "200",
+      },
+    },
+    image: {
+      teamIcon: {
+        width: 20,
+        height: 20,
+      },
+      photo: {
+        width: 120,
+        height: 120,
+      },
+    },
+    first: {
+      padding: 10,
+      justifyContent: "space-between",
+      flexDirection: "row",
+      borderBottomWidth: 0.3,
+    },
   },
-  cardContainer: {
-    marginTop: 20,
-    justifyContent: "space-between",
+  viewFullList: {
     borderWidth: 1,
-    borderRadius: 10,
-  },
-  nameText: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  scoreText: {
-    fontSize: 45,
-    fontWeight: "bold",
-  },
-  first: {
-    padding: 10,
-    justifyContent: "space-between",
-    // backgroundColor: "pink",
-    flexDirection: "row",
-    borderBottomWidth: 0.3,
+    height: 40,
+    backgroundColor: "pink",
+    margin: 20,
+    alignItems: "center",
+    justifyContent: "center",
   },
 };
 

@@ -1,21 +1,21 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StyleSheet, Image } from "react-native";
-import Games from "../Screens/Games";
-import News from "./News";
-import Analysis from "../Screens/Analysis";
-import Simulation from "../Screens/Simulation";
-import Following from "../Screens/Following";
+import Games from "./baseScreens/Games";
+import News from "./baseScreens/News/News";
+import Analysis from "./baseScreens/Analysis/Analysis";
+import Simulation from "./baseScreens/Simulation";
+import Following from "./baseScreens/Following";
 import { styles } from "../Styles/mainStyles";
 
 const Tab = createBottomTabNavigator();
 
 const ICONS = {
-  GAMES: require("../constants/icons/field.png"),
-  NEWS: require("../constants/icons/news.png"),
-  ANALYSIS: require("../constants/icons/analysis.png"),
-  SIMULATION: require("../constants/icons/simulation.png"),
-  FOLLOWING: require("../constants/icons/following.png"),
+  GAMES: require("./../constants/icons/field.png"),
+  NEWS: require("./../constants/icons/news.png"),
+  ANALYSIS: require("./../constants/icons/analysis.png"),
+  SIMULATION: require("./../constants/icons/simulation.png"),
+  FOLLOWING: require("./../constants/icons/following.png"),
 };
 
 export default Main = () => {
