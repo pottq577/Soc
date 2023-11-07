@@ -4,7 +4,7 @@ import Main from "./Screens/baseScreens/Main/Main";
 import FullList from "./Screens/baseScreens/Analysis/components/FullList";
 import { LogBox } from "react-native";
 
-LogBox.ignoreLogs(["Could not find image"]);
+LogBox.ignoreAllLogs();
 
 const Stack = createStackNavigator();
 
