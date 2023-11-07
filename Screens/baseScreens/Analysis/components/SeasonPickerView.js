@@ -1,11 +1,7 @@
 import React from "react";
 import { View, TouchableOpacity, Image, Text } from "react-native";
 import { Picker } from "@react-native-picker/picker";
-import { seasonStyle } from "../../../Styles/analysisStyles";
-
-const IMAGES = {
-  DOWN_ARROW: require("../../../constants/icons/down_arrow.png"),
-};
+import { IMAGES, seasonStyle } from "../constants/constants";
 
 const SeasonPickerView = ({
   selectedSeason,

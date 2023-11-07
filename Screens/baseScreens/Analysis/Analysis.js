@@ -1,46 +1,18 @@
+import React from "react";
 import { ScrollView, View } from "react-native";
-import React, { useReducer } from "react";
 import SegmentedControlTab from "react-native-segmented-control-tab";
-import { styles, switchStyle } from "../../../Styles/analysisStyles";
-import SeasonPickerView from "./SeasonPickerView";
-import CardContent from "./CardContent";
-import Separator from "../../Separator";
-import ActionTypes from "./ActionTypes";
-
-const initialState = {
-  isPlayerSelected: true,
-  menuVisible: false,
-  selectedSeason: "2019/20",
-};
-
-function analysisReducer(state, action) {
-  switch (action.type) {
-    case ActionTypes.TOGGLE_MENU:
-      return { ...state, menuVisible: !state.menuVisible };
-    case ActionTypes.SET_PLAYER_SELECTED:
-      return { ...state, isPlayerSelected: action.payload };
-    case ActionTypes.SET_SELECTED_SEASON:
-      return { ...state, selectedSeason: action.payload, menuVisible: false };
-    default:
-      return state;
-  }
-}
-
-const seasons = ["2023/24", "2022/23", "2021/22", "2020/21", "2019/20"];
+import SeasonPickerView from "./components/SeasonPickerView";
+import CardContent from "./components/CardContent";
+import { Separator, styles, switchStyle, SEASONS } from "./constants/constants";
+import { useAnalysis } from "./hooks/useAnalysis";
 
 const AnalysisScreen = () => {
-  const [state, dispatch] = useReducer(analysisReducer, initialState);
-  // action을 생성하여 dispatch하는 헬퍼 함수
-  const toggleMenu = () => {
-    dispatch({ type: ActionTypes.TOGGLE_MENU });
-  };
-  const setIsPlayerSelected = (isSelected) => {
-    dispatch({ type: ActionTypes.SET_PLAYER_SELECTED, payload: isSelected });
-  };
-  const setSelectedSeason = (season) => {
-    dispatch({ type: ActionTypes.SET_SELECTED_SEASON, payload: season });
-  };
-  const { selectedSeason, isPlayerSelected, menuVisible } = state;
+  const {
+    state: { selectedSeason, isPlayerSelected, menuVisible },
+    toggleMenu,
+    setIsPlayerSelected,
+    setSelectedSeason,
+  } = useAnalysis(); // Custom Hook 사용
 
   return (
     <ScrollView style={styles.container}>
@@ -59,7 +31,7 @@ const AnalysisScreen = () => {
         {/* 시즌 선택 뷰 */}
         <SeasonPickerView
           selectedSeason={selectedSeason}
-          seasons={seasons}
+          seasons={SEASONS}
           menuVisible={menuVisible}
           toggleMenu={toggleMenu}
           setSelectedSeason={setSelectedSeason}

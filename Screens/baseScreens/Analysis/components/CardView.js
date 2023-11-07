@@ -1,8 +1,7 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
-import { cardStyle } from "../../../Styles/analysisStyles";
 import FullListViewButton from "./FullListViewButton";
-import Separator from "../../Separator";
+import { Separator, cardStyle } from "../constants/constants";
 
 const CardView = ({ category, data, isPlayer }) => {
   return (
@@ -46,7 +45,11 @@ const CardView = ({ category, data, isPlayer }) => {
           </View>
 
           {/* 전체 목록 보기 버튼 */}
-          <FullListViewButton />
+          <FullListViewButton
+            category={category}
+            data={data}
+            isPlayer={isPlayer}
+          />
         </View>
       </View>
     </View>

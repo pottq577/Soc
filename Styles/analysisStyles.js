@@ -141,4 +141,94 @@ const cardStyle = {
   },
 };
 
-export { styles, switchStyle, seasonStyle, cardStyle };
+const listStyle = {
+  header: {
+    fontSize: 30,
+    fontWeight: "bold",
+    paddingTop: 10,
+    marginLeft: 8,
+  },
+  container: {
+    flex: 1,
+    padding: 10,
+  },
+  card: {
+    container: {
+      marginTop: 20,
+      justifyContent: "space-between",
+      borderWidth: 1,
+      borderRadius: 10,
+      flexDirection: "row",
+      padding: 10,
+    },
+    text: {
+      container: {
+        justifyContent: "space-around",
+      },
+      head: {
+        fontSize: 35,
+        fontWeight: "bold",
+      },
+      rank: {
+        fontSize: 15,
+      },
+      name: {
+        fontSize: 20,
+        fontWeight: "bold",
+      },
+      score: {
+        fontSize: 38,
+        fontWeight: "bold",
+      },
+      teamName: {
+        fontSize: 17,
+        marginLeft: 5,
+        fontWeight: "200",
+      },
+    },
+    image: {
+      teamIcon: {
+        width: 20,
+        height: 20,
+      },
+      photo: {
+        width: 120,
+        height: 120,
+      },
+    },
+    first: {
+      padding: 10,
+      justifyContent: "space-between",
+      flexDirection: "row",
+      borderBottomWidth: 0.3,
+    },
+  },
+  table: {
+    header: {
+      container: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        padding: 10,
+      },
+      cell: {
+        flex: 1,
+      },
+    },
+    row: {
+      container: {
+        flexDirection: "row",
+        justifyContent: "space-around",
+        padding: 10,
+      },
+      cell: {
+        flex: 1,
+      },
+      image: {
+        width: 20,
+        height: 20,
+      },
+    },
+  },
+};
+
+export { styles, switchStyle, seasonStyle, cardStyle, listStyle };
