@@ -1,8 +1,8 @@
 import React from "react";
 import { ScrollView, View } from "react-native";
 import SegmentedControlTab from "react-native-segmented-control-tab";
-import SeasonPickerView from "./components/SeasonPickerView";
-import CardContent from "./components/CardContent";
+import SeasonPickerView from "./screens/SeasonPickerView";
+import CardContent from "./screens/CardContent";
 import { Separator, styles, switchStyle, SEASONS } from "./constants/constants";
 import { useAnalysis } from "./hooks/useAnalysis";
 

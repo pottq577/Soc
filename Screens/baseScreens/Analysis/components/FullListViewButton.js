@@ -1,11 +1,9 @@
 import { TouchableOpacity, Text } from "react-native";
 import { cardStyle, VIEW_FULL_LIST } from "../constants/constants";
-import { useNavigation } from "@react-navigation/native";
 
-const FullListViewButton = ({ category, isPlayer, data }) => {
-  const navigation = useNavigation();
+const FullListViewButton = ({ category, isPlayer, data, navigation }) => {
   const handlePress = () => {
-    navigation.navigate("FullList", { category, isPlayer, data });
+    navigation.navigate("FullList", { category, isPlayer, data, navigation });
   };
 
   return (

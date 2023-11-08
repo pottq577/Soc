@@ -31,7 +31,7 @@ const playersData = [
   },
   {
     rank: 2,
-    name: "Alexis Sanchez",
+    name: "Alexis Sanchez2",
     score: 77,
     image: require("../../../../constants/77.jpeg"),
     team: require("../../../../constants/arsenal.png"),
@@ -39,7 +39,7 @@ const playersData = [
   },
   {
     rank: 3,
-    name: "Alexis Sanchez",
+    name: "Alexis Sanchez3",
     score: 77,
     image: require("../../../../constants/77.jpeg"),
     team: require("../../../../constants/arsenal.png"),
@@ -47,7 +47,7 @@ const playersData = [
   },
   {
     rank: 4,
-    name: "Alexis Sanchez",
+    name: "Alexis Sanchez4",
     score: 77,
     image: require("../../../../constants/77.jpeg"),
     team: require("../../../../constants/arsenal.png"),
@@ -63,19 +63,19 @@ const teamData = [
   },
   {
     rank: 2,
-    name: "Arsenal",
+    name: "Arsenal2",
     score: 44,
     image: require("../../../../constants/arsenal.png"),
   },
   {
     rank: 3,
-    name: "Arsenal",
+    name: "Arsenal3",
     score: 44,
     image: require("../../../../constants/arsenal.png"),
   },
   {
     rank: 4,
-    name: "Arsenal",
+    name: "Arsenal4",
     score: 44,
     image: require("../../../../constants/arsenal.png"),
   },

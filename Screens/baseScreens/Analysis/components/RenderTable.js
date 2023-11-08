@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import { listStyle } from "../constants/constants";
 
 const CommonHeader = ({ titles }) => {
@@ -34,11 +34,16 @@ export const TableHeader = ({ isPlayer }) => {
   return <CommonHeader titles={titles} />;
 };
 
-const CommonRow = ({ item, isPlayer }) => {
+const CommonRow = ({ item, isPlayer, navigation }) => {
+  const handlePress = () => {
+    navigation.navigate("Target", { item, isPlayer });
+  };
   return (
-    <View style={listStyle.table.row.container}>
+    <TouchableOpacity
+      onPress={handlePress}
+      style={listStyle.table.row.container}
+    >
       <Text style={[listStyle.table.row.cell, { flex: 1 }]}>{item.rank}</Text>
-
       <View style={{ flexDirection: "row", alignItems: "center", flex: 4 }}>
         {/* 팀 목록일 때 팀 로고 출력 */}
         {isPlayer && (
@@ -54,19 +59,25 @@ const CommonRow = ({ item, isPlayer }) => {
         </View>
       )}
       <Text style={[listStyle.table.row.cell, { flex: 1 }]}>{item.score}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
-export const TableRow = ({ item, isPlayer }) => {
-  return <CommonRow item={item} isPlayer={isPlayer} />;
+export const TableRow = ({ item, isPlayer, navigation }) => {
+  return <CommonRow item={item} isPlayer={isPlayer} navigation={navigation} />;
 };
 
-export const renderTableItem = ({ item, isPlayer }) => {
+export const renderTableItem = ({ item, isPlayer, navigation }) => {
+  const handlePress = () => {
+    navigation.navigate("Target", { item, isPlayer });
+  };
   if (item.isRankOne) {
     return (
       <View style={listStyle.container}>
-        <View style={listStyle.card.container}>
+        <TouchableOpacity
+          onPress={handlePress}
+          style={listStyle.card.container}
+        >
           <View style={listStyle.card.text.container}>
             <Text style={listStyle.card.text.rank}>{item.rank}</Text>
             <Text style={listStyle.card.text.name}>{item.name}</Text>
@@ -85,12 +96,12 @@ export const renderTableItem = ({ item, isPlayer }) => {
             <Text style={listStyle.card.text.score}>{item.score}</Text>
           </View>
           <Image style={listStyle.card.image.photo} source={item.image} />
-        </View>
+        </TouchableOpacity>
       </View>
     );
   } else if (item.isHeader) {
     return <TableHeader isPlayer={isPlayer} />;
   } else {
-    return <TableRow item={item} isPlayer={isPlayer} />;
+    return <TableRow item={item} isPlayer={isPlayer} navigation={navigation} />;
   }
 };

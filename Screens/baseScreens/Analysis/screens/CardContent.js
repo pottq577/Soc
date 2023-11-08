@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
-import NoContentView from "./NoContentView";
-import CardView from "./CardView";
+import NoContentView from "../components/NoContentView";
+import CardView from "../components/CardView";
 import {
   SEASONS,
   CATEGORIES,

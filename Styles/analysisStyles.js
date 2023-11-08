@@ -130,6 +130,11 @@ const cardStyle = {
       flexDirection: "row",
       borderBottomWidth: 0.3,
     },
+    others: {
+      padding: 10,
+      flexDirection: "row",
+      justifyContent: "space-between",
+    },
   },
   viewFullList: {
     borderWidth: 1,
