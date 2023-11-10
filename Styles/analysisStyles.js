@@ -1,7 +1,6 @@
 import { StyleSheet, Dimensions } from "react-native";
 
-const { width: SCREEN_WIWDTH, height: SCREEN_HEIGHT } =
-  Dimensions.get("window");
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 
 const styles = {
   container: {
@@ -236,4 +235,46 @@ const listStyle = {
   },
 };
 
-export { styles, switchStyle, seasonStyle, cardStyle, listStyle };
+const analysisStyle = {
+  container: {
+    borderWidth: 1,
+    borderRadius: 5,
+    padding: 13,
+    borderColor: "grey",
+    borderTopColor: "blue",
+    borderTopWidth: 3,
+    marginBottom: 20,
+  },
+  header: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 20,
+  },
+  content: {
+    container: {
+      justifyContent: "space-between",
+      flexDirection: "row",
+      borderBottomWidth: 0.3,
+      paddingVertical: 15,
+    },
+    subject: {
+      title: {
+        fontSize: 16,
+        fontWeight: "600",
+      },
+      detail: {
+        fontWeight: "500",
+        fontSize: 15,
+      },
+    },
+  },
+};
+
+export {
+  styles,
+  switchStyle,
+  seasonStyle,
+  cardStyle,
+  listStyle,
+  analysisStyle,
+};

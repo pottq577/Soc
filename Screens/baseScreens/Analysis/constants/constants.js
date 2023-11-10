@@ -4,6 +4,7 @@ import {
   seasonStyle,
   switchStyle,
   listStyle,
+  analysisStyle,
 } from "../../../../Styles/analysisStyles";
 import Separator from "../../../Separator";
 import { SCREEN_HEIGHT } from "../../../../constants/dimensions";
@@ -80,6 +81,11 @@ const teamData = [
     image: require("../../../../constants/arsenal.png"),
   },
 ];
+const positionColors = {
+  Forward: "red",
+  Midfielder: "green",
+  Defender: "blue",
+};
 
 export {
   styles,
@@ -87,6 +93,7 @@ export {
   seasonStyle,
   switchStyle,
   listStyle,
+  analysisStyle,
   IMAGES,
   VIEW_FULL_LIST,
   NO_DATA_AVAILABLE,
@@ -95,4 +102,5 @@ export {
   CATEGORIES,
   playersData,
   teamData,
+  positionColors,
 };
