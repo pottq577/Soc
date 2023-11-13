@@ -52,6 +52,7 @@ const switchStyle = {
 const seasonStyle = {
   container: {
     flex: 1,
+    marginTop: 5,
   },
   button: {
     menu: {
@@ -79,6 +80,48 @@ const seasonStyle = {
   modalView: {
     width: "100%",
     borderColor: "grey",
+  },
+};
+
+const categoryStyle = {
+  container: {
+    flex: 1,
+    marginTop: 10,
+    marginRight: 10,
+    marginBottom: -10,
+    marginLeft: 10,
+    borderRadius: 5,
+    height: 45,
+  },
+  category: {
+    container: {
+      justifyContent: "center",
+      alignItems: "center",
+      flexDirection: "row",
+      paddingRight: 15,
+    },
+    content: {
+      height: 35,
+      width: 65,
+      padding: 5,
+      justifyContent: "center",
+      alignItems: "center",
+      borderWidth: 0.5,
+      borderRadius: 5,
+      marginRight: 10,
+    },
+    text: {
+      fontWeight: "500",
+      fontSize: 15,
+    },
+    selected: {
+      content: {
+        backgroundColor: "blue",
+      },
+      text: {
+        color: "white",
+      },
+    },
   },
 };
 
@@ -277,4 +320,5 @@ export {
   cardStyle,
   listStyle,
   analysisStyle,
+  categoryStyle,
 };

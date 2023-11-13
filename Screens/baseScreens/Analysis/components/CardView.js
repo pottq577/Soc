@@ -1,10 +1,10 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import FullListViewButton from "./FullListViewButton";
 import { Separator, cardStyle } from "../constants/constants";
 import { useNavigation } from "@react-navigation/native";
 
-const CardView = ({ category, data, isPlayer }) => {
+const CardView = forwardRef(({ category, data, isPlayer }, ref) => {
   const navigation = useNavigation();
   const handlePress = (item) => {
     navigation.navigate("Target", { category, isPlayer, data, item });
@@ -88,6 +88,6 @@ const CardView = ({ category, data, isPlayer }) => {
       </View>
     </View>
   );
-};
+});
 
 export default CardView;

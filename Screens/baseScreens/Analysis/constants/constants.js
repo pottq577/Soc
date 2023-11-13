@@ -5,6 +5,7 @@ import {
   switchStyle,
   listStyle,
   analysisStyle,
+  categoryStyle,
 } from "../../../../Styles/analysisStyles";
 import Separator from "../../../Separator";
 import { SCREEN_HEIGHT } from "../../../../constants/dimensions";
@@ -94,6 +95,7 @@ export {
   switchStyle,
   listStyle,
   analysisStyle,
+  categoryStyle,
   IMAGES,
   VIEW_FULL_LIST,
   NO_DATA_AVAILABLE,

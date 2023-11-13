@@ -1,49 +1,38 @@
-import { useReducer } from "react";
-import ActionTypes from "../constants/ActionTypes";
-
-const initialState = {
-  isPlayerSelected: true,
-  menuVisible: false,
-  selectedSeason: "2019/20",
-  isOverviewSelected: true,
-};
-
-function analysisReducer(state, action) {
-  switch (action.type) {
-    case ActionTypes.TOGGLE_MENU:
-      return { ...state, menuVisible: !state.menuVisible };
-    case ActionTypes.SET_PLAYER_SELECTED:
-      return { ...state, isPlayerSelected: action.payload };
-    case ActionTypes.SET_SELECTED_SEASON:
-      return { ...state, selectedSeason: action.payload, menuVisible: false };
-    case ActionTypes.SET_OVERVIEW:
-      return { ...state, isOverviewSelected: action.payload };
-    default:
-      return state;
-  }
-}
+import { useState, useEffect } from "react";
+import { CATEGORIES } from "../constants/constants";
 
 export const useAnalysis = () => {
-  const [state, dispatch] = useReducer(analysisReducer, initialState);
-  // action을 생성하여 dispatch하는 헬퍼 함수
+  const [isPlayerSelected, setIsPlayerSelected] = useState(true);
+  const [menuVisible, setMenuVisible] = useState(false);
+  const [selectedSeason, setSelectedSeason] = useState("2019/20");
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  // isPlayerSelected 상태가 변경될 때마다 실행됩니다.
+  useEffect(() => {
+    // '선수'를 선택한 경우
+    if (isPlayerSelected) {
+      setSelectedCategory(CATEGORIES.PLAYER[0]);
+    }
+    // '팀'을 선택한 경우
+    else {
+      setSelectedCategory(CATEGORIES.TEAMS[0]);
+    }
+  }, [isPlayerSelected]); // isPlayerSelected 상태가 변경될 때만 이 useEffect를 실행합니다.
+
+  // 메뉴의 표시 상태를 토글하는 함수
   const toggleMenu = () => {
-    dispatch({ type: ActionTypes.TOGGLE_MENU });
-  };
-  const setIsPlayerSelected = (isSelected) => {
-    dispatch({ type: ActionTypes.SET_PLAYER_SELECTED, payload: isSelected });
-  };
-  const setSelectedSeason = (season) => {
-    dispatch({ type: ActionTypes.SET_SELECTED_SEASON, payload: season });
-  };
-  const setIsOverviewSelected = (isOverview) => {
-    dispatch({ type: ActionTypes.SET_OVERVIEW, payload: isOverview });
+    setMenuVisible(!menuVisible);
   };
 
+  // 상태와 액션을 설정하는 함수들을 반환합니다.
   return {
-    state,
-    toggleMenu,
+    isPlayerSelected,
     setIsPlayerSelected,
+    menuVisible,
+    toggleMenu,
+    selectedSeason,
     setSelectedSeason,
-    setIsOverviewSelected,
+    selectedCategory,
+    setSelectedCategory,
   };
 };
