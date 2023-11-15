@@ -6,6 +6,7 @@ export const useAnalysis = () => {
   const [menuVisible, setMenuVisible] = useState(false);
   const [selectedSeason, setSelectedSeason] = useState("2019/20");
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [isOverviewSelected, setIsOverviewSelected] = useState(true);
 
   // isPlayerSelected 상태가 변경될 때마다 실행됩니다.
   useEffect(() => {
@@ -34,5 +35,7 @@ export const useAnalysis = () => {
     setSelectedSeason,
     selectedCategory,
     setSelectedCategory,
+    isOverviewSelected,
+    setIsOverviewSelected,
   };
 };

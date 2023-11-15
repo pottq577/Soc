@@ -46,10 +46,7 @@ const statData = {
 
 const Target = ({ route }) => {
   const { item, isPlayer } = route.params;
-  const {
-    state: { isOverviewSelected },
-    setIsOverviewSelected,
-  } = useAnalysis(); // Custom Hook 사용
+  const { isOverviewSelected, setIsOverviewSelected } = useAnalysis(); // Custom Hook 사용
 
   // 개별 정보를 보여주는 컴포넌트
   const InfoRow = ({ label, value }) => {
