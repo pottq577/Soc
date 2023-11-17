@@ -3,6 +3,13 @@ import { View, Text, Image, ScrollView } from "react-native";
 import SegmentedControlTab from "react-native-segmented-control-tab";
 import { listStyle, switchStyle, analysisStyle } from "../constants/constants";
 import { useAnalysis } from "../hooks/useAnalysis";
+import {
+  VictoryChart,
+  VictoryPolarAxis,
+  VictoryTheme,
+  VictoryArea,
+  VictoryLabel,
+} from "victory-native";
 
 const positionColors = {
   FW: "#bc0f0f",
@@ -42,6 +49,30 @@ const statData = {
     Assists: 3,
     Passes: 30,
   },
+};
+
+const data = [
+  {
+    출전수: 30,
+    출전시간: 24,
+    골: 50,
+    어시스트: 23,
+    xG: 50,
+    xA: 34,
+    _90xG: 20,
+    _90xA: 40,
+  },
+];
+
+const domains = {
+  출전수: [0, 50],
+  출전시간: [0, 50],
+  골: [0, 100],
+  어시스트: [0, 50],
+  xG: [0, 100],
+  xA: [0, 50],
+  _90xG: [0, 50],
+  _90xA: [0, 100],
 };
 
 const Target = ({ route }) => {
@@ -97,8 +128,70 @@ const Target = ({ route }) => {
     </View>
   );
 
+  const RadarChartComponent = () => {
+    return (
+      <VictoryChart
+        polar
+        theme={VictoryTheme.material}
+        domain={{ y: [0, 100] }}
+      >
+        {Object.keys(domains).map((key, i) => {
+          return (
+            <VictoryPolarAxis
+              key={i}
+              dependentAxis
+              style={{
+                axisLabel: { padding: 10 },
+                axis: { stroke: "none" },
+                grid: { stroke: "grey", strokeWidth: 0.25, opacity: 0.5 },
+              }}
+              tickLabelComponent={<VictoryLabel labelPlacement="vertical" />}
+              labelPlacement="perpendicular"
+              axisValue={i + 1}
+              label={key}
+              tickFormat={(t) => Math.ceil(t * domains[key][1])}
+              tickValues={[0.2, 0.4, 0.6, 0.8, 1]}
+            />
+          );
+        })}
+        {Object.keys(domains).map((key, i) => {
+          return (
+            <VictoryPolarAxis
+              key={i}
+              style={{
+                axisLabel: { padding: 10 },
+                axis: { stroke: "none" },
+                grid: { stroke: "grey", strokeWidth: 0.25, opacity: 0.5 },
+              }}
+              labelPlacement="parallel"
+              axisValue={i + 1}
+              label={key}
+              tickFormat={() => ""}
+            />
+          );
+        })}
+        <VictoryArea
+          polar
+          data={data}
+          style={{
+            data: {
+              fill: "tomato",
+              fillOpacity: 0.7,
+              stroke: "tomato",
+              strokeWidth: 2,
+            },
+          }}
+          animate={{ duration: 1000 }}
+          x={(d) => d.key}
+          y={(d) => d.value / domains[d.key][1]}
+        />
+      </VictoryChart>
+    );
+  };
+
   const AnalysisView = () => (
     <View style={{ padding: 10 }}>
+      <RadarChartComponent />
       <Section sectionTitle="공격" data={statData.Attack} />
       <Section sectionTitle="팀 플레이" data={statData.Team_Play} />
     </View>

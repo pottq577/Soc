@@ -64,10 +64,10 @@ const CardView = ({ category, data, isPlayer }) => {
         {renderFirst(data[0])}
         {/* 2nd, 3rd */}
         {data.slice(1, 3).map((player, index) => (
-          <>
+          <React.Fragment key={index}>
             {renderOthers(player, index)}
             {index === 0 && <Separator />}
-          </>
+          </React.Fragment>
         ))}
         {/* 전체 목록 보기 버튼 */}
         <FullListViewButton

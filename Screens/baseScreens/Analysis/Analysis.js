@@ -56,11 +56,11 @@ const AnalysisScreen = () => {
           setSelectedSeason={setSelectedSeason}
         />
         {/* 카테고리 선택 뷰 */}
-        <CategoryPickerView
+        {/* <CategoryPickerView
           categories={currentCategories}
           selectedCategory={selectedCategory}
           onCategoryPress={onCategoryPress}
-        />
+        /> */}
       </View>
 
       <Separator />
