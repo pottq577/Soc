@@ -6,6 +6,7 @@ import {
   listStyle,
   analysisStyle,
   categoryStyle,
+  chartStyle,
 } from "../../../../Styles/analysisStyles";
 import Separator from "../../../Separator";
 import { SCREEN_HEIGHT } from "../../../../constants/dimensions";
@@ -35,8 +36,8 @@ const positionColors = {
 const domains = {
   출전수: [0, 100],
   출전시간: [0, 120],
-  골: [0, 100],
-  어시스트: [0, 100],
+  골: [0, 30],
+  어시스트: [0, 50],
   xG: [0, 100],
   xA: [0, 100],
   _90xG: [0, 100],
@@ -135,14 +136,14 @@ const statData = {
 };
 const data = [
   {
-    출전수: 40,
-    출전시간: 34,
-    골: 70,
-    어시스트: 23,
-    xG: 50,
-    xA: 34,
-    _90xG: 20,
-    _90xA: 40,
+    출전수: 80,
+    출전시간: 20,
+    골: 30,
+    어시스트: 10,
+    xG: 60,
+    xA: 60,
+    _90xG: 60,
+    _90xA: 60,
   },
 ];
 
@@ -154,6 +155,7 @@ export {
   listStyle,
   analysisStyle,
   categoryStyle,
+  chartStyle,
   IMAGES,
   VIEW_FULL_LIST,
   NO_DATA_AVAILABLE,

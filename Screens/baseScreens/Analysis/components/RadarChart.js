@@ -6,63 +6,38 @@ import {
   VictoryTheme,
   VictoryLabel,
 } from "victory-native";
-import { domains, data, analysisStyle } from "../constants/constants";
+import { domains, data, chartStyle } from "../constants/constants";
 
 const RadarChart = () => {
   const processedData = Object.keys(domains).map((key) => {
-    return { key, value: data[0][key] };
+    return { key, value: data[0][key] / domains[key][1] };
   });
 
   return (
-    <View style={analysisStyle.container}>
+    <View style={chartStyle.container}>
       <VictoryChart polar theme={VictoryTheme.material} domain={{ y: [0, 1] }}>
         {Object.keys(domains).map((key, i) => {
           return (
             <VictoryPolarAxis
-              key={i}
+              key={`polar-axis-${key}`}
               dependentAxis
-              style={{
-                axisLabel: { padding: 30 },
-                axis: { stroke: "none" },
-                grid: { stroke: "grey", strokeWidth: 0.25, opacity: 0.5 },
-              }}
+              style={chartStyle.axisStyle}
               tickLabelComponent={<VictoryLabel labelPlacement="vertical" />}
               labelPlacement="perpendicular"
               axisValue={i + 1}
               label={key}
               tickFormat={(t) => Math.ceil(t * domains[key][1])}
-              tickValues={[1, 5, 6, 10]}
-            />
-          );
-        })}
-        {Object.keys(domains).map((key, i) => {
-          return (
-            <VictoryPolarAxis
-              key={i}
-              style={{
-                axisLabel: { padding: 1 },
-                axis: { stroke: "none" },
-                grid: { stroke: "grey", strokeWidth: 0.25, opacity: 0.5 },
-              }}
-              labelPlacement="parallel"
-              axisValue={i + 1}
-              label={key}
-              tickFormat={() => ""}
             />
           );
         })}
         <VictoryArea
-          polar
           data={processedData}
           x="key"
-          y={(d) => d.value / 100}
-          style={{
-            data: {
-              fill: "tomato",
-              fillOpacity: 0.7,
-              stroke: "tomato",
-              strokeWidth: 1,
-            },
+          y="value"
+          style={chartStyle.areaStyle}
+          animate={{
+            duration: 500,
+            onLoad: { duration: 500 },
           }}
         />
       </VictoryChart>

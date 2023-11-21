@@ -313,6 +313,48 @@ const analysisStyle = {
   },
 };
 
+const chartStyle = {
+  container: {
+    borderWidth: 1,
+    borderRadius: 5,
+    padding: 13,
+    borderColor: "grey",
+    borderTopColor: "blue",
+    borderTopWidth: 3,
+    marginBottom: 20,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  axisStyle: {
+    axisLabel: {
+      padding: 30,
+      fontSize: 14,
+      fontWeight: "bold",
+      fill: "#6600ff", // Color of the label
+      opacity: 0.6,
+    },
+    axis: { stroke: "none" },
+    grid: { stroke: "grey", strokeWidth: 0.25, opacity: 0.5 },
+    ticks: {
+      stroke: "grey", // Color of the tick values
+      size: 0,
+      opacity: 0.5,
+    },
+    tickLabels: {
+      fill: "grey", // Tick label color
+      opacity: 0.5, // Tick label opacity
+    },
+  },
+  areaStyle: {
+    data: {
+      fill: "#c299ff",
+      fillOpacity: 0.7,
+      stroke: "#a366ff",
+      strokeWidth: 2,
+    },
+  },
+};
+
 export {
   styles,
   switchStyle,
@@ -321,4 +363,5 @@ export {
   listStyle,
   analysisStyle,
   categoryStyle,
+  chartStyle,
 };

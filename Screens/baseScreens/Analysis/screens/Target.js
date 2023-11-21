@@ -27,6 +27,7 @@ const Target = ({ route }) => {
   const AnalysisView = () => (
     <View style={{ padding: 10 }}>
       <RadarChart />
+      {/* 섹션 컴포넌트 (예: 선수 정보, 공격, 팀 플레이 등) */}
       <Section sectionTitle="공격" data={statData.Attack} />
       <Section sectionTitle="팀 플레이" data={statData.Team_Play} />
     </View>
