@@ -1,11 +1,12 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
-import { listStyle } from "../constants/constants";
+import { listStyle } from "../../constants/constants";
 
-const PlayerHeader = ({ item, isPlayer }) => (
+const Header = ({ item, isPlayer }) => (
   <View style={{ ...listStyle.card.container, marginHorizontal: 10 }}>
     <View style={listStyle.card.text.container}>
       <Text style={listStyle.card.text.name}>{item.name}</Text>
+      {/* 선수일 때만 클럽 아이콘, 클럽명 출력 */}
       {!isPlayer && (
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Image style={listStyle.card.image.teamIcon} source={item.team} />
@@ -18,4 +19,4 @@ const PlayerHeader = ({ item, isPlayer }) => (
   </View>
 );
 
-export default PlayerHeader;
+export default Header;

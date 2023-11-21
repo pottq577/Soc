@@ -6,7 +6,7 @@ import {
   VictoryTheme,
   VictoryLabel,
 } from "victory-native";
-import { domains, data, chartStyle } from "../constants/constants";
+import { domains, data, chartStyle } from "../../constants/constants";
 
 const RadarChart = () => {
   const processedData = Object.keys(domains).map((key) => {

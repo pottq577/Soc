@@ -146,6 +146,32 @@ const data = [
     _90xA: 60,
   },
 ];
+const leagueData = [
+  {
+    rank: 1,
+    teamName: "FC Barcelona",
+    wins: 20,
+    draws: 5,
+    losses: 3,
+    points: 65,
+  },
+  {
+    rank: 2,
+    teamName: "Real Madrid",
+    wins: 19,
+    draws: 6,
+    losses: 3,
+    points: 63,
+  },
+  {
+    rank: 3,
+    teamName: "Atletico Madrid",
+    wins: 18,
+    draws: 7,
+    losses: 3,
+    points: 61,
+  },
+];
 
 export {
   styles,
@@ -170,4 +196,5 @@ export {
   recordData,
   statData,
   data,
+  leagueData,
 };

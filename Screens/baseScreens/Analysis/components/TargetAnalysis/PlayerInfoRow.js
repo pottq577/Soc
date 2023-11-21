@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image, Text } from "react-native";
-import { analysisStyle } from "../constants/constants";
-import { positionColors } from "../constants/constants";
+import { analysisStyle } from "../../constants/constants";
+import { positionColors } from "../../constants/constants";
 
 const InfoRow = ({ label, value }) => {
   const textStyle =

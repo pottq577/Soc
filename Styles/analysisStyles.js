@@ -311,6 +311,29 @@ const analysisStyle = {
       },
     },
   },
+  team: {
+    tableHeader: {
+      flexDirection: "row",
+      justifyContent: "space-around",
+      borderBottomWidth: 1,
+      borderBottomColor: "black",
+      fontSize: 16,
+      marginBottom: 10,
+      fontWeight: "bold",
+    },
+    tableHeaderText: {
+      fontSize: 16,
+      fontWeight: "bold",
+    },
+    row: {
+      flexDirection: "row",
+      justifyContent: "space-around",
+      paddingVertical: 5,
+    },
+    cell: {
+      fontSize: 14,
+    },
+  },
 };
 
 const chartStyle = {
