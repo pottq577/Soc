@@ -334,6 +334,33 @@ const analysisStyle = {
       fontSize: 14,
     },
   },
+  squad: {
+    container: {
+      marginBottom: 20,
+      borderRadius: 15,
+      padding: 10,
+    },
+    header: {
+      justifyContent: "space-between",
+      flexDirection: "row",
+      paddingBottom: 15,
+    },
+    headerFont: {
+      title: {
+        fontWeight: "bold",
+        fontSize: 24,
+      },
+      pos: {
+        fontWeight: "600",
+        fontSize: 15,
+      },
+    },
+    content: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      marginVertical: 2,
+    },
+  },
 };
 
 const chartStyle = {

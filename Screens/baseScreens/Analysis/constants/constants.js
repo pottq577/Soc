@@ -28,6 +28,18 @@ const positionColors = {
   DF: "#468cff",
   GK: "#ffae44",
 };
+const positionMapping = {
+  Attackers: "FW",
+  Midfielders: "MF",
+  Defenders: "DF",
+  Goalkeepers: "GK",
+};
+const positionBorderStyles = (positionKey) => ({
+  borderTopColor: positionColors[positionKey],
+  borderTopWidth: 3,
+  borderLeftWidth: 0.5,
+  borderRightWidth: 0.5,
+});
 /**
  * !! 최댓값 수정 필요!
  * !! 최댓값: 각 domains 별 선수 데이터의 최댓값을 일의 자리에서 올림
@@ -172,6 +184,28 @@ const leagueData = [
     points: 61,
   },
 ];
+const squadData = {
+  attackers: [
+    { name: "Erling Haaland", position: "ST" },
+    { name: "Mohamed Salah", position: "RW" },
+    { name: "Harry Kane", position: "ST" },
+  ],
+  midfielders: [
+    { name: "Kevin De Bruyne", position: "CM" },
+    { name: "Bruno Fernandes", position: "CAM" },
+    { name: "N'Golo Kanté", position: "CDM" },
+  ],
+  defenders: [
+    { name: "Virgil van Dijk", position: "CB" },
+    { name: "Ruben Dias", position: "CB" },
+    { name: "Trent Alexander-Arnold", position: "RB" },
+  ],
+  goalkeepers: [
+    { name: "Alisson Becker", position: "GK" },
+    { name: "Ederson", position: "GK" },
+    { name: "David de Gea", position: "GK" },
+  ],
+};
 
 export {
   styles,
@@ -191,10 +225,13 @@ export {
   playersData,
   teamData,
   positionColors,
+  positionMapping,
+  positionBorderStyles,
   domains,
   overviewData,
   recordData,
   statData,
   data,
   leagueData,
+  squadData,
 };

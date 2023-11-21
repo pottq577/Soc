@@ -1,9 +1,12 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Image } from "react-native";
 import {
   leagueData,
+  squadData,
   listStyle,
   analysisStyle,
+  positionBorderStyles,
+  positionMapping,
 } from "../../constants/constants";
 
 // 공통 테이블 셀 스타일
@@ -32,10 +35,35 @@ const TeamOverview = () => {
     </TouchableOpacity>
   );
 
+  // 각 포지션별 선수 목록을 렌더링하는 함수
+  const renderSquad = (squad, title) => {
+    const positionKey = positionMapping[title]; // 포지션 이름을 키로 변환
+    const borderStyle = positionBorderStyles(positionKey); // 해당 키의 색상을 가져옴
+
+    return (
+      <View style={[analysisStyle.squad.container, borderStyle]}>
+        <View style={analysisStyle.squad.header}>
+          <Text style={analysisStyle.squad.headerFont.title}>{title}</Text>
+          <Text style={analysisStyle.squad.headerFont.pos}>Positions</Text>
+        </View>
+
+        {squad.map((player, index) => (
+          <View key={index} style={analysisStyle.squad.content}>
+            <Text>{player.name}</Text>
+            <Text>{player.position}</Text>
+          </View>
+        ))}
+      </View>
+    );
+  };
+
   return (
     <View style={{ padding: 10 }}>
       <View style={analysisStyle.container}>
-        <Text style={analysisStyle.header}>리그명</Text>
+        <Image
+          source={require("../../../../../constants/premier-league-logo.png")}
+          style={{ width: 130, height: 26 }}
+        />
         {/* 테이블 헤더 */}
         <View
           style={{
@@ -67,6 +95,13 @@ const TeamOverview = () => {
         {leagueData.map((team, index) => (
           <TableRow key={index} team={team} />
         ))}
+      </View>
+      <View style={analysisStyle.container}>
+        <Text style={analysisStyle.header}>스쿼드</Text>
+        {renderSquad(squadData.attackers, "Attackers")}
+        {renderSquad(squadData.midfielders, "Midfielders")}
+        {renderSquad(squadData.defenders, "Defenders")}
+        {renderSquad(squadData.goalkeepers, "Goalkeepers")}
       </View>
     </View>
   );
