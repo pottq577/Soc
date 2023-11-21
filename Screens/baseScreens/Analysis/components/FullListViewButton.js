@@ -3,7 +3,7 @@ import { cardStyle, VIEW_FULL_LIST } from "../constants/constants";
 
 const FullListViewButton = ({ category, isPlayer, data, navigation }) => {
   const handlePress = () => {
-    navigation.navigate("FullList", { category, isPlayer, data, navigation });
+    navigation.navigate("FullList", { category, isPlayer, data });
   };
 
   return (

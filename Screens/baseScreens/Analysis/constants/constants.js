@@ -21,6 +21,27 @@ const CATEGORIES = {
   PLAYER: ["Goals", "Assist", "Pass", "Shoot"],
   TEAMS: ["Wins", "Losses"],
 };
+const positionColors = {
+  FW: "#bc0f0f",
+  MF: "#469719",
+  DF: "#468cff",
+  GK: "#ffae44",
+};
+/**
+ * !! 최댓값 수정 필요!
+ * !! 최댓값: 각 domains 별 선수 데이터의 최댓값을 일의 자리에서 올림
+ * ?? 예시) 선수의 골 최댓값이 24면 최댓값은 30으로 설정
+ */
+const domains = {
+  출전수: [0, 100],
+  출전시간: [0, 120],
+  골: [0, 100],
+  어시스트: [0, 100],
+  xG: [0, 100],
+  xA: [0, 100],
+  _90xG: [0, 100],
+  _90xA: [0, 100],
+};
 // 예시 데이터
 const playersData = [
   {
@@ -82,11 +103,48 @@ const teamData = [
     image: require("../../../../constants/arsenal.png"),
   },
 ];
-const positionColors = {
-  Forward: "red",
-  Midfielder: "green",
-  Defender: "blue",
+const overviewData = {
+  Nationality: {
+    label: "Chile",
+    image: require("../../../../constants/Chile.png"),
+  },
+  Birth: "21/07/2000",
+  Age: 23,
+  Club: {
+    label: "Arsenal",
+    image: require("../../../../constants/arsenal.png"),
+  },
+  Position: {
+    label: "MF",
+  },
 };
+const recordData = {
+  Appearances: 77,
+  Goals: 30,
+  Assists: 10,
+};
+const statData = {
+  Attack: {
+    Goals: 77,
+    Shots: 10,
+  },
+  Team_Play: {
+    Assists: 3,
+    Passes: 30,
+  },
+};
+const data = [
+  {
+    출전수: 40,
+    출전시간: 34,
+    골: 70,
+    어시스트: 23,
+    xG: 50,
+    xA: 34,
+    _90xG: 20,
+    _90xA: 40,
+  },
+];
 
 export {
   styles,
@@ -105,4 +163,9 @@ export {
   playersData,
   teamData,
   positionColors,
+  domains,
+  overviewData,
+  recordData,
+  statData,
+  data,
 };
