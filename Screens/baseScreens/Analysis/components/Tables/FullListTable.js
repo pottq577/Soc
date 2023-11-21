@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
-import { listStyle } from "../constants/constants";
+import { listStyle } from "../../constants/constants";
 
 const CommonHeader = ({ titles }) => {
   return (

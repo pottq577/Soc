@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, FlatList } from "react-native";
 import { Separator, listStyle } from "../constants/constants";
-import { renderTableItem } from "../components/RenderTable";
+import { renderTableItem } from "../components/Tables/FullListTable";
 import { useNavigation } from "@react-navigation/native";
 
 const FullList = ({ route }) => {

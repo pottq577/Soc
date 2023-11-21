@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import Section from "./Section";
+import Section from "../Tables/PlayerSection";
 import { statData } from "../../constants/constants";
 import RadarChart from "./RadarChart";
 

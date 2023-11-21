@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text } from "react-native";
 import { analysisStyle } from "../../constants/constants";
-import PlayerInfoRow from "./PlayerInfoRow";
-import TeamInfoRow from "./TeamInfoRow";
+import PlayerInfoRow from "../TargetAnalysis/PlayerInfoRow";
+import TeamInfoRow from "../TargetAnalysis/TeamInfoRow";
 
-const Section = ({ sectionTitle, data, isPlayer }) => (
+const PlayerSection = ({ sectionTitle, data, isPlayer }) => (
   <View style={analysisStyle.container}>
     <Text style={analysisStyle.header}>{sectionTitle}</Text>
     {/* 선수일 때 PlayerInfoRow, 팀일 때 TeamInfoRow */}
@@ -15,4 +15,4 @@ const Section = ({ sectionTitle, data, isPlayer }) => (
   </View>
 );
 
-export default Section;
+export default PlayerSection;
