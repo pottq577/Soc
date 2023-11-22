@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import Section from "../Tables/PlayerSection";
-import { overviewData, recordData } from "../../constants/constants";
+import { overviewData, recordData, statData } from "../../constants/constants";
 
 const PlayerOverview = ({ isPlayer }) => (
   <View style={{ padding: 10 }}>
@@ -10,6 +10,12 @@ const PlayerOverview = ({ isPlayer }) => (
     <Section
       sectionTitle="프리미어 리그 기록"
       data={recordData}
+      isPlayer={isPlayer}
+    />
+    <Section sectionTitle="공격" data={statData.Attack} isPlayer={isPlayer} />
+    <Section
+      sectionTitle="팀 플레이"
+      data={statData.Team_Play}
       isPlayer={isPlayer}
     />
   </View>

@@ -395,17 +395,20 @@ const analysisStyle = {
       justifyContent: "center",
     },
   },
+  selectMatch: {
+    borderWidth: 1,
+    borderRadius: 5,
+    width: 150,
+    flexDirection: "row",
+    padding: 13,
+    justifyContent: "space-around",
+    alignItems: "center",
+    marginLeft: SCREEN_WIDTH / 4,
+  },
 };
 
 const chartStyle = {
   container: {
-    borderWidth: 1,
-    borderRadius: 5,
-    padding: 13,
-    borderColor: "grey",
-    borderTopColor: "blue",
-    borderTopWidth: 3,
-    marginBottom: 20,
     justifyContent: "center",
     alignItems: "center",
   },
