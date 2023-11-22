@@ -13,11 +13,7 @@ const getTextStyle = (isSelected) => [
   isSelected && categoryStyle.category.selected.text,
 ];
 
-const CategoryPickerView = ({
-  categories,
-  selectedCategory,
-  onCategoryPress,
-}) => {
+const CategoryPicker = ({ categories, selectedCategory, onCategoryPress }) => {
   return (
     <ScrollView
       horizontal
@@ -42,4 +38,4 @@ const CategoryPickerView = ({
   );
 };
 
-export default CategoryPickerView;
+export default CategoryPicker;

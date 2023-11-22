@@ -3,7 +3,7 @@ import { View, TouchableOpacity, Image, Text } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import { IMAGES, seasonStyle } from "../constants/constants";
 
-const SeasonPickerView = ({
+const SeasonPicker = ({
   selectedSeason,
   seasons,
   menuVisible,
@@ -35,4 +35,4 @@ const SeasonPickerView = ({
   );
 };
 
-export default SeasonPickerView;
+export default SeasonPicker;

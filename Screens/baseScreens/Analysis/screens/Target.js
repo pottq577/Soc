@@ -16,15 +16,15 @@ const Target = ({ route }) => {
   const renderContentView = () => {
     if (!isPlayer) {
       return isOverviewSelected ? (
-        <PlayerOverview isPlayer={isPlayer} />
+        <PlayerOverview item={item} />
       ) : (
-        <PlayerAnalysis isPlayer={isPlayer} />
+        <PlayerAnalysis item={item} />
       );
     } else {
       return isOverviewSelected ? (
-        <TeamOverview isPlayer={isPlayer} />
+        <TeamOverview item={item} />
       ) : (
-        <TeamAnalysis isPlayer={isPlayer} />
+        <TeamAnalysis item={item} />
       );
     }
   };

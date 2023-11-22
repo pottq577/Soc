@@ -361,6 +361,40 @@ const analysisStyle = {
       marginVertical: 2,
     },
   },
+  matchList: {
+    container: {
+      borderWidth: 1.5,
+      padding: 10,
+      borderRadius: 5,
+      flexDirection: "row",
+      justifyContent: "space-around",
+      alignItems: "center",
+      marginBottom: 17,
+    },
+    teamFont: {
+      fontSize: 20,
+      fontWeight: "600",
+    },
+  },
+  matchAnalysis: {
+    headerContainer: {
+      borderBottomWidth: 1.5,
+      padding: 10,
+      borderRadius: 5,
+      flexDirection: "row",
+      justifyContent: "space-around",
+      alignItems: "center",
+      marginBottom: 17,
+      height: 90,
+    },
+    analysisView: {
+      height: 300,
+      // backgroundColor: "tomato",
+      borderBottomWidth: 1,
+      alignItems: "center",
+      justifyContent: "center",
+    },
+  },
 };
 
 const chartStyle = {

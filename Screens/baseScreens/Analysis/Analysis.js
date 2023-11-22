@@ -1,8 +1,8 @@
 import React from "react";
 import { ScrollView, View } from "react-native";
 import SegmentedControlTab from "react-native-segmented-control-tab";
-import SeasonPickerView from "./screens/SeasonPickerView";
-import CategoryPickerView from "./screens/CategoryPickerView";
+import SeasonPicker from "./components/SeasonPicker";
+import CategoryPicker from "./components/CategoryPicker";
 import CardContent from "./screens/CardContent";
 import { useAnalysis } from "./hooks/useAnalysis";
 import {
@@ -48,7 +48,7 @@ const AnalysisScreen = () => {
           activeTabTextStyle={switchStyle.activeTabText}
         />
         {/* 시즌 선택 뷰 */}
-        <SeasonPickerView
+        <SeasonPicker
           selectedSeason={selectedSeason}
           seasons={SEASONS}
           menuVisible={menuVisible}
@@ -56,7 +56,7 @@ const AnalysisScreen = () => {
           setSelectedSeason={setSelectedSeason}
         />
         {/* 카테고리 선택 뷰 */}
-        {/* <CategoryPickerView
+        {/* <CategoryPicker
           categories={currentCategories}
           selectedCategory={selectedCategory}
           onCategoryPress={onCategoryPress}
