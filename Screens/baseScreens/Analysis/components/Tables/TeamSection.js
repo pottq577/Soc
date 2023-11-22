@@ -7,11 +7,6 @@ import {
 } from "../../constants/constants";
 
 const TeamSection = ({ squad, title }) => {
-  // squad가 배열인지 확인
-  if (!Array.isArray(squad)) {
-    console.error("squad prop is not an array");
-    return null;
-  }
   const positionKey = positionMapping[title]; // 포지션 이름을 키로 변환
   const borderStyle = positionBorderStyles(positionKey); // 해당 키의 색상을 가져옴
 

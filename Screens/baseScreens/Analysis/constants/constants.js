@@ -29,10 +29,10 @@ const positionColors = {
   GK: "#ffae44",
 };
 const positionMapping = {
-  Attackers: "FW",
-  Midfielders: "MF",
-  Defenders: "DF",
-  Goalkeepers: "GK",
+  공격수: "FW",
+  미드필더: "MF",
+  수비수: "DF",
+  골키퍼: "GK",
 };
 const positionBorderStyles = (positionKey) => ({
   borderTopColor: positionColors[positionKey],

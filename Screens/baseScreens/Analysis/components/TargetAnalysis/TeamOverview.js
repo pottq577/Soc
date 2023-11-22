@@ -3,10 +3,9 @@ import { View, Text, Image } from "react-native";
 import {
   leagueData,
   squadData,
-  listStyle,
   analysisStyle,
 } from "../../constants/constants";
-import TeamTableCell from "../Tables/TeamTableCell";
+import TeamTableHeader from "../Tables/TeamTableHeader";
 import TeamSection from "../Tables/TeamSection";
 import TeamTableRow from "../Tables/TeamTableRow";
 
@@ -17,32 +16,16 @@ const RenderRank = () => (
       style={{ width: 130, height: 26 }}
     />
     {/* 테이블 헤더 */}
-    <View
-      style={{
-        ...listStyle.table.header.container,
-        borderBottomWidth: 0.7,
-        marginBottom: 10,
-      }}
-    >
-      <TeamTableCell flex={1} isHeader>
-        순위
-      </TeamTableCell>
-      <TeamTableCell flex={4} isHeader>
-        팀명
-      </TeamTableCell>
-      <TeamTableCell flex={1} isHeader>
-        승
-      </TeamTableCell>
-      <TeamTableCell flex={1} isHeader>
-        무
-      </TeamTableCell>
-      <TeamTableCell flex={1} isHeader>
-        패
-      </TeamTableCell>
-      <TeamTableCell flex={1} isHeader>
-        승점
-      </TeamTableCell>
-    </View>
+    <TeamTableHeader
+      headers={[
+        { text: "순위", flex: 1 },
+        { text: "팀명", flex: 4 },
+        { text: "승", flex: 1 },
+        { text: "무", flex: 1 },
+        { text: "패", flex: 1 },
+        { text: "승점", flex: 1 },
+      ]}
+    />
     {/* 테이블 로우 */}
     {leagueData.map((team, index) => (
       <TeamTableRow key={index} team={team} />
@@ -53,10 +36,11 @@ const RenderRank = () => (
 const RenderSquad = () => (
   <View style={analysisStyle.container}>
     <Text style={analysisStyle.header}>스쿼드</Text>
-    <TeamSection squad={squadData.attackers} title="Attackers" />
-    <TeamSection squad={squadData.midfielders} title="Midfielders" />
-    <TeamSection squad={squadData.defenders} title="Defenders" />
-    <TeamSection squad={squadData.goalkeepers} title="Goalkeepers" />
+    {/* title 값은 TeamSection.js에서 활용하고, title 수정 시 constants.js의 positionMapping 변수 매핑 가능 */}
+    <TeamSection squad={squadData.attackers} title="공격수" />
+    <TeamSection squad={squadData.midfielders} title="미드필더" />
+    <TeamSection squad={squadData.defenders} title="수비수" />
+    <TeamSection squad={squadData.goalkeepers} title="골키퍼" />
   </View>
 );
 
