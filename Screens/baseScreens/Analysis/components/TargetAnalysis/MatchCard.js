@@ -2,6 +2,7 @@ import React from "react";
 import { TouchableOpacity, View, Text } from "react-native";
 import { analysisStyle } from "../../constants/constants";
 
+// 경기 목록 출력
 const MatchCard = ({ match, onPress }) => (
   <TouchableOpacity onPress={onPress} style={analysisStyle.matchList.container}>
     <Text style={analysisStyle.matchList.teamFont}>{match.home}</Text>

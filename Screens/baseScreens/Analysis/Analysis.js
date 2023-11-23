@@ -2,7 +2,7 @@ import React from "react";
 import { ScrollView, View } from "react-native";
 import SegmentedControlTab from "react-native-segmented-control-tab";
 import SeasonPicker from "./components/SeasonPicker";
-import CategoryPicker from "./components/CategoryPicker";
+// import CategoryPicker from "./components/CategoryPicker";
 import CardContent from "./screens/CardContent";
 import { useAnalysis } from "./hooks/useAnalysis";
 import {
@@ -10,7 +10,7 @@ import {
   styles,
   switchStyle,
   SEASONS,
-  CATEGORIES,
+  // CATEGORIES,
 } from "./constants/constants";
 
 const AnalysisScreen = () => {
@@ -21,16 +21,16 @@ const AnalysisScreen = () => {
     toggleMenu,
     selectedSeason,
     setSelectedSeason,
-    selectedCategory,
-    setSelectedCategory,
+    // selectedCategory,
+    // setSelectedCategory,
   } = useAnalysis(); // Custom Hook 사용
-  const currentCategories = isPlayerSelected
-    ? CATEGORIES.PLAYER
-    : CATEGORIES.TEAMS;
+  // const currentCategories = isPlayerSelected
+  //   ? CATEGORIES.PLAYER
+  //   : CATEGORIES.TEAMS;
 
-  const onCategoryPress = (category) => {
-    setSelectedCategory(category);
-  };
+  // const onCategoryPress = (category) => {
+  //   setSelectedCategory(category);
+  // };
 
   return (
     <ScrollView style={styles.container}>

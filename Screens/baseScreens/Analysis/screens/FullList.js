@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, FlatList } from "react-native";
 import { Separator, listStyle } from "../constants/constants";
-import { renderTableItem } from "../components/Tables/FullListTable";
+import FullListTable from "../components/Tables/FullListTable";
 import { useNavigation } from "@react-navigation/native";
 
 const FullList = ({ route }) => {
@@ -22,7 +22,7 @@ const FullList = ({ route }) => {
         data={modifiedData}
         keyExtractor={(item, index) => index.toString()}
         renderItem={(props) =>
-          renderTableItem({ ...props, isPlayer, navigation })
+          FullListTable({ ...props, isPlayer, navigation })
         }
         ItemSeparatorComponent={() => <Separator />}
       />

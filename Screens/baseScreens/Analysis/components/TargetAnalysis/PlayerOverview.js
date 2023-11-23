@@ -3,6 +3,7 @@ import { View } from "react-native";
 import Section from "../Tables/PlayerSection";
 import { overviewData, recordData, statData } from "../../constants/constants";
 
+// 선수 개요 화면
 const PlayerOverview = ({ isPlayer }) => (
   <View style={{ padding: 10 }}>
     {/* 섹션 컴포넌트 (예: 선수 정보, 공격, 팀 플레이 등) */}

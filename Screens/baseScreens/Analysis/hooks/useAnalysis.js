@@ -12,6 +12,7 @@ export const useAnalysis = (initialPlayer, initialAnalysisType) => {
     useState(initialAnalysisType);
   const [playerMenuVisible, setPlayerMenuVisible] = useState(false);
   const [analysisTypeMenuVisible, setAnalysisTypeMenuVisible] = useState(false);
+  const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth() + 1);
 
   // isPlayerSelected 상태가 변경될 때마다 실행됩니다.
   useEffect(() => {
@@ -61,5 +62,7 @@ export const useAnalysis = (initialPlayer, initialAnalysisType) => {
     togglePlayerMenu,
     analysisTypeMenuVisible,
     toggleAnalysisTypeMenu,
+    selectedMonth,
+    setSelectedMonth,
   };
 };

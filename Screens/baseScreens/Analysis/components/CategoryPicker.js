@@ -13,6 +13,10 @@ const getTextStyle = (isSelected) => [
   isSelected && categoryStyle.category.selected.text,
 ];
 
+/**
+ * 카테고리 선택 Picker 컴포넌트.
+ * ! 사용하지 않음
+ */
 const CategoryPicker = ({ categories, selectedCategory, onCategoryPress }) => {
   return (
     <ScrollView

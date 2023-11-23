@@ -13,6 +13,7 @@ import {
   analysisStyle,
 } from "../../constants/constants";
 
+// 선수에 대한 레이더 차트 출력
 const RadarChart = () => {
   const processedData = Object.keys(domains).map((key) => {
     return { key, value: data[0][key] / domains[key][1] };

@@ -4,6 +4,7 @@ import { View } from "react-native";
 import TeamTableCell from "./TeamTableCell";
 import { listStyle } from "../../constants/constants";
 
+// 순위, 팀명 등 테이블 헤더 뷰
 const TeamTableHeader = ({ headers }) => (
   <View
     style={{

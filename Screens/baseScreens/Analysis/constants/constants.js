@@ -208,6 +208,87 @@ const squadData = {
   ],
 };
 
+const matches = [
+  {
+    date: "2018-05-13T14:00:00",
+    home: "맨시티",
+    away: "아스날",
+    score: "0 : 0",
+  },
+  {
+    date: "2018-06-13T14:00:00",
+    home: "맨시티",
+    away: "아스날",
+    score: "0 : 1",
+  },
+  {
+    date: "2018-07-13T14:00:00",
+    home: "맨시티",
+    away: "아스날",
+    score: "0 : 2",
+  },
+  {
+    date: "2018-08-13T14:00:00",
+    home: "맨시티",
+    away: "아스날",
+    score: "0 : 3",
+  },
+  {
+    date: "2018-09-13T14:00:00",
+    home: "맨시티",
+    away: "아스날",
+    score: "0 : 4",
+  },
+  {
+    date: "2018-10-13T14:00:00",
+    home: "맨시티",
+    away: "아스날",
+    score: "0 : 4",
+  },
+  {
+    date: "2018-11-13T14:00:00",
+    home: "맨시티",
+    away: "아스날",
+    score: "0 : 4",
+  },
+  {
+    date: "2018-11-13T14:00:00",
+    home: "맨시티",
+    away: "아스날",
+    score: "0 : 4",
+  },
+  {
+    date: "2018-11-13T14:00:00",
+    home: "맨시티",
+    away: "아스날",
+    score: "0 : 4",
+  },
+  {
+    date: "2018-12-13T14:00:00",
+    home: "맨시티",
+    away: "아스날",
+    score: "0 : 4",
+  },
+  {
+    date: "2018-01-13T14:00:00",
+    home: "맨시티",
+    away: "아스날",
+    score: "0 : 4",
+  },
+  {
+    date: "2018-02-13T14:00:00",
+    home: "맨시티",
+    away: "아스날",
+    score: "0 : 4",
+  },
+  {
+    date: "2018-03-13T14:00:00",
+    home: "맨시티",
+    away: "아스날",
+    score: "0 : 4",
+  },
+];
+
 export {
   styles,
   cardStyle,
@@ -235,4 +316,5 @@ export {
   data,
   leagueData,
   squadData,
+  matches,
 };

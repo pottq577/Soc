@@ -3,6 +3,7 @@ import { TouchableOpacity } from "react-native";
 import TeamTableCell from "./TeamTableCell";
 import { listStyle } from "../../constants/constants";
 
+// 리그 순위에 대한 리스트
 const TeamTableRow = ({ team }) => {
   return (
     <TouchableOpacity style={listStyle.table.row.container}>

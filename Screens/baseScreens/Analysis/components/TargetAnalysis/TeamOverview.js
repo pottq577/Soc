@@ -44,6 +44,7 @@ const RenderSquad = () => (
   </View>
 );
 
+// 팀 개요 화면
 const TeamOverview = () => {
   return (
     <View style={{ padding: 10 }}>

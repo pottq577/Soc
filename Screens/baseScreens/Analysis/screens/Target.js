@@ -4,10 +4,9 @@ import SegmentedControlTab from "react-native-segmented-control-tab";
 import { switchStyle } from "../constants/constants";
 import { useAnalysis } from "../hooks/useAnalysis";
 import Header from "../components/TargetAnalysis/Header";
+import MatchList from "../components/TargetAnalysis/MatchList";
 import PlayerOverview from "../components/TargetAnalysis/PlayerOverview";
-import PlayerAnalysis from "../components/TargetAnalysis/PlayerAnalysis";
 import TeamOverview from "../components/TargetAnalysis/TeamOverview";
-import TeamAnalysis from "../components/TargetAnalysis/TeamAnalysis";
 
 const Target = ({ route }) => {
   const { item, isPlayer } = route.params;
@@ -16,15 +15,15 @@ const Target = ({ route }) => {
   const renderContentView = () => {
     if (!isPlayer) {
       return isOverviewSelected ? (
-        <PlayerOverview item={item} />
+        <PlayerOverview item={item} isPlayer={!isPlayer} />
       ) : (
-        <PlayerAnalysis item={item} />
+        <MatchList item={item} sPlayer={!isPlayer} />
       );
     } else {
       return isOverviewSelected ? (
-        <TeamOverview item={item} />
+        <TeamOverview item={item} isPlayer={!isPlayer} />
       ) : (
-        <TeamAnalysis item={item} />
+        <MatchList item={item} isPlayer={isPlayer} />
       );
     }
   };

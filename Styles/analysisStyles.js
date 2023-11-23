@@ -375,6 +375,21 @@ const analysisStyle = {
       fontSize: 20,
       fontWeight: "600",
     },
+    tab: {
+      container: {
+        alignItems: "center",
+        marginBottom: 30,
+      },
+      button: {
+        borderWidth: 1,
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        borderRadius: 5,
+        minWidth: 50,
+        alignItems: "center",
+        marginHorizontal: 5,
+      },
+    },
   },
   matchAnalysis: {
     headerContainer: {

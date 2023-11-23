@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { seasonStyle, IMAGES } from "../constants/constants";
 import { Picker } from "@react-native-picker/picker";
 
+// 선수나 분석 종류 선택 Picker 컴포넌트
 const AnalysisPicker = ({
   items,
   selectedItem,

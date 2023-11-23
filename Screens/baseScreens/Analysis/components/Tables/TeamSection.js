@@ -6,6 +6,7 @@ import {
   positionMapping,
 } from "../../constants/constants";
 
+// 사용자가 선택한 팀의 스쿼드 출력
 const TeamSection = ({ squad, title }) => {
   const positionKey = positionMapping[title]; // 포지션 이름을 키로 변환
   const borderStyle = positionBorderStyles(positionKey); // 해당 키의 색상을 가져옴

@@ -4,7 +4,7 @@ import { useRoute } from "@react-navigation/native";
 import { useAnalysis } from "../hooks/useAnalysis";
 import { analysisStyle } from "../constants/constants";
 import AnalysisPicker from "../components/AnalysisPicker";
-import TeamAnalysisView from "../components/TargetAnalysis/TeamAnalysisView";
+import MatchAnalysisView from "../components/TargetAnalysis/MatchAnalysisView";
 
 const players = [
   { label: "Erling Haaland", value: "Erling Haaland" },
@@ -51,7 +51,7 @@ const MatchInfo = ({ match, item }) => {
 
 const MatchAnalysis = () => {
   const route = useRoute();
-  const { match, item } = route.params;
+  const { match, item, isPlayer } = route.params;
   const {
     selectedPlayer,
     setSelectedPlayer,
@@ -66,25 +66,29 @@ const MatchAnalysis = () => {
   return (
     <>
       <MatchInfo item={item} match={match} />
-      <TeamAnalysisView
+      <MatchAnalysisView
         item={item}
         match={match}
         selectedPlayer={selectedPlayer}
         selectedAnalysisType={selectedAnalysisType}
+        isPlayer={isPlayer}
       />
+      {/* Picker */}
       <View style={{ height: 150, paddingTop: 20 }}>
-        {/* 선수 선택 Picker */}
-        <AnalysisPicker
-          items={players.map((player) => ({
-            label: player.label,
-            value: player.value,
-          }))}
-          selectedItem={selectedPlayer}
-          setSelectedItem={setSelectedPlayer}
-          toggleMenu={togglePlayerMenu}
-          menuVisible={playerMenuVisible}
-        />
-        {/* 분석 선택 Picker */}
+        {/* 선수 선택 Picker (팀 분석일 경우에만 표시) */}
+        {isPlayer && (
+          <AnalysisPicker
+            items={players.map((player) => ({
+              label: player.label,
+              value: player.value,
+            }))}
+            selectedItem={selectedPlayer}
+            setSelectedItem={setSelectedPlayer}
+            toggleMenu={togglePlayerMenu}
+            menuVisible={playerMenuVisible}
+          />
+        )}
+        {/* 분석 종류 Picker (항상 표시) */}
         <AnalysisPicker
           items={analysisTypes.map((type) => ({ label: type, value: type }))}
           selectedItem={selectedAnalysisType}

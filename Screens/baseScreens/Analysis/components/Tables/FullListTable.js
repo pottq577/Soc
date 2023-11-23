@@ -1,107 +1,29 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
-import { listStyle } from "../../constants/constants";
+import FullListFirst from "./FullListFirst";
+import FullListTableHeader from "./FullListTableHeader";
+import FullListTableRow from "./FullListTableRow";
 
-const CommonHeader = ({ titles }) => {
-  return (
-    <View style={listStyle.table.header.container}>
-      {titles.map((title, index) => (
-        <Text
-          key={index}
-          style={[listStyle.table.header.cell, { flex: title.flex }]}
-        >
-          {title.text}
-        </Text>
-      ))}
-    </View>
-  );
-};
-
-export const TableHeader = ({ isPlayer }) => {
-  const titles = isPlayer
-    ? [
-        { text: "순위", flex: 1 },
-        { text: "팀명", flex: 4 },
-        { text: "득점수", flex: 1 },
-      ]
-    : [
-        { text: "순위", flex: 1 },
-        { text: "선수명", flex: 4 },
-        { text: "팀", flex: 2 },
-        { text: "득점수", flex: 1 },
-      ];
-
-  return <CommonHeader titles={titles} />;
-};
-
-const CommonRow = ({ item, isPlayer, navigation }) => {
-  const handlePress = () => {
-    navigation.navigate("Target", { item, isPlayer });
-  };
-  return (
-    <TouchableOpacity
-      onPress={handlePress}
-      style={listStyle.table.row.container}
-    >
-      <Text style={[listStyle.table.row.cell, { flex: 1 }]}>{item.rank}</Text>
-      <View style={{ flexDirection: "row", alignItems: "center", flex: 4 }}>
-        {/* 팀 목록일 때 팀 로고 출력 */}
-        {isPlayer && (
-          <Image style={listStyle.table.row.image} source={item.image} />
-        )}
-        <Text style={[listStyle.table.row.cell, { flex: 4 }]}>{item.name}</Text>
-      </View>
-
-      {/* 선수 목록일 때 팀 로고 출력 */}
-      {!isPlayer && (
-        <View style={[listStyle.table.row.cell, { flex: 2 }]}>
-          <Image style={listStyle.table.row.image} source={item.team} />
-        </View>
-      )}
-      <Text style={[listStyle.table.row.cell, { flex: 1 }]}>{item.score}</Text>
-    </TouchableOpacity>
-  );
-};
-
-export const TableRow = ({ item, isPlayer, navigation }) => {
-  return <CommonRow item={item} isPlayer={isPlayer} navigation={navigation} />;
-};
-
-export const renderTableItem = ({ item, isPlayer, navigation }) => {
+// 전체 목록 테이블에 대한 구현
+const FullListTable = ({ item, isPlayer, navigation }) => {
   const handlePress = () => {
     navigation.navigate("Target", { item, isPlayer });
   };
   if (item.isRankOne) {
-    return (
-      <View style={listStyle.container}>
-        <TouchableOpacity
-          onPress={handlePress}
-          style={listStyle.card.container}
-        >
-          <View style={listStyle.card.text.container}>
-            <Text style={listStyle.card.text.rank}>{item.rank}</Text>
-            <Text style={listStyle.card.text.name}>{item.name}</Text>
-            {/* 선수 목록일 때만 팀 로고, 팀명 출력 */}
-            {!isPlayer && (
-              <View style={{ flexDirection: "row", alignItems: "center" }}>
-                <Image
-                  style={listStyle.card.image.teamIcon}
-                  source={item.team}
-                />
-                <Text style={listStyle.card.text.teamName}>
-                  {item.teamName}
-                </Text>
-              </View>
-            )}
-            <Text style={listStyle.card.text.score}>{item.score}</Text>
-          </View>
-          <Image style={listStyle.card.image.photo} source={item.image} />
-        </TouchableOpacity>
-      </View>
-    );
+    // 리스트 중 첫 번째 선수(팀) 출력
+    <FullListFirst isPlayer={isPlayer} item={item} handlePress={handlePress} />;
   } else if (item.isHeader) {
-    return <TableHeader isPlayer={isPlayer} />;
+    // 테이블 헤더 출력
+    return <FullListTableHeader isPlayer={isPlayer} />;
   } else {
-    return <TableRow item={item} isPlayer={isPlayer} navigation={navigation} />;
+    return (
+      // 1등을 제외한 나머지 선수(팀) 출력
+      <FullListTableRow
+        item={item}
+        isPlayer={isPlayer}
+        navigation={navigation}
+      />
+    );
   }
 };
+
+export default FullListTable;

@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, Image } from "react-native";
 import { listStyle } from "../../constants/constants";
 
+// 분석 화면 진입 시 나오는 화면에 대한 렌더링
 const Header = ({ item, isPlayer }) => (
   <View style={{ ...listStyle.card.container, marginHorizontal: 10 }}>
     <View style={listStyle.card.text.container}>

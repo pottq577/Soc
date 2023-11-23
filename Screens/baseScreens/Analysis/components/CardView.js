@@ -4,6 +4,7 @@ import FullListViewButton from "./FullListViewButton";
 import { Separator, cardStyle } from "../constants/constants";
 import { useNavigation } from "@react-navigation/native";
 
+// 선수(팀)에 대한 카드
 const CardView = ({ category, data, isPlayer }) => {
   const navigation = useNavigation();
   const handlePress = (item) => {

@@ -3,7 +3,9 @@ import { View, Image, Text } from "react-native";
 import { analysisStyle } from "../../constants/constants";
 import { positionColors } from "../../constants/constants";
 
+// 선수 정보에 대한 뷰
 const InfoRow = ({ label, value }) => {
+  // 포지션 별 텍스트 스타일 변경
   const textStyle =
     label === "Position" ? { color: positionColors[value.label] } : {};
   // value가 객체이면 이미지와 레이블을 모두 표시합니다.
@@ -25,6 +27,7 @@ const InfoRow = ({ label, value }) => {
         {value}
       </Text>
     );
+
   return (
     <View style={analysisStyle.content.container}>
       <Text style={analysisStyle.content.subject.title}>{label}</Text>

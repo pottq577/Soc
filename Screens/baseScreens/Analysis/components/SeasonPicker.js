@@ -3,6 +3,7 @@ import { View, TouchableOpacity, Image, Text } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import { IMAGES, seasonStyle } from "../constants/constants";
 
+// 사용자가 선수(팀)의 분석할 시즌을 선택할 수 있는 Picker 컴포넌트
 const SeasonPicker = ({
   selectedSeason,
   seasons,
