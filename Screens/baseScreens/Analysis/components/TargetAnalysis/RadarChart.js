@@ -6,17 +6,14 @@ import {
   VictoryTheme,
   VictoryLabel,
 } from "victory-native";
-import {
-  domains,
-  data,
-  chartStyle,
-  analysisStyle,
-} from "../../constants/constants";
+import { domains, chartStyle, analysisStyle } from "../../constants/constants";
+// 예시 데이터
+import { radarData } from "../../constants/data";
 
 // 선수에 대한 레이더 차트 출력
 const RadarChart = () => {
   const processedData = Object.keys(domains).map((key) => {
-    return { key, value: data[0][key] / domains[key][1] };
+    return { key, value: radarData[0][key] / domains[key][1] };
   });
 
   return (

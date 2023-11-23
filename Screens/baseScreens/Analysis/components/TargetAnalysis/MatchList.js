@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import { Text, View } from "react-native";
-import { analysisStyle, matches } from "../../constants/constants";
+import { analysisStyle } from "../../constants/constants";
 import { useNavigation } from "@react-navigation/native";
 import { useAnalysis } from "../../hooks/useAnalysis";
 import RadarChart from "./RadarChart";
 import MatchCard from "./MatchCard";
 import MatchMonthTabs from "./MatchMonthTabs";
 import groupMatchesByMonth from "./utils/groupMatches";
+// example data
+import { matches } from "../../constants/data";
 
 // 선수(팀)이 참여했던 경기 리스트 출력
 const MatchList = ({ item, isPlayer }) => {

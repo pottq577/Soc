@@ -1,7 +1,8 @@
 import React from "react";
 import { View } from "react-native";
 import Section from "../Tables/PlayerSection";
-import { overviewData, recordData, statData } from "../../constants/constants";
+// 예시 데이터
+import { overviewData, recordData, statData } from "../../constants/data";
 
 // 선수 개요 화면
 const PlayerOverview = ({ isPlayer }) => (

@@ -1,13 +1,11 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
-import {
-  leagueData,
-  squadData,
-  analysisStyle,
-} from "../../constants/constants";
+import { analysisStyle } from "../../constants/constants";
 import TeamTableHeader from "../Tables/TeamTableHeader";
 import TeamSection from "../Tables/TeamSection";
 import TeamTableRow from "../Tables/TeamTableRow";
+// 예시 데이터
+import { leagueData, squadData } from "../../constants/data";
 
 const RenderRank = () => (
   <View style={analysisStyle.container}>

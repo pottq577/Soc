@@ -2,12 +2,9 @@ import React from "react";
 import { View } from "react-native";
 import NoContentView from "../components/NoContentView";
 import CardView from "../components/CardView";
-import {
-  SEASONS,
-  CATEGORIES,
-  playersData,
-  teamData,
-} from "../constants/constants";
+import { SEASONS, CATEGORIES } from "../constants/constants";
+// 예시 데이터
+import { playersData, teamData } from "../constants/data";
 
 const CardContent = ({ selectedSeason, isPlayerSelected }) => {
   if (selectedSeason !== SEASONS[4]) return <NoContentView />;
