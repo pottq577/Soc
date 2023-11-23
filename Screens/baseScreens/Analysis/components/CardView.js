@@ -1,8 +1,34 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import FullListViewButton from "./FullListViewButton";
-import { Separator, cardStyle } from "../constants/constants";
+import { Separator, cardStyle, IMAGES } from "../constants/constants";
 import { useNavigation } from "@react-navigation/native";
+
+const TeamInfo = ({ playerData }) => (
+  <View style={{ flexDirection: "row", alignItems: "center" }}>
+    <Image style={cardStyle.card.image.teamIcon} source={playerData.team} />
+    <Text style={cardStyle.card.text.teamName}>{playerData.teamName}</Text>
+  </View>
+);
+
+const MainFoot = () => {
+  return (
+    <View style={{ flexDirection: "row" }}>
+      <Image
+        style={{
+          width: 25,
+          height: 45,
+          backgroundColor: "#rgba(76, 39, 245, 0.1)",
+          tintColor: "#rgba(76, 39, 245, 0.5)",
+          borderRadius: 10,
+        }}
+        source={IMAGES.LEFT_FOOT}
+      />
+      <View style={{ paddingHorizontal: 3 }} />
+      <Image style={{ width: 25, height: 45 }} source={IMAGES.RIGHT_FOOT} />
+    </View>
+  );
+};
 
 // 선수(팀)에 대한 카드
 const CardView = ({ category, data, isPlayer }) => {
@@ -17,22 +43,18 @@ const CardView = ({ category, data, isPlayer }) => {
         onPress={() => handlePress(playerData)}
         style={cardStyle.card.first}
       >
-        <View style={{ justifyContent: "space-around" }}>
+        <View style={{ justifyContent: "space-around", width: 200 }}>
           <Text style={cardStyle.card.text.rank}>{playerData.rank}</Text>
           <Text style={cardStyle.card.text.name}>{playerData.name}</Text>
           {/* 선수 뷰일 때만 팀명/로고 출력 */}
-          {!isPlayer && (
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Image
-                style={cardStyle.card.image.teamIcon}
-                source={playerData.team}
-              />
-              <Text style={cardStyle.card.text.teamName}>
-                {playerData.teamName}
-              </Text>
-            </View>
-          )}
-          <Text style={cardStyle.card.text.score}>{playerData.score}</Text>
+          {!isPlayer && <TeamInfo playerData={playerData} />}
+          {/* 선수 뷰일 때만 주발 정보 출력 */}
+          <View
+            style={{ flexDirection: "row", justifyContent: "space-between" }}
+          >
+            <Text style={cardStyle.card.text.score}>{playerData.score}</Text>
+            {!isPlayer && <MainFoot />}
+          </View>
         </View>
         <Image style={cardStyle.card.image.photo} source={playerData.image} />
       </TouchableOpacity>

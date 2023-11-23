@@ -15,6 +15,8 @@ const IMAGES = {
   NO_CONTENT: require("../../../../constants/no_content.png"),
   DOWN_ARROW: require("../../../../constants/icons/down_arrow.png"),
   RIGHT_ARROW: require("../../../../constants/icons/right_arrow.png"),
+  LEFT_FOOT: require("../../../../constants/icons/left-foot.png"),
+  RIGHT_FOOT: require("../../../../constants/icons/right-foot.png"),
 };
 const VIEW_FULL_LIST = "View Full List";
 const NO_DATA_AVAILABLE = "No Data Available";
