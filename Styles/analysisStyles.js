@@ -395,16 +395,6 @@ const analysisStyle = {
       justifyContent: "center",
     },
   },
-  selectMatch: {
-    borderWidth: 1,
-    borderRadius: 5,
-    width: 150,
-    flexDirection: "row",
-    padding: 13,
-    justifyContent: "space-around",
-    alignItems: "center",
-    marginLeft: SCREEN_WIDTH / 4,
-  },
 };
 
 const chartStyle = {
