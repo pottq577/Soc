@@ -70,13 +70,6 @@ const seasonStyle = {
       height: 20,
     },
   },
-  menuItem: {
-    padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#ddd",
-    marginLeft: 10,
-    marginRight: 10,
-  },
   modalView: {
     width: "100%",
     borderColor: "grey",
@@ -426,6 +419,9 @@ const analysisStyle = {
       borderBottomWidth: 1,
       alignItems: "center",
       justifyContent: "center",
+    },
+    pickerContainer: {
+      height: 50,
     },
   },
 };

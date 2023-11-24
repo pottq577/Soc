@@ -13,6 +13,7 @@ export const useAnalysis = (initialPlayer, initialAnalysisType) => {
   const [playerMenuVisible, setPlayerMenuVisible] = useState(false);
   const [analysisTypeMenuVisible, setAnalysisTypeMenuVisible] = useState(false);
   const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth() + 1);
+  const [activePicker, setActivePicker] = useState(null); // 추가된 상태
 
   // isPlayerSelected 상태가 변경될 때마다 실행됩니다.
   useEffect(() => {
@@ -31,15 +32,21 @@ export const useAnalysis = (initialPlayer, initialAnalysisType) => {
     setMenuVisible(!menuVisible);
   };
 
-  // 하나의 메뉴가 열리면 다른 하나를 닫는 함수
+  // 다른 Picker가 활성화되면 현재 Picker를 비활성화합니다.
   const togglePlayerMenu = () => {
+    setActivePicker(activePicker === "player" ? null : "player");
     setPlayerMenuVisible(!playerMenuVisible);
-    if (analysisTypeMenuVisible) setAnalysisTypeMenuVisible(false);
+    if (analysisTypeMenuVisible) {
+      setAnalysisTypeMenuVisible(false);
+    }
   };
 
   const toggleAnalysisTypeMenu = () => {
+    setActivePicker(activePicker === "analysisType" ? null : "analysisType");
     setAnalysisTypeMenuVisible(!analysisTypeMenuVisible);
-    if (playerMenuVisible) setPlayerMenuVisible(false);
+    if (playerMenuVisible) {
+      setPlayerMenuVisible(false);
+    }
   };
 
   // 상태와 액션을 설정하는 함수들을 반환합니다.
@@ -64,5 +71,7 @@ export const useAnalysis = (initialPlayer, initialAnalysisType) => {
     toggleAnalysisTypeMenu,
     selectedMonth,
     setSelectedMonth,
+    activePicker,
+    setActivePicker,
   };
 };

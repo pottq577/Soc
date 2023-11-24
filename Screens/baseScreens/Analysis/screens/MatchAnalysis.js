@@ -2,41 +2,16 @@ import React from "react";
 import { Text, View } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { useAnalysis } from "../hooks/useAnalysis";
-import { analysisStyle } from "../constants/constants";
-import AnalysisPicker from "../components/AnalysisPicker";
+import {
+  analysisStyle,
+  analysisTypes,
+  pickerType,
+} from "../constants/constants";
+import AnalysisPickerContainer from "../components/TargetAnalysis/AnalysisPickerContainer";
 import MatchAnalysisView from "../components/TargetAnalysis/MatchAnalysisView";
+import { players } from "../constants/data";
 
-const players = [
-  { label: "Erling Haaland", value: "Erling Haaland" },
-  { label: "Mohamed Salah", value: "Mohamed Salah" },
-  { label: "Kevin De Bruyne", value: "Kevin De Bruyne" },
-  // ... 기타 선수들
-];
-
-const analysisTypes = [
-  "이벤트 발생 위치",
-  "패스 경로",
-  "슈팅 히트맵",
-  "속력 그래프",
-  "볼 히트맵",
-  "스프린트 경로",
-  "패스 네트워크",
-];
-
-const Example = ({ match, item }) => {
-  return (
-    <View>
-      <Text>{`날짜: ${match.date}`}</Text>
-      {/* match.home은 예시 데이터로, item.name을 사용하여 사용자가 선택한 팀의 팀명을 출력 */}
-      <Text>{`선택 팀: ${match.home}`}</Text>
-      {/* <Text>{`선택 팀: ${item.name}`}</Text> */}
-      <Text>{`상대 팀: ${match.away}`}</Text>
-      <Text>{`점수: ${match.score}`}</Text>
-    </View>
-  );
-};
-
-const MatchInfo = ({ match, item }) => {
+const MatchHeader = ({ match, item }) => {
   return (
     <View style={analysisStyle.matchAnalysis.headerContainer}>
       <Text style={analysisStyle.matchList.teamFont}>{match.home}</Text>
@@ -59,13 +34,25 @@ const MatchAnalysis = () => {
     setSelectedAnalysisType,
     togglePlayerMenu,
     toggleAnalysisTypeMenu,
-    playerMenuVisible,
-    analysisTypeMenuVisible,
+    activePicker,
+    setActivePicker,
   } = useAnalysis(players[0].label, analysisTypes[0]);
+
+  // 각 Picker의 메뉴 토글 함수
+  const togglePicker = (picker) => {
+    setActivePicker(activePicker === picker ? null : picker);
+    if (picker === pickerType.player) {
+      togglePlayerMenu();
+    } else {
+      toggleAnalysisTypeMenu();
+    }
+  };
 
   return (
     <>
-      <MatchInfo item={item} match={match} />
+      {/* 화면 최상단 경기 정보 */}
+      <MatchHeader item={item} match={match} />
+      {/* 사용자가 선택한 분석을 보여줄 뷰 */}
       <MatchAnalysisView
         item={item}
         match={match}
@@ -73,28 +60,27 @@ const MatchAnalysis = () => {
         selectedAnalysisType={selectedAnalysisType}
         isPlayer={isPlayer}
       />
-      {/* Picker */}
-      <View style={{ height: 150, paddingTop: 20 }}>
-        {/* 선수 선택 Picker (팀 분석일 경우에만 표시) */}
+      {/* 선수 선택(팀 분석일 때), 분석 종류 선택 Picker 뷰 */}
+      <View style={{ paddingTop: 20 }}>
+        {/* 선수 선택 Picker */}
         {isPlayer && (
-          <AnalysisPicker
-            items={players.map((player) => ({
-              label: player.label,
-              value: player.value,
-            }))}
+          <AnalysisPickerContainer
+            picker={pickerType.player}
+            activePicker={activePicker}
+            togglePicker={() => togglePicker(pickerType.player)}
+            items={players}
             selectedItem={selectedPlayer}
             setSelectedItem={setSelectedPlayer}
-            toggleMenu={togglePlayerMenu}
-            menuVisible={playerMenuVisible}
           />
         )}
-        {/* 분석 종류 Picker (항상 표시) */}
-        <AnalysisPicker
-          items={analysisTypes.map((type) => ({ label: type, value: type }))}
+        {/* 분석 종류 Picker */}
+        <AnalysisPickerContainer
+          picker={pickerType.analysisType}
+          activePicker={activePicker}
+          togglePicker={() => togglePicker(pickerType.analysisType)}
+          items={analysisTypes}
           selectedItem={selectedAnalysisType}
           setSelectedItem={setSelectedAnalysisType}
-          toggleMenu={toggleAnalysisTypeMenu}
-          menuVisible={analysisTypeMenuVisible}
         />
       </View>
     </>

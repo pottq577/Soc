@@ -237,6 +237,18 @@ const matches = [
     score: "0 : 4",
   },
 ];
+// MatchAnalysis.js
+const players = [
+  { label: "Erling Haaland", value: "Erling Haaland" },
+  { label: "Mohamed Salah", value: "Mohamed Salah" },
+  { label: "Kevin De Bruyne", value: "Kevin De Bruyne" },
+  { label: "Erling Haaland", value: "Erling Haaland" },
+  { label: "Mohamed Salah", value: "Mohamed Salah" },
+  { label: "Kevin De Bruyne", value: "Kevin De Bruyne" },
+  { label: "Erling Haaland", value: "Erling Haaland" },
+  { label: "Mohamed Salah", value: "Mohamed Salah" },
+  { label: "Kevin De Bruyne", value: "Kevin De Bruyne" },
+];
 
 export {
   playersData,
@@ -248,4 +260,5 @@ export {
   leagueData,
   squadData,
   matches,
+  players,
 };

@@ -9,7 +9,7 @@ import {
   chartStyle,
 } from "../../../../Styles/analysisStyles";
 import Separator from "../../../Separator";
-import { SCREEN_HEIGHT } from "../../../../constants/dimensions";
+import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../../../../constants/dimensions";
 
 const IMAGES = {
   NO_CONTENT: require("../../../../constants/no_content.png"),
@@ -43,8 +43,8 @@ const positionBorderStyles = (positionKey) => ({
 });
 /**
  * !! 최댓값 수정 필요!
- * !! 최댓값: 각 domains 별 선수 데이터의 최댓값을 일의 자리에서 올림
- * ?? 예시) 선수의 골 최댓값이 24면 최댓값은 30으로 설정
+ * !! 최댓값은 각 domains 별 선수 데이터의 최댓값을 일의 자리에서 올림
+ * ?? 선수의 골 최댓값이 24면 최댓값은 30으로 설정
  */
 const domains = {
   출전수: [0, 100],
@@ -55,6 +55,21 @@ const domains = {
   xA: [0, 100],
   _90xG: [0, 100],
   _90xA: [0, 100],
+};
+
+const analysisTypes = [
+  "이벤트 발생 위치",
+  "패스 경로",
+  "슈팅 히트맵",
+  "속력 그래프",
+  "볼 히트맵",
+  "스프린트 경로",
+  "패스 네트워크",
+];
+
+const pickerType = {
+  analysisType: "analysisType",
+  player: "player",
 };
 
 export {
@@ -76,4 +91,8 @@ export {
   positionMapping,
   positionBorderStyles,
   domains,
+  analysisTypes,
+  SCREEN_WIDTH,
+  SCREEN_HEIGHT,
+  pickerType,
 };
