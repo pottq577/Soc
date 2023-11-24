@@ -44,10 +44,11 @@ const RadarChart = () => {
             x="key"
             y="value"
             style={chartStyle.areaStyle}
-            animate={{
-              duration: 500,
-              onLoad: { duration: 500 },
-            }}
+            // 성능 개선을 위해 애니메이션 속성 제거
+            // animate={{
+            //   duration: 500,
+            //   onLoad: { duration: 500 },
+            // }}
           />
         </VictoryChart>
       </View>
