@@ -29,6 +29,7 @@ const CardView = ({ category, data, isPlayer }) => {
           <Text style={cardStyle.card.text.name}>{playerData.name}</Text>
           {/* 선수 뷰일 때만 팀명/로고 출력 */}
           {!isPlayer && <TeamInfo playerData={playerData} />}
+          <Text style={cardStyle.card.text.score}>{playerData.score}</Text>
         </View>
         <Image style={cardStyle.card.image.photo} source={playerData.image} />
       </TouchableOpacity>
