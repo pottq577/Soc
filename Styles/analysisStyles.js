@@ -249,6 +249,24 @@ const listStyle = {
       flexDirection: "row",
       borderBottomWidth: 0.3,
     },
+    foot_number: {
+      container: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        width: 210,
+        alignItems: "center",
+      },
+      textContainer: {
+        paddingVertical: 5,
+        paddingHorizontal: 6,
+        backgroundColor: "#rgba(255, 100, 121, 0.65)",
+        borderRadius: 10,
+      },
+      text: {
+        fontSize: 16,
+        fontWeight: "600",
+      },
+    },
   },
   table: {
     header: {
@@ -384,10 +402,10 @@ const analysisStyle = {
         borderWidth: 1,
         paddingHorizontal: 10,
         paddingVertical: 5,
+        marginHorizontal: 5,
         borderRadius: 5,
         minWidth: 50,
         alignItems: "center",
-        marginHorizontal: 5,
       },
     },
   },

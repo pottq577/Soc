@@ -11,25 +11,6 @@ const TeamInfo = ({ playerData }) => (
   </View>
 );
 
-const MainFoot = () => {
-  return (
-    <View style={{ flexDirection: "row" }}>
-      <Image
-        style={{
-          width: 25,
-          height: 45,
-          backgroundColor: "#rgba(76, 39, 245, 0.1)",
-          tintColor: "#rgba(76, 39, 245, 0.5)",
-          borderRadius: 10,
-        }}
-        source={IMAGES.LEFT_FOOT}
-      />
-      <View style={{ paddingHorizontal: 3 }} />
-      <Image style={{ width: 25, height: 45 }} source={IMAGES.RIGHT_FOOT} />
-    </View>
-  );
-};
-
 // 선수(팀)에 대한 카드
 const CardView = ({ category, data, isPlayer }) => {
   const navigation = useNavigation();
@@ -48,13 +29,6 @@ const CardView = ({ category, data, isPlayer }) => {
           <Text style={cardStyle.card.text.name}>{playerData.name}</Text>
           {/* 선수 뷰일 때만 팀명/로고 출력 */}
           {!isPlayer && <TeamInfo playerData={playerData} />}
-          {/* 선수 뷰일 때만 주발 정보 출력 */}
-          <View
-            style={{ flexDirection: "row", justifyContent: "space-between" }}
-          >
-            <Text style={cardStyle.card.text.score}>{playerData.score}</Text>
-            {!isPlayer && <MainFoot />}
-          </View>
         </View>
         <Image style={cardStyle.card.image.photo} source={playerData.image} />
       </TouchableOpacity>
