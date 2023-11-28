@@ -7,14 +7,14 @@ import {
   analysisStyle,
   categoryStyle,
   chartStyle,
-} from "../../../../Styles/analysisStyles";
-import Separator from "../../../Separator";
-import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../../../../constants/dimensions";
+} from "../../../Styles/analysisStyles";
+import Separator from "../../../components/Separator";
+import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../../../constants/dimensions";
 
 const IMAGES = {
-  NO_CONTENT: require("../../../../constants/no_content.png"),
-  DOWN_ARROW: require("../../../../constants/icons/down_arrow.png"),
-  RIGHT_ARROW: require("../../../../constants/icons/right_arrow.png"),
+  NO_CONTENT: require("../../../constants/no_content.png"),
+  DOWN_ARROW: require("../../../constants/icons/down_arrow.png"),
+  RIGHT_ARROW: require("../../../constants/icons/right_arrow.png"),
 };
 const VIEW_FULL_LIST = "View Full List";
 const NO_DATA_AVAILABLE = "No Data Available";

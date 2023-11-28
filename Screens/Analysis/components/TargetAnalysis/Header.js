@@ -1,8 +1,7 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 import { listStyle } from "../../constants/constants";
-
-const Space = () => <View style={{ paddingHorizontal: 5 }} />;
+import Space from "../../../../components/Space";
 
 const FootText = ({ isPreferred, text }) => {
   const textStyle = isPreferred
@@ -22,7 +21,7 @@ const PreferFoot = ({ preferFoot }) => {
       <Text style={{ marginBottom: 7, fontWeight: "600" }}>선호 주발</Text>
       <View style={{ flexDirection: "row" }}>
         <FootText isPreferred={preferFoot === "L"} text="L" />
-        <Space />
+        <Space paddingHorizontal={5} />
         <FootText isPreferred={preferFoot === "R"} text="R" />
       </View>
     </View>

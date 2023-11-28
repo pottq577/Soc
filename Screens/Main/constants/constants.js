@@ -1,4 +1,4 @@
-import { styles } from "../../../../Styles/mainStyles";
+import { styles } from "../../../Styles/mainStyles";
 import Games from "../../Games/Games";
 import News from "../../News/News";
 import Analysis from "../../Analysis/Analysis";

@@ -1,9 +1,9 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Main from "./Screens/baseScreens/Main/Main";
-import FullList from "./Screens/baseScreens/Analysis/screens/FullList";
-import Target from "./Screens/baseScreens/Analysis/screens/Target";
-import MatchAnalysis from "./Screens/baseScreens/Analysis/screens/MatchAnalysis";
+import Main from "./Screens/Main/Main";
+import FullList from "./Screens/Analysis/screens/FullList";
+import Target from "./Screens/Analysis/screens/Target";
+import MatchAnalysis from "./Screens/Analysis/screens/MatchAnalysis";
 import { LogBox } from "react-native";
 
 LogBox.ignoreAllLogs();
