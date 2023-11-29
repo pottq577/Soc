@@ -47,4 +47,11 @@ const timelineEvents = [
   { time: "75", type: "goal", team: "home", player: "Player 5" },
 ];
 
-export { matches, timelineEvents };
+const matchDetails = {
+  possession: { home: "60%", away: "40%" },
+  expectedGoals: { home: "1.2", away: "0.8" },
+  shots: { home: "10", away: "7" },
+  onTarget: { home: "4", away: "3" },
+};
+
+export { matches, timelineEvents, matchDetails };

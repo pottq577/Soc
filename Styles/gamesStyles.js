@@ -125,6 +125,19 @@ const overviewStyle = {
       fontWeight: "bold",
     },
   },
+  details: {
+    container: {
+      // padding: 10,
+      // borderWidth: 1,
+      // borderRadius: 15,
+    },
+    teamData: {
+      fontSize: 16,
+    },
+    label: {
+      fontSize: 16,
+    },
+  },
 };
 
 const rankingStyle = {
