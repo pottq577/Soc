@@ -1,7 +1,8 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import FullListViewButton from "./FullListViewButton";
-import { Separator, cardStyle, IMAGES } from "../constants/constants";
+import { cardStyle } from "../constants/constants";
+import Separator from "../../../components/Separator";
 import { useNavigation } from "@react-navigation/native";
 
 const TeamInfo = ({ playerData }) => (

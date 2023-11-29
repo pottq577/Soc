@@ -10,7 +10,7 @@ import { leagueData, squadData } from "../../constants/data";
 const RenderRank = () => (
   <View style={analysisStyle.container}>
     <Image
-      source={require("../../../../../constants/premier-league-logo.png")}
+      source={require("../../../../constants/premier-league-logo.png")}
       style={{ width: 130, height: 26 }}
     />
     {/* 테이블 헤더 */}

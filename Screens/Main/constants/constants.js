@@ -6,11 +6,11 @@ import Simulation from "../../Simulation/Simulation";
 import Following from "../../Following/Following";
 
 const ICONS = {
-  GAMES: require("../../../../constants/icons/field.png"),
-  NEWS: require("../../../../constants/icons/news.png"),
-  ANALYSIS: require("../../../../constants/icons/analysis.png"),
-  SIMULATION: require("../../../../constants/icons/simulation.png"),
-  FOLLOWING: require("../../../../constants/icons/following.png"),
+  GAMES: require("../../../constants/icons/field.png"),
+  NEWS: require("../../../constants/icons/news.png"),
+  ANALYSIS: require("../../../constants/icons/analysis.png"),
+  SIMULATION: require("../../../constants/icons/simulation.png"),
+  FOLLOWING: require("../../../constants/icons/following.png"),
 };
 const TAB_BAR_OPTIONS = {
   tabBarActiveTintColor: "purple",

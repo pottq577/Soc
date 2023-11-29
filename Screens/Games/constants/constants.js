@@ -1,4 +1,3 @@
-import Separator from "../../../components/Separator";
 import {
   styles,
   calendarList,
@@ -11,10 +10,10 @@ import {
 } from "../../Analysis/constants/constants";
 
 const IMAGES = {
-  PL_LOGO: require("../../../../constants/Premier_League-Logo.wine.png"),
-  CALENDAR: require("../../../../constants/icons/calendar.png"),
-  ARSENAL: require("../../../../constants/arsenal.png"),
-  MUN: require("../../../../constants/mu.png"),
+  PL_LOGO: require("../../../constants/Premier_League-Logo.wine.png"),
+  CALENDAR: require("../../../constants/icons/calendar.png"),
+  ARSENAL: require("../../../constants/arsenal.png"),
+  MUN: require("../../../constants/mu.png"),
 };
 
 const teams = [
@@ -86,7 +85,6 @@ const teams = [
 ];
 
 export {
-  Separator,
   SCREEN_WIDTH,
   SCREEN_HEIGHT,
   styles,

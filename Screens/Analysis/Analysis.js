@@ -6,12 +6,12 @@ import SeasonPicker from "./components/SeasonPicker";
 import CardContent from "./screens/CardContent";
 import { useAnalysis } from "./hooks/useAnalysis";
 import {
-  Separator,
   styles,
   switchStyle,
   SEASONS,
   // CATEGORIES,
 } from "./constants/constants";
+import Separator from "../../components/Separator";
 
 const AnalysisScreen = () => {
   const {

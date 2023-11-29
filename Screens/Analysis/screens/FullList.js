@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, FlatList } from "react-native";
-import { Separator, listStyle } from "../constants/constants";
+import { listStyle } from "../constants/constants";
+import Separator from "../../../components/Separator";
 import FullListTable from "../components/Tables/FullListTable";
 import { useNavigation } from "@react-navigation/native";
 

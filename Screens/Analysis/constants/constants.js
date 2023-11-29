@@ -8,7 +8,6 @@ import {
   categoryStyle,
   chartStyle,
 } from "../../../Styles/analysisStyles";
-import Separator from "../../../components/Separator";
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../../../constants/dimensions";
 
 const IMAGES = {
@@ -84,7 +83,6 @@ export {
   IMAGES,
   VIEW_FULL_LIST,
   NO_DATA_AVAILABLE,
-  Separator,
   SEASONS,
   CATEGORIES,
   positionColors,

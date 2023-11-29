@@ -2,8 +2,7 @@ import React from "react";
 import { View, Text, Image, ScrollView } from "react-native";
 import { styles, matchList } from "../constants/constants";
 import { matches } from "../constants/data";
-
-import { Space } from "../../../components/Space";
+import Space from "../../../components/Space";
 
 const TeamInfo = ({ name, logo, alignRight }) => {
   return (
