@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
-import { matchListStyles } from "../constants/constants";
-import TeamInfo from "../components/TeamInfo";
+import { matchListStyles } from "../../constants/constants";
+import TeamInfo from "./TeamInfo";
 
 const Cards = ({ index, match, onPress }) => {
   return (
@@ -12,9 +12,9 @@ const Cards = ({ index, match, onPress }) => {
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <TeamInfo name={match.home} logo={match.homeLogo} alignRight={true} />
           <View style={matchListStyles.scoreContainer}>
-            <Text style={matchListStyles.text.score}>{match.homeScore}</Text>
-            <Text style={matchListStyles.text.score}> - </Text>
-            <Text style={matchListStyles.text.score}>{match.awayScore}</Text>
+            <Text style={matchListStyles.score}>{match.homeScore}</Text>
+            <Text style={matchListStyles.score}> - </Text>
+            <Text style={matchListStyles.score}>{match.awayScore}</Text>
           </View>
           <TeamInfo
             name={match.away}

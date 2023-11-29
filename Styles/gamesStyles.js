@@ -54,11 +54,11 @@ const matchListStyles = {
     flex: 1,
   },
   text: {
-    score: {
-      fontSize: 20,
-      fontWeight: "600",
-    },
     fontSize: 16,
+    fontWeight: "600",
+  },
+  score: {
+    fontSize: 20,
     fontWeight: "600",
   },
   teamInfo: {
@@ -94,8 +94,50 @@ const matchListStyles = {
       flexDirection: "row",
       flex: 1,
     },
-    scoredContainer: {},
   },
 };
 
-export { styles, calendarList, leagueCalIcon, matchListStyles };
+const overviewStyle = {
+  container: {
+    padding: 10,
+  },
+  timeline: {
+    container: {
+      // 타임라인 전체에 대한 스타일
+      padding: 10,
+      borderWidth: 1,
+      borderRadius: 15,
+    },
+    eventRow: {
+      // 개별 이벤트 행에 대한 스타일
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "center",
+      marginBottom: 5,
+    },
+    event: {
+      // 공통 이벤트 스타일
+      flex: 3,
+      textAlign: "center",
+    },
+    time: {
+      // 이벤트 시간에 대한 스타일
+      fontWeight: "bold",
+    },
+  },
+};
+
+const rankingStyle = {
+  container: {
+    padding: 10,
+  },
+};
+
+export {
+  styles,
+  calendarList,
+  leagueCalIcon,
+  matchListStyles,
+  overviewStyle,
+  rankingStyle,
+};

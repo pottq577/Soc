@@ -39,4 +39,12 @@ const matches = actualData.map((match) => ({
   datetime: match.datetime, // 경기 날짜와 시간
 }));
 
-export { matches };
+const timelineEvents = [
+  { time: "10", type: "goal", team: "home", player: "Player 1" },
+  { time: "27", type: "yellow-card", team: "away", player: "Player 2" },
+  { time: "45+2", type: "goal", team: "away", player: "Player 3" },
+  { time: "59", type: "red-card", team: "home", player: "Player 4" },
+  { time: "75", type: "goal", team: "home", player: "Player 5" },
+];
+
+export { matches, timelineEvents };

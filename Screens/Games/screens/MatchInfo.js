@@ -1,22 +1,54 @@
-import React from "react";
-import { View, Text, Image } from "react-native";
-import { useRoute } from "@react-navigation/native";
-import MatchHeader from "../components/MatchHeader";
+import React, { useState } from "react";
+import { View, ScrollView } from "react-native";
+import MatchHeader from "../components/MatchInfo/MatchHeader";
+import Separator from "../../../components/Separator";
+import SegmentedControlTab from "react-native-segmented-control-tab";
+import { switchStyle } from "../constants/constants";
+import MatchRanking from "../components/MatchInfo/MatchRanking";
+import MatchOverview from "../components/MatchInfo/MatchOverview";
 
-const MatchInfo = () => {
-  const route = useRoute(); // 현재 경로 정보를 가져옵니다
+const MatchInfo = ({ route }) => {
   const { home, homeScore, homeLogo, away, awayScore, awayLogo, datetime } =
     route.params;
+  const [selectedTabIndex, setSelectedTabIndex] = useState(0); // 탭 인덱스 상태
+
+  // 렌더링할 컨텐츠를 결정하는 함수
+  const renderContentView = () => {
+    switch (selectedTabIndex) {
+      case 0: // '개요' 탭 선택 시
+        return <MatchOverview home={home} away={away} datetime={datetime} />;
+      case 1: // '순위' 탭 선택 시
+        return <MatchRanking home={home} away={away} />;
+      default:
+        return null;
+    }
+  };
 
   return (
-    <MatchHeader
-      home={home}
-      homeScore={homeScore}
-      homeLogo={homeLogo}
-      away={away}
-      awayScore={awayScore}
-      awayLogo={awayLogo}
-    />
+    <ScrollView>
+      <MatchHeader
+        home={home}
+        homeScore={homeScore}
+        homeLogo={homeLogo}
+        away={away}
+        awayScore={awayScore}
+        awayLogo={awayLogo}
+      />
+      <Separator />
+      <View style={{ height: 60, width: "100%" }}>
+        <SegmentedControlTab
+          values={["개요", "순위"]}
+          selectedIndex={selectedTabIndex}
+          onTabPress={setSelectedTabIndex}
+          tabsContainerStyle={switchStyle.tabsContainer}
+          tabStyle={switchStyle.tabs}
+          activeTabStyle={switchStyle.activeTab}
+          tabTextStyle={switchStyle.tabText}
+          activeTabTextStyle={switchStyle.activeTabText}
+        />
+      </View>
+      {renderContentView()}
+    </ScrollView>
   );
 };
 

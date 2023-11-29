@@ -1,8 +1,8 @@
 import React from "react";
-import { View, ScrollView, Text, TouchableOpacity } from "react-native";
+import { ScrollView } from "react-native";
 import { matches } from "../constants/data";
 import { useNavigation } from "@react-navigation/native";
-import Cards from "../components/Cards";
+import Cards from "../components/MatchCards/Cards";
 
 const MatchCards = () => {
   const navigation = useNavigation();

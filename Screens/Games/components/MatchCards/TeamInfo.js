@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image, Text } from "react-native";
-import Space from "../../../components/Space";
-import { matchListStyles, styles } from "../constants/constants";
+import Space from "../../../../components/Space";
+import { matchListStyles, styles } from "../../constants/constants";
 
 const TeamInfo = ({ name, logo, alignRight }) => {
   return (

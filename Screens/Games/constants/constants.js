@@ -3,7 +3,10 @@ import {
   calendarList,
   leagueCalIcon,
   matchListStyles,
+  overviewStyle,
+  rankingStyle,
 } from "../../../Styles/gamesStyles";
+import { switchStyle, analysisStyle } from "../../Analysis/constants/constants";
 import {
   SCREEN_HEIGHT,
   SCREEN_WIDTH,
@@ -91,6 +94,10 @@ export {
   calendarList,
   leagueCalIcon,
   matchListStyles,
+  overviewStyle,
+  rankingStyle,
+  switchStyle,
+  analysisStyle,
   IMAGES,
   teams,
 };

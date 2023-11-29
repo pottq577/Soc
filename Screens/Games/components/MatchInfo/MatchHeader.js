@@ -1,8 +1,8 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
-import Space from "../../../components/Space";
+import Space from "../../../../components/Space";
 import MatchHeaderGoals from "./MatchHeaderGoals";
-import { matchListStyles } from "../constants/constants";
+import { matchListStyles } from "../../constants/constants";
 
 // 팀명, 로고 출력 뷰
 const TeamDisplay = ({ name, logo }) => {
