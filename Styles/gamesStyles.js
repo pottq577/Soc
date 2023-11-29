@@ -43,18 +43,21 @@ const leagueCalIcon = {
   },
 };
 
-const matchList = {
+const matchListStyles = {
   container: {
     padding: 10,
-    flexDirection: "row",
     alignItems: "center",
     borderWidth: 1,
     borderRadius: 5,
     marginBottom: 20,
-    height: 60,
+    height: 100,
     flex: 1,
   },
   text: {
+    score: {
+      fontSize: 20,
+      fontWeight: "600",
+    },
     fontSize: 16,
     fontWeight: "600",
   },
@@ -71,6 +74,28 @@ const matchList = {
   teamName: {
     flexShrink: 1, // 텍스트가 화면을 넘어가지 않도록 함
   },
+  matchHeader: {
+    container: {
+      flexDirection: "row",
+      padding: 20,
+      marginTop: 20,
+      alignItems: "center",
+    },
+    teamLogo: {
+      width: 50,
+      height: 50,
+    },
+    teamContainer: {
+      alignItems: "center",
+      flex: 1,
+    },
+    scoreContainer: {
+      justifyContent: "center",
+      flexDirection: "row",
+      flex: 1,
+    },
+    scoredContainer: {},
+  },
 };
 
-export { styles, calendarList, leagueCalIcon, matchList };
+export { styles, calendarList, leagueCalIcon, matchListStyles };

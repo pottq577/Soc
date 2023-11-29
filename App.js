@@ -4,6 +4,7 @@ import Main from "./Screens/Main/Main";
 import FullList from "./Screens/Analysis/screens/FullList";
 import Target from "./Screens/Analysis/screens/Target";
 import MatchAnalysis from "./Screens/Analysis/screens/MatchAnalysis";
+import MatchInfo from "./Screens/Games/screens/MatchInfo";
 import { LogBox } from "react-native";
 
 LogBox.ignoreAllLogs();
@@ -45,6 +46,15 @@ export default function App() {
           options={{
             headerShown: true,
             title: "경기 분석",
+            gestureEnabled: true,
+          }}
+        />
+        <Stack.Screen
+          name="MatchInfo"
+          component={MatchInfo}
+          options={{
+            headerShown: true,
+            title: "경기 정보",
             gestureEnabled: true,
           }}
         />

@@ -2,7 +2,7 @@ import {
   styles,
   calendarList,
   leagueCalIcon,
-  matchList,
+  matchListStyles,
 } from "../../../Styles/gamesStyles";
 import {
   SCREEN_HEIGHT,
@@ -90,7 +90,7 @@ export {
   styles,
   calendarList,
   leagueCalIcon,
-  matchList,
+  matchListStyles,
   IMAGES,
   teams,
 };
