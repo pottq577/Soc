@@ -4,7 +4,7 @@ import MatchHeader from "../components/MatchInfo/MatchHeader";
 import Separator from "../../../components/Separator";
 import SegmentedControlTab from "react-native-segmented-control-tab";
 import { switchStyle } from "../constants/constants";
-import MatchRanking from "../components/MatchInfo/MatchRanking";
+import MatchLineUp from "../components/MatchInfo/MatchLineUp";
 import MatchOverview from "../components/MatchInfo/MatchOverview";
 
 const MatchInfo = ({ route }) => {
@@ -17,8 +17,8 @@ const MatchInfo = ({ route }) => {
     switch (selectedTabIndex) {
       case 0: // '개요' 탭 선택 시
         return <MatchOverview home={home} away={away} datetime={datetime} />;
-      case 1: // '순위' 탭 선택 시
-        return <MatchRanking home={home} away={away} />;
+      case 1: // '라인업' 탭 선택 시
+        return <MatchLineUp home={home} away={away} />;
       default:
         return null;
     }
@@ -37,7 +37,7 @@ const MatchInfo = ({ route }) => {
       <Separator />
       <View style={{ height: 60, width: "100%" }}>
         <SegmentedControlTab
-          values={["개요", "순위"]}
+          values={["개요", "라인업"]}
           selectedIndex={selectedTabIndex}
           onTabPress={setSelectedTabIndex}
           tabsContainerStyle={switchStyle.tabsContainer}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
-import { overviewStyle, analysisStyle } from "../../constants/constants";
+import { analysisStyle } from "../../constants/constants";
 import { timelineEvents, matchDetails } from "../../constants/data";
 import TimelineEvent from "./TimelineEvent";
 import MatchDetails from "./MatchDetails";
@@ -15,7 +15,7 @@ const MatchOverview = () => {
           <TimelineEvent key={index} event={event} />
         ))}
       </View>
-      {/* 경기 결과 정보 */}
+      {/* 경기 세부 정보 카드 */}
       <MatchDetails matchDetails={matchDetails} />
     </View>
   );

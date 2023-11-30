@@ -117,7 +117,7 @@ const overviewStyle = {
     },
     event: {
       // 공통 이벤트 스타일
-      flex: 3,
+      flex: 1,
       textAlign: "center",
     },
     time: {
