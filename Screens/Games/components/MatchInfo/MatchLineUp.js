@@ -1,12 +1,42 @@
-import React from "react";
-import { Text, View } from "react-native";
-import { teams } from "../../constants/constants";
+import React, { useState } from "react";
+import { View, ScrollView } from "react-native";
+import SegmentedControlTab from "react-native-segmented-control-tab";
+import { switchStyle } from "../../constants/constants";
+import RenderSquad from "../../../Analysis/components/TargetAnalysis/RenderSquad";
+import Space from "../../../../components/Space";
 
 const MatchLineUp = () => {
+  const [selectedTabIndex, setSelectedTabIndex] = useState(0); // 현재 선택된 탭 인덱스
+
+  // 탭에 따른 컨텐츠 렌더링
+  const renderTabContent = () => {
+    switch (selectedTabIndex) {
+      case 0: // '홈' 탭 선택 시
+        return <RenderSquad isHome={selectedTabIndex} />;
+      case 1: // '어웨이' 탭 선택 시
+        return <RenderSquad isHome={selectedTabIndex} />;
+      default:
+        return null;
+    }
+  };
+
   return (
-    <View>
-      <Text>라인업</Text>
-    </View>
+    <ScrollView style={{ paddingHorizontal: 10 }}>
+      <View style={{ height: 60, width: "100%" }}>
+        <SegmentedControlTab
+          values={["홈", "어웨이"]}
+          selectedIndex={selectedTabIndex}
+          onTabPress={setSelectedTabIndex}
+          tabsContainerStyle={switchStyle.tabsContainer}
+          tabStyle={switchStyle.tabs}
+          activeTabStyle={switchStyle.activeTab}
+          tabTextStyle={switchStyle.tabText}
+          activeTabTextStyle={switchStyle.activeTabText}
+        />
+      </View>
+      <Space paddingVertical={5} />
+      {renderTabContent()}
+    </ScrollView>
   );
 };
 

@@ -1,11 +1,11 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Image } from "react-native";
 import { analysisStyle } from "../../constants/constants";
 import TeamTableHeader from "../Tables/TeamTableHeader";
-import TeamSection from "../Tables/TeamSection";
 import TeamTableRow from "../Tables/TeamTableRow";
 // 예시 데이터
-import { leagueData, squadData } from "../../constants/data";
+import { leagueData } from "../../constants/data";
+import RenderSquad from "./RenderSquad";
 
 const RenderRank = () => (
   <View style={analysisStyle.container}>
@@ -28,17 +28,6 @@ const RenderRank = () => (
     {leagueData.map((team, index) => (
       <TeamTableRow key={index} team={team} />
     ))}
-  </View>
-);
-
-const RenderSquad = () => (
-  <View style={analysisStyle.container}>
-    <Text style={analysisStyle.header}>스쿼드</Text>
-    {/* title 값은 TeamSection.js에서 활용하고, title 수정 시 constants.js의 positionMapping 변수 매핑 가능 */}
-    <TeamSection squad={squadData.attackers} title="공격수" />
-    <TeamSection squad={squadData.midfielders} title="미드필더" />
-    <TeamSection squad={squadData.defenders} title="수비수" />
-    <TeamSection squad={squadData.goalkeepers} title="골키퍼" />
   </View>
 );
 

@@ -2,7 +2,10 @@ import React from "react";
 import { View, Text } from "react-native";
 import { listStyle } from "../../constants/constants";
 
-// 순위, 팀(선수)명 등에 대한 헤더 뷰
+/**
+ * 전체 목록에서 테이블의 헤더를 출력하는 뷰
+ * @param isPlayer: 선수 / 팀 구분
+ */
 const FullListTableHeader = ({ isPlayer }) => {
   const titles = isPlayer
     ? [

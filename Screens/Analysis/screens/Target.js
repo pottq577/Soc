@@ -8,6 +8,10 @@ import MatchList from "../components/TargetAnalysis/MatchList";
 import PlayerOverview from "../components/TargetAnalysis/PlayerOverview";
 import TeamOverview from "../components/TargetAnalysis/TeamOverview";
 
+/**
+ * 사용자가 선택한
+ * @returns
+ */
 const Target = ({ route }) => {
   const { item, isPlayer } = route.params;
   const { isOverviewSelected, setIsOverviewSelected } = useAnalysis(); // Custom Hook 사용

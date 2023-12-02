@@ -2,7 +2,12 @@ import React from "react";
 import { TouchableOpacity, View, Text, Image } from "react-native";
 import { listStyle } from "../../constants/constants";
 
-// 첫 번째 선수(팀)을 제외한 나머지 리스트
+/**
+ * 첫 번째 선수(팀)을 제외한 나머지 리스트 출력
+ * @param item: 사용자가 선수 / 팀을 선택했을 때 Target.js로 데이터를 넘겨줌
+ * @param isPlayer: 사용자가 선수 / 팀을 선택했는지 확인
+ * @returns
+ */
 const FullListTableRow = ({ item, isPlayer, navigation }) => {
   const handlePress = () => {
     navigation.navigate("Target", { item, isPlayer });

@@ -13,6 +13,13 @@ import {
 } from "./constants/constants";
 import Separator from "../../components/Separator";
 
+/**
+ * '분석' 화면 진입 시 보여줄 화면 렌더링
+ * (최상단부터)
+ * 선수 / 팀 스위치 버튼 (SegmentedControlTab)
+ * 시즌 선택 버튼 (SeasonPicker)
+ * 선수 / 팀별 카테고리 카드 (CardContent)
+ */
 const AnalysisScreen = () => {
   const {
     isPlayerSelected,
@@ -37,6 +44,7 @@ const AnalysisScreen = () => {
       {/* 상단 메뉴 컴포넌트 컨테이너 */}
       <View style={{ marginBottom: 15 }}>
         {/* 선수 / 팀 선택 */}
+        {/* isPlayerSelected 상태에 따라 CardContent에서 분리된 선수/팀 뷰 렌더링 */}
         <SegmentedControlTab
           values={["선수", "팀"]}
           selectedIndex={isPlayerSelected ? 0 : 1}
