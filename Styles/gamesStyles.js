@@ -22,7 +22,7 @@ const styles = {
   },
 };
 
-const calendarList = {
+const calendarStyle = {
   container: {
     text: {
       padding: 5,
@@ -47,8 +47,14 @@ const calendarList = {
     backgroundColor: "tomato",
   },
   modalContainer: {
-    marginTop: SCREEN_HEIGHT / 4,
+    marginBottom: SCREEN_HEIGHT / 25,
     padding: 10,
+  },
+  backdrop: {
+    flex: 1,
+    backgroundColor: "rgba(0, 0, 0, 0.5)", // 흐린 배경
+    justifyContent: "center",
+    alignItems: "center",
   },
 };
 
@@ -174,7 +180,7 @@ const rankingStyle = {
 
 export {
   styles,
-  calendarList,
+  calendarStyle,
   leagueCalIcon,
   matchListStyles,
   overviewStyle,

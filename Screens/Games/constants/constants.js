@@ -1,6 +1,6 @@
 import {
   styles,
-  calendarList,
+  calendarStyle,
   leagueCalIcon,
   matchListStyles,
   overviewStyle,
@@ -91,7 +91,7 @@ export {
   SCREEN_WIDTH,
   SCREEN_HEIGHT,
   styles,
-  calendarList,
+  calendarStyle,
   leagueCalIcon,
   matchListStyles,
   overviewStyle,

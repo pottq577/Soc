@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import Separator from "../../components/Separator";
 import LeagueCalendarIcon from "./components/LeagueCalendarIcon";
-import Calendar from "./components/Calendar";
+import Date from "./components/Date";
 import MatchCards from "./screens/MatchCards";
 import { switchStyle } from "./constants/constants";
 import SegmentedControlTab from "react-native-segmented-control-tab";
@@ -28,7 +28,7 @@ const GameScreen = () => {
       {/* 리그 아이콘, 달력 아이콘 */}
       <LeagueCalendarIcon selectedTabIndex={selectedTabIndex} />
       {/* 날짜 선택 (경기 일정 탭에서만 보이도록) */}
-      {selectedTabIndex === 0 && <Calendar />}
+      {selectedTabIndex === 0 && <Date />}
 
       <Separator />
 
