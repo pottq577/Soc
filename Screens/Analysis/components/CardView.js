@@ -40,7 +40,7 @@ const CardView = ({ category, data, isPlayer }) => {
           <Text style={cardStyle.card.text.rank}>{playerData.rank}</Text>
           <Text style={cardStyle.card.text.name}>{playerData.name}</Text>
           {/* 선수 뷰일 때만 팀명/로고 출력 */}
-          {!isPlayer && <TeamInfo playerData={playerData} />}
+          {isPlayer && <TeamInfo playerData={playerData} />}
           <Text style={cardStyle.card.text.score}>{playerData.score}</Text>
         </View>
         {/* 카드 우측 선수 / 팀 이미지(아이콘) */}
@@ -64,7 +64,7 @@ const CardView = ({ category, data, isPlayer }) => {
           />
           <Text>{playerData.name}</Text>
         </View>
-        {/* 리스트 우측 선수 / 팀의 득점 데이터 */}
+        {/* 리스트 우측 선수 / 팀 */}
         <Text>{playerData.score}</Text>
       </TouchableOpacity>
     );

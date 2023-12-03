@@ -1,6 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import Section from "../Tables/PlayerSection";
+import RadarChart from "./RadarChart";
 // 예시 데이터
 import { overviewData, recordData, statData } from "../../constants/data";
 
@@ -20,6 +21,7 @@ const PlayerOverview = ({ isPlayer }) => (
       data={statData.Team_Play}
       isPlayer={isPlayer}
     />
+    {isPlayer && <RadarChart />}
   </View>
 );
 

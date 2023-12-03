@@ -9,25 +9,42 @@ import PlayerOverview from "../components/TargetAnalysis/PlayerOverview";
 import TeamOverview from "../components/TargetAnalysis/TeamOverview";
 
 /**
- * 사용자가 선택한
+ * 사용자가 선택한 선수 / 팀에 대한 상세 분석 화면
  * @returns
  */
 const Target = ({ route }) => {
   const { item, isPlayer } = route.params;
-  const { isOverviewSelected, setIsOverviewSelected } = useAnalysis(); // Custom Hook 사용
+  // console.log("Target isPlayer : ", isPlayer);
+
+  const {
+    isOverviewSelected,
+    setIsOverviewSelected,
+    isWholeSeason,
+    setIsWholeSeason,
+  } = useAnalysis(); // Custom Hook 사용
 
   const renderContentView = () => {
-    if (!isPlayer) {
+    if (isPlayer) {
       return isOverviewSelected ? (
-        <PlayerOverview item={item} isPlayer={!isPlayer} />
+        <PlayerOverview item={item} isPlayer={isPlayer} />
       ) : (
-        <MatchList item={item} sPlayer={!isPlayer} />
+        <MatchList
+          item={item}
+          isPlayer={isPlayer}
+          isWholeSeason={isWholeSeason}
+          setIsWholeSeason={setIsWholeSeason}
+        />
       );
     } else {
       return isOverviewSelected ? (
         <TeamOverview item={item} isPlayer={!isPlayer} />
       ) : (
-        <MatchList item={item} isPlayer={isPlayer} />
+        <MatchList
+          item={item}
+          isPlayer={isPlayer}
+          isWholeSeason={isWholeSeason}
+          setIsWholeSeason={setIsWholeSeason}
+        />
       );
     }
   };

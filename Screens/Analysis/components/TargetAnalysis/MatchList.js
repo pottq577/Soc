@@ -1,21 +1,18 @@
 import React, { useEffect } from "react";
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import { analysisStyle } from "../../constants/constants";
 import { useNavigation } from "@react-navigation/native";
 import { useAnalysis } from "../../hooks/useAnalysis";
-import RadarChart from "./RadarChart";
 import MatchCard from "./MatchCard";
 import MatchMonthTabs from "./MatchMonthTabs";
 import groupMatchesByMonth from "./utils/groupMatches";
 // example data
 import { matches } from "../../constants/data";
 
-// 선수(팀)이 참여했던 경기 리스트 출력
-const MatchList = ({ item, isPlayer }) => {
+// 한 경기에 대해서만 분석
+const TargetMatch = ({ isWholeSeason, navigation, item, isPlayer }) => {
   const { selectedMonth, setSelectedMonth } = useAnalysis();
   const groupedMatches = groupMatchesByMonth(matches);
-  const navigation = useNavigation();
-
   // groupedMatches에 selectedMonth가 있는지 확인하고, 없으면 첫 번째 월로 설정
   useEffect(() => {
     if (!groupedMatches[selectedMonth]) {
@@ -23,32 +20,82 @@ const MatchList = ({ item, isPlayer }) => {
     }
   }, [selectedMonth, groupedMatches, setSelectedMonth]);
 
+  console.log("TargetMatch isPlayer : ", isPlayer);
+
   const handlePress = (match) => {
-    navigation.navigate("MatchAnalysis", { match, item, isPlayer });
+    navigation.navigate("MatchAnalysis", {
+      match,
+      item,
+      isPlayer,
+      isWholeSeason: false,
+    });
   };
 
   return (
+    <View>
+      {/* 월 선택 탭 */}
+      <MatchMonthTabs
+        months={Object.keys(groupedMatches)}
+        selectedMonth={selectedMonth}
+        onSelectMonth={setSelectedMonth}
+      />
+      {/* 경기 선택 */}
+      {groupedMatches[selectedMonth].map((match, index) => (
+        <MatchCard
+          key={index}
+          match={match}
+          onPress={() => handlePress(match)}
+        />
+      ))}
+    </View>
+  );
+};
+
+const TargetSeason = ({ isWholeSeason, isPlayer, navigation }) => {
+  const handlePress = () => {
+    navigation.navigate("MatchAnalysis", {
+      isPlayer,
+      isWholeSeason: true,
+    });
+  };
+
+  console.log("TargetSeason isPlayer : ", isPlayer);
+  return (
+    <TouchableOpacity
+      onPress={handlePress}
+      style={{ borderWidth: 1, height: 100 }}
+    >
+      <Text>season</Text>
+    </TouchableOpacity>
+  );
+};
+
+// 선수(팀)이 참여했던 경기 리스트 출력
+const MatchList = ({ item, isPlayer, isWholeSeason, setIsWholeSeason }) => {
+  const navigation = useNavigation();
+
+  return (
     <View style={{ padding: 10 }}>
+      {/* 한 경기에 대해서만 분석 */}
       <View style={analysisStyle.container}>
         <Text style={analysisStyle.header}>경기 선택</Text>
-        {/* 월 선택 탭 */}
-        <MatchMonthTabs
-          months={Object.keys(groupedMatches)}
-          selectedMonth={selectedMonth}
-          onSelectMonth={setSelectedMonth}
+        <TargetMatch
+          navigation={navigation}
+          isWholeSeason={isWholeSeason}
+          item={item}
+          isPlayer={isPlayer}
         />
-        {/* 경기 선택 */}
-        {groupedMatches[selectedMonth] &&
-          groupedMatches[selectedMonth].map((match, index) => (
-            <MatchCard
-              key={index}
-              match={match}
-              onPress={() => handlePress(match)}
-            />
-          ))}
       </View>
-      {/* 선수 분석일 때만 레이더 차트 표시 */}
-      {!isPlayer && <RadarChart />}
+      {/* 시즌에 대한 분석 */}
+      <View style={analysisStyle.container}>
+        <Text style={analysisStyle.header}>시즌 분석</Text>
+        <TargetSeason
+          navigation={navigation}
+          isWholeSeason={isWholeSeason}
+          item={item}
+          isPlayer={isPlayer}
+        />
+      </View>
     </View>
   );
 };

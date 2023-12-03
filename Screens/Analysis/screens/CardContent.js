@@ -21,7 +21,7 @@ const CardContent = ({ selectedSeason, isPlayerSelected }) => {
 
   return categories.map((category, index) => (
     <View key={index} style={{ marginBottom: 20 }}>
-      <CardView category={category} data={data} isPlayer={!isPlayerSelected} />
+      <CardView category={category} data={data} isPlayer={isPlayerSelected} />
     </View>
   ));
 };

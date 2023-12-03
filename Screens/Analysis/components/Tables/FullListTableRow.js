@@ -21,13 +21,13 @@ const FullListTableRow = ({ item, isPlayer, navigation }) => {
       <Text style={[listStyle.table.row.cell, { flex: 1 }]}>{item.rank}</Text>
       <View style={{ flexDirection: "row", alignItems: "center", flex: 4 }}>
         {/* 팀 전체 목록일 때만 팀 로고 출력 */}
-        {isPlayer && (
+        {!isPlayer && (
           <Image style={listStyle.table.row.image} source={item.image} />
         )}
         <Text style={[listStyle.table.row.cell, { flex: 4 }]}>{item.name}</Text>
       </View>
       {/* 선수 전체 목록일 때만 팀 로고 출력  */}
-      {!isPlayer && (
+      {isPlayer && (
         <View style={[listStyle.table.row.cell, { flex: 2 }]}>
           <Image style={listStyle.table.row.image} source={item.team} />
         </View>

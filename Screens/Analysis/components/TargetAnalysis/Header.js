@@ -34,7 +34,7 @@ const Header = ({ item, isPlayer }) => (
     <View style={listStyle.card.text.container}>
       <Text style={listStyle.card.text.name}>{item.name}</Text>
       {/* 선수일 때만 클럽 아이콘, 클럽명 출력 */}
-      {!isPlayer && (
+      {isPlayer && (
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Image style={listStyle.card.image.teamIcon} source={item.team} />
           <Text style={listStyle.card.text.teamName}>{item.teamName}</Text>
@@ -43,7 +43,7 @@ const Header = ({ item, isPlayer }) => (
       <View style={listStyle.card.foot_number.container}>
         <Text style={listStyle.card.text.score}>등번호</Text>
         {/* items에서 선수의 주발 정보를 가져올 것. 선수일 때만 주발 정보 출력 */}
-        {!isPlayer && <PreferFoot preferFoot={"R"} />}
+        {isPlayer && <PreferFoot preferFoot={"R"} />}
       </View>
     </View>
     <Image style={listStyle.card.image.photo} source={item.image} />

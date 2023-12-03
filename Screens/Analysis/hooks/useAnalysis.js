@@ -13,7 +13,8 @@ export const useAnalysis = (initialPlayer, initialAnalysisType) => {
   const [playerMenuVisible, setPlayerMenuVisible] = useState(false);
   const [analysisTypeMenuVisible, setAnalysisTypeMenuVisible] = useState(false);
   const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth() + 1);
-  const [activePicker, setActivePicker] = useState(null); // 추가된 상태
+  const [activePicker, setActivePicker] = useState(null);
+  const [isWholeSeason, setIsWholeSeason] = useState(false);
 
   // isPlayerSelected 상태가 변경될 때마다 실행됩니다.
   useEffect(() => {
@@ -73,5 +74,7 @@ export const useAnalysis = (initialPlayer, initialAnalysisType) => {
     setSelectedMonth,
     activePicker,
     setActivePicker,
+    isWholeSeason,
+    setIsWholeSeason,
   };
 };

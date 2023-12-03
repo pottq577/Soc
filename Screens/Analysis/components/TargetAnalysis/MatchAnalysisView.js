@@ -12,17 +12,38 @@ const MatchAnalysisView = ({
   selectedPlayer,
   selectedAnalysisType,
   isPlayer,
+  isWholeSeason,
 }) => {
+  // 시즌 전체 분석 뷰
+  const renderWholeSeasonView = () => {
+    return (
+      <View style={analysisStyle.matchAnalysis.analysisView}>
+        <Text>시즌 전체 분석</Text>
+        {/* 시즌 전체 분석에 필요한 추가 정보 또는 컴포넌트 */}
+        <Text>{`isWholeSeason: ${isWholeSeason}`}</Text>
+        <Text>{`isPlayer: ${isPlayer}`}</Text>
+      </View>
+    );
+  };
+
+  // 특정 경기 분석 뷰
+  const renderMatchView = () => {
+    return (
+      <View style={analysisStyle.matchAnalysis.analysisView}>
+        <Text>분석 화면</Text>
+        {/* 팀 분석일 때만 선수 선택 표시 */}
+        {isPlayer && <Text>{`선택된 선수: ${selectedPlayer}`}</Text>}
+        <Text>{`선택된 분석 유형: ${selectedAnalysisType}`}</Text>
+        <Text>{`매치 정보 (date): ${match.date}`}</Text>
+        <Text>{`매치 정보 (score): ${match.score}`}</Text>
+        <Text>{`isPlayer: ${isPlayer}`}</Text>
+        <Text>{`isWholeSeason: ${isWholeSeason}`}</Text>
+      </View>
+    );
+  };
+
   return (
-    <View style={analysisStyle.matchAnalysis.analysisView}>
-      <Text>분석 화면</Text>
-      {/* 팀 분석일 때만 선수 선택 표시 */}
-      {isPlayer && <Text>{`선택된 선수: ${selectedPlayer}`}</Text>}
-      <Text>{`선택된 분석 유형: ${selectedAnalysisType}`}</Text>
-      <Text>{`매치 정보 (date): ${match.date}`}</Text>
-      <Text>{`매치 정보 (score): ${match.score}`}</Text>
-      <Text>{`isPlayer: ${!isPlayer}`}</Text>
-    </View>
+    <View>{isWholeSeason ? renderWholeSeasonView() : renderMatchView()}</View>
   );
 };
 

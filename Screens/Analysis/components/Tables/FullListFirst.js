@@ -11,7 +11,7 @@ const FullListFirst = ({ isPlayer, item, handlePress }) => {
           <Text style={listStyle.card.text.rank}>{item.rank}</Text>
           <Text style={listStyle.card.text.name}>{item.name}</Text>
           {/* 선수 목록일 때만 팀 로고, 팀명 출력 */}
-          {!isPlayer && (
+          {isPlayer && (
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Image style={listStyle.card.image.teamIcon} source={item.team} />
               <Text style={listStyle.card.text.teamName}>{item.teamName}</Text>

@@ -11,22 +11,26 @@ import AnalysisPickerContainer from "../components/TargetAnalysis/AnalysisPicker
 import MatchAnalysisView from "../components/TargetAnalysis/MatchAnalysisView";
 import { players } from "../constants/data";
 
-const MatchHeader = ({ match, item }) => {
-  return (
-    <View style={analysisStyle.matchAnalysis.headerContainer}>
-      <Text style={analysisStyle.matchList.teamFont}>{match.home}</Text>
-      <View style={{ alignItems: "center" }}>
-        <Text style={{ color: "grey" }}>{match.date}</Text>
-        <Text style={{ fontSize: 30 }}>{match.score}</Text>
+const MatchHeader = ({ match, item, isWholeSeason }) => {
+  // match 객체가 존재하는 경우에만 경기 정보를 표시
+  if (!isWholeSeason && match) {
+    return (
+      <View style={analysisStyle.matchAnalysis.headerContainer}>
+        <Text style={analysisStyle.matchList.teamFont}>{match.home}</Text>
+        <View style={{ alignItems: "center" }}>
+          <Text style={{ color: "grey" }}>{match.date}</Text>
+          <Text style={{ fontSize: 30 }}>{match.score}</Text>
+        </View>
+        <Text style={analysisStyle.matchList.teamFont}>{match.away}</Text>
       </View>
-      <Text style={analysisStyle.matchList.teamFont}>{match.away}</Text>
-    </View>
-  );
+    );
+  }
+  return null;
 };
 
 const MatchAnalysis = () => {
   const route = useRoute();
-  const { match, item, isPlayer } = route.params;
+  const { match, item, isPlayer, isWholeSeason } = route.params;
   const {
     selectedPlayer,
     setSelectedPlayer,
@@ -51,7 +55,7 @@ const MatchAnalysis = () => {
   return (
     <>
       {/* 화면 최상단 경기 정보 */}
-      <MatchHeader item={item} match={match} />
+      <MatchHeader item={item} match={match} isWholeSeason={isWholeSeason} />
       {/* 사용자가 선택한 분석을 보여줄 뷰 */}
       <MatchAnalysisView
         item={item}
@@ -59,11 +63,12 @@ const MatchAnalysis = () => {
         selectedPlayer={selectedPlayer}
         selectedAnalysisType={selectedAnalysisType}
         isPlayer={isPlayer}
+        isWholeSeason={isWholeSeason}
       />
       {/* 선수 선택(팀 분석일 때), 분석 종류 선택 Picker 뷰 */}
       <View style={{ paddingTop: 20 }}>
         {/* 선수 선택 Picker */}
-        {isPlayer && (
+        {!isPlayer && (
           <AnalysisPickerContainer
             picker={pickerType.player}
             activePicker={activePicker}
