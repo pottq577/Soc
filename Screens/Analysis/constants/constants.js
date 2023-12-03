@@ -17,7 +17,15 @@ const IMAGES = {
 };
 const VIEW_FULL_LIST = "View Full List";
 const NO_DATA_AVAILABLE = "No Data Available";
-const SEASONS = ["2023/24", "2022/23", "2021/22", "2020/21", "2019/20"];
+const SEASONS = [
+  "2023/24",
+  "2022/23",
+  "2021/22",
+  "2020/21",
+  "2019/20",
+  "2018/19",
+  "2017/18",
+];
 const CATEGORIES = {
   PLAYER: ["Goals", "Assist", "Pass", "Shoot"],
   TEAMS: ["Wins", "Losses"],

@@ -4,7 +4,7 @@ import { CATEGORIES } from "../constants/constants";
 export const useAnalysis = (initialPlayer, initialAnalysisType) => {
   const [isPlayerSelected, setIsPlayerSelected] = useState(true);
   const [menuVisible, setMenuVisible] = useState(false);
-  const [selectedSeason, setSelectedSeason] = useState("2019/20");
+  const [selectedSeason, setSelectedSeason] = useState("2017/18");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [isOverviewSelected, setIsOverviewSelected] = useState(true);
   const [selectedPlayer, setSelectedPlayer] = useState(initialPlayer);

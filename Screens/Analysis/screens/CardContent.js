@@ -15,7 +15,7 @@ import { playersData, teamData } from "../constants/data";
  * @returns CardView.js
  */
 const CardContent = ({ selectedSeason, isPlayerSelected }) => {
-  if (selectedSeason !== SEASONS[4]) return <NoContentView />;
+  if (selectedSeason !== SEASONS[6]) return <NoContentView />;
   const categories = isPlayerSelected ? CATEGORIES.PLAYER : CATEGORIES.TEAMS;
   const data = isPlayerSelected ? playersData : teamData;
 

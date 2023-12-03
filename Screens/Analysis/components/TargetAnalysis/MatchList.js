@@ -20,8 +20,6 @@ const TargetMatch = ({ isWholeSeason, navigation, item, isPlayer }) => {
     }
   }, [selectedMonth, groupedMatches, setSelectedMonth]);
 
-  console.log("TargetMatch isPlayer : ", isPlayer);
-
   const handlePress = (match) => {
     navigation.navigate("MatchAnalysis", {
       match,
