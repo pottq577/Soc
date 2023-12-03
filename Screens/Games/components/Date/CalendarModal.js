@@ -1,7 +1,13 @@
+/**
+ * CalendarModal.js에서 선택된 날짜를 기준으로 weekDates를 계산하고
+ * setWeekDates를 사용하여 상태를 업데이트
+ */
 import React from "react";
 import { View, Modal, TouchableOpacity, Text } from "react-native";
 import { Calendar } from "react-native-calendars";
-import { SCREEN_HEIGHT, calendarStyle } from "../constants/constants";
+import { calendarStyle } from "../../constants/constants";
+import { getWeekDates } from "./utils/getWeekDates";
+import { useDateContext } from "../../hooks/useDateContext";
 
 const CalendarModal = ({
   modalVisible,
@@ -9,11 +15,13 @@ const CalendarModal = ({
   selectedDate,
   setSelectedDate,
 }) => {
+  const { setWeekDates } = useDateContext();
   // 날짜 선택 핸들러
   const onDayPress = (day) => {
     setSelectedDate(day.dateString);
-    console.log(selectedDate);
-    // 추가로 필요한 처리 작성
+    const weekDates = getWeekDates(day.dateString); // 해당 주의 날짜 범위 계산
+    setWeekDates(weekDates);
+    console.log("Selected Week Dates:", weekDates); // 확인을 위한 로그 출력
   };
   // 모달 외부를 터치했을 때 모달을 닫는 함수
   const handleModalClose = () => {

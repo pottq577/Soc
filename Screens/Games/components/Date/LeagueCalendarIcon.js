@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image, TouchableOpacity, Modal, Text } from "react-native";
-import { IMAGES, leagueCalIcon, styles } from "../constants/constants";
-import { useModal } from "../hooks/useModal";
+import { IMAGES, leagueCalIcon, styles } from "../../constants/constants";
+import { useModal } from "../../hooks/useModal";
 import CalendarModal from "./CalendarModal";
 
 const DisplayIcon = ({ selectedTabIndex, setModalVisible }) => (

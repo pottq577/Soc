@@ -56,6 +56,21 @@ const calendarStyle = {
     justifyContent: "center",
     alignItems: "center",
   },
+  select: {
+    container: {
+      justifyContent: "center",
+      alignItems: "center",
+      marginTop: SCREEN_HEIGHT / 4.5,
+    },
+    icon: {
+      width: 60,
+      height: 60,
+    },
+    text: {
+      fontWeight: "bold",
+      fontSize: 16,
+    },
+  },
 };
 
 const leagueCalIcon = {
