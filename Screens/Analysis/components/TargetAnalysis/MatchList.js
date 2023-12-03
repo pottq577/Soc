@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
-import { analysisStyle } from "../../constants/constants";
+import { SCREEN_WIDTH, analysisStyle } from "../../constants/constants";
 import { useNavigation } from "@react-navigation/native";
 import { useAnalysis } from "../../hooks/useAnalysis";
 import MatchCard from "./MatchCard";
@@ -63,9 +63,20 @@ const TargetSeason = ({ isWholeSeason, isPlayer, navigation }) => {
   return (
     <TouchableOpacity
       onPress={handlePress}
-      style={{ borderWidth: 1, height: 100 }}
+      style={{
+        borderWidth: 1,
+        height: 50,
+        borderRadius: 15,
+        padding: 10,
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#rgba(71, 39, 245, 0.5)",
+        width: SCREEN_WIDTH / 4,
+      }}
     >
-      <Text>season</Text>
+      <Text style={{ fontSize: 16, fontWeight: "bold", color: "white" }}>
+        분석하기
+      </Text>
     </TouchableOpacity>
   );
 };

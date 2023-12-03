@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, ScrollView } from "react-native";
 import SegmentedControlTab from "react-native-segmented-control-tab";
 import { switchStyle } from "../../constants/constants";
 import RenderSquad from "../../../Analysis/components/TargetAnalysis/RenderSquad";
 import Space from "../../../../components/Space";
+import { useModal } from "../../hooks/useModal";
 
 const MatchLineUp = () => {
-  const [selectedTabIndex, setSelectedTabIndex] = useState(0); // 현재 선택된 탭 인덱스
+  const { selectedTabIndex, setSelectedTabIndex } = useModal();
 
   // 탭에 따른 컨텐츠 렌더링
   const renderTabContent = () => {

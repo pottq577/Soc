@@ -20,8 +20,8 @@ const MatchAnalysisView = ({
       <View style={analysisStyle.matchAnalysis.analysisView}>
         <Text>시즌 전체 분석</Text>
         {/* 시즌 전체 분석에 필요한 추가 정보 또는 컴포넌트 */}
-        <Text>{`isWholeSeason: ${isWholeSeason}`}</Text>
         <Text>{`isPlayer: ${isPlayer}`}</Text>
+        <Text>{`isWholeSeason: ${isWholeSeason}`}</Text>
       </View>
     );
   };

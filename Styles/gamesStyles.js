@@ -1,3 +1,5 @@
+import { SCREEN_WIDTH, SCREEN_HEIGHT } from "../constants/dimensions";
+
 const styles = {
   container: {
     flex: 1,
@@ -6,10 +8,12 @@ const styles = {
     PL_LOGO: {
       width: 93,
       height: 39,
+      margin: 10,
     },
     CALENDAR: {
       width: 30,
       height: 30,
+      margin: 10,
     },
     teamLogo: {
       width: 30,
@@ -32,14 +36,36 @@ const calendarList = {
     fontSize: 16,
     fontWeight: "500",
   },
+  button: {
+    borderWidth: 1,
+    borderRadius: 15,
+    height: 30,
+    width: SCREEN_WIDTH / 5,
+    marginLeft: SCREEN_WIDTH / 1.4,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "tomato",
+  },
+  modalContainer: {
+    marginTop: SCREEN_HEIGHT / 4,
+    padding: 10,
+  },
 };
 
 const leagueCalIcon = {
   container: {
     flexDirection: "row",
     alignItems: "center",
-    padding: 10,
-    justifyContent: "space-between",
+  },
+  PL_container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  CALENDAR_container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "flex-end",
   },
 };
 

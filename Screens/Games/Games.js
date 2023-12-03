@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-import { View, Image } from "react-native";
+import React from "react";
+import { View } from "react-native";
 import Separator from "../../components/Separator";
 import LeagueCalendarIcon from "./components/LeagueCalendarIcon";
 import Calendar from "./components/Calendar";
 import MatchCards from "./screens/MatchCards";
-import { IMAGES, styles, switchStyle } from "./constants/constants";
+import { switchStyle } from "./constants/constants";
 import SegmentedControlTab from "react-native-segmented-control-tab";
+import { useModal } from "./hooks/useModal";
 
 const GameScreen = () => {
-  const [selectedTabIndex, setSelectedTabIndex] = useState(0); // 현재 선택된 탭 인덱스
+  const { selectedTabIndex, setSelectedTabIndex } = useModal();
 
   // 탭에 따른 컨텐츠 렌더링
   const renderTabContent = () => {
@@ -24,11 +25,8 @@ const GameScreen = () => {
 
   return (
     <View>
-      {/* 리그 아이콘 */}
-      <View style={{ alignItems: "center", padding: 10 }}>
-        <Image source={IMAGES.PL_LOGO} style={styles.icons.PL_LOGO} />
-      </View>
-
+      {/* 리그 아이콘, 달력 아이콘 */}
+      <LeagueCalendarIcon selectedTabIndex={selectedTabIndex} />
       {/* 날짜 선택 (경기 일정 탭에서만 보이도록) */}
       {selectedTabIndex === 0 && <Calendar />}
 
