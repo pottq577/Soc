@@ -5,45 +5,22 @@ import { useNavigation } from "@react-navigation/native";
 import Cards from "../components/MatchCards/Cards";
 import { useDateContext } from "../hooks/useDateContext";
 import { matches } from "../constants/data";
-import Space from "../../../components/Space";
-
-const NotSelected = () => {
-  return (
-    <View style={calendarStyle.select.container}>
-      <Image
-        source={IMAGES.SELECT_CALENDAR}
-        style={calendarStyle.select.icon}
-      />
-      <Text style={calendarStyle.select.text}>우측 상단의 달력을 통해</Text>
-      <Text style={calendarStyle.select.text}>날짜를 선택해주세요.</Text>
-    </View>
-  );
-};
-
-const NoMatches = () => (
-  <View style={calendarStyle.select.container}>
-    <Image source={IMAGES.NO_CONTENT} style={calendarStyle.select.icon} />
-    <Space paddingVertical={10} />
-    <Text style={calendarStyle.select.text}>
-      해당 주에는 경기 일정이 없습니다.
-    </Text>
-  </View>
-);
+import NoMatches from "../components/NoMatches";
+import NotSelected from "../components/NotSelected";
 
 const MatchCards = () => {
   const navigation = useNavigation();
   const handlePress = (match) => {
     navigation.navigate("MatchInfo", { ...match });
   };
-  const { weekDates } = useDateContext();
+  const { weekDates, selectedDate } = useDateContext();
 
-  // weekDates와 일치하는 actualData 필터링
-  const filteredMatches =
-    weekDates.length > 0
-      ? matches.filter((match) =>
-          weekDates.some((date) => match.datetime.startsWith(date))
-        )
-      : [];
+  // 선택된 날짜가 없으면 전체 주차 경기를 보여주고, 있으면 해당 날짜의 경기만 필터링
+  const filteredMatches = selectedDate
+    ? matches.filter((match) => match.datetime.startsWith(selectedDate))
+    : matches.filter((match) =>
+        weekDates.some((date) => match.datetime.startsWith(date))
+      );
 
   return (
     <ScrollView style={{ padding: 10, marginHorizontal: 10 }}>

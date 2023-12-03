@@ -22,6 +22,7 @@ const CalendarModal = ({
     const weekDates = getWeekDates(day.dateString); // 해당 주의 날짜 범위 계산
     setWeekDates(weekDates);
     console.log("Selected Week Dates:", weekDates); // 확인을 위한 로그 출력
+    setModalVisible(false);
   };
   // 모달 외부를 터치했을 때 모달을 닫는 함수
   const handleModalClose = () => {

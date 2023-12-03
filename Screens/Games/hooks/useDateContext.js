@@ -5,9 +5,12 @@ const DateContext = createContext();
 
 export const DateProvider = ({ children }) => {
   const [weekDates, setWeekDates] = useState([]);
+  const [selectedDate, setSelectedDate] = useState(null); // 선택된 날짜 상태 추가
 
   return (
-    <DateContext.Provider value={{ weekDates, setWeekDates }}>
+    <DateContext.Provider
+      value={{ weekDates, setWeekDates, selectedDate, setSelectedDate }}
+    >
       {children}
     </DateContext.Provider>
   );

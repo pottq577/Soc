@@ -71,6 +71,11 @@ const calendarStyle = {
       fontSize: 16,
     },
   },
+  selectedDateStyle: {
+    backgroundColor: "#007bff", // 배경색
+    borderRadius: 5, // 모서리 둥글게
+    padding: 5, // 패딩
+  },
 };
 
 const leagueCalIcon = {

@@ -6,12 +6,12 @@ import SegmentedControlTab from "react-native-segmented-control-tab";
 import { switchStyle } from "../constants/constants";
 import MatchLineUp from "../components/MatchInfo/MatchLineUp";
 import MatchOverview from "../components/MatchInfo/MatchOverview";
-import { useModal } from "../hooks/useModal";
+import { useGames } from "../hooks/useGames";
 
 const MatchInfo = ({ route }) => {
   const { home, homeScore, homeLogo, away, awayScore, awayLogo, datetime } =
     route.params;
-  const { selectedTabIndex, setSelectedTabIndex } = useModal();
+  const { selectedTabIndex, setSelectedTabIndex } = useGames();
 
   // 렌더링할 컨텐츠를 결정하는 함수
   const renderContentView = () => {

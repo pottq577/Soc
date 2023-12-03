@@ -4,10 +4,10 @@ import SegmentedControlTab from "react-native-segmented-control-tab";
 import { switchStyle } from "../../constants/constants";
 import RenderSquad from "../../../Analysis/components/TargetAnalysis/RenderSquad";
 import Space from "../../../../components/Space";
-import { useModal } from "../../hooks/useModal";
+import { useGames } from "../../hooks/useGames";
 
 const MatchLineUp = () => {
-  const { selectedTabIndex, setSelectedTabIndex } = useModal();
+  const { selectedTabIndex, setSelectedTabIndex } = useGames();
 
   // 탭에 따른 컨텐츠 렌더링
   const renderTabContent = () => {
