@@ -1,7 +1,9 @@
 # models.py
 from database import db
 
-#선수 모델
+# 선수 모델
+
+
 class Player(db.Model):
     __tablename__ = 'players'
 
@@ -29,7 +31,9 @@ class Player(db.Model):
     def __repr__(self):
         return f'<Player {self.firstname} {self.lastname}>'
 
-#축구 클럽 모델
+# 축구 클럽 모델
+
+
 class Team(db.Model):
     __tablename__ = 'teams'  # 테이블 이름을 PostgreSQL 정의와 일치시킵니다.
 
@@ -46,7 +50,9 @@ class Team(db.Model):
     def __repr__(self):
         return f'<Team {self.name} ({self.city})>'
 
-#경쟁 리그 모델(England만 사용가능 나머지는 더미데이터)
+# 경쟁 리그 모델(England만 사용가능 나머지는 더미데이터)
+
+
 class Competition(db.Model):
     __tablename__ = 'competitions'
     __table_args__ = {'schema': 'public'}
@@ -63,7 +69,9 @@ class Competition(db.Model):
     def __repr__(self):
         return f'<Competition {self.name}>'
 
-#Tags(이벤트 태그명)
+# Tags(이벤트 태그명)
+
+
 class Tag2Name(db.Model):
     __tablename__ = 'tags2name'
     __table_args__ = {'schema': 'public'}
@@ -75,7 +83,9 @@ class Tag2Name(db.Model):
     def __repr__(self):
         return f'<Tag2Name {self.tag}: {self.label}>'
 
-#경기 데이터 모델
+# 경기 데이터 모델
+
+
 class MatchEngland(db.Model):
     __tablename__ = 'matches_england'
     __table_args__ = {'schema': 'public'}
@@ -98,7 +108,9 @@ class MatchEngland(db.Model):
     def __repr__(self):
         return f'<MatchEngland {self.wyid}>'
 
-#이벤트 모델(England)
+# 이벤트 모델(England)
+
+
 class EnglandEvent(db.Model):
     __tablename__ = 'england_events'
     __table_args__ = {'schema': 'public'}
@@ -123,6 +135,7 @@ class EnglandEvent(db.Model):
     def __repr__(self):
         return f'<EnglandEvent {self.index}>'
 
+
 class Match(db.Model):
     __tablename__ = 'matches'
     __table_args__ = {'schema': 'public'}
@@ -141,12 +154,13 @@ class Match(db.Model):
 
     def __repr__(self):
         return f'<Match {self.match_id}>'
-    
+
 
 class TeamRank(db.Model):
     __tablename__ = 'rank_england'
 
-    rank = db.Column(db.Integer, primary_key=True)
+    wyid = db.Column(db.Integer, primary_key=True)
+    rank = db.Column(db.Integer, nullable=False)
     team = db.Column(db.String(50), nullable=False)
     matches = db.Column(db.Integer, nullable=False)
     wins = db.Column(db.Integer, nullable=False)
