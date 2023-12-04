@@ -1,0 +1,381 @@
+﻿match_id,gameweek,datetime,venue,team1_id,team1_name,team1_goals,team2_id,team2_name,team2_goals,duration
+2499719,1,2017-08-11 18:45:00,Emirates Stadium,1609,Arsenal,4,1631,Leicester City,3,Regular
+2499727,1,2017-08-12 11:30:00,Vicarage Road Stadium,1644,Watford,3,1612,Liverpool,3,Regular
+2499726,1,2017-08-12 14:00:00,St. Mary's Stadium,1619,Southampton,0,10531,Swansea City,0,Regular
+2499721,1,2017-08-12 14:00:00,Stamford Bridge,1610,Chelsea,2,1646,Burnley,3,Regular
+2499728,1,2017-08-12 14:00:00,The Hawthorns,1627,West Bromwich Albion,1,1659,AFC Bournemouth,0,Regular
+2499723,1,2017-08-12 14:00:00,Goodison Park,1623,Everton,1,1639,Stoke City,0,Regular
+2499722,1,2017-08-12 14:00:00,Selhurst Park,1628,Crystal Palace,0,1673,Huddersfield Town,3,Regular
+2499720,1,2017-08-12 16:30:00,The American Express Community Stadium,1651,Brighton & Hove Albion,0,1625,Manchester City,2,Regular
+2499725,1,2017-08-13 12:30:00,St. James' Park,1613,Newcastle United,0,1624,Tottenham Hotspur,2,Regular
+2499724,1,2017-08-13 15:00:00,Old Trafford,1611,Manchester United,4,1633,West Ham United,0,Regular
+2499736,2,2017-08-19 11:30:00,Liberty Stadium,10531,Swansea City,0,1611,Manchester United,4,Regular
+2499730,2,2017-08-19 14:00:00,Turf Moor,1646,Burnley,0,1627,West Bromwich Albion,1,Regular
+2499729,2,2017-08-19 14:00:00,Vitality Stadium,1659,AFC Bournemouth,0,1644,Watford,2,Regular
+2499733,2,2017-08-19 14:00:00,Anfield,1612,Liverpool,1,1628,Crystal Palace,0,Regular
+2500036,2,2017-08-19 14:00:00,St. Mary's Stadium,1619,Southampton,3,1633,West Ham United,2,Regular
+2499732,2,2017-08-19 14:00:00,King Power Stadium,1631,Leicester City,2,1651,Brighton & Hove Albion,0,Regular
+2499735,2,2017-08-19 16:30:00,Bet365 Stadium,1639,Stoke City,1,1609,Arsenal,0,Regular
+2499731,2,2017-08-20 12:30:00,The John Smith's Stadium,1673,Huddersfield Town,1,1613,Newcastle United,0,Regular
+2499737,2,2017-08-20 15:00:00,Wembley Stadium,1624,Tottenham Hotspur,1,1610,Chelsea,2,Regular
+2499734,2,2017-08-21 19:00:00,Etihad Stadium,1625,Manchester City,1,1623,Everton,1,Regular
+2499739,3,2017-08-26 11:30:00,Vitality Stadium,1659,AFC Bournemouth,1,1625,Manchester City,2,Regular
+2499741,3,2017-08-26 14:00:00,Selhurst Park,1628,Crystal Palace,0,10531,Swansea City,2,Regular
+2499747,3,2017-08-26 14:00:00,Vicarage Road Stadium,1644,Watford,0,1651,Brighton & Hove Albion,0,Regular
+2499745,3,2017-08-26 14:00:00,St. James' Park,1613,Newcastle United,3,1633,West Ham United,0,Regular
+2499742,3,2017-08-26 14:00:00,The John Smith's Stadium,1673,Huddersfield Town,0,1619,Southampton,0,Regular
+2499744,3,2017-08-26 16:30:00,Old Trafford,1611,Manchester United,2,1631,Leicester City,0,Regular
+2499740,3,2017-08-27 12:30:00,Stamford Bridge,1610,Chelsea,2,1623,Everton,0,Regular
+2499748,3,2017-08-27 12:30:00,The Hawthorns,1627,West Bromwich Albion,1,1639,Stoke City,1,Regular
+2499743,3,2017-08-27 15:00:00,Anfield,1612,Liverpool,4,1609,Arsenal,0,Regular
+2499746,3,2017-08-27 15:00:00,Wembley Stadium,1624,Tottenham Hotspur,1,1646,Burnley,1,Regular
+2499754,4,2017-09-09 11:30:00,Etihad Stadium,1625,Manchester City,5,1612,Liverpool,0,Regular
+2499755,4,2017-09-09 14:00:00,St. Mary's Stadium,1619,Southampton,0,1644,Watford,2,Regular
+2499753,4,2017-09-09 14:00:00,King Power Stadium,1631,Leicester City,1,1610,Chelsea,2,Regular
+2499752,4,2017-09-09 14:00:00,Goodison Park,1623,Everton,0,1624,Tottenham Hotspur,3,Regular
+2499750,4,2017-09-09 14:00:00,The American Express Community Stadium,1651,Brighton & Hove Albion,3,1627,West Bromwich Albion,1,Regular
+2499749,4,2017-09-09 14:00:00,Emirates Stadium,1609,Arsenal,3,1659,AFC Bournemouth,0,Regular
+2499756,4,2017-09-09 16:30:00,Bet365 Stadium,1639,Stoke City,2,1611,Manchester United,2,Regular
+2499751,4,2017-09-10 12:30:00,Turf Moor,1646,Burnley,1,1628,Crystal Palace,0,Regular
+2499757,4,2017-09-10 15:00:00,Liberty Stadium,10531,Swansea City,0,1613,Newcastle United,1,Regular
+2499758,4,2017-09-11 19:00:00,London Stadium,1633,West Ham United,2,1673,Huddersfield Town,0,Regular
+2499759,5,2017-09-15 19:00:00,Vitality Stadium,1659,AFC Bournemouth,2,1651,Brighton & Hove Albion,1,Regular
+2499761,5,2017-09-16 11:30:00,Selhurst Park,1628,Crystal Palace,0,1619,Southampton,1,Regular
+2499768,5,2017-09-16 14:00:00,The Hawthorns,1627,West Bromwich Albion,0,1633,West Ham United,0,Regular
+2499767,5,2017-09-16 14:00:00,Vicarage Road Stadium,1644,Watford,0,1625,Manchester City,6,Regular
+2499765,5,2017-09-16 14:00:00,St. James' Park,1613,Newcastle United,2,1639,Stoke City,1,Regular
+2499763,5,2017-09-16 14:00:00,Anfield,1612,Liverpool,1,1646,Burnley,1,Regular
+2499762,5,2017-09-16 14:00:00,The John Smith's Stadium,1673,Huddersfield Town,1,1631,Leicester City,1,Regular
+2499766,5,2017-09-16 16:30:00,Wembley Stadium,1624,Tottenham Hotspur,0,10531,Swansea City,0,Regular
+2499760,5,2017-09-17 12:30:00,Stamford Bridge,1610,Chelsea,0,1609,Arsenal,0,Regular
+2499764,5,2017-09-17 15:00:00,Old Trafford,1611,Manchester United,4,1623,Everton,0,Regular
+2499778,6,2017-09-23 11:30:00,London Stadium,1633,West Ham United,2,1624,Tottenham Hotspur,3,Regular
+2499777,6,2017-09-23 14:00:00,Liberty Stadium,10531,Swansea City,1,1644,Watford,2,Regular
+2499776,6,2017-09-23 14:00:00,Bet365 Stadium,1639,Stoke City,0,1610,Chelsea,4,Regular
+2499775,6,2017-09-23 14:00:00,St. Mary's Stadium,1619,Southampton,0,1611,Manchester United,1,Regular
+2499774,6,2017-09-23 14:00:00,Etihad Stadium,1625,Manchester City,5,1628,Crystal Palace,0,Regular
+2499772,6,2017-09-23 14:00:00,Goodison Park,1623,Everton,2,1659,AFC Bournemouth,1,Regular
+2499771,6,2017-09-23 14:00:00,Turf Moor,1646,Burnley,0,1673,Huddersfield Town,0,Regular
+2499773,6,2017-09-23 16:30:00,King Power Stadium,1631,Leicester City,2,1612,Liverpool,3,Regular
+2499770,6,2017-09-24 15:00:00,The American Express Community Stadium,1651,Brighton & Hove Albion,1,1613,Newcastle United,0,Regular
+2499769,6,2017-09-25 19:00:00,Emirates Stadium,1609,Arsenal,2,1627,West Bromwich Albion,0,Regular
+2499783,7,2017-09-30 11:30:00,The John Smith's Stadium,1673,Huddersfield Town,0,1624,Tottenham Hotspur,4,Regular
+2499788,7,2017-09-30 14:00:00,London Stadium,1633,West Ham United,1,10531,Swansea City,0,Regular
+2499787,7,2017-09-30 14:00:00,The Hawthorns,1627,West Bromwich Albion,2,1644,Watford,2,Regular
+2499786,7,2017-09-30 14:00:00,Bet365 Stadium,1639,Stoke City,2,1619,Southampton,1,Regular
+2499784,7,2017-09-30 14:00:00,Old Trafford,1611,Manchester United,4,1628,Crystal Palace,0,Regular
+2499779,7,2017-09-30 14:00:00,Vitality Stadium,1659,AFC Bournemouth,0,1631,Leicester City,0,Regular
+2499781,7,2017-09-30 16:30:00,Stamford Bridge,1610,Chelsea,0,1625,Manchester City,1,Regular
+2499780,7,2017-10-01 11:00:00,Emirates Stadium,1609,Arsenal,2,1651,Brighton & Hove Albion,0,Regular
+2499782,7,2017-10-01 13:15:00,Goodison Park,1623,Everton,0,1646,Burnley,1,Regular
+2499785,7,2017-10-01 15:30:00,St. James' Park,1613,Newcastle United,1,1612,Liverpool,1,Regular
+2499793,8,2017-10-14 11:30:00,Anfield,1612,Liverpool,0,1611,Manchester United,0,Regular
+2499796,8,2017-10-14 14:00:00,Liberty Stadium,10531,Swansea City,2,1673,Huddersfield Town,0,Regular
+2499794,8,2017-10-14 14:00:00,Etihad Stadium,1625,Manchester City,7,1639,Stoke City,2,Regular
+2499791,8,2017-10-14 14:00:00,Selhurst Park,1628,Crystal Palace,2,1610,Chelsea,1,Regular
+2499790,8,2017-10-14 14:00:00,Turf Moor,1646,Burnley,1,1633,West Ham United,1,Regular
+2499797,8,2017-10-14 14:00:00,Wembley Stadium,1624,Tottenham Hotspur,1,1659,AFC Bournemouth,0,Regular
+2499798,8,2017-10-14 16:30:00,Vicarage Road Stadium,1644,Watford,2,1609,Arsenal,1,Regular
+2499789,8,2017-10-15 12:30:00,The American Express Community Stadium,1651,Brighton & Hove Albion,1,1623,Everton,1,Regular
+2499795,8,2017-10-15 15:00:00,St. Mary's Stadium,1619,Southampton,2,1613,Newcastle United,2,Regular
+2499792,8,2017-10-16 19:00:00,King Power Stadium,1631,Leicester City,1,1627,West Bromwich Albion,1,Regular
+2499808,9,2017-10-20 19:00:00,London Stadium,1633,West Ham United,0,1651,Brighton & Hove Albion,3,Regular
+2499799,9,2017-10-21 11:30:00,Stamford Bridge,1610,Chelsea,4,1644,Watford,2,Regular
+2499801,9,2017-10-21 14:00:00,The John Smith's Stadium,1673,Huddersfield Town,2,1611,Manchester United,1,Regular
+2499802,9,2017-10-21 14:00:00,Etihad Stadium,1625,Manchester City,3,1646,Burnley,0,Regular
+2499806,9,2017-10-21 14:00:00,Liberty Stadium,10531,Swansea City,1,1631,Leicester City,2,Regular
+2499805,9,2017-10-21 14:00:00,Bet365 Stadium,1639,Stoke City,1,1659,AFC Bournemouth,2,Regular
+2499803,9,2017-10-21 14:00:00,St. James' Park,1613,Newcastle United,1,1628,Crystal Palace,0,Regular
+2499804,9,2017-10-21 16:30:00,St. Mary's Stadium,1619,Southampton,1,1627,West Bromwich Albion,0,Regular
+2499800,9,2017-10-22 12:30:00,Goodison Park,1623,Everton,2,1609,Arsenal,5,Regular
+2499807,9,2017-10-22 15:00:00,Wembley Stadium,1624,Tottenham Hotspur,4,1612,Liverpool,1,Regular
+2499816,10,2017-10-28 11:30:00,Old Trafford,1611,Manchester United,1,1624,Tottenham Hotspur,0,Regular
+2499813,10,2017-10-28 14:00:00,Selhurst Park,1628,Crystal Palace,2,1633,West Ham United,2,Regular
+2499810,10,2017-10-28 14:00:00,Emirates Stadium,1609,Arsenal,2,10531,Swansea City,1,Regular
+2499817,10,2017-10-28 14:00:00,Vicarage Road Stadium,1644,Watford,0,1639,Stoke City,1,Regular
+2499815,10,2017-10-28 14:00:00,Anfield,1612,Liverpool,3,1673,Huddersfield Town,0,Regular
+2499818,10,2017-10-28 14:00:00,The Hawthorns,1627,West Bromwich Albion,2,1625,Manchester City,3,Regular
+2499809,10,2017-10-28 16:30:00,Vitality Stadium,1659,AFC Bournemouth,0,1610,Chelsea,1,Regular
+2499811,10,2017-10-29 13:30:00,The American Express Community Stadium,1651,Brighton & Hove Albion,1,1619,Southampton,1,Regular
+2499814,10,2017-10-29 16:00:00,King Power Stadium,1631,Leicester City,2,1623,Everton,0,Regular
+2499812,10,2017-10-30 20:00:00,Turf Moor,1646,Burnley,1,1613,Newcastle United,0,Regular
+2499825,11,2017-11-04 12:30:00,Bet365 Stadium,1639,Stoke City,2,1631,Leicester City,2,Regular
+2499824,11,2017-11-04 15:00:00,St. Mary's Stadium,1619,Southampton,0,1646,Burnley,1,Regular
+2499823,11,2017-11-04 15:00:00,St. James' Park,1613,Newcastle United,0,1659,AFC Bournemouth,1,Regular
+2499821,11,2017-11-04 15:00:00,The John Smith's Stadium,1673,Huddersfield Town,1,1627,West Bromwich Albion,0,Regular
+2499826,11,2017-11-04 15:00:00,Liberty Stadium,10531,Swansea City,0,1651,Brighton & Hove Albion,1,Regular
+2499828,11,2017-11-04 17:30:00,London Stadium,1633,West Ham United,1,1612,Liverpool,4,Regular
+2499827,11,2017-11-05 12:00:00,Wembley Stadium,1624,Tottenham Hotspur,1,1628,Crystal Palace,0,Regular
+2499822,11,2017-11-05 14:15:00,Etihad Stadium,1625,Manchester City,3,1609,Arsenal,1,Regular
+2499820,11,2017-11-05 16:30:00,Goodison Park,1623,Everton,3,1644,Watford,2,Regular
+2499819,11,2017-11-05 16:30:00,Stamford Bridge,1610,Chelsea,1,1611,Manchester United,0,Regular
+2499830,12,2017-11-18 12:30:00,Emirates Stadium,1609,Arsenal,2,1624,Tottenham Hotspur,0,Regular
+2499835,12,2017-11-18 15:00:00,Anfield,1612,Liverpool,3,1619,Southampton,0,Regular
+2499834,12,2017-11-18 15:00:00,King Power Stadium,1631,Leicester City,0,1625,Manchester City,2,Regular
+2499833,12,2017-11-18 15:00:00,Selhurst Park,1628,Crystal Palace,2,1623,Everton,2,Regular
+2499832,12,2017-11-18 15:00:00,Turf Moor,1646,Burnley,2,10531,Swansea City,0,Regular
+2499829,12,2017-11-18 15:00:00,Vitality Stadium,1659,AFC Bournemouth,4,1673,Huddersfield Town,0,Regular
+2499838,12,2017-11-18 15:00:00,The Hawthorns,1627,West Bromwich Albion,0,1610,Chelsea,4,Regular
+2499836,12,2017-11-18 17:30:00,Old Trafford,1611,Manchester United,4,1613,Newcastle United,1,Regular
+2499837,12,2017-11-19 16:00:00,Vicarage Road Stadium,1644,Watford,2,1633,West Ham United,0,Regular
+2499831,12,2017-11-20 20:00:00,The American Express Community Stadium,1651,Brighton & Hove Albion,2,1639,Stoke City,2,Regular
+2499848,13,2017-11-24 20:00:00,London Stadium,1633,West Ham United,1,1631,Leicester City,1,Regular
+2499846,13,2017-11-25 15:00:00,Liberty Stadium,10531,Swansea City,0,1659,AFC Bournemouth,0,Regular
+2499840,13,2017-11-25 15:00:00,Selhurst Park,1628,Crystal Palace,2,1639,Stoke City,1,Regular
+2499847,13,2017-11-25 15:00:00,Wembley Stadium,1624,Tottenham Hotspur,1,1627,West Bromwich Albion,1,Regular
+2499844,13,2017-11-25 15:00:00,St. James' Park,1613,Newcastle United,0,1644,Watford,3,Regular
+2499843,13,2017-11-25 15:00:00,Old Trafford,1611,Manchester United,1,1651,Brighton & Hove Albion,0,Regular
+2499842,13,2017-11-25 17:30:00,Anfield,1612,Liverpool,1,1610,Chelsea,1,Regular
+2499845,13,2017-11-26 13:30:00,St. Mary's Stadium,1619,Southampton,4,1623,Everton,1,Regular
+2499839,13,2017-11-26 14:00:00,Turf Moor,1646,Burnley,0,1609,Arsenal,1,Regular
+2499841,13,2017-11-26 16:00:00,The John Smith's Stadium,1673,Huddersfield Town,1,1625,Manchester City,2,Regular
+2499852,14,2017-11-28 19:45:00,King Power Stadium,1631,Leicester City,2,1624,Tottenham Hotspur,1,Regular
+2499851,14,2017-11-28 19:45:00,The American Express Community Stadium,1651,Brighton & Hove Albion,0,1628,Crystal Palace,0,Regular
+2499854,14,2017-11-28 20:00:00,The Hawthorns,1627,West Bromwich Albion,2,1613,Newcastle United,2,Regular
+2499853,14,2017-11-28 20:00:00,Vicarage Road Stadium,1644,Watford,2,1611,Manchester United,4,Regular
+2499850,14,2017-11-29 19:45:00,Emirates Stadium,1609,Arsenal,5,1673,Huddersfield Town,0,Regular
+2499849,14,2017-11-29 19:45:00,Vitality Stadium,1659,AFC Bournemouth,1,1646,Burnley,2,Regular
+2499855,14,2017-11-29 19:45:00,Stamford Bridge,1610,Chelsea,1,10531,Swansea City,0,Regular
+2499858,14,2017-11-29 20:00:00,Bet365 Stadium,1639,Stoke City,0,1612,Liverpool,3,Regular
+2499857,14,2017-11-29 20:00:00,Etihad Stadium,1625,Manchester City,2,1619,Southampton,1,Regular
+2499856,14,2017-11-29 20:00:00,Goodison Park,1623,Everton,4,1633,West Ham United,0,Regular
+2499862,15,2017-12-02 12:30:00,Stamford Bridge,1610,Chelsea,3,1613,Newcastle United,1,Regular
+2499863,15,2017-12-02 15:00:00,Goodison Park,1623,Everton,2,1673,Huddersfield Town,0,Regular
+2499861,15,2017-12-02 15:00:00,The American Express Community Stadium,1651,Brighton & Hove Albion,1,1612,Liverpool,5,Regular
+2499864,15,2017-12-02 15:00:00,King Power Stadium,1631,Leicester City,1,1646,Burnley,0,Regular
+2499867,15,2017-12-02 15:00:00,Vicarage Road Stadium,1644,Watford,1,1624,Tottenham Hotspur,1,Regular
+2499866,15,2017-12-02 15:00:00,Bet365 Stadium,1639,Stoke City,2,10531,Swansea City,1,Regular
+2499868,15,2017-12-02 15:00:00,The Hawthorns,1627,West Bromwich Albion,0,1628,Crystal Palace,0,Regular
+2499860,15,2017-12-02 17:30:00,Emirates Stadium,1609,Arsenal,1,1611,Manchester United,3,Regular
+2499859,15,2017-12-03 13:30:00,Vitality Stadium,1659,AFC Bournemouth,1,1619,Southampton,1,Regular
+2499865,15,2017-12-03 16:00:00,Etihad Stadium,1625,Manchester City,2,1633,West Ham United,1,Regular
+2499878,16,2017-12-09 12:30:00,London Stadium,1633,West Ham United,1,1610,Chelsea,0,Regular
+2499877,16,2017-12-09 15:00:00,Wembley Stadium,1624,Tottenham Hotspur,5,1639,Stoke City,1,Regular
+2499876,16,2017-12-09 15:00:00,Liberty Stadium,10531,Swansea City,1,1627,West Bromwich Albion,0,Regular
+2499871,16,2017-12-09 15:00:00,The John Smith's Stadium,1673,Huddersfield Town,2,1651,Brighton & Hove Albion,0,Regular
+2499870,16,2017-12-09 15:00:00,Selhurst Park,1628,Crystal Palace,2,1659,AFC Bournemouth,2,Regular
+2499869,16,2017-12-09 15:00:00,Turf Moor,1646,Burnley,1,1644,Watford,0,Regular
+2499874,16,2017-12-09 17:30:00,St. James' Park,1613,Newcastle United,2,1631,Leicester City,3,Regular
+2499875,16,2017-12-10 12:00:00,St. Mary's Stadium,1619,Southampton,1,1609,Arsenal,1,Regular
+2499872,16,2017-12-10 14:15:00,Anfield,1612,Liverpool,1,1623,Everton,1,Regular
+2499873,16,2017-12-10 16:30:00,Old Trafford,1611,Manchester United,1,1625,Manchester City,2,Regular
+2499879,17,2017-12-12 19:45:00,Turf Moor,1646,Burnley,1,1639,Stoke City,0,Regular
+2499883,17,2017-12-12 20:00:00,Selhurst Park,1628,Crystal Palace,2,1644,Watford,1,Regular
+2499880,17,2017-12-12 20:00:00,The John Smith's Stadium,1673,Huddersfield Town,1,1610,Chelsea,3,Regular
+2499886,17,2017-12-13 19:45:00,St. Mary's Stadium,1619,Southampton,1,1631,Leicester City,4,Regular
+2499885,17,2017-12-13 19:45:00,St. James' Park,1613,Newcastle United,0,1623,Everton,1,Regular
+2499881,17,2017-12-13 19:45:00,Liberty Stadium,10531,Swansea City,0,1625,Manchester City,4,Regular
+2499882,17,2017-12-13 20:00:00,London Stadium,1633,West Ham United,0,1609,Arsenal,0,Regular
+2499887,17,2017-12-13 20:00:00,Anfield,1612,Liverpool,0,1627,West Bromwich Albion,0,Regular
+2499888,17,2017-12-13 20:00:00,Wembley Stadium,1624,Tottenham Hotspur,2,1651,Brighton & Hove Albion,0,Regular
+2499884,17,2017-12-13 20:00:00,Old Trafford,1611,Manchester United,1,1659,AFC Bournemouth,0,Regular
+2499894,18,2017-12-16 12:30:00,King Power Stadium,1631,Leicester City,0,1628,Crystal Palace,3,Regular
+2499897,18,2017-12-16 15:00:00,Vicarage Road Stadium,1644,Watford,1,1673,Huddersfield Town,4,Regular
+2499892,18,2017-12-16 15:00:00,Stamford Bridge,1610,Chelsea,1,1619,Southampton,0,Regular
+2499891,18,2017-12-16 15:00:00,The American Express Community Stadium,1651,Brighton & Hove Albion,0,1646,Burnley,0,Regular
+2499890,18,2017-12-16 15:00:00,Emirates Stadium,1609,Arsenal,1,1613,Newcastle United,0,Regular
+2499896,18,2017-12-16 16:00:00,Bet365 Stadium,1639,Stoke City,0,1633,West Ham United,3,Regular
+2499895,18,2017-12-16 17:30:00,Etihad Stadium,1625,Manchester City,4,1624,Tottenham Hotspur,1,Regular
+2499898,18,2017-12-17 14:15:00,The Hawthorns,1627,West Bromwich Albion,1,1611,Manchester United,2,Regular
+2499889,18,2017-12-17 16:30:00,Vitality Stadium,1659,AFC Bournemouth,0,1612,Liverpool,4,Regular
+2499893,18,2017-12-18 20:00:00,Goodison Park,1623,Everton,3,10531,Swansea City,1,Regular
+2499899,19,2017-12-22 19:45:00,Emirates Stadium,1609,Arsenal,3,1612,Liverpool,3,Regular
+2499902,19,2017-12-23 12:30:00,Goodison Park,1623,Everton,0,1610,Chelsea,0,Regular
+2499908,19,2017-12-23 15:00:00,London Stadium,1633,West Ham United,2,1613,Newcastle United,3,Regular
+2499907,19,2017-12-23 15:00:00,Liberty Stadium,10531,Swansea City,1,1628,Crystal Palace,1,Regular
+2499906,19,2017-12-23 15:00:00,Bet365 Stadium,1639,Stoke City,3,1627,West Bromwich Albion,1,Regular
+2499905,19,2017-12-23 15:00:00,St. Mary's Stadium,1619,Southampton,1,1673,Huddersfield Town,1,Regular
+2499904,19,2017-12-23 15:00:00,Etihad Stadium,1625,Manchester City,4,1659,AFC Bournemouth,0,Regular
+2499900,19,2017-12-23 15:00:00,The American Express Community Stadium,1651,Brighton & Hove Albion,1,1644,Watford,0,Regular
+2499901,19,2017-12-23 17:30:00,Turf Moor,1646,Burnley,0,1624,Tottenham Hotspur,3,Regular
+2499903,19,2017-12-23 19:45:00,King Power Stadium,1631,Leicester City,2,1611,Manchester United,2,Regular
+2499916,20,2017-12-26 12:30:00,Wembley Stadium,1624,Tottenham Hotspur,5,1619,Southampton,2,Regular
+2499917,20,2017-12-26 15:00:00,Vicarage Road Stadium,1644,Watford,2,1631,Leicester City,1,Regular
+2499909,20,2017-12-26 15:00:00,Vitality Stadium,1659,AFC Bournemouth,3,1633,West Ham United,3,Regular
+2499910,20,2017-12-26 15:00:00,Stamford Bridge,1610,Chelsea,2,1651,Brighton & Hove Albion,0,Regular
+2499918,20,2017-12-26 15:00:00,The Hawthorns,1627,West Bromwich Albion,0,1623,Everton,0,Regular
+2499914,20,2017-12-26 15:00:00,Old Trafford,1611,Manchester United,2,1646,Burnley,2,Regular
+2499912,20,2017-12-26 15:00:00,The John Smith's Stadium,1673,Huddersfield Town,1,1639,Stoke City,1,Regular
+2499913,20,2017-12-26 17:30:00,Anfield,1612,Liverpool,5,10531,Swansea City,0,Regular
+2499915,20,2017-12-27 19:45:00,St. James' Park,1613,Newcastle United,0,1625,Manchester City,1,Regular
+2499911,20,2017-12-28 20:00:00,Selhurst Park,1628,Crystal Palace,2,1609,Arsenal,3,Regular
+2499927,21,2017-12-30 15:00:00,Vicarage Road Stadium,1644,Watford,1,10531,Swansea City,2,Regular
+2499925,21,2017-12-30 15:00:00,St. James' Park,1613,Newcastle United,0,1651,Brighton & Hove Albion,0,Regular
+2499923,21,2017-12-30 15:00:00,Anfield,1612,Liverpool,2,1631,Leicester City,1,Regular
+2499922,21,2017-12-30 15:00:00,The John Smith's Stadium,1673,Huddersfield Town,0,1646,Burnley,0,Regular
+2499920,21,2017-12-30 15:00:00,Stamford Bridge,1610,Chelsea,5,1639,Stoke City,0,Regular
+2499919,21,2017-12-30 15:00:00,Vitality Stadium,1659,AFC Bournemouth,2,1623,Everton,1,Regular
+2499924,21,2017-12-30 17:30:00,Old Trafford,1611,Manchester United,0,1619,Southampton,0,Regular
+2499921,21,2017-12-31 12:00:00,Selhurst Park,1628,Crystal Palace,0,1625,Manchester City,0,Regular
+2499928,21,2017-12-31 16:30:00,The Hawthorns,1627,West Bromwich Albion,1,1609,Arsenal,1,Regular
+2499930,22,2018-01-01 12:30:00,The American Express Community Stadium,1651,Brighton & Hove Albion,2,1659,AFC Bournemouth,2,Regular
+2499936,22,2018-01-01 15:00:00,Bet365 Stadium,1639,Stoke City,0,1613,Newcastle United,1,Regular
+2499933,22,2018-01-01 15:00:00,King Power Stadium,1631,Leicester City,3,1673,Huddersfield Town,0,Regular
+2499931,22,2018-01-01 15:00:00,Turf Moor,1646,Burnley,1,1612,Liverpool,2,Regular
+2499932,22,2018-01-01 17:30:00,Goodison Park,1623,Everton,0,1611,Manchester United,2,Regular
+2499938,22,2018-01-02 19:45:00,London Stadium,1633,West Ham United,2,1627,West Bromwich Albion,1,Regular
+2499937,22,2018-01-02 19:45:00,Liberty Stadium,10531,Swansea City,0,1624,Tottenham Hotspur,2,Regular
+2499935,22,2018-01-02 19:45:00,St. Mary's Stadium,1619,Southampton,1,1628,Crystal Palace,2,Regular
+2499934,22,2018-01-02 20:00:00,Etihad Stadium,1625,Manchester City,3,1644,Watford,1,Regular
+2499929,22,2018-01-03 19:45:00,Emirates Stadium,1609,Arsenal,2,1610,Chelsea,2,Regular
+2499926,21,2018-01-04 20:00:00,Wembley Stadium,1624,Tottenham Hotspur,1,1633,West Ham United,1,Regular
+2499948,23,2018-01-13 15:00:00,The Hawthorns,1627,West Bromwich Albion,2,1651,Brighton & Hove Albion,0,Regular
+2499947,23,2018-01-13 15:00:00,Vicarage Road Stadium,1644,Watford,2,1619,Southampton,2,Regular
+2499945,23,2018-01-13 15:00:00,St. James' Park,1613,Newcastle United,1,10531,Swansea City,1,Regular
+2499942,23,2018-01-13 15:00:00,The John Smith's Stadium,1673,Huddersfield Town,1,1633,West Ham United,4,Regular
+2499941,23,2018-01-13 15:00:00,Selhurst Park,1628,Crystal Palace,1,1646,Burnley,0,Regular
+2499940,23,2018-01-13 15:00:00,Stamford Bridge,1610,Chelsea,0,1631,Leicester City,0,Regular
+2499946,23,2018-01-13 17:30:00,Wembley Stadium,1624,Tottenham Hotspur,4,1623,Everton,0,Regular
+2499939,23,2018-01-14 13:30:00,Vitality Stadium,1659,AFC Bournemouth,2,1609,Arsenal,1,Regular
+2499943,23,2018-01-14 16:00:00,Anfield,1612,Liverpool,4,1625,Manchester City,3,Regular
+2499944,23,2018-01-15 20:00:00,Old Trafford,1611,Manchester United,3,1639,Stoke City,0,Regular
+2499950,24,2018-01-20 12:30:00,The American Express Community Stadium,1651,Brighton & Hove Albion,0,1610,Chelsea,4,Regular
+2499958,24,2018-01-20 15:00:00,London Stadium,1633,West Ham United,1,1659,AFC Bournemouth,1,Regular
+2499956,24,2018-01-20 15:00:00,Bet365 Stadium,1639,Stoke City,2,1673,Huddersfield Town,0,Regular
+2499953,24,2018-01-20 15:00:00,King Power Stadium,1631,Leicester City,2,1644,Watford,0,Regular
+2499952,24,2018-01-20 15:00:00,Goodison Park,1623,Everton,1,1627,West Bromwich Albion,1,Regular
+2499951,24,2018-01-20 15:00:00,Turf Moor,1646,Burnley,0,1611,Manchester United,1,Regular
+2499949,24,2018-01-20 15:00:00,Emirates Stadium,1609,Arsenal,4,1628,Crystal Palace,1,Regular
+2499954,24,2018-01-20 17:30:00,Etihad Stadium,1625,Manchester City,3,1613,Newcastle United,1,Regular
+2499955,24,2018-01-21 16:00:00,St. Mary's Stadium,1619,Southampton,1,1624,Tottenham Hotspur,1,Regular
+2499957,24,2018-01-22 20:00:00,Liberty Stadium,10531,Swansea City,1,1612,Liverpool,0,Regular
+2499960,25,2018-01-30 19:45:00,Liberty Stadium,10531,Swansea City,3,1609,Arsenal,1,Regular
+2499961,25,2018-01-30 19:45:00,London Stadium,1633,West Ham United,1,1628,Crystal Palace,1,Regular
+2499959,25,2018-01-30 20:00:00,The John Smith's Stadium,1673,Huddersfield Town,0,1612,Liverpool,3,Regular
+2499965,25,2018-01-31 19:45:00,St. Mary's Stadium,1619,Southampton,1,1651,Brighton & Hove Albion,1,Regular
+2499964,25,2018-01-31 19:45:00,St. James' Park,1613,Newcastle United,1,1646,Burnley,1,Regular
+2499963,25,2018-01-31 19:45:00,Goodison Park,1623,Everton,2,1631,Leicester City,1,Regular
+2499962,25,2018-01-31 19:45:00,Stamford Bridge,1610,Chelsea,0,1659,AFC Bournemouth,3,Regular
+2499968,25,2018-01-31 20:00:00,Wembley Stadium,1624,Tottenham Hotspur,2,1611,Manchester United,0,Regular
+2499967,25,2018-01-31 20:00:00,Bet365 Stadium,1639,Stoke City,0,1644,Watford,0,Regular
+2499966,25,2018-01-31 20:00:00,Etihad Stadium,1625,Manchester City,3,1627,West Bromwich Albion,0,Regular
+2499972,26,2018-02-03 12:30:00,Turf Moor,1646,Burnley,1,1625,Manchester City,1,Regular
+2499969,26,2018-02-03 15:00:00,Vitality Stadium,1659,AFC Bournemouth,2,1639,Stoke City,1,Regular
+2499971,26,2018-02-03 15:00:00,The American Express Community Stadium,1651,Brighton & Hove Albion,3,1633,West Ham United,1,Regular
+2499976,26,2018-02-03 15:00:00,Old Trafford,1611,Manchester United,2,1673,Huddersfield Town,0,Regular
+2499974,26,2018-02-03 15:00:00,King Power Stadium,1631,Leicester City,1,10531,Swansea City,1,Regular
+2499978,26,2018-02-03 15:00:00,The Hawthorns,1627,West Bromwich Albion,2,1619,Southampton,3,Regular
+2499970,26,2018-02-03 17:30:00,Emirates Stadium,1609,Arsenal,5,1623,Everton,1,Regular
+2499973,26,2018-02-04 14:15:00,Selhurst Park,1628,Crystal Palace,1,1613,Newcastle United,1,Regular
+2499975,26,2018-02-04 16:30:00,Anfield,1612,Liverpool,2,1624,Tottenham Hotspur,2,Regular
+2499977,26,2018-02-05 20:00:00,Vicarage Road Stadium,1644,Watford,4,1610,Chelsea,1,Regular
+2499987,27,2018-02-10 12:30:00,Wembley Stadium,1624,Tottenham Hotspur,1,1609,Arsenal,0,Regular
+2499980,27,2018-02-10 15:00:00,Goodison Park,1623,Everton,3,1628,Crystal Palace,1,Regular
+2499985,27,2018-02-10 15:00:00,Bet365 Stadium,1639,Stoke City,1,1651,Brighton & Hove Albion,1,Regular
+2499988,27,2018-02-10 15:00:00,London Stadium,1633,West Ham United,2,1644,Watford,0,Regular
+2499986,27,2018-02-10 15:00:00,Liberty Stadium,10531,Swansea City,1,1646,Burnley,0,Regular
+2499982,27,2018-02-10 17:30:00,Etihad Stadium,1625,Manchester City,5,1631,Leicester City,1,Regular
+2499981,27,2018-02-11 12:00:00,The John Smith's Stadium,1673,Huddersfield Town,4,1659,AFC Bournemouth,1,Regular
+2499983,27,2018-02-11 14:15:00,St. James' Park,1613,Newcastle United,1,1611,Manchester United,0,Regular
+2499984,27,2018-02-11 16:30:00,St. Mary's Stadium,1619,Southampton,0,1612,Liverpool,2,Regular
+2499979,27,2018-02-12 20:00:00,Stamford Bridge,1610,Chelsea,3,1627,West Bromwich Albion,0,Regular
+2499994,28,2018-02-24 12:30:00,King Power Stadium,1631,Leicester City,1,1639,Stoke City,1,Regular
+2499991,28,2018-02-24 15:00:00,The American Express Community Stadium,1651,Brighton & Hove Albion,4,10531,Swansea City,1,Regular
+2499989,28,2018-02-24 15:00:00,Vitality Stadium,1659,AFC Bournemouth,2,1613,Newcastle United,2,Regular
+2499995,28,2018-02-24 15:00:00,Anfield,1612,Liverpool,4,1633,West Ham United,1,Regular
+2499998,28,2018-02-24 15:00:00,The Hawthorns,1627,West Bromwich Albion,1,1673,Huddersfield Town,2,Regular
+2499992,28,2018-02-24 15:00:00,Turf Moor,1646,Burnley,1,1619,Southampton,1,Regular
+2499997,28,2018-02-24 17:30:00,Vicarage Road Stadium,1644,Watford,1,1623,Everton,0,Regular
+2499993,28,2018-02-25 12:00:00,Selhurst Park,1628,Crystal Palace,0,1624,Tottenham Hotspur,1,Regular
+2499996,28,2018-02-25 14:05:00,Old Trafford,1611,Manchester United,2,1610,Chelsea,1,Regular
+2499990,28,2018-03-01 19:45:00,Emirates Stadium,1609,Arsenal,0,1625,Manchester City,3,Regular
+2500000,29,2018-03-03 12:30:00,Turf Moor,1646,Burnley,2,1623,Everton,1,Regular
+2500008,29,2018-03-03 15:00:00,Vicarage Road Stadium,1644,Watford,1,1627,West Bromwich Albion,0,Regular
+2500007,29,2018-03-03 15:00:00,Wembley Stadium,1624,Tottenham Hotspur,2,1673,Huddersfield Town,0,Regular
+2500006,29,2018-03-03 15:00:00,Liberty Stadium,10531,Swansea City,4,1633,West Ham United,1,Regular
+2500005,29,2018-03-03 15:00:00,St. Mary's Stadium,1619,Southampton,0,1639,Stoke City,0,Regular
+2500002,29,2018-03-03 15:00:00,King Power Stadium,1631,Leicester City,1,1659,AFC Bournemouth,1,Regular
+2500003,29,2018-03-03 17:30:00,Anfield,1612,Liverpool,2,1613,Newcastle United,0,Regular
+2499999,29,2018-03-04 13:30:00,The American Express Community Stadium,1651,Brighton & Hove Albion,2,1609,Arsenal,1,Regular
+2500004,29,2018-03-04 16:00:00,Etihad Stadium,1625,Manchester City,1,1610,Chelsea,0,Regular
+2500001,29,2018-03-05 20:00:00,Selhurst Park,1628,Crystal Palace,2,1611,Manchester United,3,Regular
+2500014,30,2018-03-10 12:30:00,Old Trafford,1611,Manchester United,2,1612,Liverpool,1,Regular
+2500017,30,2018-03-10 15:00:00,The Hawthorns,1627,West Bromwich Albion,1,1631,Leicester City,4,Regular
+2500015,30,2018-03-10 15:00:00,St. James' Park,1613,Newcastle United,3,1619,Southampton,0,Regular
+2500013,30,2018-03-10 15:00:00,The John Smith's Stadium,1673,Huddersfield Town,0,10531,Swansea City,0,Regular
+2500012,30,2018-03-10 15:00:00,Goodison Park,1623,Everton,2,1651,Brighton & Hove Albion,0,Regular
+2500018,30,2018-03-10 15:00:00,London Stadium,1633,West Ham United,0,1646,Burnley,3,Regular
+2500011,30,2018-03-10 17:30:00,Stamford Bridge,1610,Chelsea,2,1628,Crystal Palace,1,Regular
+2500010,30,2018-03-11 13:30:00,Emirates Stadium,1609,Arsenal,3,1644,Watford,0,Regular
+2500009,30,2018-03-11 16:00:00,Vitality Stadium,1659,AFC Bournemouth,1,1624,Tottenham Hotspur,4,Regular
+2500016,30,2018-03-12 20:00:00,Bet365 Stadium,1639,Stoke City,0,1625,Manchester City,2,Regular
+2500019,31,2018-03-17 14:00:00,Vitality Stadium,1659,AFC Bournemouth,2,1627,West Bromwich Albion,1,Regular
+2500025,31,2018-03-17 14:00:00,Bet365 Stadium,1639,Stoke City,1,1623,Everton,2,Regular
+2500021,31,2018-03-17 15:00:00,The John Smith's Stadium,1673,Huddersfield Town,0,1628,Crystal Palace,2,Regular
+2500023,31,2018-03-17 17:30:00,Anfield,1612,Liverpool,5,1644,Watford,0,Regular
+2500032,32,2018-03-31 11:30:00,Selhurst Park,1628,Crystal Palace,1,1612,Liverpool,2,Regular
+2500038,32,2018-03-31 14:00:00,The Hawthorns,1627,West Bromwich Albion,1,1646,Burnley,2,Regular
+2500037,32,2018-03-31 14:00:00,Vicarage Road Stadium,1644,Watford,2,1659,AFC Bournemouth,2,Regular
+2500035,32,2018-03-31 14:00:00,St. James' Park,1613,Newcastle United,1,1673,Huddersfield Town,0,Regular
+2500034,32,2018-03-31 14:00:00,Old Trafford,1611,Manchester United,2,10531,Swansea City,0,Regular
+2500030,32,2018-03-31 14:00:00,The American Express Community Stadium,1651,Brighton & Hove Albion,0,1631,Leicester City,2,Regular
+2499738,32,2018-03-31 14:00:00,London Stadium,1633,West Ham United,3,1619,Southampton,0,Regular
+2500033,32,2018-03-31 16:30:00,Goodison Park,1623,Everton,1,1625,Manchester City,3,Regular
+2500029,32,2018-04-01 12:30:00,Emirates Stadium,1609,Arsenal,3,1639,Stoke City,0,Regular
+2500031,32,2018-04-01 15:00:00,Stamford Bridge,1610,Chelsea,1,1624,Tottenham Hotspur,3,Regular
+2500043,33,2018-04-07 11:30:00,Goodison Park,1623,Everton,0,1612,Liverpool,0,Regular
+2500048,33,2018-04-07 14:00:00,The Hawthorns,1627,West Bromwich Albion,1,10531,Swansea City,1,Regular
+2500047,33,2018-04-07 14:00:00,Vicarage Road Stadium,1644,Watford,1,1646,Burnley,2,Regular
+2500046,33,2018-04-07 14:00:00,Bet365 Stadium,1639,Stoke City,1,1624,Tottenham Hotspur,2,Regular
+2500044,33,2018-04-07 14:00:00,King Power Stadium,1631,Leicester City,1,1613,Newcastle United,2,Regular
+2500041,33,2018-04-07 14:00:00,The American Express Community Stadium,1651,Brighton & Hove Albion,1,1673,Huddersfield Town,1,Regular
+2500039,33,2018-04-07 14:00:00,Vitality Stadium,1659,AFC Bournemouth,2,1628,Crystal Palace,2,Regular
+2500045,33,2018-04-07 16:30:00,Etihad Stadium,1625,Manchester City,2,1611,Manchester United,3,Regular
+2500040,33,2018-04-08 13:15:00,Emirates Stadium,1609,Arsenal,3,1619,Southampton,2,Regular
+2500042,33,2018-04-08 15:30:00,Stamford Bridge,1610,Chelsea,1,1633,West Ham United,1,Regular
+2500055,34,2018-04-14 11:30:00,St. Mary's Stadium,1619,Southampton,2,1610,Chelsea,3,Regular
+2500056,34,2018-04-14 14:00:00,Liberty Stadium,10531,Swansea City,1,1623,Everton,1,Regular
+2500051,34,2018-04-14 14:00:00,The John Smith's Stadium,1673,Huddersfield Town,1,1644,Watford,0,Regular
+2500050,34,2018-04-14 14:00:00,Selhurst Park,1628,Crystal Palace,3,1651,Brighton & Hove Albion,2,Regular
+2500049,34,2018-04-14 14:00:00,Turf Moor,1646,Burnley,2,1631,Leicester City,1,Regular
+2500052,34,2018-04-14 16:30:00,Anfield,1612,Liverpool,3,1659,AFC Bournemouth,0,Regular
+2500057,34,2018-04-14 18:45:00,Wembley Stadium,1624,Tottenham Hotspur,1,1625,Manchester City,3,Regular
+2500054,34,2018-04-15 12:30:00,St. James' Park,1613,Newcastle United,2,1609,Arsenal,1,Regular
+2500053,34,2018-04-15 15:00:00,Old Trafford,1611,Manchester United,0,1627,West Bromwich Albion,1,Regular
+2500058,34,2018-04-16 19:00:00,London Stadium,1633,West Ham United,1,1639,Stoke City,1,Regular
+2500061,35,2018-04-17 18:45:00,The American Express Community Stadium,1651,Brighton & Hove Albion,1,1624,Tottenham Hotspur,1,Regular
+2500059,35,2018-04-18 18:45:00,Vitality Stadium,1659,AFC Bournemouth,0,1611,Manchester United,2,Regular
+2500064,35,2018-04-19 18:45:00,King Power Stadium,1631,Leicester City,0,1619,Southampton,0,Regular
+2500020,31,2018-04-19 18:45:00,Turf Moor,1646,Burnley,1,1610,Chelsea,2,Regular
+2500068,35,2018-04-21 11:30:00,The Hawthorns,1627,West Bromwich Albion,2,1612,Liverpool,2,Regular
+2500067,35,2018-04-21 14:00:00,Vicarage Road Stadium,1644,Watford,0,1628,Crystal Palace,0,Regular
+2500066,35,2018-04-22 12:30:00,Bet365 Stadium,1639,Stoke City,1,1646,Burnley,1,Regular
+2500060,35,2018-04-22 12:30:00,Emirates Stadium,1609,Arsenal,4,1633,West Ham United,1,Regular
+2500065,35,2018-04-22 15:30:00,Etihad Stadium,1625,Manchester City,5,10531,Swansea City,0,Regular
+2500063,35,2018-04-23 19:00:00,Goodison Park,1623,Everton,1,1613,Newcastle United,0,Regular
+2500072,36,2018-04-28 11:30:00,Anfield,1612,Liverpool,0,1639,Stoke City,0,Regular
+2500069,36,2018-04-28 14:00:00,Turf Moor,1646,Burnley,0,1651,Brighton & Hove Albion,0,Regular
+2500070,36,2018-04-28 14:00:00,Selhurst Park,1628,Crystal Palace,5,1631,Leicester City,0,Regular
+2500071,36,2018-04-28 14:00:00,The John Smith's Stadium,1673,Huddersfield Town,0,1623,Everton,2,Regular
+2500075,36,2018-04-28 14:00:00,St. Mary's Stadium,1619,Southampton,2,1659,AFC Bournemouth,1,Regular
+2500074,36,2018-04-28 14:00:00,St. James' Park,1613,Newcastle United,0,1627,West Bromwich Albion,1,Regular
+2500076,36,2018-04-28 16:30:00,Liberty Stadium,10531,Swansea City,0,1610,Chelsea,1,Regular
+2500078,36,2018-04-29 13:15:00,London Stadium,1633,West Ham United,1,1625,Manchester City,4,Regular
+2500073,36,2018-04-29 15:30:00,Old Trafford,1611,Manchester United,2,1609,Arsenal,1,Regular
+2500077,36,2018-04-30 19:00:00,Wembley Stadium,1624,Tottenham Hotspur,2,1644,Watford,0,Regular
+2500081,37,2018-05-04 19:00:00,The American Express Community Stadium,1651,Brighton & Hove Albion,1,1611,Manchester United,0,Regular
+2500086,37,2018-05-05 11:30:00,Bet365 Stadium,1639,Stoke City,1,1628,Crystal Palace,2,Regular
+2500079,37,2018-05-05 14:00:00,Vitality Stadium,1659,AFC Bournemouth,1,10531,Swansea City,0,Regular
+2500084,37,2018-05-05 14:00:00,King Power Stadium,1631,Leicester City,0,1633,West Ham United,2,Regular
+2500088,37,2018-05-05 14:00:00,The Hawthorns,1627,West Bromwich Albion,1,1624,Tottenham Hotspur,0,Regular
+2500087,37,2018-05-05 14:00:00,Vicarage Road Stadium,1644,Watford,2,1613,Newcastle United,1,Regular
+2500083,37,2018-05-05 16:30:00,Goodison Park,1623,Everton,1,1619,Southampton,1,Regular
+2500085,37,2018-05-06 12:30:00,Etihad Stadium,1625,Manchester City,0,1673,Huddersfield Town,0,Regular
+2500082,37,2018-05-06 15:30:00,Stamford Bridge,1610,Chelsea,1,1612,Liverpool,0,Regular
+2500080,37,2018-05-06 15:30:00,Emirates Stadium,1609,Arsenal,5,1646,Burnley,0,Regular
+2500026,31,2018-05-08 18:45:00,Liberty Stadium,10531,Swansea City,0,1619,Southampton,1,Regular
+2500062,35,2018-05-09 18:45:00,Stamford Bridge,1610,Chelsea,1,1673,Huddersfield Town,1,Regular
+2500022,31,2018-05-09 18:45:00,King Power Stadium,1631,Leicester City,3,1609,Arsenal,1,Regular
+2500027,31,2018-05-09 19:00:00,Wembley Stadium,1624,Tottenham Hotspur,1,1613,Newcastle United,0,Regular
+2500024,31,2018-05-09 19:00:00,Etihad Stadium,1625,Manchester City,3,1651,Brighton & Hove Albion,1,Regular
+2500028,31,2018-05-10 18:45:00,London Stadium,1633,West Ham United,0,1611,Manchester United,0,Regular
+2500097,38,2018-05-13 14:00:00,Wembley Stadium,1624,Tottenham Hotspur,5,1631,Leicester City,4,Regular
+2500096,38,2018-05-13 14:00:00,Liberty Stadium,10531,Swansea City,1,1639,Stoke City,2,Regular
+2500095,38,2018-05-13 14:00:00,St. Mary's Stadium,1619,Southampton,0,1625,Manchester City,1,Regular
+2500094,38,2018-05-13 14:00:00,St. James' Park,1613,Newcastle United,3,1610,Chelsea,0,Regular
+2500093,38,2018-05-13 14:00:00,Old Trafford,1611,Manchester United,1,1644,Watford,0,Regular
+2500092,38,2018-05-13 14:00:00,Anfield,1612,Liverpool,4,1651,Brighton & Hove Albion,0,Regular
+2500091,38,2018-05-13 14:00:00,The John Smith's Stadium,1673,Huddersfield Town,0,1609,Arsenal,1,Regular
+2500090,38,2018-05-13 14:00:00,Selhurst Park,1628,Crystal Palace,2,1627,West Bromwich Albion,0,Regular
+2500098,38,2018-05-13 14:00:00,London Stadium,1633,West Ham United,3,1623,Everton,1,Regular
+2500089,38,2018-05-13 14:00:00,Turf Moor,1646,Burnley,1,1659,AFC Bournemouth,2,Regular
