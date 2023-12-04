@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image, TouchableOpacity, Modal, Text } from "react-native";
 import { IMAGES, leagueCalIcon, styles } from "../../constants/constants";
-import { useModal } from "../../hooks/useModal";
+import { useGames } from "../../hooks/useGames";
 import CalendarModal from "./CalendarModal";
 
 const DisplayIcon = ({ selectedTabIndex, setModalVisible }) => (
@@ -29,7 +29,7 @@ const DisplayIcon = ({ selectedTabIndex, setModalVisible }) => (
 // 리그 아이콘과 달력 아이콘 출력
 const LeagueCalendarIcon = ({ selectedTabIndex }) => {
   const { modalVisible, setModalVisible, selectedDate, setSelectedDate } =
-    useModal();
+    useGames();
 
   return (
     <View>

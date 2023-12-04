@@ -10,11 +10,11 @@ import Date from "./components/Date/Date";
 import MatchCards from "./screens/MatchCards";
 import { switchStyle } from "./constants/constants";
 import SegmentedControlTab from "react-native-segmented-control-tab";
-import { useModal } from "./hooks/useModal";
+import { useGames } from "./hooks/useGames";
 import { DateProvider } from "./hooks/useDateContext";
 
 const GameScreen = () => {
-  const { selectedTabIndex, setSelectedTabIndex } = useModal();
+  const { selectedTabIndex, setSelectedTabIndex } = useGames();
 
   // 탭에 따른 컨텐츠 렌더링
   const renderTabContent = () => {
