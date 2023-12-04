@@ -7,6 +7,20 @@ const teamLogos = {
 
 const actualData = [
   {
+    datetime: "2017-06-13 12:30:00",
+    team1_name: "Newcastle United",
+    team1_goals: 0,
+    team2_name: "Tottenham Hotspur",
+    team2_goals: 2,
+  },
+  {
+    datetime: "2017-07-13 12:30:00",
+    team1_name: "Newcastle United",
+    team1_goals: 0,
+    team2_name: "Tottenham Hotspur",
+    team2_goals: 2,
+  },
+  {
     datetime: "2017-08-13 12:30:00",
     team1_name: "Newcastle United",
     team1_goals: 0,

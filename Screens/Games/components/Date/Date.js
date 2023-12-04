@@ -28,7 +28,14 @@ const Date = () => {
           ]}
           onPress={() => handleSelectDate(date)}
         >
-          <Text style={calendarStyle.font}>{date}</Text>
+          <Text
+            style={[
+              calendarStyle.font,
+              highlightedDate === date && calendarStyle.selectedFontStyle, // 선택된 날짜에 대한 Text 스타일
+            ]}
+          >
+            {date}
+          </Text>
         </TouchableOpacity>
       ))}
     </ScrollView>

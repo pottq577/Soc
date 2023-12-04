@@ -1,4 +1,4 @@
-const IP_LAST_OCTET = "160";
+const IP_LAST_OCTET = "221";
 const IP_ADDRESS_PART = "http://10.20.102.";
 const SERVER_PORT = "5001";
 

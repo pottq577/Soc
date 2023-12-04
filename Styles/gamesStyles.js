@@ -72,9 +72,13 @@ const calendarStyle = {
     },
   },
   selectedDateStyle: {
-    backgroundColor: "#007bff", // 배경색
-    borderRadius: 5, // 모서리 둥글게
-    padding: 5, // 패딩
+    backgroundColor: "#007bff",
+    borderRadius: 5,
+    padding: 5,
+  },
+  selectedFontStyle: {
+    color: "white",
+    fontWeight: "bold",
   },
 };
 
