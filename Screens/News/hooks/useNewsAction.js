@@ -1,11 +1,11 @@
 import { useCallback } from "react";
-import { SERVER_ADDRESS } from "../constants/constants";
+import { NEWS_SERVER_ADDRESS } from "../constants/constants";
 import { ActionTypes } from "../constants/ActionTypes";
 
 export const useNewsAction = (dispatch, SCREEN_WIDTH) => {
   const fetchNews = useCallback(async () => {
     dispatch({ type: ActionTypes.SET_LOADING, loading: true });
-    fetch(`${SERVER_ADDRESS}/get-news`)
+    fetch(`${NEWS_SERVER_ADDRESS}/get-news`)
       .then((response) => response.json())
       .then((data) => {
         dispatch({ type: ActionTypes.SET_NEWS, news: data });

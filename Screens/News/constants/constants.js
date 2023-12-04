@@ -1,6 +1,6 @@
 import { styles, dynamicImageStyle } from "../../../Styles/newsStyles";
 import { SCREEN_WIDTH } from "../../../constants/dimensions";
-import { SERVER_ADDRESS } from "../../../constants/config";
+import { NEWS_SERVER_ADDRESS } from "../../../constants/config";
 
 const IMAGES = {
   BACK: require("../../../constants/icons/back-button.png"),
@@ -13,7 +13,7 @@ export {
   styles,
   dynamicImageStyle,
   SCREEN_WIDTH,
-  SERVER_ADDRESS,
+  NEWS_SERVER_ADDRESS,
   IMAGES,
   NO_IMAGE_TEXT,
   LOADING_MESSAGE,
