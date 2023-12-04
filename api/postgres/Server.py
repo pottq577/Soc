@@ -299,7 +299,7 @@ def get_team_players():
             return jsonify({'error': 'Team ID is required'}), 400
 
         # 서버의 다른 엔드포인트에서 선수들의 데이터를 조회
-        players_data = requests.get('http://127.0.0.1:5000/players').json()
+        players_data = requests.get('http://127.0.0.1:5002/players').json()
 
         # 해당 팀 ID에 맞는 선수만 필터링
         team_players = [
@@ -340,7 +340,7 @@ def get_match(matchId):
 def get_england_teams():
     try:
         # 기존 '/teams' 엔드포인트에서 모든 팀 데이터를 가져옵니다.
-        teams_response = requests.get('http://127.0.0.1:5000/teams')
+        teams_response = requests.get('http://127.0.0.1:5002/teams')
         if teams_response.status_code != 200:
             raise Exception("Failed to fetch teams data")
 
@@ -369,11 +369,11 @@ def fetch_data(endpoint):
 def refined_events():
     try:
         # 기존 엔드포인트에서 데이터 가져오기
-        matches_data = fetch_data('http://127.0.0.1:5000/matches_england')
+        matches_data = fetch_data('http://127.0.0.1:5002/matches_england')
         events_data = fetch_data(
-            'http://127.0.0.1:5000/england_events')['events']
-        teams_data = fetch_data('http://127.0.0.1:5000/teams')
-        players_data = fetch_data('http://127.0.0.1:5000/players')
+            'http://127.0.0.1:5002/england_events')['events']
+        teams_data = fetch_data('http://127.0.0.1:5002/teams')
+        players_data = fetch_data('http://127.0.0.1:5002/players')
 
         # 데이터가 정상적으로 로드되었는지 확인
         if not (matches_data and events_data and teams_data and players_data):
@@ -754,7 +754,7 @@ def get_events_by_match(match_id):
 @app.route('/matchAnalysis/<int:match_id>/<team_name>', methods=['GET'])
 def get_refined_events(match_id, team_name):
     # 서버에서 해당 match_id의 이벤트 데이터를 가져옵니다
-    # response = requests.get(f'http://119.204.24.238:5000/england_events/match/{match_id}')
+    # response = requests.get(f'http://119.204.24.238:5002/england_events/match/{match_id}')
     # if response.status_code != 200:
     #    return jsonify({'error': 'Data not found'}), 404
     match_events = pd.read_pickle(
