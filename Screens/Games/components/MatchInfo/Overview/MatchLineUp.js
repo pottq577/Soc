@@ -1,7 +1,7 @@
 import React from "react";
 import { ScrollView } from "react-native";
-import RenderSquad from "../../../Analysis/components/TargetAnalysis/RenderSquad";
-import { useGames } from "../../hooks/useGames";
+import RenderSquad from "../../../../Analysis/components/TargetAnalysis/RenderSquad";
+import { useGames } from "../../../hooks/useGames";
 
 const MatchLineUp = ({ home, away }) => {
   const { selectedTabIndex, setSelectedTabIndex } = useGames();

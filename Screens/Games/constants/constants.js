@@ -5,6 +5,7 @@ import {
   matchListStyles,
   overviewStyle,
   rankingStyle,
+  matchAnalysisStyle,
 } from "../../../Styles/gamesStyles";
 import { switchStyle, analysisStyle } from "../../Analysis/constants/constants";
 import {
@@ -100,6 +101,7 @@ export {
   rankingStyle,
   switchStyle,
   analysisStyle,
+  matchAnalysisStyle,
   IMAGES,
   teams,
 };

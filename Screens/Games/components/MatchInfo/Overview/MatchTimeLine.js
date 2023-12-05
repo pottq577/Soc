@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { overviewStyle } from "../../constants/constants";
+import { overviewStyle } from "../../../constants/constants";
 
 const TimelineEvent = ({ event }) => {
   const eventIcon =

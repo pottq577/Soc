@@ -1,8 +1,8 @@
 import React from "react";
 import { Text, View } from "react-native";
-import { analysisStyle } from "../../constants/constants";
-import { timelineEvents, matchDetails } from "../../constants/data";
-import TimelineEvent from "./TimelineEvent";
+import { analysisStyle } from "../../../constants/constants";
+import { timelineEvents, matchDetails } from "../../../constants/data";
+import MatchTimeLine from "./MatchTimeLine";
 import MatchDetails from "./MatchDetails";
 import MatchLineUp from "./MatchLineUp";
 
@@ -13,7 +13,7 @@ const MatchOverview = () => {
       <View style={analysisStyle.container}>
         <Text style={analysisStyle.header}>타임라인</Text>
         {timelineEvents.map((event, index) => (
-          <TimelineEvent key={index} event={event} />
+          <MatchTimeLine key={index} event={event} />
         ))}
       </View>
       {/* 경기 세부 정보 카드 */}

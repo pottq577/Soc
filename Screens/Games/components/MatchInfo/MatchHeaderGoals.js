@@ -3,6 +3,7 @@ import { View, Text } from "react-native";
 import { matchListStyles } from "../../constants/constants";
 import Space from "../../../../components/Space";
 
+// TODO MatchHeader.js에서 골 데이터를 넘겨받아 화면에 출력
 const MatchHeaderGoals = () => {
   return (
     <View style={{ flexDirection: "row", padding: 20 }}>

@@ -235,6 +235,36 @@ const rankingStyle = {
   },
 };
 
+const matchAnalysisStyle = {
+  passNetwork: {
+    marginBottom: 10,
+    width: "100%", // 이미지의 너비를 화면 너비에 맞춥니다.
+    height: 300, // 이미지의 높이를 조절합니다.
+    alignSelf: "stretch",
+  },
+  tableRowHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "#f0f0f0", // 헤더 배경색
+    padding: 10, // 헤더 내부 여백
+  },
+  tableRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    borderBottomWidth: 1,
+    borderBottomColor: "#DDD", // 행 아래의 테두리 색상
+    padding: 10, // 행 내부 여백
+  },
+  tableHeaderCell: {
+    fontWeight: "bold",
+    flex: 1, // 셀의 공간을 균등하게 배분
+    textAlign: "center", // 텍스트 가운데 정렬
+  },
+  tableCell: {
+    flex: 1, // 셀의 공간을 균등하게 배분
+    textAlign: "center", // 텍스트 가운데 정렬
+  },
+};
 export {
   styles,
   calendarStyle,
@@ -242,4 +272,5 @@ export {
   matchListStyles,
   overviewStyle,
   rankingStyle,
+  matchAnalysisStyle,
 };

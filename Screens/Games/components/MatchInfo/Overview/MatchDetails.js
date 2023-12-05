@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
-import { analysisStyle, overviewStyle } from "../../constants/constants";
+import { analysisStyle, overviewStyle } from "../../../constants/constants";
 
 const MatchDetailCard = ({ label, homeData, awayData }) => {
   // 숫자로 변환 (점수, 퍼센티지 등)

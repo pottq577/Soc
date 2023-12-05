@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { matchListStyles } from "../../constants/constants";
 import TeamInfo from "./TeamInfo";
 
