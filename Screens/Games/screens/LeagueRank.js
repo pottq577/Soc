@@ -1,21 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { View, ScrollView, Text } from "react-native";
 import { rankingStyle } from "../constants/constants";
+import useFetchLeagueRank from "../hooks/fetchLeagueRank";
 
 const LeagueRank = () => {
-  const [teams, setTeams] = useState([]);
+  const teams = useFetchLeagueRank();
 
-  useEffect(() => {
-    fetch("http://10.20.102.165:5002/TeamRank") // Flask 서버 URL로 변경
-      .then((response) => response.json())
-      .then((data) => {
-        setTeams(data);
-        // console.log(data);
-      })
-      .catch((error) => console.error("Error fetching data: ", error));
-  }, []);
-
-  //팀아이디 추가 필요 매핑해서 쓸 수 있게
   return (
     <ScrollView style={{ marginBottom: 140 }}>
       <View style={rankingStyle.headerRow}>

@@ -231,7 +231,8 @@ const rankingStyle = {
   },
   cellTeamName: {
     flex: 3,
-    textAlign: "center",
+    // textAlign: "center",
+    justifyContent: "flex-start",
   },
 };
 

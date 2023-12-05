@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useAnalysis } from "../../hooks/useAnalysis";
 import MatchCard from "./MatchCard";
 import MatchMonthTabs from "./MatchMonthTabs";
-import groupMatchesByMonth from "./utils/groupMatches";
+import groupMatchesByMonth from "../../utils/groupMatches";
 // example data
 import { matches } from "../../constants/data";
 

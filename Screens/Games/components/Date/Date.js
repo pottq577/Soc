@@ -1,12 +1,13 @@
 // useDateContext를 사용하여 weekDates를 가져오고, 이를 화면에 표시
-import React, { useState } from "react";
+import React from "react";
 import { ScrollView, TouchableOpacity, Text } from "react-native";
 import { calendarStyle } from "../../constants/constants";
 import { useDateContext } from "../../hooks/useDateContext";
+import { useGames } from "../../hooks/useGames";
 
 const Date = () => {
   const { weekDates, selectedDate, setSelectedDate } = useDateContext();
-  const [highlightedDate, setHighlightedDate] = useState(selectedDate);
+  const { highlightedDate, setHighlightedDate } = useGames(selectedDate);
 
   const handleSelectDate = (date) => {
     setSelectedDate(date); // 선택한 날짜 상태 업데이트

@@ -39,20 +39,18 @@ const MatchDetailCard = ({ label, homeData, awayData }) => {
   );
 };
 
-const MatchDetails = ({ matchDetails }) => {
-  return (
-    <View style={analysisStyle.container}>
-      <Text style={analysisStyle.header}>경기 세부 정보</Text>
-      {matchDetails.map((detail, index) => (
-        <MatchDetailCard
-          key={index}
-          label={detail.label}
-          homeData={detail.homeData}
-          awayData={detail.awayData}
-        />
-      ))}
-    </View>
-  );
-};
+const MatchDetails = ({ matchDetails }) => (
+  <View style={analysisStyle.container}>
+    <Text style={analysisStyle.header}>경기 세부 정보</Text>
+    {matchDetails.map((detail, index) => (
+      <MatchDetailCard
+        key={index}
+        label={detail.label}
+        homeData={detail.homeData}
+        awayData={detail.awayData}
+      />
+    ))}
+  </View>
+);
 
 export default MatchDetails;

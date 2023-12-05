@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text } from "react-native";
 import { overviewStyle } from "../../../constants/constants";
 
-const TimelineEvent = ({ event }) => {
+const MatchTimeLine = ({ event }) => {
   const eventIcon =
     event.type === "goal" ? "⚽️" : event.type === "yellow-card" ? "🟨" : "🟥";
 
@@ -26,4 +26,4 @@ const TimelineEvent = ({ event }) => {
   );
 };
 
-export default TimelineEvent;
+export default MatchTimeLine;

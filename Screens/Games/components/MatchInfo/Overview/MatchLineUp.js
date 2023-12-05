@@ -6,6 +6,7 @@ import { useGames } from "../../../hooks/useGames";
 const MatchLineUp = ({ home, away }) => {
   const { selectedTabIndex, setSelectedTabIndex } = useGames();
 
+  // TODO RenderSquad에서 실제 팀의 스쿼드 라인업을 출력할 것
   // 탭에 따른 컨텐츠 렌더링
   const renderTabContent = () => {
     switch (selectedTabIndex) {

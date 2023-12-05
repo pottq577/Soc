@@ -12,7 +12,7 @@ const MatchAnalysis = ({ matchDetails, match_id }) => {
   // 렌더링할 컨텐츠를 결정하는 함수
   const renderContentView = () => {
     if (!matchDetails) {
-      return <Text>Loading...</Text>; // 또는 다른 로딩 표시
+      return <Text>Loading...</Text>;
     }
 
     switch (selectedTabIndex) {

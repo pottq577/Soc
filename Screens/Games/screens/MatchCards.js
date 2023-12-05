@@ -1,37 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Cards from "../components/MatchCards/Cards";
 import { useDateContext } from "../hooks/useDateContext";
 import NoMatches from "../components/NoMatches";
 import NotSelected from "../components/NotSelected";
+import useFetchMatches from "../hooks/fetchMatches";
+import getDateString from "../utils/getDateString";
 
 const MatchCards = () => {
   const navigation = useNavigation();
-  const [matches, setMatches] = useState([]);
+  const matches = useFetchMatches();
   const { weekDates, selectedDate } = useDateContext();
-
-  const fetchMatches = async () => {
-    try {
-      const response = await fetch("http://10.20.102.165:5002/matches");
-      const data = await response.json();
-      setMatches(data);
-    } catch (error) {
-      console.error("Error fetching data: ", error);
-    }
-  };
 
   const handlePress = (match) => {
     navigation.navigate("MatchInfo", { ...match });
-  };
-
-  useEffect(() => {
-    fetchMatches();
-  }, []);
-
-  // 날짜만 추출하는 함수
-  const getDateString = (datetime) => {
-    return datetime.split("T")[0]; // 'YYYY-MM-DD' 형식으로 변환
   };
 
   // 선택된 날짜가 없으면 전체 주차 경기를 보여주고, 있으면 해당 날짜의 경기만 필터링
