@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { POSTGRES_SERVER_ADDRESS } from "../../../constants/config";
 
 const useFetchGameData = (matchDetails, matchId, team) => {
   const [imageData, setImageData] = useState(null);
@@ -10,7 +11,7 @@ const useFetchGameData = (matchDetails, matchId, team) => {
       const fetchImageData = async () => {
         try {
           const response = await fetch(
-            `http://10.20.102.165:5002/matchAnalysis/${matchId}/${team}`
+            `${POSTGRES_SERVER_ADDRESS}/matchAnalysis/${matchId}/${team}`
           );
           if (!response.ok) throw new Error("Failed to fetch image");
           const blob = await response.blob();
@@ -24,7 +25,7 @@ const useFetchGameData = (matchDetails, matchId, team) => {
       const fetchPlayerStats = async () => {
         try {
           const response = await fetch(
-            `http://10.20.102.165:5002/match_player_stats/${matchId}`
+            `${POSTGRES_SERVER_ADDRESS}/match_player_stats/${matchId}`
           );
           if (!response.ok) throw new Error("Failed to fetch player stats");
           const jsonResponse = await response.json();

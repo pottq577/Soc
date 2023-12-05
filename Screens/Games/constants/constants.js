@@ -12,6 +12,10 @@ import {
   SCREEN_HEIGHT,
   SCREEN_WIDTH,
 } from "../../Analysis/constants/constants";
+import {
+  POSTGRES_SERVER_ADDRESS,
+  POSTGRES_SERVER_PORT,
+} from "../../../constants/config";
 
 const IMAGES = {
   PL_LOGO: require("../../../constants/Premier_League-Logo.wine.png"),
@@ -104,4 +108,6 @@ export {
   matchAnalysisStyle,
   IMAGES,
   teams,
+  POSTGRES_SERVER_ADDRESS,
+  POSTGRES_SERVER_PORT,
 };

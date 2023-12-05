@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { POSTGRES_SERVER_ADDRESS } from "../../../constants/config";
 
 const useFetchLeagueRank = () => {
   const [teams, setTeams] = useState([]);
@@ -6,7 +7,7 @@ const useFetchLeagueRank = () => {
   useEffect(() => {
     const fetchLeagueRank = async () => {
       try {
-        const response = await fetch("http://10.20.102.165:5002/TeamRank");
+        const response = await fetch(`${POSTGRES_SERVER_ADDRESS}/TeamRank`);
         const data = await response.json();
         setTeams(data);
       } catch (error) {
