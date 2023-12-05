@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, url_for, send_file
+from flask import Flask, jsonify, request, url_for, send_file, render_template
 from flask_cors import CORS
 from database import db
 from models import Player
@@ -24,6 +24,8 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 from io import BytesIO
 from stats_generator import generate_player_stats
+
+portNum = 5002
 
 
 def create_app():
@@ -934,10 +936,11 @@ def get_image():
 
 @app.route('/')
 def index():
-    image_url = url_for(
-        'static', filename='images/pass_network_2499719_Arsenal.png')
-    return {'image_url': image_url}
+    # image_url = url_for(
+    #     'static', filename='images/pass_network_2499719_Arsenal.png')
+    # return {'image_url': image_url}
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5002, debug=True)
+    app.run(host='0.0.0.0', port=portNum, debug=True)
