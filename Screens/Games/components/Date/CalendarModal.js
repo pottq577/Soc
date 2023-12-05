@@ -53,9 +53,9 @@ const CalendarModal = ({
           onStartShouldSetResponder={() => true}
         >
           <Calendar
-            current="2017-06-01"
-            minDate="2017-01-01"
-            maxDate="2017-12-31"
+            current="2017-08-11"
+            minDate="2017-08-11"
+            maxDate="2018-05-13"
             onDayPress={onDayPress}
             markedDates={{
               [selectedDate]: {

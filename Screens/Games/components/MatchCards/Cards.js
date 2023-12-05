@@ -10,14 +10,18 @@ const Cards = ({ index, match, onPress }) => {
         <Text style={{ paddingBottom: 13 }}>{match.datetime}</Text>
         {/* 홈, 득점, 어웨이 */}
         <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <TeamInfo name={match.home} logo={match.homeLogo} alignRight={true} />
+          <TeamInfo
+            name={match.team1_name}
+            logo={match.homeLogo}
+            alignRight={true}
+          />
           <View style={matchListStyles.scoreContainer}>
-            <Text style={matchListStyles.score}>{match.homeScore}</Text>
+            <Text style={matchListStyles.score}>{match.team1_goals}</Text>
             <Text style={matchListStyles.score}> - </Text>
-            <Text style={matchListStyles.score}>{match.awayScore}</Text>
+            <Text style={matchListStyles.score}>{match.team2_goals}</Text>
           </View>
           <TeamInfo
-            name={match.away}
+            name={match.team2_name}
             logo={match.awayLogo}
             alignRight={false}
           />

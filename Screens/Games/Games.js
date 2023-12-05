@@ -13,7 +13,6 @@ import { switchStyle } from "./constants/constants";
 import SegmentedControlTab from "react-native-segmented-control-tab";
 import { useGames } from "./hooks/useGames";
 import { DateProvider } from "./hooks/useDateContext";
-import MatchTest from "./screens/MatchTest";
 
 const GameScreen = () => {
   const { selectedTabIndex, setSelectedTabIndex } = useGames();
@@ -22,8 +21,7 @@ const GameScreen = () => {
   const renderTabContent = () => {
     switch (selectedTabIndex) {
       case 0: // '경기 일정' 탭 선택 시
-        // return <MatchCards />;
-        return <MatchTest />;
+        return <MatchCards />;
       case 1: // '리그 순위' 탭 선택 시
         return <LeagueRank />;
       default:

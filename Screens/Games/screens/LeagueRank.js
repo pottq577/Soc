@@ -10,7 +10,7 @@ const LeagueRank = () => {
       .then((response) => response.json())
       .then((data) => {
         setTeams(data);
-        console.log(data);
+        // console.log(data);
       })
       .catch((error) => console.error("Error fetching data: ", error));
   }, []);
