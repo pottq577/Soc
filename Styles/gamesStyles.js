@@ -197,8 +197,41 @@ const overviewStyle = {
 };
 
 const rankingStyle = {
-  container: {
+  headerRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "#f7f7f7", // 제목 배경색
     padding: 10,
+    borderBottomWidth: 2,
+    borderBottomColor: "#ddd",
+  },
+  headerCell: {
+    // width: "10%",
+    flex: 1,
+    fontWeight: "bold", // 제목 글씨 굵게
+    textAlign: "center",
+  },
+  headerCellTeamName: {
+    flex: 3,
+    fontWeight: "bold", // 제목 글씨 굵게
+    textAlign: "center",
+  },
+  row: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: "#ddd",
+  },
+  cell: {
+    // width: "10%",
+    flex: 1,
+    textAlign: "center",
+  },
+  cellTeamName: {
+    flex: 3,
+    textAlign: "center",
   },
 };
 

@@ -8,10 +8,12 @@ import Separator from "../../components/Separator";
 import LeagueCalendarIcon from "./components/Date/LeagueCalendarIcon";
 import Date from "./components/Date/Date";
 import MatchCards from "./screens/MatchCards";
+import LeagueRank from "./screens/LeagueRank";
 import { switchStyle } from "./constants/constants";
 import SegmentedControlTab from "react-native-segmented-control-tab";
 import { useGames } from "./hooks/useGames";
 import { DateProvider } from "./hooks/useDateContext";
+import MatchTest from "./screens/MatchTest";
 
 const GameScreen = () => {
   const { selectedTabIndex, setSelectedTabIndex } = useGames();
@@ -20,9 +22,10 @@ const GameScreen = () => {
   const renderTabContent = () => {
     switch (selectedTabIndex) {
       case 0: // '경기 일정' 탭 선택 시
-        return <MatchCards />;
+        // return <MatchCards />;
+        return <MatchTest />;
       case 1: // '리그 순위' 탭 선택 시
-      // return <LeagueRanking />;
+        return <LeagueRank />;
       default:
         return null;
     }
