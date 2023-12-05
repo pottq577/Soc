@@ -35,12 +35,6 @@ const MatchCards = () => {
   };
 
   // 선택된 날짜가 없으면 전체 주차 경기를 보여주고, 있으면 해당 날짜의 경기만 필터링
-  // const filteredMatches =
-  //   weekDates.length > 0
-  //     ? matches.filter((match) =>
-  //         weekDates.some((date) => getDateString(match.datetime) === date)
-  //       )
-  //     : [];
   const filteredMatches = matches.filter((match) => {
     const matchDate = getDateString(match.datetime);
     return selectedDate

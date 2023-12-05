@@ -4,6 +4,7 @@ import { analysisStyle } from "../../constants/constants";
 import { timelineEvents, matchDetails } from "../../constants/data";
 import TimelineEvent from "./TimelineEvent";
 import MatchDetails from "./MatchDetails";
+import MatchLineUp from "./MatchLineUp";
 
 const MatchOverview = () => {
   return (
@@ -17,6 +18,8 @@ const MatchOverview = () => {
       </View>
       {/* 경기 세부 정보 카드 */}
       <MatchDetails matchDetails={matchDetails} />
+      {/* 경기 라인 업 카드 */}
+      <MatchLineUp />
     </View>
   );
 };

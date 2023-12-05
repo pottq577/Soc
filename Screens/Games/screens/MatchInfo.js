@@ -19,7 +19,7 @@ const MatchInfo = ({ route }) => {
       case 0: // '개요' 탭 선택 시
         return <MatchOverview home={home} away={away} datetime={datetime} />;
       case 1: // '라인업' 탭 선택 시
-        return <MatchLineUp home={home} away={away} />;
+      // return <MatchLineUp home={home} away={away} />;
       default:
         return null;
     }
@@ -38,7 +38,7 @@ const MatchInfo = ({ route }) => {
       <Separator />
       <View style={{ height: 60, width: "100%" }}>
         <SegmentedControlTab
-          values={["개요", "라인업"]}
+          values={["개요", "경기 분석"]}
           selectedIndex={selectedTabIndex}
           onTabPress={setSelectedTabIndex}
           tabsContainerStyle={switchStyle.tabsContainer}
