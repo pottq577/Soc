@@ -30,6 +30,7 @@ const calendarStyle = {
       borderWidth: 0.4,
       borderRadius: 10,
       marginLeft: 10,
+      marginBottom: 20,
     },
   },
   font: {

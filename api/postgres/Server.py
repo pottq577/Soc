@@ -530,8 +530,10 @@ def get_player_stats(match_id):
             'end_x': event.end_x,
             'end_y': event.end_y
         } for event in events]
-        # match_events = pd.read_pickle(f'Analysis/data/refined_events/England/{match_id}.pkl')
-        match_events = pd.DataFrame(events_data)
+        # TODO DB에서 가져오는 데 오류가 발생해서 일단 로컬 데이터 사용
+        match_events = pd.read_pickle(
+            f'Analysis/data/refined_events/England/{match_id}.pkl')
+        # match_events = pd.DataFrame(events_data)
 
         # 슈팅 횟수
         shot_records = match_events[

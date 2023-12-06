@@ -6,7 +6,7 @@ import React from "react";
 import { View, Modal, TouchableOpacity, Text } from "react-native";
 import { Calendar } from "react-native-calendars";
 import { calendarStyle } from "../../constants/constants";
-import getWeekDates from "../../utils/getWeekDates";
+import { getWeekDates } from "../../utils/getWeekDates";
 import { useDateContext } from "../../hooks/useDateContext";
 
 const CalendarModal = ({

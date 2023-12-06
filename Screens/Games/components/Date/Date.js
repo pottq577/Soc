@@ -10,8 +10,15 @@ const Date = () => {
   const { highlightedDate, setHighlightedDate } = useGames(selectedDate);
 
   const handleSelectDate = (date) => {
-    setSelectedDate(date); // 선택한 날짜 상태 업데이트
-    setHighlightedDate(date);
+    if (selectedDate === date) {
+      // 이미 선택된 날짜를 다시 선택한 경우, 선택 해제
+      setSelectedDate(null);
+      setHighlightedDate(null);
+    } else {
+      // 새로운 날짜를 선택한 경우, 선택 상태 업데이트
+      setSelectedDate(date);
+      setHighlightedDate(date);
+    }
   };
 
   return (
