@@ -1,0 +1,8 @@
+{
+  "api_urls": {
+    "teams": "http://10.20.103.60:5002/teams",
+    "matches_england": "http://10.20.103.60:5002/matches_england",
+    "england_events": "http://10.20.103.60:5002/england_events",
+    "players": "http://10.20.103.60:5002/players"
+  }
+}

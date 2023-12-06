@@ -8,7 +8,7 @@ import { useGames } from "../../../Games/hooks/useGames";
 import Space from "../../../../components/Space";
 
 /**
- * 스쿼드 렌더링 뷰 (TeamOverview.js, LeagueRanking.js에서 사용)
+ * 스쿼드 렌더링 뷰 (TeamOverview.js, MatchLineUp.js에서 사용)
  * @param isHome 사용자에게 보여줄 스쿼드 정보가 홈인지 어웨이인지 구분
  *               '홈'일 경우 isHome === 0, '어웨이'일 경우 isHome === 1
  * @returns

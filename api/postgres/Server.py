@@ -28,6 +28,24 @@ from stats_generator import generate_player_stats
 portNum = 5002
 
 
+def load_config():
+    with open('setting.json', 'r') as file:
+        return json.load(file)
+
+
+config = load_config()
+
+# 데이터 가져오기 함수
+
+
+def fetch_data(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        raise ValueError(f"Failed to fetch data from {url}")
+
+
 def create_app():
     app = Flask(__name__, static_url_path='/static', static_folder='static')
 
@@ -300,8 +318,11 @@ def get_team_players():
         if not team_id:
             return jsonify({'error': 'Team ID is required'}), 400
 
+        # 설정 파일에서 플레이어 데이터 URL 가져오기
+        players_url = config['api_urls']['players']
+
         # 서버의 다른 엔드포인트에서 선수들의 데이터를 조회
-        players_data = requests.get('http://127.0.0.1:5002/players').json()
+        players_data = fetch_data(players_url)
 
         # 해당 팀 ID에 맞는 선수만 필터링
         team_players = [
@@ -342,7 +363,8 @@ def get_match(matchId):
 def get_england_teams():
     try:
         # 기존 '/teams' 엔드포인트에서 모든 팀 데이터를 가져옵니다.
-        teams_response = requests.get('http://127.0.0.1:5002/teams')
+        # teams_response = requests.get('http://127.0.0.1:5002/teams')
+        teams_response = requests.get(config['api_urls']['teams'])
         if teams_response.status_code != 200:
             raise Exception("Failed to fetch teams data")
 
@@ -359,23 +381,23 @@ def get_england_teams():
         return jsonify({'error': str(e)}), 500
 
 
-# 기존 엔드포인트에서 데이터를 가져오는 함수
-def fetch_data(endpoint):
-    response = requests.get(endpoint)
-    return response.json() if response.status_code == 200 else None
-
 # 새로운 엔드포인트: refined_events
 
 
 @app.route('/refined_events', methods=['GET'])
 def refined_events():
     try:
+        # 설정 파일에서 URL 가져오기
+        matches_url = config['api_urls']['matches_england']
+        events_url = config['api_urls']['england_events']
+        teams_url = config['api_urls']['teams']
+        players_url = config['api_urls']['players']
+
         # 기존 엔드포인트에서 데이터 가져오기
-        matches_data = fetch_data('http://127.0.0.1:5002/matches_england')
-        events_data = fetch_data(
-            'http://127.0.0.1:5002/england_events')['events']
-        teams_data = fetch_data('http://127.0.0.1:5002/teams')
-        players_data = fetch_data('http://127.0.0.1:5002/players')
+        matches_data = fetch_data(matches_url)
+        events_data = fetch_data(events_url)['events']
+        teams_data = fetch_data(teams_url)
+        players_data = fetch_data(players_url)
 
         # 데이터가 정상적으로 로드되었는지 확인
         if not (matches_data and events_data and teams_data and players_data):
