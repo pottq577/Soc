@@ -1,9 +1,25 @@
-import { View, Text } from "react-native";
+import React from "react";
+import { View } from "react-native";
+import { Video } from "expo-av";
+import VideoPlayer from "expo-video-player";
 
-export default function SimulationScreen() {
+const SimulationScreen = () => {
   return (
     <View>
-      <Text>시뮬레이션</Text>
+      <VideoPlayer
+        videoProps={{
+          shouldPlay: true,
+          resizeMode: Video.RESIZE_MODE_CONTAIN,
+          source: require("./11.mp4"),
+          // 추가적인 Video 속성들을 여기에 기재
+        }}
+        inFullscreen={true}
+        showControlsOnLoad={true}
+        showFullscreenButton={true}
+        style={{ width: 1000, height: 300 }}
+      />
     </View>
   );
-}
+};
+
+export default SimulationScreen;
