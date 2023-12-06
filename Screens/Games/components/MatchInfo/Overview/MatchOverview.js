@@ -1,12 +1,15 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { analysisStyle } from "../../../constants/constants";
-import { timelineEvents, matchDetails } from "../../../constants/data";
+import { timelineEvents } from "../../../constants/data";
 import MatchTimeLine from "./MatchTimeLine";
 import MatchDetails from "./MatchDetails";
 import MatchLineUp from "./MatchLineUp";
+import useFetchGameData from "../../../hooks/fetchGameData";
 
-const MatchOverview = () => {
+const MatchOverview = ({ match_id, matchDetails }) => {
+  const { homeLineup, awayLineup } = useFetchGameData(matchDetails, match_id);
+
   return (
     <View style={{ padding: 10 }}>
       {/* 타임라인 카드 */}
@@ -17,9 +20,9 @@ const MatchOverview = () => {
         ))}
       </View>
       {/* 경기 세부 정보 카드 */}
-      <MatchDetails matchDetails={matchDetails} />
+      {/* <MatchDetails matchDetails={matchDetails} /> */}
       {/* 경기 라인 업 카드 */}
-      <MatchLineUp />
+      <MatchLineUp match_id={match_id} home={homeLineup} away={awayLineup} />
     </View>
   );
 };

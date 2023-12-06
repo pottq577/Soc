@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text } from "react-native";
 import { analysisStyle, switchStyle } from "../../constants/constants";
 import { squadData } from "../../constants/data";
@@ -13,8 +13,57 @@ import Space from "../../../../components/Space";
  *               '홈'일 경우 isHome === 0, '어웨이'일 경우 isHome === 1
  * @returns
  */
-const RenderSquad = ({ isHome }) => {
+const RenderSquad = ({ match_id }) => {
   const { selectedTabIndex, setSelectedTabIndex } = useGames();
+  const [squad, setSquad] = useState({});
+
+  useEffect(() => {
+    const fetchPlayers = async () => {
+      try {
+        const response = await fetch(
+          `http://10.20.103.60:5002/match_player_stats/${match_id}`
+        );
+        const result = await response.json();
+        const playersData = JSON.parse(result.data);
+        setSquad(categorizePlayersByPosition(playersData));
+      } catch (error) {
+        console.error("Error fetching players:", error);
+      }
+    };
+
+    fetchPlayers();
+  }, [match_id]);
+
+  const categorizePlayersByPosition = (players) => {
+    const categorized = {
+      Forwards: [],
+      Midfielders: [],
+      Defenders: [],
+      Goalkeepers: [],
+    };
+
+    players.forEach((player) => {
+      switch (player.role_name) {
+        case "Forward":
+          categorized.Forwards.push(player);
+          break;
+        case "Midfielder":
+          categorized.Midfielders.push(player);
+          break;
+        case "Defender":
+          categorized.Defenders.push(player);
+          break;
+        case "Goalkeeper":
+          categorized.Goalkeepers.push(player);
+          break;
+        default:
+          break;
+      }
+    });
+
+    return categorized;
+  };
+
   return (
     <View style={analysisStyle.container}>
       <Text style={analysisStyle.header}>라인업</Text>

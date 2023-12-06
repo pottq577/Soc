@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
 import { POSTGRES_SERVER_ADDRESS } from "../../../constants/config";
 
-const useFetchGameData = (matchDetails, matchId, team) => {
+const useFetchGameData = (matchDetails, match_id, team) => {
   const [imageData, setImageData] = useState(null);
   const [playerStats, setPlayerStats] = useState([]);
+  const [homeLineup, setHomeLineup] = useState([]);
+  const [awayLineup, setAwayLineup] = useState([]);
 
   useEffect(() => {
-    if (matchDetails && matchId && team) {
+    if (matchDetails && match_id && team) {
       // 이미지 데이터 가져오기
       const fetchImageData = async () => {
         try {
           const response = await fetch(
-            `${POSTGRES_SERVER_ADDRESS}/matchAnalysis/${matchId}/${team}`
+            `${POSTGRES_SERVER_ADDRESS}/matchAnalysis/${match_id}/${team}`
           );
           if (!response.ok) throw new Error("Failed to fetch image");
           const blob = await response.blob();
@@ -25,7 +27,7 @@ const useFetchGameData = (matchDetails, matchId, team) => {
       const fetchPlayerStats = async () => {
         try {
           const response = await fetch(
-            `${POSTGRES_SERVER_ADDRESS}/match_player_stats/${matchId}`
+            `${POSTGRES_SERVER_ADDRESS}/match_player_stats/${match_id}`
           );
           if (!response.ok) throw new Error("Failed to fetch player stats");
           const jsonResponse = await response.json();
@@ -52,13 +54,28 @@ const useFetchGameData = (matchDetails, matchId, team) => {
           console.error("Error fetching player stats:", error);
         }
       };
+      // 라인업 데이터 가져오기
+      const fetchLineupData = async () => {
+        try {
+          const response = await fetch(
+            `${POSTGRES_SERVER_ADDRESS}/match_lineup/${match_id}`
+          );
+          if (!response.ok) throw new Error("Failed to fetch lineup data");
+          const lineupData = await response.json();
+          setHomeLineup(lineupData.home);
+          setAwayLineup(lineupData.away);
+        } catch (error) {
+          console.error("Error fetching lineup data:", error);
+        }
+      };
 
       fetchImageData();
       fetchPlayerStats();
+      fetchLineupData();
     }
-  }, [matchDetails, matchId, team]);
+  }, [matchDetails, match_id, team]);
 
-  return { imageData, playerStats };
+  return { imageData, playerStats, homeLineup, awayLineup };
 };
 
 export default useFetchGameData;
