@@ -296,7 +296,8 @@ def get_standings():
                 'goals_for': standing.goals_for,
                 'goals_against': standing.goals_against,
                 'goal_difference': standing.goal_difference,
-                'points': standing.points
+                'points': standing.points,
+                'wyid': standing.wyid  # wyid 필드 추가
             } for standing in teamRank
         ]
 
@@ -305,7 +306,6 @@ def get_standings():
     except Exception as e:
         # 예외 처리
         return jsonify({'error': str(e)}), 500
-
 # 엔드포인트: 특정 팀의 선수 목록 조회
 
 

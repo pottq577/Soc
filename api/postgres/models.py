@@ -157,10 +157,9 @@ class Match(db.Model):
 
 
 class TeamRank(db.Model):
-    __tablename__ = 'rank_england'
+    __tablename__ = 'team_rank'
 
-    wyid = db.Column(db.Integer, primary_key=True)
-    rank = db.Column(db.Integer, nullable=False)
+    rank = db.Column(db.Integer, primary_key=True)
     team = db.Column(db.String(50), nullable=False)
     matches = db.Column(db.Integer, nullable=False)
     wins = db.Column(db.Integer, nullable=False)
@@ -170,6 +169,7 @@ class TeamRank(db.Model):
     goals_against = db.Column(db.Integer, nullable=False)
     goal_difference = db.Column(db.String(5), nullable=False)
     points = db.Column(db.Integer, nullable=False)
+    wyid = db.Column(db.Integer, nullable=False, unique=True)
 
     def __repr__(self):
         return f'<Team {self.team}, Rank {self.rank}>'

@@ -9,7 +9,9 @@ import useFetchGameData from "../../../hooks/fetchGameData";
 
 const MatchOverview = ({ match_id, matchDetails }) => {
   const { homeLineup, awayLineup } = useFetchGameData(matchDetails, match_id);
-
+  console.log(homeLineup);
+  console.log(match_id);
+  console.log(matchDetails);
   return (
     <View style={{ padding: 10 }}>
       {/* 타임라인 카드 */}
@@ -22,7 +24,11 @@ const MatchOverview = ({ match_id, matchDetails }) => {
       {/* 경기 세부 정보 카드 */}
       {/* <MatchDetails matchDetails={matchDetails} /> */}
       {/* 경기 라인 업 카드 */}
-      <MatchLineUp match_id={match_id} home={homeLineup} away={awayLineup} />
+      <MatchLineUp
+        match_id={match_id}
+        homeLineup={homeLineup}
+        awayLineup={awayLineup}
+      />
     </View>
   );
 };

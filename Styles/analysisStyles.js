@@ -153,6 +153,7 @@ const cardStyle = {
       teamIcon: {
         width: 20,
         height: 20,
+        marginRight: 5,
       },
       photo: {
         width: 120,
@@ -174,7 +175,7 @@ const cardStyle = {
   viewFullList: {
     borderWidth: 1,
     height: 40,
-    backgroundColor: "pink",
+    backgroundColor: "#rgba(75, 0, 130, 1)",
     margin: 20,
     alignItems: "center",
     justifyContent: "center",

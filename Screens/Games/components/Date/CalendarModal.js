@@ -15,13 +15,12 @@ const CalendarModal = ({
   selectedDate,
   setSelectedDate,
 }) => {
-  const { setWeekDates } = useDateContext();
+  const { setWeekDates, setSelectedDate: updateDateContext } = useDateContext();
   // 날짜 선택 핸들러
   const onDayPress = (day) => {
     setSelectedDate(day.dateString);
-    const weekDates = getWeekDates(day.dateString); // 해당 주의 날짜 범위 계산
-    setWeekDates(weekDates);
-    console.log("Selected Week Dates:", weekDates); // 확인을 위한 로그 출력
+    const newWeekDates = getWeekDates(day.dateString);
+    setWeekDates(newWeekDates); // 선택된 날짜를 포함하는 주차의 날짜들로 weekDates 업데이트
     setModalVisible(false);
   };
   // 모달 외부를 터치했을 때 모달을 닫는 함수

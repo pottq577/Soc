@@ -8,7 +8,7 @@ const MatchHeaderGoals = () => {
   return (
     <View style={{ flexDirection: "row", padding: 20 }}>
       <View style={matchListStyles.matchHeader.scoreContainer}>
-        <Text>꺼억</Text>
+        <Text>Player1</Text>
         <Space paddingHorizontal={5} />
         <Text>30'</Text>
       </View>
@@ -16,7 +16,7 @@ const MatchHeaderGoals = () => {
         <Text>⚽️</Text>
       </View>
       <View style={matchListStyles.matchHeader.scoreContainer}>
-        <Text>꺼억</Text>
+        <Text>Player2</Text>
         <Space paddingHorizontal={5} />
         <Text>30'</Text>
       </View>

@@ -13,56 +13,56 @@ import Space from "../../../../components/Space";
  *               '홈'일 경우 isHome === 0, '어웨이'일 경우 isHome === 1
  * @returns
  */
-const RenderSquad = ({ match_id }) => {
+const RenderSquad = ({ match_id, homeLineup, awayLineup }) => {
   const { selectedTabIndex, setSelectedTabIndex } = useGames();
-  const [squad, setSquad] = useState({});
+  // const [squad, setSquad] = useState({});
 
-  useEffect(() => {
-    const fetchPlayers = async () => {
-      try {
-        const response = await fetch(
-          `http://10.20.103.60:5002/match_player_stats/${match_id}`
-        );
-        const result = await response.json();
-        const playersData = JSON.parse(result.data);
-        setSquad(categorizePlayersByPosition(playersData));
-      } catch (error) {
-        console.error("Error fetching players:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchPlayers = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         `http://10.20.103.60:5002/match_player_stats/${match_id}`
+  //       );
+  //       const result = await response.json();
+  //       const playersData = JSON.parse(result.data);
+  //       setSquad(categorizePlayersByPosition(playersData));
+  //     } catch (error) {
+  //       console.error("Error fetching players:", error);
+  //     }
+  //   };
 
-    fetchPlayers();
-  }, [match_id]);
+  //   fetchPlayers();
+  // }, [match_id]);
 
-  const categorizePlayersByPosition = (players) => {
-    const categorized = {
-      Forwards: [],
-      Midfielders: [],
-      Defenders: [],
-      Goalkeepers: [],
-    };
+  // const categorizePlayersByPosition = (players) => {
+  //   const categorized = {
+  //     Forwards: [],
+  //     Midfielders: [],
+  //     Defenders: [],
+  //     Goalkeepers: [],
+  //   };
 
-    players.forEach((player) => {
-      switch (player.role_name) {
-        case "Forward":
-          categorized.Forwards.push(player);
-          break;
-        case "Midfielder":
-          categorized.Midfielders.push(player);
-          break;
-        case "Defender":
-          categorized.Defenders.push(player);
-          break;
-        case "Goalkeeper":
-          categorized.Goalkeepers.push(player);
-          break;
-        default:
-          break;
-      }
-    });
+  //   players.forEach((player) => {
+  //     switch (player.role_name) {
+  //       case "Forward":
+  //         categorized.Forwards.push(player);
+  //         break;
+  //       case "Midfielder":
+  //         categorized.Midfielders.push(player);
+  //         break;
+  //       case "Defender":
+  //         categorized.Defenders.push(player);
+  //         break;
+  //       case "Goalkeeper":
+  //         categorized.Goalkeepers.push(player);
+  //         break;
+  //       default:
+  //         break;
+  //     }
+  //   });
 
-    return categorized;
-  };
+  //   return categorized;
+  // };
 
   return (
     <View style={analysisStyle.container}>

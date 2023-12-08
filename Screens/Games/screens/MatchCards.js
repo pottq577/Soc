@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Cards from "../components/MatchCards/Cards";
@@ -7,11 +7,23 @@ import NoMatches from "../components/NoMatches";
 import NotSelected from "../components/NotSelected";
 import useFetchMatches from "../hooks/fetchMatches";
 import getDateString from "../utils/getDateString";
+import { getWeekDates } from "../utils/getWeekDates";
 
+// TODO 경기 일정 / 날짜 카드 수정 필요
 const MatchCards = () => {
   const navigation = useNavigation();
   const matches = useFetchMatches();
-  const { weekDates, selectedDate } = useDateContext();
+  const { weekDates, setWeekDates, selectedDate, setSelectedDate } =
+    useDateContext();
+
+  useEffect(() => {
+    // 컴포넌트 마운트 시, 1주차 경기 일정을 설정
+    if (matches.length > 0 && weekDates.length === 0) {
+      const firstMatchDate = getDateString(matches[0].datetime);
+      setWeekDates(getWeekDates(firstMatchDate));
+      setSelectedDate(null);
+    }
+  }, [matches, weekDates, setWeekDates, setSelectedDate]);
 
   const handlePress = (match) => {
     navigation.navigate("MatchInfo", { ...match });
@@ -29,6 +41,7 @@ const MatchCards = () => {
     <ScrollView
       style={{ padding: 10, marginHorizontal: 10, marginBottom: 180 }}
     >
+      {/* 사용자로부터 날짜를 선택받아야만 경기 일정을 표시 */}
       {weekDates.length === 0 ? (
         <NotSelected />
       ) : filteredMatches.length === 0 ? (
@@ -38,6 +51,13 @@ const MatchCards = () => {
           <Cards key={index} match={match} onPress={() => handlePress(match)} />
         ))
       )}
+      {/* {filteredMatches.length === 0 ? (
+        <NoMatches />
+      ) : (
+        filteredMatches.map((match, index) => (
+          <Cards key={index} match={match} onPress={() => handlePress(match)} />
+        ))
+      )} */}
     </ScrollView>
   );
 };

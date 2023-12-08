@@ -9,7 +9,7 @@ const FullListViewButton = ({ category, isPlayer, data, navigation }) => {
 
   return (
     <TouchableOpacity onPress={handlePress} style={cardStyle.viewFullList}>
-      <Text>{VIEW_FULL_LIST}</Text>
+      <Text style={{ color: "white" }}>{VIEW_FULL_LIST}</Text>
     </TouchableOpacity>
   );
 };

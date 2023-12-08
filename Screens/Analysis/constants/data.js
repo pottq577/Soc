@@ -2,27 +2,27 @@
 const playersData = [
   {
     rank: 1,
-    name: "Alexis Sanchez",
-    score: 77,
-    image: require("../../../constants/77.jpeg"),
-    team: require("../../../constants/arsenal.png"),
-    teamName: "Arsenal",
+    name: "손흥민",
+    score: 30,
+    image: require("../../../constants/players/son.png"),
+    team: require("../../../constants/teams/hotspur.png"),
+    teamName: "Tottenham Hotspur",
   },
   {
     rank: 2,
-    name: "Alexis Sanchez2",
-    score: 77,
+    name: "엘링 홀란드",
+    score: 20,
     image: require("../../../constants/77.jpeg"),
-    team: require("../../../constants/arsenal.png"),
-    teamName: "Arsenal",
+    team: require("../../../constants/teams/mancity.png"),
+    teamName: "Manchester City",
   },
   {
     rank: 3,
-    name: "Alexis Sanchez3",
-    score: 77,
+    name: "마커스 래시포드",
+    score: 10,
     image: require("../../../constants/77.jpeg"),
-    team: require("../../../constants/arsenal.png"),
-    teamName: "Arsenal",
+    team: require("../../../constants/teams/manuni.png"),
+    teamName: "Manchester United",
   },
   {
     rank: 4,
@@ -37,21 +37,21 @@ const playersData = [
 const teamData = [
   {
     rank: 1,
-    name: "Arsenal",
-    score: 44,
-    image: require("../../../constants/arsenal.png"),
+    name: "Tottenham Hotspur",
+    score: 30,
+    image: require("../../../constants/teams/hotspur.png"),
   },
   {
     rank: 2,
-    name: "Arsenal2",
-    score: 44,
-    image: require("../../../constants/arsenal.png"),
+    name: "Manchester City",
+    score: 20,
+    image: require("../../../constants/teams/mancity.png"),
   },
   {
     rank: 3,
-    name: "Arsenal3",
-    score: 44,
-    image: require("../../../constants/arsenal.png"),
+    name: "Manchester United",
+    score: 10,
+    image: require("../../../constants/teams/manuni.png"),
   },
   {
     rank: 4,
@@ -63,17 +63,17 @@ const teamData = [
 // PlayerOverview.js
 const overviewData = {
   Nationality: {
-    label: "Chile",
-    image: require("../../../constants/Chile.png"),
+    label: "Korea",
+    image: require("../../../constants/national/korea.png"),
   },
-  Birth: "21/07/2000",
-  Age: 23,
+  Birth: "07/08/1992",
+  Age: 31,
   Club: {
-    label: "Arsenal",
-    image: require("../../../constants/arsenal.png"),
+    label: "Tottenham Hotspur",
+    image: require("../../../constants/teams/hotspur.png"),
   },
   Position: {
-    label: "MF",
+    label: "FW",
   },
 };
 // PlayerOverview.js
@@ -96,14 +96,14 @@ const statData = {
 // RadarChart.js
 const radarData = [
   {
-    출전수: 80,
-    출전시간: 20,
-    골: 30,
-    어시스트: 10,
-    xG: 60,
-    xA: 60,
-    _90xG: 60,
-    _90xA: 60,
+    출전수: 20,
+    출전시간: 100,
+    골: 3,
+    어시스트: 5,
+    xG: 5.29,
+    xA: 4.42,
+    _90xG: 0.73,
+    _90xA: 0.41,
   },
 ];
 // TeamOverview.js
@@ -160,9 +160,9 @@ const squadData = {
 const matches = [
   {
     date: "2018-05-13T14:00:00",
-    home: "맨시티",
+    home: "토트넘",
     away: "아스날",
-    score: "0 : 0",
+    score: "3 : 3",
   },
   {
     date: "2018-06-13T14:00:00",
@@ -239,7 +239,7 @@ const matches = [
 ];
 // MatchAnalysis.js
 const players = [
-  { label: "Erling Haaland", value: "Erling Haaland" },
+  { label: "손흥민", value: "손흥민" },
   { label: "Mohamed Salah", value: "Mohamed Salah" },
   { label: "Kevin De Bruyne", value: "Kevin De Bruyne" },
   { label: "Erling Haaland", value: "Erling Haaland" },
