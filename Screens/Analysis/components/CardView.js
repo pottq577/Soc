@@ -60,7 +60,7 @@ const CardView = ({ category, data, isPlayer }) => {
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Image
             style={cardStyle.card.image.teamIcon}
-            source={playerData.team}
+            source={playerData.image}
           />
           <Text>{playerData.name}</Text>
         </View>

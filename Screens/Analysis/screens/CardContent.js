@@ -1,9 +1,8 @@
-// branch test
 import React, { useState, useEffect } from "react";
 import { View, ScrollView, Text, Alert } from "react-native";
 import NoContentView from "../components/NoContentView";
 import CardView from "../components/CardView";
-import { SEASONS, CATEGORIES } from "../constants/constants";
+import { SEASONS, CATEGORIES, TEAMS } from "../constants/constants";
 // 예시 데이터
 import { playersData, teamData } from "../constants/data";
 import { POSTGRES_SERVER_ADDRESS } from "../../../constants/config";
@@ -48,7 +47,6 @@ const CardContent = ({ selectedSeason, isPlayerSelected }) => {
     fetchCategoryData("goals-against", setTopGoalsAgainst);
   }, []);
 
-  console.log("TopWins: ", topWins);
   const renderContent = () => {
     if (isPlayerSelected) {
       const data = playersData;
@@ -62,32 +60,64 @@ const CardContent = ({ selectedSeason, isPlayerSelected }) => {
         </View>
       ));
     } else {
-      // const data = teamData;
-      const renderTeamList = (teams, category) => (
-        <View>
-          <Text>{category}</Text>
-          {teams.map((team, index) => (
-            <Text key={index}>
-              {`${team.value.rank}. ${team.value.team}: ${
-                team.value.losses ||
-                team.value.wins ||
-                team.value.goal_difference ||
-                team.value.goals_for ||
-                team.value.goals_against
-              }`}
-            </Text>
-          ))}
-        </View>
-      );
+      const teamNameMapping = {
+        아스날: "Arsenal",
+        본머스: "Bournemouth",
+        첼시: "Chelsea",
+        "토트넘 홋스퍼": "Hotspur",
+        "허더즈 필드": "Huddersfield",
+        "레스터 시티": "Leicester",
+        리버풀: "Liverpool",
+        "맨체스터 시티": "ManCity",
+        "맨체스터 유나이티드": "ManUni",
+        "스토크 시티": "Stoke",
+        "스완지 시티": "Swansea",
+        왓포드: "Watford",
+        "웨스트 브롬위치 알비온": "WestBromwich",
+        "웨스트햄 유나이티드": "WestHam",
+      };
+      const mapTeamData = (teamData) => {
+        return teamData.map((team) => ({
+          rank: team.value.rank,
+          name: team.value.team,
+          score:
+            team.value.losses ||
+            team.value.wins ||
+            team.value.goal_difference ||
+            team.value.goals_for ||
+            team.value.goals_against,
+          image: TEAMS[teamNameMapping[team.value.team]], // 매핑된 팀 이름을 키로 사용
+        }));
+      };
 
       return (
-        <ScrollView>
-          {renderTeamList(topWins, "승리 수")}
-          {renderTeamList(topLosses, "패배 수")}
-          {renderTeamList(topGoalDifference, "득실차")}
-          {renderTeamList(topGoalsFor, "득점")}
-          {renderTeamList(topGoalsAgainst, "실점")}
-        </ScrollView>
+        <View>
+          <CardView
+            category="승리 수"
+            data={mapTeamData(topWins)}
+            isPlayer={false}
+          />
+          <CardView
+            category="패배 수"
+            data={mapTeamData(topLosses)}
+            isPlayer={false}
+          />
+          <CardView
+            category="득실차"
+            data={mapTeamData(topGoalDifference)}
+            isPlayer={false}
+          />
+          <CardView
+            category="득점"
+            data={mapTeamData(topGoalsFor)}
+            isPlayer={false}
+          />
+          <CardView
+            category="실점"
+            data={mapTeamData(topGoalsAgainst)}
+            isPlayer={false}
+          />
+        </View>
       );
     }
   };
