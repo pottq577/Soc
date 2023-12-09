@@ -15,6 +15,22 @@ const IMAGES = {
   DOWN_ARROW: require("../../../constants/icons/down_arrow.png"),
   RIGHT_ARROW: require("../../../constants/icons/right_arrow.png"),
 };
+const TEAMS = {
+  Arsenal: require("../../../constants/teams/Arsenal.png"),
+  Bournemouth: require("../../../constants/teams/Bournemouth.png"),
+  Chelsea: require("../../../constants/teams/Chelsea.png"),
+  Hotspur: require("../../../constants/teams/hotspur.png"),
+  Huddersfield: require("../../../constants/teams/Huddersfield.png"),
+  Leicester: require("../../../constants/teams/Leicester.png"),
+  Liverpool: require("../../../constants/teams/Liverpool.png"),
+  ManCity: require("../../../constants/teams/mancity.png"),
+  ManUni: require("../../../constants/teams/manuni.png"),
+  Stoke: require("../../../constants/teams/Stoke.png"),
+  Swansea: require("../../../constants/teams/Swansea.png"),
+  Watford: require("../../../constants/teams/Watford.png"),
+  WestBromwich: require("../../../constants/teams/WestBromwich.png"),
+  WestHam: require("../../../constants/teams/WestHam.png"),
+};
 const VIEW_FULL_LIST = "View Full List";
 const NO_DATA_AVAILABLE = "No Data Available";
 const SEASONS = [
@@ -28,7 +44,7 @@ const SEASONS = [
 ];
 const CATEGORIES = {
   PLAYER: ["Goals", "Assist", "Pass", "Shoot"],
-  TEAMS: ["Wins", "Losses"],
+  TEAMS: ["승리", "패배", "득실차", "득점", "실점"],
 };
 const positionColors = {
   FW: "#bc0f0f",
@@ -101,4 +117,5 @@ export {
   SCREEN_WIDTH,
   SCREEN_HEIGHT,
   pickerType,
+  TEAMS,
 };

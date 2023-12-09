@@ -41,7 +41,6 @@ const MatchCards = () => {
     <ScrollView
       style={{ padding: 10, marginHorizontal: 10, marginBottom: 180 }}
     >
-      {/* 사용자로부터 날짜를 선택받아야만 경기 일정을 표시 */}
       {weekDates.length === 0 ? (
         <NotSelected />
       ) : filteredMatches.length === 0 ? (

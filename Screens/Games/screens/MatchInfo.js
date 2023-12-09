@@ -28,7 +28,11 @@ const MatchInfo = ({ route }) => {
     switch (selectedTabIndex) {
       case 0: // '개요' 탭 선택 시
         return (
-          <MatchOverview matchDetails={matchDetails} match_id={match_id} />
+          <MatchOverview
+            match_id={match_id}
+            matchDetails={matchDetails}
+            selectedTabIndex={selectedTabIndex}
+          />
         );
       case 1: // '패스 네트워크' 탭 선택 시
         return (

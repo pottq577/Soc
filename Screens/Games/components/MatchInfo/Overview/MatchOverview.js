@@ -5,13 +5,32 @@ import { timelineEvents } from "../../../constants/data";
 import MatchTimeLine from "./MatchTimeLine";
 import MatchDetails from "./MatchDetails";
 import MatchLineUp from "./MatchLineUp";
-import useFetchGameData from "../../../hooks/fetchGameData";
+import Test from "./test";
 
-const MatchOverview = ({ match_id, matchDetails }) => {
-  const { homeLineup, awayLineup } = useFetchGameData(matchDetails, match_id);
-  console.log(homeLineup);
-  console.log(match_id);
-  console.log(matchDetails);
+const MatchOverview = ({ match_id, matchDetails, selectedTabIndex }) => {
+  const renderContentView = () => {
+    switch (selectedTabIndex) {
+      case 0:
+        return (
+          <Test
+            match_id={match_id}
+            matchDetails={matchDetails}
+            team={matchDetails.team1_name}
+          />
+        );
+      case 1:
+        return (
+          <Test
+            match_id={match_id}
+            matchDetails={matchDetails}
+            team={matchDetails.team2_name}
+          />
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
     <View style={{ padding: 10 }}>
       {/* 타임라인 카드 */}
@@ -22,13 +41,10 @@ const MatchOverview = ({ match_id, matchDetails }) => {
         ))}
       </View>
       {/* 경기 세부 정보 카드 */}
-      {/* <MatchDetails matchDetails={matchDetails} /> */}
+      <MatchDetails matchDetails={matchDetails} />
       {/* 경기 라인 업 카드 */}
-      <MatchLineUp
-        match_id={match_id}
-        homeLineup={homeLineup}
-        awayLineup={awayLineup}
-      />
+      <MatchLineUp match_id={match_id} />
+      {renderContentView()}
     </View>
   );
 };

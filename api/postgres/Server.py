@@ -16,7 +16,7 @@ import json
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
-
+from sqlalchemy import desc, cast, Integer
 import matplotlib.pyplot as plt
 from collections import defaultdict
 from Analysis.plot_utils import draw_pitch
@@ -956,6 +956,54 @@ def get_image():
 
 # # 서버 시작 시 디렉토리 생성 함수 호출
 # create_directory()
+
+@app.route('/top-teams/wins', methods=['GET'])
+def top_teams_by_wins():
+    teams = TeamRank.query.order_by(desc(TeamRank.wins)).limit(5).all()
+    teams_data = [{'rank': i+1, 'team': team.team, 'wins': team.wins}
+                  for i, team in enumerate(teams)]
+    return jsonify(teams_data)
+
+
+# @app.route('/top-teams/losses', methods=['GET'])
+# def top_teams_by_losses():
+#     teams = TeamRank.query.order_by(desc(TeamRank.losses)).limit(5).all()
+#     teams_data = [{'rank': i+1, 'team': team.team, 'losses': team.losses}
+#                   for i, team in enumerate(teams)]
+#     return jsonify(teams_data)
+
+@app.route('/top-teams/losses', methods=['GET'])
+def top_teams_by_losses():
+    teams = TeamRank.query.order_by(desc(TeamRank.losses)).limit(5).all()
+    teams_data = [{'rank': i+1, 'team': team.team, 'losses': team.losses}
+                  for i, team in enumerate(teams)]
+    return jsonify(teams_data)
+
+
+@app.route('/top-teams/goal-difference', methods=['GET'])
+def top_teams_by_goal_difference():
+    teams = TeamRank.query.order_by(
+        desc(cast(TeamRank.goal_difference, Integer))).limit(5).all()
+    teams_data = [{'rank': i+1, 'team': team.team,
+                   'goal_difference': team.goal_difference} for i, team in enumerate(teams)]
+    return jsonify(teams_data)
+
+
+@app.route('/top-teams/goals-for', methods=['GET'])
+def top_teams_by_goals_for():
+    teams = TeamRank.query.order_by(desc(TeamRank.goals_for)).limit(5).all()
+    teams_data = [{'rank': i+1, 'team': team.team, 'goals_for': team.goals_for}
+                  for i, team in enumerate(teams)]
+    return jsonify(teams_data)
+
+
+@app.route('/top-teams/goals-against', methods=['GET'])
+def top_teams_by_goals_against():
+    teams = TeamRank.query.order_by(
+        desc(TeamRank.goals_against)).limit(5).all()
+    teams_data = [{'rank': i+1, 'team': team.team, 'goals_against': team.goals_against}
+                  for i, team in enumerate(teams)]
+    return jsonify(teams_data)
 
 
 @app.route('/')
