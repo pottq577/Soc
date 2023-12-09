@@ -1,6 +1,6 @@
 // branch test
 import React, { useState, useEffect } from "react";
-import { View, Alert } from "react-native";
+import { View, ScrollView, Text, Alert } from "react-native";
 import NoContentView from "../components/NoContentView";
 import CardView from "../components/CardView";
 import { SEASONS, CATEGORIES } from "../constants/constants";
@@ -18,14 +18,13 @@ import { POSTGRES_SERVER_ADDRESS } from "../../../constants/config";
 const CardContent = ({ selectedSeason, isPlayerSelected }) => {
   if (selectedSeason !== SEASONS[6]) return <NoContentView />;
   const categories = isPlayerSelected ? CATEGORIES.PLAYER : CATEGORIES.TEAMS;
-  const data = isPlayerSelected ? playersData : teamData;
 
-  const [teamData, setTeamData] = useState([]);
   const [topWins, setTopWins] = useState([]);
   const [topLosses, setTopLosses] = useState([]);
   const [topGoalDifference, setTopGoalDifference] = useState([]);
   const [topGoalsFor, setTopGoalsFor] = useState([]);
   const [topGoalsAgainst, setTopGoalsAgainst] = useState([]);
+
   const fetchCategoryData = async (category, setState) => {
     try {
       const response = await fetch(
@@ -42,20 +41,58 @@ const CardContent = ({ selectedSeason, isPlayerSelected }) => {
   };
 
   useEffect(() => {
-    if (selectedSeason === SEASONS[6]) {
-      fetchCategoryData("wins", setTopWins);
-      fetchCategoryData("losses", setTopLosses);
-      fetchCategoryData("goal-difference", setTopGoalDifference);
-      fetchCategoryData("goals-for", setTopGoalsFor);
-      fetchCategoryData("goals-against", setTopGoalsAgainst);
-    }
-  }, [selectedSeason]);
+    fetchCategoryData("wins", setTopWins);
+    fetchCategoryData("losses", setTopLosses);
+    fetchCategoryData("goal-difference", setTopGoalDifference);
+    fetchCategoryData("goals-for", setTopGoalsFor);
+    fetchCategoryData("goals-against", setTopGoalsAgainst);
+  }, []);
 
-  return categories.map((category, index) => (
-    <View key={index} style={{ marginBottom: 20 }}>
-      <CardView category={category} data={data} isPlayer={isPlayerSelected} />
-    </View>
-  ));
+  console.log("TopWins: ", topWins);
+  const renderContent = () => {
+    if (isPlayerSelected) {
+      const data = playersData;
+      return categories.map((category, index) => (
+        <View key={index} style={{ marginBottom: 20 }}>
+          <CardView
+            category={category}
+            data={data}
+            isPlayer={isPlayerSelected}
+          />
+        </View>
+      ));
+    } else {
+      // const data = teamData;
+      const renderTeamList = (teams, category) => (
+        <View>
+          <Text>{category}</Text>
+          {teams.map((team, index) => (
+            <Text key={index}>
+              {`${team.value.rank}. ${team.value.team}: ${
+                team.value.losses ||
+                team.value.wins ||
+                team.value.goal_difference ||
+                team.value.goals_for ||
+                team.value.goals_against
+              }`}
+            </Text>
+          ))}
+        </View>
+      );
+
+      return (
+        <ScrollView>
+          {renderTeamList(topWins, "승리 수")}
+          {renderTeamList(topLosses, "패배 수")}
+          {renderTeamList(topGoalDifference, "득실차")}
+          {renderTeamList(topGoalsFor, "득점")}
+          {renderTeamList(topGoalsAgainst, "실점")}
+        </ScrollView>
+      );
+    }
+  };
+
+  return renderContent();
 };
 
 export default CardContent;
