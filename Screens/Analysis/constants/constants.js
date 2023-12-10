@@ -17,19 +17,19 @@ const IMAGES = {
 };
 const TEAMS = {
   Arsenal: require("../../../constants/teams/Arsenal.png"),
-  Bournemouth: require("../../../constants/teams/Bournemouth.png"),
+  AFCBournemouth: require("../../../constants/teams/Bournemouth.png"),
   Chelsea: require("../../../constants/teams/Chelsea.png"),
-  Hotspur: require("../../../constants/teams/hotspur.png"),
-  Huddersfield: require("../../../constants/teams/Huddersfield.png"),
-  Leicester: require("../../../constants/teams/Leicester.png"),
+  TottenhamHotspur: require("../../../constants/teams/hotspur.png"),
+  HuddersfieldTown: require("../../../constants/teams/Huddersfield.png"),
+  LeicesterCity: require("../../../constants/teams/Leicester.png"),
   Liverpool: require("../../../constants/teams/Liverpool.png"),
-  ManCity: require("../../../constants/teams/mancity.png"),
-  ManUni: require("../../../constants/teams/manuni.png"),
-  Stoke: require("../../../constants/teams/Stoke.png"),
-  Swansea: require("../../../constants/teams/Swansea.png"),
+  ManchesterCity: require("../../../constants/teams/mancity.png"),
+  ManchesterUnited: require("../../../constants/teams/manuni.png"),
+  StokeCity: require("../../../constants/teams/Stoke.png"),
+  SwanseaCity: require("../../../constants/teams/Swansea.png"),
   Watford: require("../../../constants/teams/Watford.png"),
-  WestBromwich: require("../../../constants/teams/WestBromwich.png"),
-  WestHam: require("../../../constants/teams/WestHam.png"),
+  WestBromwichAlbion: require("../../../constants/teams/WestBromwich.png"),
+  WestHamUnited: require("../../../constants/teams/WestHam.png"),
 };
 const VIEW_FULL_LIST = "View Full List";
 const NO_DATA_AVAILABLE = "No Data Available";
