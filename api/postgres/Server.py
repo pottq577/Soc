@@ -1041,6 +1041,90 @@ def get_match_events(match_id):
     return jsonify(response)
 
 
+@app.route('/matchAnalysisData/<int:match_id>/<team_name>', methods=['GET'])
+def get_match_analysis_data(match_id, team_name):
+    # 서버에서 해당 match_id의 이벤트 데이터를 가져옵니다.
+    match_events = pd.read_pickle(
+        f'Analysis/data/refined_events/England/{match_id}.pkl')
+
+    team_events = match_events[match_events['team_name'] == team_name]
+    player_change_records = team_events[
+        (team_events['event_type'] == 'Substitution') |
+        (team_events['tags'].apply(lambda x: 'Red card' in x))
+    ]
+    in_players = player_change_records[player_change_records['sub_event_type']
+                                       == 'Player in']['player_id'].tolist()
+    player_ids = [p for p in team_events['player_id'].unique()
+                  if not p in in_players]
+
+    period_durations = match_events.groupby('period')['time'].max()
+    phase_record_list = []
+    phase = 1
+
+    for period in period_durations.index:
+        change_times = player_change_records[player_change_records['period'] == period]['time'].unique(
+        ).tolist()
+        change_times.append(period_durations[period])
+        if 0 not in change_times:
+            change_times = [0] + change_times
+
+        for i in range(len(change_times[:-1])):
+            moment_records = player_change_records[
+                (player_change_records['period'] == period) &
+                (player_change_records['time'] == change_times[i])
+            ]
+
+            for _, record in moment_records.iterrows():
+                if record['sub_event_type'] == 'Player out' or record['event_type'] == 'Foul':
+                    player_ids.remove(record['player_id'])
+                else:
+                    player_ids.append(record['player_id'])
+
+            phase_record = {
+                'phase': phase,
+                'period': period,
+                'start_time': change_times[i],
+                'end_time': change_times[i+1],
+                'duration': change_times[i+1] - change_times[i],
+                'player_ids': player_ids.copy()
+            }
+            phase += 1
+            phase_record_list.append(phase_record)
+
+    phase_records = pd.DataFrame(phase_record_list).set_index('phase')
+
+    # 1페이즈 선발 선수 아이디 추출 및 0 제외
+    first_phase_player_ids = phase_records.loc[1,
+                                               'player_ids'] if 1 in phase_records.index else []
+    first_phase_player_ids = [id for id in first_phase_player_ids if id != 0]
+
+    # 해당 선수들의 정보를 데이터베이스에서 조회
+    players_info = Player.query.filter(
+        Player.wyid.in_(first_phase_player_ids)).all()
+    players_data = [
+        {
+            'wyid': player.wyid,
+            'firstname': player.firstname,
+            'lastname': player.lastname,
+            'shortname': player.shortname,
+            'currentteamid': player.currentteamid,
+            'role_code2': player.role_code2,
+            'role_code3': player.role_code3,
+            'role_name': player.role_name,
+            'weight': player.weight,
+            'height': player.height,
+            'birtharea_name': player.birtharea_name,
+            'foot': player.foot,
+        } for player in players_info
+    ]
+
+    # 선수 정보와 함께 1페이즈 선발 선수 아이디 반환
+    return jsonify({
+        # 'first_phase_player_ids': first_phase_player_ids,
+        'players_info': players_data
+    })
+
+
 @app.route('/')
 def index():
     # image_url = url_for(

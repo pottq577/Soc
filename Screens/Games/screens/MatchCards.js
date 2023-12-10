@@ -34,7 +34,7 @@ const MatchCards = () => {
     //   "West Ham United": TEAMS.WestHam,
     // };
     const logoPath = TEAMS[teamName.replace(/\s/g, "")]; // 공백을 제거
-    console.log(`Logo path for ${teamName}:`, logoPath); // 콘솔 로깅
+    // console.log(`Logo path for ${teamName}:`, logoPath); // 콘솔 로깅
     return logoPath;
   };
 

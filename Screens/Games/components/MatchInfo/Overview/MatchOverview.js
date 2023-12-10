@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { analysisStyle } from "../../../constants/constants";
-import { timelineEvents } from "../../../constants/data";
 import MatchTimeLine from "./MatchTimeLine";
 import MatchDetails from "./MatchDetails";
 import MatchLineUp from "./MatchLineUp";
@@ -76,7 +75,11 @@ const MatchOverview = ({ match_id, matchDetails, selectedTabIndex }) => {
       {/* 경기 세부 정보 카드 */}
       {/* <MatchDetails matchDetails={matchDetails} /> */}
       {/* 경기 라인 업 카드 */}
-      <MatchLineUp match_id={match_id} />
+      <MatchLineUp
+        match_id={match_id}
+        team1Name={matchDetails.team1_name}
+        team2Name={matchDetails.team2_name}
+      />
       {renderContentView()}
     </View>
   );
