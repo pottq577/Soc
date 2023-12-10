@@ -46,7 +46,7 @@ const categorizePlayersByPosition = (players) => {
   return categorized;
 };
 
-const RenderSquad = ({ match_id, homeLineup, awayLineup }) => {
+const RenderSquad = ({ homeLineup, awayLineup }) => {
   const { selectedTabIndex, setSelectedTabIndex } = useGames();
   // console.log("Away Lineup in RenderSquad:", awayLineup); // 어웨이 팀 라인업 로깅
 

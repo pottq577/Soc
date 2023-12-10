@@ -38,14 +38,7 @@ const MatchLineUp = ({ match_id, team1Name, team2Name }) => {
   // TODO RenderSquad에서 실제 팀의 스쿼드 라인업을 출력할 것
   // 탭에 따른 컨텐츠 렌더링
   const renderTabContent = () => {
-    const players = selectedTabIndex === 0 ? homeLineup : awayLineup;
-    return (
-      <RenderSquad
-        match_id={match_id}
-        homeLineup={homeLineup}
-        awayLineup={awayLineup}
-      />
-    );
+    return <RenderSquad homeLineup={homeLineup} awayLineup={awayLineup} />;
   };
 
   return <ScrollView>{renderTabContent()}</ScrollView>;

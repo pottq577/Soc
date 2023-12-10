@@ -17,22 +17,6 @@ const MatchCards = () => {
   const { weekDates, setWeekDates, selectedDate, setSelectedDate } =
     useDateContext();
   const mapTeamLogo = (teamName) => {
-    // const teamNameMapping = {
-    //   Arsenal: TEAMS.Arsenal,
-    //   Bournemouth: TEAMS.Bournemouth,
-    //   Chelsea: TEAMS.Chelsea,
-    //   "Tottenham Hotspur": TEAMS.Hotspur,
-    //   Huddersfield: TEAMS.Huddersfield,
-    //   "Leicester City": TEAMS.Leicester,
-    //   Liverpool: TEAMS.Liverpool,
-    //   "Manchester City": TEAMS.ManCity,
-    //   "Manchester United": TEAMS.ManUni,
-    //   "Stoke City": TEAMS.Stoke,
-    //   "Swansea City": TEAMS.Swansea,
-    //   Watford: TEAMS.Watford,
-    //   "West Bromwich Albion": TEAMS.WestBromwich,
-    //   "West Ham United": TEAMS.WestHam,
-    // };
     const logoPath = TEAMS[teamName.replace(/\s/g, "")]; // 공백을 제거
     // console.log(`Logo path for ${teamName}:`, logoPath); // 콘솔 로깅
     return logoPath;

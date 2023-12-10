@@ -62,19 +62,19 @@ const CardContent = ({ selectedSeason, isPlayerSelected }) => {
     } else {
       const teamNameMapping = {
         아스날: "Arsenal",
-        본머스: "Bournemouth",
+        본머스: "AFCBournemouth",
         첼시: "Chelsea",
-        "토트넘 홋스퍼": "Hotspur",
-        "허더즈 필드": "Huddersfield",
-        "레스터 시티": "Leicester",
+        "토트넘 홋스퍼": "TottenhamHotspur",
+        "허더즈 필드": "HuddersfieldTown",
+        "레스터 시티": "LeicesterCity",
         리버풀: "Liverpool",
-        "맨체스터 시티": "ManCity",
-        "맨체스터 유나이티드": "ManUni",
-        "스토크 시티": "Stoke",
-        "스완지 시티": "Swansea",
+        "맨체스터 시티": "ManchesterCity",
+        "맨체스터 유나이티드": "ManchesterUnited",
+        "스토크 시티": "StokeCity",
+        "스완지 시티": "SwanseaCity",
         왓포드: "Watford",
-        "웨스트 브롬위치 알비온": "WestBromwich",
-        "웨스트햄 유나이티드": "WestHam",
+        "웨스트 브롬위치 알비온": "WestBromwichAlbion",
+        "웨스트햄 유나이티드": "WestHamUnited",
       };
       const mapTeamData = (teamData) => {
         return teamData.map((team) => ({
