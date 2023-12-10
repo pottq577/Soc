@@ -25,21 +25,29 @@ const MatchInfo = ({ route }) => {
 
   // 렌더링할 컨텐츠를 결정하는 함수
   const renderContentView = () => {
-    switch (selectedTabIndex) {
-      case 0: // '개요' 탭 선택 시
-        return (
-          <MatchOverview
-            match_id={match_id}
-            matchDetails={matchDetails}
-            selectedTabIndex={selectedTabIndex}
-          />
-        );
-      case 1: // '패스 네트워크' 탭 선택 시
-        return (
-          <MatchAnalysis match_id={match_id} matchDetails={matchDetails} />
-        );
-      default:
-        return null;
+    if (matchDetails) {
+      switch (selectedTabIndex) {
+        case 0: // '개요' 탭 선택 시
+          // console.log(
+          //   "MatchInfo matchDetails.team1_name : ",
+          //   matchDetails.team1_name
+          // );
+          return (
+            <MatchOverview
+              match_id={match_id}
+              matchDetails={matchDetails}
+              selectedTabIndex={selectedTabIndex}
+            />
+          );
+        case 1: // '패스 네트워크' 탭 선택 시
+          return (
+            <MatchAnalysis match_id={match_id} matchDetails={matchDetails} />
+          );
+        default:
+          return null;
+      }
+    } else {
+      console.log("loading ...");
     }
   };
 

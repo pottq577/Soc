@@ -41,7 +41,7 @@ const MatchOverview = ({ match_id, matchDetails, selectedTabIndex }) => {
         ))}
       </View>
       {/* 경기 세부 정보 카드 */}
-      <MatchDetails matchDetails={matchDetails} />
+      {/* <MatchDetails matchDetails={matchDetails} /> */}
       {/* 경기 라인 업 카드 */}
       <MatchLineUp match_id={match_id} />
       {renderContentView()}
