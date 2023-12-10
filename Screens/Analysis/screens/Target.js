@@ -13,7 +13,7 @@ import TeamOverview from "../components/TargetAnalysis/TeamOverview";
  * @returns
  */
 const Target = ({ route }) => {
-  const { item, isPlayer } = route.params;
+  const { item, isPlayer, isGame } = route.params;
   // console.log("Target isPlayer : ", isPlayer);
 
   const {
@@ -52,7 +52,7 @@ const Target = ({ route }) => {
   return (
     <ScrollView>
       {/* 선수 정보 헤더 */}
-      <Header item={item} isPlayer={isPlayer} />
+      <Header item={item} isPlayer={isPlayer} isGame={isGame} />
       {/* 개요 / 분석 선택 탭 */}
       <View style={{ height: 60, width: "100%" }}>
         <SegmentedControlTab

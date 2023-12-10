@@ -13,6 +13,7 @@ import requests
 import subprocess
 import os
 import json
+import io
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
@@ -1123,6 +1124,64 @@ def get_match_analysis_data(match_id, team_name):
         # 'first_phase_player_ids': first_phase_player_ids,
         'players_info': players_data
     })
+
+
+def get_pass_map(match_id, player_id):
+    # 데이터 로드
+    match_events = pd.read_pickle(
+        f'Analysis/data/refined_events/England/{match_id}.pkl')
+    team1_name, team2_name = match_events['team_name'].unique()
+    team1_events = match_events[match_events['team_name'] == team1_name]
+    team2_events = match_events[match_events['team_name'] == team2_name]
+
+    team2_events[['start_x', 'end_x']] = 104 - \
+        team2_events[['start_x', 'end_x']]
+    team2_events[['start_y', 'end_y']] = 68 - \
+        team2_events[['start_y', 'end_y']]
+    pass_records = match_events[
+        (match_events['event_type'] == 'Pass') |
+        (match_events['sub_event_type'].isin(
+            ['Free kick', 'Free kick cross', 'corner']))
+    ]
+    team1_pass_records = pass_records[pass_records['team_name'] == team1_name]
+    team2_pass_records = pass_records[pass_records['team_name'] == team2_name]
+    # pass_records는 이미 전체 패스 이벤트를 포함하고 있는 것으로 가정합니다.
+    # 특정 선수의 패스 데이터만 필터링
+    player_pass_records = pass_records[pass_records['player_id'] == player_id]
+
+    # 패스 맵 그리기 준비
+    fig, ax = plt.subplots()
+    draw_pitch('white', 'black', size_x=18, size_y=12)
+
+    # 특정 선수의 패스 데이터 시각화
+    plt.scatter(
+        player_pass_records['start_x'], player_pass_records['start_y'],
+        marker='s', c='blue', alpha=0.7, label=f'{player_id}: {len(player_pass_records)} passes'
+    )
+    # 각 패스에 대해 화살표로 표시
+    for i, record in player_pass_records.iterrows():
+        x = record['start_x']
+        y = record['start_y']
+        dx = record['end_x'] - x
+        dy = record['end_y'] - y
+        plt.arrow(x, y, dx, dy, width=0.3,
+                  head_width=1.5, color='blue', alpha=0.5)
+
+    # 결과 저장
+    buf = io.BytesIO()
+    plt.savefig(buf, format='png', bbox_inches='tight')
+    buf.seek(0)
+    plt.close(fig)
+    return buf
+
+
+@app.route('/get_pass_map/<int:match_id>/<int:player_id>', methods=['GET'])
+def get_pass_map_endpoint(match_id, player_id):
+    try:
+        buf = get_pass_map(match_id, player_id)
+        return send_file(buf, mimetype='image/png')
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 
 @app.route('/')

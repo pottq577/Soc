@@ -29,12 +29,16 @@ const PreferFoot = ({ preferFoot }) => {
 };
 
 // 분석 화면 진입 시 나오는 화면에 대한 렌더링, 선수 정보 간략 출력 헤더
-const Header = ({ item, isPlayer }) => (
+const Header = ({ item, isPlayer, isGame }) => (
   <View style={{ ...listStyle.card.container, marginHorizontal: 10 }}>
     <View style={listStyle.card.text.container}>
       {/* 선수명, 클럽명 */}
       <View style={{ flexDirection: "row" }}>
-        <Text style={listStyle.card.text.name}>{item.name}</Text>
+        {/* 게임 탭에서 넘어온 데이터 구분 */}
+        {isGame && (
+          <Text style={listStyle.card.text.name}>{item.shortname}</Text>
+        )}
+        {!isGame && <Text style={listStyle.card.text.name}>{item.name}</Text>}
         <Space paddingHorizontal={5} />
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Image style={listStyle.card.image.teamIcon} source={item.team} />
