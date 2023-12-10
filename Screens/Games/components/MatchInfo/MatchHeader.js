@@ -1,10 +1,7 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 import Space from "../../../../components/Space";
-import MatchHeaderGoals from "./MatchHeaderGoals";
 import { matchListStyles } from "../../constants/constants";
-
-// TODO DB에서 골 넣은 선수와 시간 데이터 가져올 수 있으면 가져오고, MatchHeaderGoals.js에 매개변수로 전달
 
 // 팀명, 로고 출력 뷰
 const TeamDisplay = ({ name, logo }) => {
@@ -43,8 +40,6 @@ const MatchHeader = ({
         {/* 어웨이 팀 정보 */}
         <TeamDisplay name={team2_name} logo={awayLogo} />
       </View>
-      {/* 골 타임라인 */}
-      <MatchHeaderGoals />
     </View>
   );
 };

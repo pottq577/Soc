@@ -8,6 +8,7 @@ import NotSelected from "../components/NotSelected";
 import useFetchMatches from "../hooks/fetchMatches";
 import getDateString from "../utils/getDateString";
 import { getWeekDates } from "../utils/getWeekDates";
+import { TEAMS } from "../../Analysis/constants/constants";
 
 // TODO 경기 일정 / 날짜 카드 수정 필요
 const MatchCards = () => {
@@ -15,6 +16,27 @@ const MatchCards = () => {
   const matches = useFetchMatches();
   const { weekDates, setWeekDates, selectedDate, setSelectedDate } =
     useDateContext();
+  const mapTeamLogo = (teamName) => {
+    // const teamNameMapping = {
+    //   Arsenal: TEAMS.Arsenal,
+    //   Bournemouth: TEAMS.Bournemouth,
+    //   Chelsea: TEAMS.Chelsea,
+    //   "Tottenham Hotspur": TEAMS.Hotspur,
+    //   Huddersfield: TEAMS.Huddersfield,
+    //   "Leicester City": TEAMS.Leicester,
+    //   Liverpool: TEAMS.Liverpool,
+    //   "Manchester City": TEAMS.ManCity,
+    //   "Manchester United": TEAMS.ManUni,
+    //   "Stoke City": TEAMS.Stoke,
+    //   "Swansea City": TEAMS.Swansea,
+    //   Watford: TEAMS.Watford,
+    //   "West Bromwich Albion": TEAMS.WestBromwich,
+    //   "West Ham United": TEAMS.WestHam,
+    // };
+    const logoPath = TEAMS[teamName.replace(/\s/g, "")]; // 공백을 제거
+    console.log(`Logo path for ${teamName}:`, logoPath); // 콘솔 로깅
+    return logoPath;
+  };
 
   useEffect(() => {
     // 컴포넌트 마운트 시, 1주차 경기 일정을 설정
@@ -30,12 +52,18 @@ const MatchCards = () => {
   };
 
   // 선택된 날짜가 없으면 전체 주차 경기를 보여주고, 있으면 해당 날짜의 경기만 필터링
-  const filteredMatches = matches.filter((match) => {
-    const matchDate = getDateString(match.datetime);
-    return selectedDate
-      ? matchDate === selectedDate
-      : weekDates.includes(matchDate);
-  });
+  const filteredMatches = matches
+    .filter((match) => {
+      const matchDate = getDateString(match.datetime);
+      return selectedDate
+        ? matchDate === selectedDate
+        : weekDates.includes(matchDate);
+    })
+    .map((match) => ({
+      ...match,
+      homeLogo: mapTeamLogo(match.team1_name),
+      awayLogo: mapTeamLogo(match.team2_name),
+    }));
 
   return (
     <ScrollView
@@ -50,13 +78,6 @@ const MatchCards = () => {
           <Cards key={index} match={match} onPress={() => handlePress(match)} />
         ))
       )}
-      {/* {filteredMatches.length === 0 ? (
-        <NoMatches />
-      ) : (
-        filteredMatches.map((match, index) => (
-          <Cards key={index} match={match} onPress={() => handlePress(match)} />
-        ))
-      )} */}
     </ScrollView>
   );
 };

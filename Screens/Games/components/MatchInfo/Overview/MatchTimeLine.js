@@ -20,19 +20,27 @@ const MatchTimeLine = ({ event, team1Name, team2Name }) => {
 
   return (
     <View style={overviewStyle.timeline.eventRow}>
-      {/* 홈 팀 이벤트 (좌측에 배치) */}
+      {/* 홈 팀 선수명 (좌측에 배치) */}
+      <Text style={[overviewStyle.timeline.event, { textAlign: "center" }]}>
+        {isHomeTeamEvent ? event.player_name : ""}
+      </Text>
+
+      {/* 홈 팀 이모티콘 */}
       <Text style={overviewStyle.timeline.event}>
-        {isHomeTeamEvent ? `${event.player_name} ${eventIcon}` : ""}
+        {isHomeTeamEvent ? eventIcon : ""}
       </Text>
 
       {/* 이벤트 시간 (중앙에 배치) */}
-      <View style={{ alignItems: "center", flex: 1 }}>
-        <Text style={overviewStyle.timeline.time}>{eventTime}'</Text>
-      </View>
+      <Text style={overviewStyle.timeline.time}>{eventTime}'</Text>
 
-      {/* 어웨이 팀 이벤트 (우측에 배치) */}
+      {/* 어웨이 팀 이모티콘 */}
       <Text style={overviewStyle.timeline.event}>
-        {!isHomeTeamEvent ? `${eventIcon} ${event.player_name}` : ""}
+        {!isHomeTeamEvent ? eventIcon : ""}
+      </Text>
+
+      {/* 어웨이 팀 선수명 (우측에 배치) */}
+      <Text style={[overviewStyle.timeline.event, { textAlign: "center" }]}>
+        {!isHomeTeamEvent ? event.player_name : ""}
       </Text>
     </View>
   );

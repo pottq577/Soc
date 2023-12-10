@@ -18,6 +18,8 @@ const MatchInfo = ({ route }) => {
     team1_name,
     team2_goals,
     team2_name,
+    homeLogo,
+    awayLogo,
   } = route.params;
   const { selectedTabIndex, setSelectedTabIndex } = useGames();
   const { matchDetails } = fetchMatchDetails(match_id);
@@ -54,7 +56,15 @@ const MatchInfo = ({ route }) => {
   return (
     <ScrollView>
       <MatchHeader
-        {...{ team1_name, team1_goals, team2_name, team2_goals, datetime }}
+        {...{
+          team1_name,
+          team1_goals,
+          team2_name,
+          team2_goals,
+          datetime,
+          homeLogo,
+          awayLogo,
+        }}
       />
       <Separator />
       <View style={{ height: 60, width: "100%" }}>

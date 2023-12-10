@@ -9,6 +9,7 @@ const useFetchMatches = () => {
       try {
         const response = await fetch(`${POSTGRES_SERVER_ADDRESS}/matches`);
         const data = await response.json();
+        // console.log("Server response:", data); // 서버 응답 로깅
         setMatches(data);
       } catch (error) {
         console.error("Error fetching data: ", error);
