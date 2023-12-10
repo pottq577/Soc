@@ -47,7 +47,7 @@ const MatchInfo = ({ route }) => {
           return null;
       }
     } else {
-      console.log("loading ...");
+      console.log("MatchInfo - matchDetails loading ...");
     }
   };
 

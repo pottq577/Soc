@@ -27,6 +27,34 @@ from stats_generator import generate_player_stats
 
 portNum = 5002
 
+# 엔드포인트 목록
+# /players
+# /teams
+# /competitions
+# /tags2name
+# /matches_england
+# /england_events
+# /matches
+# /TeamRank
+# /get-team-players
+# /match/<match_id>
+# /teams/england
+# /refined_events
+# /run-goal-stats
+# /get_shots/<match_id>
+# /get_passes/<match_id>
+# /match_player_stats/<match_id>
+# /top_scorers
+# /england_events/match/<match_id>
+# /matchAnalysis/<match_id>/<team_name>
+# /get_image
+# /top-teams/wins
+# /top-teams/losses
+# /top-teams/goal-difference
+# /top-teams/goals-for
+# /top-teams/goals-against
+# /match_events/<match_id>
+
 
 def load_config():
     with open('setting.json', 'r') as file:
@@ -335,8 +363,6 @@ def get_team_players():
         print(f"Error: {e}")
         return jsonify({'error': str(e)}), 500
 
-################################################
-
 
 @app.route('/match/<matchId>', methods=['GET'])
 def get_match(matchId):
@@ -381,9 +407,6 @@ def get_england_teams():
         return jsonify({'error': str(e)}), 500
 
 
-# 새로운 엔드포인트: refined_events
-
-
 @app.route('/refined_events', methods=['GET'])
 def refined_events():
     try:
@@ -426,21 +449,6 @@ def refined_events():
         return jsonify(refined_events)
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-
-# 득점왕 실행 요청
-# @app.route('/run-goal-stats', methods=['GET'])
-# def run_goal_stats():
-#     try:
-#         # 스크립트 파일 경로 설정
-#         script_path = os.path.join('mstp', 'tp', 'Server', 'Analysis', 'goal_stats.py')
-
-#         # 파이썬 스크립트 실행
-#         result = subprocess.run(['python', script_path], capture_output=True, text=True)
-
-#         # 결과 반환
-#         return jsonify({'output': result.stdout})
-#     except Exception as e:
-#         return jsonify({'error': str(e)}), 500
 
 
 @app.route('/run-goal-stats', methods=['GET'])
@@ -943,20 +951,6 @@ def get_image():
     return {'image_url': full_image_url}
 
 
-# def create_directory():
-#     # 'static/images' 경로 설정
-#     directory = os.path.join('static', 'images')
-
-#     # 해당 경로가 존재하지 않으면 생성
-#     if not os.path.exists(directory):
-#         os.makedirs(directory)
-#         print(f"Directory {directory} created")
-#     else:
-#         print(f"Directory {directory} already exists")
-
-# # 서버 시작 시 디렉토리 생성 함수 호출
-# create_directory()
-
 @app.route('/top-teams/wins', methods=['GET'])
 def top_teams_by_wins():
     teams = TeamRank.query.order_by(desc(TeamRank.wins)).limit(5).all()
@@ -964,13 +958,6 @@ def top_teams_by_wins():
                   for i, team in enumerate(teams)]
     return jsonify(teams_data)
 
-
-# @app.route('/top-teams/losses', methods=['GET'])
-# def top_teams_by_losses():
-#     teams = TeamRank.query.order_by(desc(TeamRank.losses)).limit(5).all()
-#     teams_data = [{'rank': i+1, 'team': team.team, 'losses': team.losses}
-#                   for i, team in enumerate(teams)]
-#     return jsonify(teams_data)
 
 @app.route('/top-teams/losses', methods=['GET'])
 def top_teams_by_losses():
@@ -1004,6 +991,54 @@ def top_teams_by_goals_against():
     teams_data = [{'rank': i+1, 'team': team.team, 'goals_against': team.goals_against}
                   for i, team in enumerate(teams)]
     return jsonify(teams_data)
+
+
+@app.route('/match_events/<int:match_id>', methods=['GET'])
+def get_match_events(match_id):
+    # pickle 파일에서 데이터 로드
+    match_events = pd.read_pickle(
+        f'Analysis/data/refined_events/England/{match_id}.pkl')
+
+    # 각 이벤트 유형별로 필터링
+    goals = match_events[match_events['tags'].apply(lambda x: 'Goal' in x)]
+    yellow_cards = match_events[match_events['tags'].apply(
+        lambda x: 'Yellow card' in x)]
+    red_cards = match_events[match_events['tags'].apply(
+        lambda x: 'Red card' in x)]
+    substitutions = match_events[match_events['event_type'].apply(
+        lambda x: 'Substitution' in x)]
+    own_goals = match_events[match_events['tags'].apply(
+        lambda x: 'Own goal' in x)]
+
+    # NaN 값을 다루기 위한 함수
+    def handle_nan(data):
+        return data.replace({np.nan: None})
+    # 경기에 대한 추가 정보를 데이터베이스에서 조회합니다.
+    match_info = MatchEngland.query.filter_by(wyid=match_id).first()
+
+    if match_info:
+        # 필요한 정보를 가져옵니다.
+        additional_info = {
+            'dateutc': match_info.dateutc.isoformat() if match_info.dateutc else None,
+            'winner': match_info.winner,
+            'venue': match_info.venue,
+            'label': match_info.label
+        }
+    else:
+        # 해당하는 경기 정보가 없는 경우
+        additional_info = {}
+
+    # 결과를 JSON 형식으로 변환하기 전에 NaN 값을 처리하고 추가 정보를 포함시킵니다.
+    response = {
+        'goals': handle_nan(goals).to_dict(orient='records'),
+        'yellow_cards': handle_nan(yellow_cards).to_dict(orient='records'),
+        'red_cards': handle_nan(red_cards).to_dict(orient='records'),
+        'substitutions': handle_nan(substitutions).to_dict(orient='records'),
+        'own_goals': handle_nan(own_goals).to_dict(orient='records'),
+        'match_info': additional_info  # 추가된 정보
+    }
+
+    return jsonify(response)
 
 
 @app.route('/')
