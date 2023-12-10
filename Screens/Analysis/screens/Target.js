@@ -56,7 +56,7 @@ const Target = ({ route }) => {
       {/* 개요 / 분석 선택 탭 */}
       <View style={{ height: 60, width: "100%" }}>
         <SegmentedControlTab
-          values={["개요", "분석"]}
+          values={["경기", "시즌"]}
           selectedIndex={isOverviewSelected ? 0 : 1}
           onTabPress={(index) => setIsOverviewSelected(index === 0)}
           tabsContainerStyle={switchStyle.tabsContainer}
@@ -66,7 +66,7 @@ const Target = ({ route }) => {
           activeTabTextStyle={switchStyle.activeTabText}
         />
       </View>
-      <View>{renderContentView()}</View>
+      {renderContentView()}
     </ScrollView>
   );
 };

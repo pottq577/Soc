@@ -6,6 +6,7 @@ import { useAnalysis } from "../../hooks/useAnalysis";
 import MatchCard from "./MatchCard";
 import MatchMonthTabs from "./MatchMonthTabs";
 import groupMatchesByMonth from "../../utils/groupMatches";
+import RadarChart from "./RadarChart";
 // example data
 import { matches } from "../../constants/data";
 
@@ -86,7 +87,7 @@ const MatchList = ({ item, isPlayer, isWholeSeason, setIsWholeSeason }) => {
   return (
     <View style={{ padding: 10 }}>
       {/* 한 경기에 대해서만 분석 */}
-      <View style={analysisStyle.container}>
+      {/* <View style={analysisStyle.container}>
         <Text style={analysisStyle.header}>경기 선택</Text>
         <TargetMatch
           navigation={navigation}
@@ -94,9 +95,9 @@ const MatchList = ({ item, isPlayer, isWholeSeason, setIsWholeSeason }) => {
           item={item}
           isPlayer={isPlayer}
         />
-      </View>
+      </View> */}
       {/* 시즌에 대한 분석 */}
-      <View style={analysisStyle.container}>
+      {/* <View style={analysisStyle.container}>
         <Text style={analysisStyle.header}>시즌 분석</Text>
         <TargetSeason
           navigation={navigation}
@@ -104,7 +105,8 @@ const MatchList = ({ item, isPlayer, isWholeSeason, setIsWholeSeason }) => {
           item={item}
           isPlayer={isPlayer}
         />
-      </View>
+      </View> */}
+      <RadarChart />
     </View>
   );
 };

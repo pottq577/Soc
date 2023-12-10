@@ -40,11 +40,26 @@ const Header = ({ item, isPlayer }) => (
           <Text style={listStyle.card.text.teamName}>{item.teamName}</Text>
         </View>
       )}
-      <View style={listStyle.card.foot_number.container}>
-        <Text style={listStyle.card.text.score}>등번호</Text>
-        {/* items에서 선수의 주발 정보를 가져올 것. 선수일 때만 주발 정보 출력 */}
-        {isPlayer && <PreferFoot preferFoot={"R"} />}
-      </View>
+      {isPlayer && (
+        <View style={listStyle.card.foot_number.container}>
+          <View style={{ width: 130 }}>
+            <View
+              style={{ flexDirection: "row", justifyContent: "space-between" }}
+            >
+              <Text>Nationality</Text>
+              <Text>Korea</Text>
+            </View>
+            <View
+              style={{ flexDirection: "row", justifyContent: "space-between" }}
+            >
+              <Text>Position</Text>
+              <Text>FW</Text>
+            </View>
+          </View>
+          {/* items에서 선수의 주발 정보를 가져올 것. 선수일 때만 주발 정보 출력 */}
+          <PreferFoot preferFoot={"R"} />
+        </View>
+      )}
     </View>
     <Image style={listStyle.card.image.photo} source={item.image} />
   </View>
