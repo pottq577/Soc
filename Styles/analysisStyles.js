@@ -425,6 +425,20 @@ const analysisStyle = {
       height: 50,
     },
   },
+  target: {
+    container: {
+      width: 130,
+      height: 60,
+      justifyContent: "space-around",
+    },
+    textContainer: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+    },
+    text: {
+      fontWeight: "600",
+    },
+  },
 };
 
 const chartStyle = {

@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
-import { listStyle } from "../../constants/constants";
+import { analysisStyle, listStyle } from "../../constants/constants";
 import Space from "../../../../components/Space";
 
 const FootText = ({ isPreferred, text }) => {
@@ -32,32 +32,36 @@ const PreferFoot = ({ preferFoot }) => {
 const Header = ({ item, isPlayer }) => (
   <View style={{ ...listStyle.card.container, marginHorizontal: 10 }}>
     <View style={listStyle.card.text.container}>
-      <Text style={listStyle.card.text.name}>{item.name}</Text>
-      {/* 선수일 때만 클럽 아이콘, 클럽명 출력 */}
-      {isPlayer && (
+      {/* 선수명, 클럽명 */}
+      <View style={{ flexDirection: "row" }}>
+        <Text style={listStyle.card.text.name}>{item.name}</Text>
+        <Space paddingHorizontal={5} />
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Image style={listStyle.card.image.teamIcon} source={item.team} />
           <Text style={listStyle.card.text.teamName}>{item.teamName}</Text>
         </View>
-      )}
+      </View>
+      {/* 선수일 때만 클럽 아이콘, 클럽명 출력 */}
       {isPlayer && (
-        <View style={listStyle.card.foot_number.container}>
-          <View style={{ width: 130 }}>
-            <View
-              style={{ flexDirection: "row", justifyContent: "space-between" }}
-            >
-              <Text>Nationality</Text>
-              <Text>Korea</Text>
+        <View>
+          <View style={listStyle.card.foot_number.container}>
+            <View style={analysisStyle.target.container}>
+              <View style={analysisStyle.target.textContainer}>
+                <Text style={analysisStyle.target.text}>국적</Text>
+                <Text style={analysisStyle.target.text}>대한민국</Text>
+              </View>
+              <View style={analysisStyle.target.textContainer}>
+                <Text style={analysisStyle.target.text}>포지션</Text>
+                <Text style={analysisStyle.target.text}>공격수</Text>
+              </View>
+              <View style={analysisStyle.target.textContainer}>
+                <Text style={analysisStyle.target.text}>키</Text>
+                <Text style={analysisStyle.target.text}>180cm</Text>
+              </View>
             </View>
-            <View
-              style={{ flexDirection: "row", justifyContent: "space-between" }}
-            >
-              <Text>Position</Text>
-              <Text>FW</Text>
-            </View>
+            {/* items에서 선수의 주발 정보를 가져올 것. 선수일 때만 주발 정보 출력 */}
+            <PreferFoot preferFoot={"R"} />
           </View>
-          {/* items에서 선수의 주발 정보를 가져올 것. 선수일 때만 주발 정보 출력 */}
-          <PreferFoot preferFoot={"R"} />
         </View>
       )}
     </View>
