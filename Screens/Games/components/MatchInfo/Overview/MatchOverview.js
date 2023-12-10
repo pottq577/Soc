@@ -4,7 +4,6 @@ import { analysisStyle } from "../../../constants/constants";
 import MatchTimeLine from "./MatchTimeLine";
 import MatchDetails from "./MatchDetails";
 import MatchLineUp from "./MatchLineUp";
-import Test from "./test";
 import { POSTGRES_SERVER_ADDRESS } from "../../../constants/constants";
 
 const MatchOverview = ({ match_id, matchDetails, selectedTabIndex }) => {
@@ -35,29 +34,6 @@ const MatchOverview = ({ match_id, matchDetails, selectedTabIndex }) => {
     fetchEvents();
   }, [match_id]);
 
-  const renderContentView = () => {
-    switch (selectedTabIndex) {
-      case 0:
-        return (
-          <Test
-            match_id={match_id}
-            matchDetails={matchDetails}
-            team={matchDetails.team1_name}
-          />
-        );
-      case 1:
-        return (
-          <Test
-            match_id={match_id}
-            matchDetails={matchDetails}
-            team={matchDetails.team2_name}
-          />
-        );
-      default:
-        return null;
-    }
-  };
-
   return (
     <View style={{ padding: 10 }}>
       {/* 타임라인 카드 */}
@@ -80,7 +56,6 @@ const MatchOverview = ({ match_id, matchDetails, selectedTabIndex }) => {
         team1Name={matchDetails.team1_name}
         team2Name={matchDetails.team2_name}
       />
-      {renderContentView()}
     </View>
   );
 };

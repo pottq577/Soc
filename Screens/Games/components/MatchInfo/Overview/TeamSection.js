@@ -10,6 +10,9 @@ import {
 const TeamSection = ({ squad, title }) => {
   const positionKey = positionMapping[title]; // 포지션 이름을 키로 변환
   const borderStyle = positionBorderStyles(positionKey); // 해당 키의 색상을 가져옴
+
+  const validSquad = Array.isArray(squad) ? squad : [];
+
   return (
     <View style={[analysisStyle.squad.container, borderStyle]}>
       <View style={analysisStyle.squad.header}>
@@ -17,10 +20,10 @@ const TeamSection = ({ squad, title }) => {
         <Text style={analysisStyle.squad.headerFont.pos}>Positions</Text>
       </View>
 
-      {squad.map((player, index) => (
+      {validSquad.map((player, index) => (
         <View key={index} style={analysisStyle.squad.content}>
           <Text>{player.shortname}</Text>
-          <Text>{player.role_code2}</Text> {/* 선수 포지션 */}
+          <Text>{player.role_code2}</Text>
         </View>
       ))}
     </View>

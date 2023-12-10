@@ -93,6 +93,24 @@ const teams = [
     goalDifference: 26,
   },
 ];
+const positionColors = {
+  FW: "#bc0f0f",
+  MF: "#469719",
+  DF: "#468cff",
+  GK: "#ffae44",
+};
+const positionMapping = {
+  공격수: "FW",
+  미드필더: "MF",
+  수비수: "DF",
+  골키퍼: "GK",
+};
+const positionBorderStyles = (positionKey) => ({
+  borderTopColor: positionColors[positionKey],
+  borderTopWidth: 3,
+  borderLeftWidth: 0.5,
+  borderRightWidth: 0.5,
+});
 
 export {
   SCREEN_WIDTH,
@@ -110,4 +128,7 @@ export {
   teams,
   POSTGRES_SERVER_ADDRESS,
   POSTGRES_SERVER_PORT,
+  positionColors,
+  positionMapping,
+  positionBorderStyles,
 };
