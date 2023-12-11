@@ -3,6 +3,8 @@ import { View, Text, Image } from "react-native";
 import { analysisStyle, listStyle } from "../../constants/constants";
 import Space from "../../../../components/Space";
 
+const person = require("../../../../constants/icons/person.png");
+
 const FootText = ({ isPreferred, text }) => {
   const textStyle = isPreferred
     ? { fontWeight: "bold", color: "blue" }
@@ -35,15 +37,15 @@ const Header = ({ item, isPlayer, isGame }) => (
       {/* 선수명, 클럽명 */}
       <View style={{ flexDirection: "row" }}>
         {/* 게임 탭에서 넘어온 데이터 구분 */}
-        {isGame && (
+        {isGame ? (
           <Text style={listStyle.card.text.name}>{item.shortname}</Text>
+        ) : (
+          <Text style={listStyle.card.text.name}>{item.name}</Text>
         )}
-        {!isGame && <Text style={listStyle.card.text.name}>{item.name}</Text>}
-        <Space paddingHorizontal={5} />
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Image style={listStyle.card.image.teamIcon} source={item.team} />
-          <Text style={listStyle.card.text.teamName}>{item.teamName}</Text>
-        </View>
+      </View>
+      <View style={{ flexDirection: "row", alignItems: "center" }}>
+        <Image style={listStyle.card.image.teamIcon} source={item.team} />
+        <Text style={listStyle.card.text.teamName}>{item.teamName}</Text>
       </View>
       {/* 선수일 때만 클럽 아이콘, 클럽명 출력 */}
       {isPlayer && (
@@ -69,7 +71,11 @@ const Header = ({ item, isPlayer, isGame }) => (
         </View>
       )}
     </View>
-    <Image style={listStyle.card.image.photo} source={item.image} />
+    {isGame ? (
+      <Image style={listStyle.card.image.photo} source={person} />
+    ) : (
+      <Image style={listStyle.card.image.photo} source={item.image} />
+    )}
   </View>
 );
 

@@ -19,11 +19,11 @@ const PlayerOverview = ({ isPlayer }) => {
   const renderContentView = () => {
     if (isPlayer) {
       return isOverviewSelected ? (
-        <View>
+        <View style={{ padding: 10 }}>
           <Text>passmap</Text>
         </View>
       ) : (
-        <View>
+        <View style={{ padding: 10 }}>
           <Text>balltouch</Text>
         </View>
       );
@@ -41,7 +41,7 @@ const PlayerOverview = ({ isPlayer }) => {
   };
 
   return (
-    <View style={{ padding: 10 }}>
+    <View style={{ padding: 0 }}>
       {/* 섹션 컴포넌트 (예: 선수 정보, 공격, 팀 플레이 등) */}
       {/* <Section sectionTitle="선수정보" data={overviewData} isPlayer={isPlayer} />
     <Section

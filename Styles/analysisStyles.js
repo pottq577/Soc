@@ -154,10 +154,12 @@ const cardStyle = {
         width: 20,
         height: 20,
         marginRight: 5,
+        resizeMode: "contain",
       },
       photo: {
         width: 120,
         height: 120,
+        resizeMode: "contain",
       },
     },
     first: {
