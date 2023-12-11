@@ -22,61 +22,84 @@ const PreferFoot = ({ preferFoot }) => {
     <View style={{ alignItems: "center" }}>
       <Text style={{ marginBottom: 7, fontWeight: "600" }}>선호 주발</Text>
       <View style={{ flexDirection: "row" }}>
-        <FootText isPreferred={preferFoot === "L"} text="L" />
+        <FootText isPreferred={preferFoot === "left"} text="L" />
         <Space paddingHorizontal={5} />
-        <FootText isPreferred={preferFoot === "R"} text="R" />
+        <FootText isPreferred={preferFoot === "right"} text="R" />
       </View>
     </View>
   );
 };
 
 // 분석 화면 진입 시 나오는 화면에 대한 렌더링, 선수 정보 간략 출력 헤더
-const Header = ({ item, isPlayer, isGame }) => (
-  <View style={{ ...listStyle.card.container, marginHorizontal: 10 }}>
-    <View style={listStyle.card.text.container}>
-      {/* 선수명, 클럽명 */}
-      <View style={{ flexDirection: "row" }}>
-        {/* 게임 탭에서 넘어온 데이터 구분 */}
-        {isGame ? (
-          <Text style={listStyle.card.text.name}>{item.shortname}</Text>
-        ) : (
-          <Text style={listStyle.card.text.name}>{item.name}</Text>
-        )}
-      </View>
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <Image style={listStyle.card.image.teamIcon} source={item.team} />
-        <Text style={listStyle.card.text.teamName}>{item.teamName}</Text>
-      </View>
-      {/* 선수일 때만 클럽 아이콘, 클럽명 출력 */}
-      {isPlayer && (
-        <View>
+const Header = ({
+  item,
+  isPlayer,
+  isGame,
+  team1_name,
+  team1_goals,
+  team2_name,
+  team2_goals,
+  datetime,
+  homeLogo,
+  awayLogo,
+  teamType,
+}) => {
+  return (
+    <View style={{ ...listStyle.card.container, marginHorizontal: 10 }}>
+      <View style={listStyle.card.text.container}>
+        {/* 선수명, 클럽명 */}
+        <View style={{ flexDirection: "row" }}>
+          {/* 게임 탭에서 넘어온 데이터 구분 */}
+          {isGame ? (
+            <Text style={listStyle.card.text.name}>{item.shortname}</Text>
+          ) : (
+            <Text style={listStyle.card.text.name}>{item.name}</Text>
+          )}
+        </View>
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          {teamType === "home" ? (
+            <>
+              <Image style={listStyle.card.image.teamIcon} source={homeLogo} />
+              <Text style={listStyle.card.text.teamName}>{team1_name}</Text>
+            </>
+          ) : (
+            <>
+              <Image style={listStyle.card.image.teamIcon} source={awayLogo} />
+              <Text style={listStyle.card.text.teamName}>{team2_name}</Text>
+            </>
+          )}
+        </View>
+        {/* 선수일 때만 출력 */}
+        {isPlayer && (
           <View style={listStyle.card.foot_number.container}>
             <View style={analysisStyle.target.container}>
               <View style={analysisStyle.target.textContainer}>
                 <Text style={analysisStyle.target.text}>국적</Text>
-                <Text style={analysisStyle.target.text}>대한민국</Text>
+                <Text style={analysisStyle.target.text}>
+                  {item.birtharea_name}
+                </Text>
               </View>
               <View style={analysisStyle.target.textContainer}>
                 <Text style={analysisStyle.target.text}>포지션</Text>
-                <Text style={analysisStyle.target.text}>공격수</Text>
+                <Text style={analysisStyle.target.text}>{item.role_code2}</Text>
               </View>
               <View style={analysisStyle.target.textContainer}>
                 <Text style={analysisStyle.target.text}>키</Text>
-                <Text style={analysisStyle.target.text}>180cm</Text>
+                <Text style={analysisStyle.target.text}>{item.height}cm</Text>
               </View>
             </View>
             {/* items에서 선수의 주발 정보를 가져올 것. 선수일 때만 주발 정보 출력 */}
-            <PreferFoot preferFoot={"R"} />
+            <PreferFoot preferFoot={item.foot} />
           </View>
-        </View>
+        )}
+      </View>
+      {isGame ? (
+        <Image style={listStyle.card.image.photo} source={person} />
+      ) : (
+        <Image style={listStyle.card.image.photo} source={item.image} />
       )}
     </View>
-    {isGame ? (
-      <Image style={listStyle.card.image.photo} source={person} />
-    ) : (
-      <Image style={listStyle.card.image.photo} source={item.image} />
-    )}
-  </View>
-);
+  );
+};
 
 export default Header;

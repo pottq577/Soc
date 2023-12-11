@@ -46,17 +46,42 @@ const categorizePlayersByPosition = (players) => {
   return categorized;
 };
 
-const RenderSquad = ({ homeLineup, awayLineup }) => {
+const RenderSquad = ({
+  match_id,
+  homeLineup,
+  awayLineup,
+  team1_name,
+  team1_goals,
+  team2_name,
+  team2_goals,
+  datetime,
+  homeLogo,
+  awayLogo,
+}) => {
   const { selectedTabIndex, setSelectedTabIndex } = useGames();
   // console.log("Away Lineup in RenderSquad:", awayLineup); // 어웨이 팀 라인업 로깅
 
   // 현재 선택된 탭에 따른 라인업 데이터를 확인하고, 해당 데이터가 배열인지 확인합니다.
+  // const currentLineupData =
+  //   selectedTabIndex === 0
+  //     ? homeLineup && homeLineup.players_info
+  //       ? homeLineup.players_info
+  //       : []
+  //     : awayLineup && awayLineup.players_info
+  //     ? awayLineup.players_info
+  //     : [];
+
+  // const teamType = selectedTabIndex === 0 ? "home" : "away";
+  // const squad = categorizePlayersByPosition(currentLineupData);
+  const teamType = selectedTabIndex === 0 ? "home" : "away";
+
+  // 현재 선택된 탭에 따라 라인업 데이터를 설정하고, 배열인지 확인합니다.
   const currentLineupData =
-    selectedTabIndex === 0
-      ? homeLineup && homeLineup.players_info
+    teamType === "home"
+      ? homeLineup && Array.isArray(homeLineup.players_info)
         ? homeLineup.players_info
         : []
-      : awayLineup && awayLineup.players_info
+      : awayLineup && Array.isArray(awayLineup.players_info)
       ? awayLineup.players_info
       : [];
 
@@ -79,10 +104,66 @@ const RenderSquad = ({ homeLineup, awayLineup }) => {
       </View>
       <Space paddingVertical={10} />
       {/* title 값은 TeamSection.js에서 활용하고, title 수정 시 constants.js의 positionMapping 변수 매핑 가능 */}
-      <TeamSection squad={squad.Forwards} title="공격수" />
-      <TeamSection squad={squad.Midfielders} title="미드필더" />
-      <TeamSection squad={squad.Defenders} title="수비수" />
-      <TeamSection squad={squad.Goalkeepers} title="골키퍼" />
+      <TeamSection
+        squad={squad.Forwards}
+        title="공격수"
+        match_id={match_id}
+        teamType={teamType}
+        {...{
+          team1_name,
+          team1_goals,
+          team2_name,
+          team2_goals,
+          datetime,
+          homeLogo,
+          awayLogo,
+        }}
+      />
+      <TeamSection
+        squad={squad.Midfielders}
+        title="미드필더"
+        match_id={match_id}
+        teamType={teamType}
+        {...{
+          team1_name,
+          team1_goals,
+          team2_name,
+          team2_goals,
+          datetime,
+          homeLogo,
+          awayLogo,
+        }}
+      />
+      <TeamSection
+        squad={squad.Defenders}
+        title="수비수"
+        match_id={match_id}
+        teamType={teamType}
+        {...{
+          team1_name,
+          team1_goals,
+          team2_name,
+          team2_goals,
+          datetime,
+          homeLogo,
+          awayLogo,
+        }}
+      />
+      <TeamSection
+        squad={squad.Goalkeepers}
+        title="골키퍼"
+        match_id={match_id}
+        teamType={teamType}
+        {...{
+          team1_name,
+          team1_goals,
+          team2_name,
+          team2_goals,
+          datetime,
+          homeLogo,
+          awayLogo,
+        }}
+      />
     </View>
   );
 };

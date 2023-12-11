@@ -39,6 +39,15 @@ const MatchInfo = ({ route }) => {
               match_id={match_id}
               matchDetails={matchDetails}
               selectedTabIndex={selectedTabIndex}
+              {...{
+                team1_name,
+                team1_goals,
+                team2_name,
+                team2_goals,
+                datetime,
+                homeLogo,
+                awayLogo,
+              }}
             />
           );
         case 1: // '패스 네트워크' 탭 선택 시

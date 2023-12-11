@@ -21,7 +21,6 @@ const MatchCards = () => {
     // console.log(`Logo path for ${teamName}:`, logoPath); // 콘솔 로깅
     return logoPath;
   };
-
   useEffect(() => {
     // 컴포넌트 마운트 시, 1주차 경기 일정을 설정
     if (matches.length > 0 && weekDates.length === 0) {
@@ -33,6 +32,7 @@ const MatchCards = () => {
 
   const handlePress = (match) => {
     navigation.navigate("MatchInfo", { ...match });
+    console.log(match);
   };
 
   // 선택된 날짜가 없으면 전체 주차 경기를 보여주고, 있으면 해당 날짜의 경기만 필터링

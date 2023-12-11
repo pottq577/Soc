@@ -8,7 +8,19 @@ import {
 import { useNavigation } from "@react-navigation/native";
 
 // 사용자가 선택한 팀의 스쿼드 출력
-const TeamSection = ({ squad, title }) => {
+const TeamSection = ({
+  squad,
+  title,
+  match_id,
+  team1_name,
+  team1_goals,
+  team2_name,
+  team2_goals,
+  datetime,
+  homeLogo,
+  awayLogo,
+  teamType,
+}) => {
   const positionKey = positionMapping[title]; // 포지션 이름을 키로 변환
   const borderStyle = positionBorderStyles(positionKey); // 해당 키의 색상을 가져옴
   const validSquad = Array.isArray(squad) ? squad : [];
@@ -19,6 +31,15 @@ const TeamSection = ({ squad, title }) => {
       item,
       isPlayer: true,
       isGame: true,
+      match_id,
+      team1_name,
+      team1_goals,
+      team2_name,
+      team2_goals,
+      datetime,
+      homeLogo,
+      awayLogo,
+      teamType,
     });
   };
 

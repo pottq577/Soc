@@ -3,12 +3,26 @@ import { Text, View } from "react-native";
 import SegmentedControlTab from "react-native-segmented-control-tab";
 import { useAnalysis } from "../../hooks/useAnalysis";
 import { switchStyle } from "../../constants/constants";
+import PassMap from "./passball/PassMap";
+import BallTouch from "./passball/BallTouch";
 import Section from "../Tables/PlayerSection";
 // 예시 데이터
 import { overviewData, recordData, statData } from "../../constants/data";
 
 // 선수 개요 화면
-const PlayerOverview = ({ isPlayer }) => {
+const PlayerOverview = ({
+  item,
+  isPlayer,
+  squad,
+  match_id,
+  team1_name,
+  team1_goals,
+  team2_name,
+  team2_goals,
+  datetime,
+  homeLogo,
+  awayLogo,
+}) => {
   const {
     isOverviewSelected,
     setIsOverviewSelected,
@@ -18,25 +32,15 @@ const PlayerOverview = ({ isPlayer }) => {
 
   const renderContentView = () => {
     if (isPlayer) {
-      return isOverviewSelected ? (
-        <View style={{ padding: 10 }}>
-          <Text>passmap</Text>
-        </View>
-      ) : (
-        <View style={{ padding: 10 }}>
-          <Text>balltouch</Text>
-        </View>
-      );
+      <View>
+        <PassMap item={item} match_id={match_id} />
+        <BallTouch />
+      </View>;
     } else {
-      return isOverviewSelected ? (
-        <View>
-          <Text>passmap</Text>
-        </View>
-      ) : (
-        <View>
-          <Text>balltouch</Text>
-        </View>
-      );
+      <View>
+        <PassMap item={item} match_id={match_id} />
+        <BallTouch />
+      </View>;
     }
   };
 
@@ -55,7 +59,7 @@ const PlayerOverview = ({ isPlayer }) => {
       data={statData.Team_Play}
       isPlayer={isPlayer}
     />*/}
-      <View style={{ height: 60, width: "100%" }}>
+      {/* <View style={{ height: 60, width: "100%" }}>
         <SegmentedControlTab
           values={["패스맵", "볼터치 위치"]}
           selectedIndex={isOverviewSelected ? 0 : 1}
@@ -66,8 +70,10 @@ const PlayerOverview = ({ isPlayer }) => {
           tabTextStyle={switchStyle.tabText}
           activeTabTextStyle={switchStyle.activeTabText}
         />
-      </View>
-      {renderContentView()}
+      </View> */}
+      {/* {renderContentView()} */}
+      <PassMap item={item} match_id={match_id} />
+      <BallTouch />
     </View>
   );
 };
