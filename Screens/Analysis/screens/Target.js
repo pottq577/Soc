@@ -7,6 +7,8 @@ import Header from "../components/TargetAnalysis/Header";
 import MatchList from "../components/TargetAnalysis/MatchList";
 import PlayerOverview from "../components/TargetAnalysis/PlayerOverview";
 import TeamOverview from "../components/TargetAnalysis/TeamOverview";
+import PassMap from "../components/TargetAnalysis/passball/PassMap";
+import BallTouch from "../components/TargetAnalysis/passball/BallTouch";
 
 /**
  * 사용자가 선택한 선수 / 팀에 대한 상세 분석 화면
@@ -39,12 +41,16 @@ const Target = ({ route }) => {
   const renderContentView = () => {
     if (isPlayer) {
       return isOverviewSelected ? (
-        <PlayerOverview
-          item={item}
-          isPlayer={isPlayer}
-          squad={squad}
-          match_id={match_id}
-        />
+        // <PlayerOverview
+        //   item={item}
+        //   isPlayer={isPlayer}
+        //   squad={squad}
+        //   match_id={match_id}
+        // />
+        <View>
+          <PassMap item={item} match_id={match_id} />
+          <BallTouch />
+        </View>
       ) : (
         <MatchList
           item={item}
