@@ -131,6 +131,9 @@ const matchListStyles = {
   },
   teamName: {
     flexShrink: 1, // 텍스트가 화면을 넘어가지 않도록 함
+    // backgroundColor: "blue",
+    flex: 1,
+    textAlign: "center",
   },
   matchHeader: {
     container: {
