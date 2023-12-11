@@ -18,6 +18,7 @@ const styles = {
     teamLogo: {
       width: 30,
       height: 30,
+      resizeMode: "contain",
     },
   },
 };
@@ -234,6 +235,11 @@ const rankingStyle = {
     flex: 3,
     // textAlign: "center",
     justifyContent: "flex-start",
+  },
+  logo: {
+    width: 25,
+    height: 25,
+    resizeMode: "contain",
   },
 };
 

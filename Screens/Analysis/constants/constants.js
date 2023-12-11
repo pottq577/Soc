@@ -30,6 +30,12 @@ const TEAMS = {
   Watford: require("../../../constants/teams/Watford.png"),
   WestBromwichAlbion: require("../../../constants/teams/WestBromwich.png"),
   WestHamUnited: require("../../../constants/teams/WestHam.png"),
+  "Brighton&HoveAlbion": require("../../../constants/teams/brighton.png"),
+  Burnley: require("../../../constants/teams/burnley.png"),
+  CrystalPalace: require("../../../constants/teams/crtystal.png"),
+  Everton: require("../../../constants/teams/everton.png"),
+  Southampton: require("../../../constants/teams/southampton.png"),
+  NewcastleUnited: require("../../../constants/teams/Newcastle.png"),
 };
 const VIEW_FULL_LIST = "View Full List";
 const NO_DATA_AVAILABLE = "No Data Available";
