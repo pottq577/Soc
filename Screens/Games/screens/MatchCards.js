@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { ScrollView } from "react-native";
+import { View, ScrollView, ActivityIndicator } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Cards from "../components/MatchCards/Cards";
 import { useDateContext } from "../hooks/useDateContext";
@@ -13,7 +13,7 @@ import { TEAMS } from "../../Analysis/constants/constants";
 // TODO 경기 일정 / 날짜 카드 수정 필요
 const MatchCards = () => {
   const navigation = useNavigation();
-  const matches = useFetchMatches();
+  const { matches, isLoading } = useFetchMatches();
   const { weekDates, setWeekDates, selectedDate, setSelectedDate } =
     useDateContext();
   const mapTeamLogo = (teamName) => {
@@ -50,19 +50,31 @@ const MatchCards = () => {
     }));
 
   return (
-    <ScrollView
-      style={{ padding: 10, marginHorizontal: 10, marginBottom: 200 }}
-    >
-      {weekDates.length === 0 ? (
-        <NotSelected />
-      ) : filteredMatches.length === 0 ? (
-        <NoMatches />
+    <View>
+      {isLoading ? (
+        <View style={{ padding: 100 }}>
+          <ActivityIndicator size="large" color="#0000ff" />
+        </View>
       ) : (
-        filteredMatches.map((match, index) => (
-          <Cards key={index} match={match} onPress={() => handlePress(match)} />
-        ))
+        <ScrollView
+          style={{ padding: 10, marginHorizontal: 10, marginBottom: 200 }}
+        >
+          {weekDates.length === 0 ? (
+            <NotSelected />
+          ) : filteredMatches.length === 0 ? (
+            <NoMatches />
+          ) : (
+            filteredMatches.map((match, index) => (
+              <Cards
+                key={index}
+                match={match}
+                onPress={() => handlePress(match)}
+              />
+            ))
+          )}
+        </ScrollView>
       )}
-    </ScrollView>
+    </View>
   );
 };
 
