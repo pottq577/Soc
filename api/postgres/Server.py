@@ -1319,6 +1319,145 @@ def max_value():
     return jsonify(max_values._asdict())
 
 
+# 이미지 저장 디렉토리 설정
+IMAGE_DIR = os.path.join(app.static_folder, 'images')
+if not os.path.exists(IMAGE_DIR):
+    os.makedirs(IMAGE_DIR)
+
+
+@app.route('/get_goal_sequences/<int:match_id>', methods=['GET'])
+def get_goal_sequences(match_id):
+    # 경기 데이터 로드
+    try:
+        match_events = pd.read_pickle(
+            f'Analysis/data/refined_events/England/{match_id}.pkl')
+    except FileNotFoundError:
+        return jsonify({"error": "Match data not found"}), 404
+
+    # 데이터 전처리
+    match_events['display_time'] = match_events.apply(
+        lambda x: f"{x['period']} {int(x['time'] // 60):02d}:{int(x['time'] % 60):02d}", axis=1
+    )
+    cols = ['period', 'time', 'display_time', 'team_name',
+            'player_name'] + match_events.columns[8:-1].tolist()
+    match_events = match_events[match_events['event_type']
+                                != 'Substitution'][cols]
+
+    # 시퀀스 분석
+    events_except_duels = match_events[match_events['event_type'] != 'Duel']
+    seq_records = []
+    event_idxs = [events_except_duels.index[0]]
+
+    for i in events_except_duels.index[1:]:
+        prev_event = match_events.loc[event_idxs[-1]]
+        cur_event = match_events.loc[i]
+        if (
+            cur_event['period'] == prev_event['period'] and
+            cur_event['event_type'] != 'Free kick' and
+            cur_event['time'] - prev_event['time'] < 15 and
+            cur_event['team_name'] == prev_event['team_name']
+        ):
+            event_idxs.append(i)
+        else:
+            seq_records.append({
+                'team_name': match_events.at[event_idxs[0], 'team_name'],
+                'first_idx': event_idxs[0],
+                'last_idx': event_idxs[-1]
+            })
+            event_idxs = [i]
+
+    seq_records = pd.DataFrame(seq_records)
+    seq_records['len'] = seq_records['last_idx'] - seq_records['first_idx'] + 1
+    seq_records = seq_records[seq_records['len'] >= 2].reset_index(drop=True)
+
+    # 골인 시퀀스 필터링
+    goal_seq_records = seq_records[
+        seq_records['last_idx'].apply(
+            lambda x: 'Goal' in match_events.at[x, 'tags']
+        )
+    ]
+
+    # 골 시퀀스가 없는 경우 처리
+    if goal_seq_records.empty:
+        return jsonify({"message": "No_Goal"}), 200
+
+    # 이미지 URL 리스트를 생성
+    image_urls = []
+
+    for i, (first_idx, last_idx) in enumerate(zip(goal_seq_records['first_idx'], goal_seq_records['last_idx'])):
+        filename = f'goal_sequence_{match_id}_{i}.png'  # 파일 이름을 인덱스를 이용해 생성
+        filepath = os.path.join(IMAGE_DIR, filename)
+        visualize_sequence(match_events, first_idx, last_idx, buffer=filepath)
+        # 이미지 URL을 생성하여 리스트에 추가
+        image_url = f'/static/images/{filename}'
+        image_urls.append(image_url)
+
+# 이미지 URL 리스트를 JSON으로 반환
+    return jsonify({'images': image_urls})
+
+
+def visualize_sequence(match_events, first_idx, last_idx, buffer=None, title=None, rotate_team2_events=False):
+    cols = [
+        'period', 'time', 'display_time', 'team_name', 'player_name',
+        'event_type', 'sub_event_type', 'tags', 'start_x', 'start_y', 'end_x', 'end_y'
+    ]
+    match_events = match_events[match_events['event_type']
+                                != 'Substitution'][cols]
+
+    team1_name, team2_name = match_events['team_name'].unique()
+    # 팀2 좌표 반전
+    team2_x = match_events.loc[match_events['team_name']
+                               == team2_name, ['start_x', 'end_x']]
+    team2_y = match_events.loc[match_events['team_name']
+                               == team2_name, ['start_y', 'end_y']]
+    match_events.loc[match_events['team_name'] ==
+                     team2_name, ['start_x', 'end_x']] = 104 - team2_x
+    match_events.loc[match_events['team_name'] ==
+                     team2_name, ['start_y', 'end_y']] = 68 - team2_y
+    seq_events = match_events.loc[first_idx:last_idx].copy()
+    if rotate_team2_events:
+        team2_idx = seq_events['team_name'] == team2_name
+        seq_events.loc[team2_idx, ['start_x', 'end_x']] = 104 - \
+            seq_events.loc[team2_idx, ['start_x', 'end_x']]
+        seq_events.loc[team2_idx, ['start_y', 'end_y']] = 68 - \
+            seq_events.loc[team2_idx, ['start_y', 'end_y']]
+
+    duels = seq_events[seq_events['event_type'] == 'Duel']
+    diffs = duels[['time', 'start_x', 'start_y']
+                  ].diff().shift(-1).fillna(10).abs().sum(axis=1)
+    seq_events_plotted = seq_events.drop(index=duels[diffs < 2].index)
+    seq_events_plotted.loc[seq_events_plotted['event_type']
+                           == 'Duel', 'team_name'] = 'Duel'
+
+    draw_pitch('white', 'black')
+
+    color_dict = {team1_name: 'red', team2_name: 'blue', 'Duel': 'black'}
+    colors = seq_events_plotted['team_name'].apply(lambda x: color_dict[x])
+    plt.scatter(seq_events_plotted['start_x'],
+                seq_events_plotted['start_y'], c=colors, s=400)
+
+    for i, event in seq_events_plotted.iterrows():
+        x = event['start_x']
+        y = event['start_y']
+        plt.annotate(i % 100, xy=[x, y], color='white',
+                     ha='center', va='center', fontsize=15)
+        if not np.isnan(event['end_x']):
+            dx = event['end_x'] - x
+            dy = event['end_y'] - y
+            color = color_dict[event['team_name']]
+            plt.arrow(x, y, dx, dy, width=0.3, head_width=1.5,
+                      length_includes_head=True, color=color, alpha=0.5)
+
+    if title is None:
+        title = seq_events['display_time'].iloc[-1]
+    plt.title(title, fontdict={'size': 20})
+
+    # 버퍼에 저장 또는 파일로 저장
+    if buffer is not None:
+        plt.savefig(buffer, bbox_inches='tight')
+    plt.close()
+
+
 @app.route('/')
 def index():
     # image_url = url_for(

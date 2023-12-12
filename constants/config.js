@@ -1,4 +1,4 @@
-const IP_ADDRESS_PART = "192.168.0.";
+const IP_ADDRESS_PART = "http://192.168.0.";
 const NEWS_SERVER_PORT = "5001";
 const POSTGRES_SERVER_PORT = "5002";
 
