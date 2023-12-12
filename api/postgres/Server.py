@@ -1186,7 +1186,7 @@ def top_passers():
     return jsonify(results)
 
 
-@app.route('/most-played')
+@app.route('/top-played')
 def most_played_players():
     # 출전시간을 기준으로 선수들을 그룹화하고 정렬하여 상위 10명 추출
     most_played = db.session.query(

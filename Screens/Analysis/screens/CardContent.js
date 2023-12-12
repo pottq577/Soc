@@ -48,6 +48,7 @@ const CardContent = ({ selectedSeason, isPlayerSelected }) => {
   }, []);
 
   const renderContent = () => {
+    // 선수일 때
     if (isPlayerSelected) {
       const data = playersData;
       return categories.map((category, index) => (
@@ -60,6 +61,7 @@ const CardContent = ({ selectedSeason, isPlayerSelected }) => {
         </View>
       ));
     } else {
+      // 팀일 때
       const teamNameMapping = {
         아스날: "Arsenal",
         본머스: "AFCBournemouth",
@@ -93,12 +95,12 @@ const CardContent = ({ selectedSeason, isPlayerSelected }) => {
       return (
         <View>
           <CardView
-            category="승리 수"
+            category="승리"
             data={mapTeamData(topWins)}
             isPlayer={false}
           />
           <CardView
-            category="패배 수"
+            category="패배"
             data={mapTeamData(topLosses)}
             isPlayer={false}
           />
