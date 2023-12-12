@@ -24,6 +24,8 @@ const IMAGES = {
   MUN: require("../../../constants/mu.png"),
   SELECT_CALENDAR: require("../../../constants/icons/select_calendar.png"),
   NO_CONTENT: require("../../../constants/no_content.png"),
+  DOWN_ARROW: require("../../../constants/icons/down_arrow.png"),
+  UP_ARROW: require("../../../constants/icons/up_arrow.png"),
 };
 
 const teams = [

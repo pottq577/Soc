@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, ScrollView, Text } from "react-native";
 import SegmentedControlTab from "react-native-segmented-control-tab";
 import { useGames } from "../../../hooks/useGames";
