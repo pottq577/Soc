@@ -78,7 +78,7 @@ const MatchInfo = ({ route }) => {
               matchEvents={matchEvents}
             />
           );
-        case 1: // '패스 네트워크' 탭 선택 시
+        case 1: // '분석' 탭 선택 시
           return (
             <MatchAnalysis match_id={match_id} matchDetails={matchDetails} />
           );
@@ -107,7 +107,7 @@ const MatchInfo = ({ route }) => {
       <Separator />
       <View style={{ height: 60, width: "100%" }}>
         <SegmentedControlTab
-          values={["개요", "패스 네트워크"]}
+          values={["개요", "분석"]}
           selectedIndex={selectedTabIndex}
           onTabPress={setSelectedTabIndex}
           tabsContainerStyle={switchStyle.tabsContainer}

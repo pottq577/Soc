@@ -1,5 +1,5 @@
 import React from "react";
-import { View, ScrollView, Image } from "react-native";
+import { View, ScrollView, Image, Text } from "react-native";
 import { matchAnalysisStyle } from "../../../constants/constants";
 import RenderTable from "./RenderTable";
 import useFetchGameData from "../../../hooks/fetchGameData";
