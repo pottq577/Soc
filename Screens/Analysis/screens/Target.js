@@ -7,6 +7,7 @@ import Header from "../components/TargetAnalysis/Header";
 import MatchList from "../components/TargetAnalysis/MatchList";
 import TeamOverview from "../components/TargetAnalysis/TeamOverview";
 import MapDisplay from "../components/TargetAnalysis/MapDisplay";
+import RadarChart from "../components/TargetAnalysis/RadarChart";
 
 /**
  * 사용자가 선택한 선수 / 팀에 대한 상세 분석 화면
@@ -37,6 +38,7 @@ const Target = ({ route }) => {
   } = useAnalysis(); // Custom Hook 사용
 
   const renderContentView = () => {
+    // console.log(item);
     if (isPlayer) {
       return isOverviewSelected ? (
         <View>
@@ -44,12 +46,15 @@ const Target = ({ route }) => {
           <MapDisplay item={item} match_id={match_id} type={"touch"} />
         </View>
       ) : (
-        <MatchList
-          item={item}
-          isPlayer={isPlayer}
-          isWholeSeason={isWholeSeason}
-          setIsWholeSeason={setIsWholeSeason}
-        />
+        <View style={{ padding: 10 }}>
+          <RadarChart item={item} />
+        </View>
+        // <MatchList
+        //   item={item}
+        //   isPlayer={isPlayer}
+        //   isWholeSeason={isWholeSeason}
+        //   setIsWholeSeason={setIsWholeSeason}
+        // />
       );
     } else {
       return isOverviewSelected ? (

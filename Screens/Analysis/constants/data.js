@@ -96,14 +96,12 @@ const statData = {
 // RadarChart.js
 const radarData = [
   {
-    출전수: 20,
-    출전시간: 100,
+    골: 20,
+    어시스트: 100,
     골: 3,
     어시스트: 5,
     xG: 5.29,
     xA: 4.42,
-    _90xG: 0.73,
-    _90xA: 0.41,
   },
 ];
 // TeamOverview.js

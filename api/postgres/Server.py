@@ -1278,6 +1278,47 @@ def top_yellow_cards():
     return jsonify(result)
 
 
+@app.route('/RadarChart')
+def radar_chart():
+    player_stats = db.session.query(
+        PlayerStats.player_id.label('wyid'),
+        PlayerStats.player_name,
+        db.func.sum(PlayerStats.goals).label('total_goals'),
+        db.func.sum(PlayerStats.assists).label('total_assists'),
+        db.func.sum(PlayerStats.shots_on_target).label(
+            'total_shots_on_target'),
+        db.func.sum(PlayerStats.acc_passes).label('total_acc_passes'),
+        db.func.round(db.func.cast(db.func.avg(
+            PlayerStats.pass_accuracy), db.Numeric), 2).label('avg_pass_accuracy')
+    ).group_by(PlayerStats.player_id, PlayerStats.player_name).all()
+
+    return jsonify([player._asdict() for player in player_stats])
+
+
+@app.route('/max_value')
+def max_value():
+    subquery = db.session.query(
+        db.func.sum(PlayerStats.goals).label('total_goals'),
+        db.func.sum(PlayerStats.assists).label('total_assists'),
+        db.func.sum(PlayerStats.shots_on_target).label(
+            'total_shots_on_target'),
+        db.func.sum(PlayerStats.acc_passes).label('total_acc_passes'),
+        db.func.avg(PlayerStats.pass_accuracy).label('avg_pass_accuracy')
+    ).group_by(PlayerStats.player_id).subquery()
+
+    max_values = db.session.query(
+        db.func.max(subquery.c.total_goals).label('max_goals'),
+        db.func.max(subquery.c.total_assists).label('max_assists'),
+        db.func.max(subquery.c.total_shots_on_target).label(
+            'max_shots_on_target'),
+        db.func.max(subquery.c.total_acc_passes).label('max_acc_passes'),
+        db.func.max(subquery.c.avg_pass_accuracy).label(
+            'max_avg_pass_accuracy')
+    ).one()
+
+    return jsonify(max_values._asdict())
+
+
 @app.route('/')
 def index():
     # image_url = url_for(

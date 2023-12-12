@@ -159,6 +159,8 @@ const matchListStyles = {
     teamText: {
       fontWeight: "600",
       fontSize: 16,
+      // alignItems: "center",
+      textAlign: "center",
     },
     scoreText: {
       fontWeight: "600",
