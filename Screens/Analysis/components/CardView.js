@@ -4,14 +4,22 @@ import FullListViewButton from "./FullListViewButton";
 import { cardStyle } from "../constants/constants";
 import Separator from "../../../components/Separator";
 import { useNavigation } from "@react-navigation/native";
+import { TEAMS } from "../constants/constants";
 
 // 선수 뷰일 때만 팀명/로고 출력 (renderFirst)
-const TeamInfo = ({ playerData }) => (
-  <View style={{ flexDirection: "row", alignItems: "center" }}>
-    <Image style={cardStyle.card.image.teamIcon} source={playerData.team} />
-    <Text style={cardStyle.card.text.teamName}>{playerData.teamName}</Text>
-  </View>
-);
+const TeamInfo = ({ playerData }) => {
+  const teamKey = playerData.team.replace(/\s+/g, "");
+  // console.log(teamKey);
+  const teamImage = TEAMS[teamKey];
+  return (
+    <View style={{ flexDirection: "row", alignItems: "center" }}>
+      {teamImage && (
+        <Image style={cardStyle.card.image.teamIcon} source={teamImage} />
+      )}
+      <Text style={cardStyle.card.text.teamName}>{playerData.team}</Text>
+    </View>
+  );
+};
 
 /**
  * 선수 / 팀에 대한 데이터 렌더링
@@ -19,7 +27,7 @@ const TeamInfo = ({ playerData }) => (
  * @returns
  */
 const CardView = ({ category, data, isPlayer }) => {
-  console.log(data);
+  // console.log("team: ", data[0].team);
   const isValidData = data && data.length > 0 && data[0].hasOwnProperty("rank");
 
   const navigation = useNavigation();

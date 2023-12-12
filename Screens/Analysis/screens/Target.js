@@ -17,7 +17,7 @@ const Target = ({ route }) => {
     item,
     isPlayer,
     isGame,
-    squad,
+    data,
     match_id,
     team1_name,
     team1_goals,

@@ -14,9 +14,6 @@ const MapDisplay = ({ item, match_id, type }) => {
         let response = await fetch(
           `${POSTGRES_SERVER_ADDRESS}/get_${mapType}_map/${matchId}/${playerId}`
         );
-        console.log(
-          `${POSTGRES_SERVER_ADDRESS}/get_${mapType}_map/${matchId}/${playerId}`
-        );
         let blob = await response.blob();
         setIsLoading(false);
         return URL.createObjectURL(blob);
