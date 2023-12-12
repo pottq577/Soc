@@ -1,7 +1,9 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 import Space from "../../../../components/Space";
-import { matchListStyles } from "../../constants/constants";
+import { matchListStyles, analysisStyle } from "../../constants/constants";
+import MatchTimeLine from "./Overview/MatchTimeLine";
+import Separator from "../../../../components/Separator";
 
 // 팀명, 로고 출력 뷰
 const TeamDisplay = ({ name, logo }) => {
@@ -22,6 +24,7 @@ const MatchHeader = ({
   team2_goals,
   awayLogo,
   datetime,
+  matchEvents,
 }) => {
   const formattedDate = datetime.split("T")[0].replace(/-/g, "-");
 
@@ -49,6 +52,18 @@ const MatchHeader = ({
         </View>
         {/* 어웨이 팀 정보 */}
         <TeamDisplay name={team2_name} logo={awayLogo} />
+      </View>
+      <Separator />
+      <View style={{ width: "90%" }}>
+        {/* <Text style={analysisStyle.header}>타임라인</Text> */}
+        {matchEvents.map((event, index) => (
+          <MatchTimeLine
+            key={index}
+            event={event}
+            team1Name={team1_name}
+            team2Name={team2_name}
+          />
+        ))}
       </View>
     </View>
   );
