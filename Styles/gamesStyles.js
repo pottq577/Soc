@@ -131,6 +131,9 @@ const matchListStyles = {
   },
   teamName: {
     flexShrink: 1, // 텍스트가 화면을 넘어가지 않도록 함
+    // backgroundColor: "blue",
+    flex: 1,
+    textAlign: "center",
   },
   matchHeader: {
     container: {
@@ -140,8 +143,9 @@ const matchListStyles = {
       alignItems: "center",
     },
     teamLogo: {
-      width: 50,
-      height: 50,
+      width: 80,
+      height: 80,
+      resizeMode: "contain",
     },
     teamContainer: {
       alignItems: "center",
@@ -151,6 +155,14 @@ const matchListStyles = {
       justifyContent: "center",
       flexDirection: "row",
       flex: 1,
+    },
+    teamText: {
+      fontWeight: "600",
+      fontSize: 16,
+    },
+    scoreText: {
+      fontWeight: "600",
+      fontSize: 24,
     },
   },
 };

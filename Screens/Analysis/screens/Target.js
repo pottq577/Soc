@@ -5,8 +5,8 @@ import { switchStyle } from "../constants/constants";
 import { useAnalysis } from "../hooks/useAnalysis";
 import Header from "../components/TargetAnalysis/Header";
 import MatchList from "../components/TargetAnalysis/MatchList";
-import PlayerOverview from "../components/TargetAnalysis/PlayerOverview";
 import TeamOverview from "../components/TargetAnalysis/TeamOverview";
+import MapDisplay from "../components/TargetAnalysis/MapDisplay";
 
 /**
  * 사용자가 선택한 선수 / 팀에 대한 상세 분석 화면
@@ -39,12 +39,10 @@ const Target = ({ route }) => {
   const renderContentView = () => {
     if (isPlayer) {
       return isOverviewSelected ? (
-        <PlayerOverview
-          item={item}
-          isPlayer={isPlayer}
-          squad={squad}
-          match_id={match_id}
-        />
+        <View>
+          <MapDisplay item={item} match_id={match_id} type={"pass"} />
+          <MapDisplay item={item} match_id={match_id} type={"touch"} />
+        </View>
       ) : (
         <MatchList
           item={item}

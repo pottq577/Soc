@@ -9,7 +9,7 @@ const TeamDisplay = ({ name, logo }) => {
     <View style={matchListStyles.matchHeader.teamContainer}>
       <Image style={matchListStyles.matchHeader.teamLogo} source={logo} />
       <Space padding={10} />
-      <Text>{name}</Text>
+      <Text style={matchListStyles.matchHeader.teamText}>{name}</Text>
     </View>
   );
 };
@@ -23,19 +23,29 @@ const MatchHeader = ({
   awayLogo,
   datetime,
 }) => {
+  const formattedDate = datetime.split("T")[0].replace(/-/g, "-");
+
   return (
     <View style={{ alignItems: "center" }}>
-      {/* 경기 일정 표시 */}
-      <Text>{datetime}</Text>
       {/* 팀, 득점 정보 표시 */}
       <View style={matchListStyles.matchHeader.container}>
         {/* 홈 팀 정보 */}
         <TeamDisplay name={team1_name} logo={homeLogo} />
         {/* 득점 수 */}
-        <View style={matchListStyles.matchHeader.scoreContainer}>
-          <Text>{team1_goals}</Text>
-          <Text> : </Text>
-          <Text>{team2_goals}</Text>
+        <View style={{ alignItems: "center" }}>
+          <Text style={matchListStyles.matchHeader.teamText}>
+            {formattedDate}
+          </Text>
+          <Space paddingVertical={20} />
+          <View style={matchListStyles.matchHeader.scoreContainer}>
+            <Text style={matchListStyles.matchHeader.scoreText}>
+              {team1_goals}
+            </Text>
+            <Text style={matchListStyles.matchHeader.scoreText}> : </Text>
+            <Text style={matchListStyles.matchHeader.scoreText}>
+              {team2_goals}
+            </Text>
+          </View>
         </View>
         {/* 어웨이 팀 정보 */}
         <TeamDisplay name={team2_name} logo={awayLogo} />

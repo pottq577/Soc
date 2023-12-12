@@ -29,34 +29,6 @@ from stats_generator import generate_player_stats
 
 portNum = 5002
 
-# 엔드포인트 목록
-# /players
-# /teams
-# /competitions
-# /tags2name
-# /matches_england
-# /england_events
-# /matches
-# /TeamRank
-# /get-team-players
-# /match/<match_id>
-# /teams/england
-# /refined_events
-# /run-goal-stats
-# /get_shots/<match_id>
-# /get_passes/<match_id>
-# /match_player_stats/<match_id>
-# /top_scorers
-# /england_events/match/<match_id>
-# /matchAnalysis/<match_id>/<team_name>
-# /get_image
-# /top-teams/wins
-# /top-teams/losses
-# /top-teams/goal-difference
-# /top-teams/goals-for
-# /top-teams/goals-against
-# /match_events/<match_id>
-
 
 def load_config():
     with open('setting.json', 'r') as file:
