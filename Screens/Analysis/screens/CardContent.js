@@ -23,8 +23,14 @@ const CardContent = ({ selectedSeason, isPlayerSelected }) => {
   const [topGoalDifference, setTopGoalDifference] = useState([]);
   const [topGoalsFor, setTopGoalsFor] = useState([]);
   const [topGoalsAgainst, setTopGoalsAgainst] = useState([]);
+  const [topScorers, setTopScorers] = useState([]);
+  const [topAssisters, setTopAssisters] = useState([]);
+  const [topPassers, setTopPassers] = useState([]);
+  const [topPlayed, setTopPlayed] = useState([]);
+  const [topYellowCards, setTopYellowCards] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const fetchCategoryData = async (category, setState) => {
+  const fetchTeamData = async (category, setState) => {
     try {
       const response = await fetch(
         `${POSTGRES_SERVER_ADDRESS}/top-teams/${category}`
@@ -39,27 +45,73 @@ const CardContent = ({ selectedSeason, isPlayerSelected }) => {
     }
   };
 
+  const fetchPlayerData = async (category, setState) => {
+    try {
+      const response = await fetch(
+        `${POSTGRES_SERVER_ADDRESS}/top-${category}`
+      );
+      const data = await response.json();
+      // const sortedData = Object.entries(data)
+      //   .map(([team, value]) => ({ team, value }))
+      //   .sort((a, b) => b.value - a.value); // 내림차순으로 정렬
+      // setState(sortedData);
+      setState(data);
+      // console.log(data);
+    } catch (error) {
+      Alert.alert("Error", `Failed to load data for ${category}`);
+    }
+  };
+
   useEffect(() => {
-    fetchCategoryData("wins", setTopWins);
-    fetchCategoryData("losses", setTopLosses);
-    fetchCategoryData("goal-difference", setTopGoalDifference);
-    fetchCategoryData("goals-for", setTopGoalsFor);
-    fetchCategoryData("goals-against", setTopGoalsAgainst);
+    fetchTeamData("wins", setTopWins);
+    fetchTeamData("losses", setTopLosses);
+    fetchTeamData("goal-difference", setTopGoalDifference);
+    fetchTeamData("goals-for", setTopGoalsFor);
+    fetchTeamData("goals-against", setTopGoalsAgainst);
+    fetchPlayerData("scorers", setTopScorers);
+    fetchPlayerData("assisters", setTopAssisters);
+    fetchPlayerData("passers", setTopPassers);
+    fetchPlayerData("played", setTopPlayed);
+    fetchPlayerData("yellow-cards", setTopYellowCards);
+    setIsLoading(false);
   }, []);
 
   const renderContent = () => {
+    // console.log("Top Scorers: ", topScorers);
+    // 선수일 때
     if (isPlayerSelected) {
-      const data = playersData;
-      return categories.map((category, index) => (
-        <View key={index} style={{ marginBottom: 20 }}>
+      return (
+        <View>
           <CardView
-            category={category}
-            data={data}
+            category={"득점왕"}
+            data={topScorers}
+            isPlayer={isPlayerSelected}
+          />
+          <CardView
+            category={"어시스트왕"}
+            data={topAssisters}
+            isPlayer={isPlayerSelected}
+          />
+          <CardView
+            category={"패스마스터"}
+            data={topPassers}
+            isPlayer={isPlayerSelected}
+          />
+          <CardView
+            category={"열심히 하시잖아"}
+            data={topPlayed}
+            isPlayer={isPlayerSelected}
+          />
+          <CardView
+            category={"치즈왕"}
+            data={topYellowCards}
             isPlayer={isPlayerSelected}
           />
         </View>
-      ));
+      );
     } else {
+      // console.log("Top Wins: ", topWins);
+      // 팀일 때
       const teamNameMapping = {
         아스날: "Arsenal",
         본머스: "AFCBournemouth",
@@ -89,16 +141,15 @@ const CardContent = ({ selectedSeason, isPlayerSelected }) => {
           image: TEAMS[teamNameMapping[team.value.team]], // 매핑된 팀 이름을 키로 사용
         }));
       };
-
       return (
         <View>
           <CardView
-            category="승리 수"
+            category="승리"
             data={mapTeamData(topWins)}
             isPlayer={false}
           />
           <CardView
-            category="패배 수"
+            category="패배"
             data={mapTeamData(topLosses)}
             isPlayer={false}
           />

@@ -173,3 +173,32 @@ class TeamRank(db.Model):
 
     def __repr__(self):
         return f'<Team {self.team}, Rank {self.rank}>'
+
+
+class PlayerStats(db.Model):
+    __tablename__ = 'player_stats'
+
+    match_id = db.Column(db.Integer, primary_key=True)
+    team_id = db.Column(db.Integer)
+    team_name = db.Column(db.String(255))
+    player_id = db.Column(db.Integer, primary_key=True)
+    player_name = db.Column(db.String(255))
+    playing_time = db.Column(db.Float)
+    goals = db.Column(db.Integer)
+    assists = db.Column(db.Integer)
+    own_goals = db.Column(db.Integer)
+    total_shots = db.Column(db.Integer)
+    shots_on_target = db.Column(db.Integer)
+    rfoot_shots = db.Column(db.Integer)
+    lfoot_shots = db.Column(db.Integer)
+    header_shots = db.Column(db.Integer)
+    fouls = db.Column(db.Integer)
+    offsides = db.Column(db.Integer)
+    yellow_cards = db.Column(db.Integer)
+    red_cards = db.Column(db.Integer)
+    total_passes = db.Column(db.Integer)
+    acc_passes = db.Column(db.Integer)
+    pass_accuracy = db.Column(db.Float)
+
+    def __repr__(self):
+        return f'<PlayerStats MatchID={self.match_id}, PlayerID={self.player_id}>'

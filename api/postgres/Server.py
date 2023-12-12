@@ -9,6 +9,7 @@ from models import MatchEngland
 from models import EnglandEvent
 from models import Match
 from models import TeamRank
+from models import PlayerStats
 import requests
 import subprocess
 import os
@@ -17,7 +18,7 @@ import io
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
-from sqlalchemy import desc, cast, Integer
+from sqlalchemy import desc, cast, Integer, func
 import matplotlib.pyplot as plt
 from collections import defaultdict
 from Analysis.plot_utils import draw_pitch
@@ -27,34 +28,6 @@ from io import BytesIO
 from stats_generator import generate_player_stats
 
 portNum = 5002
-
-# 엔드포인트 목록
-# /players
-# /teams
-# /competitions
-# /tags2name
-# /matches_england
-# /england_events
-# /matches
-# /TeamRank
-# /get-team-players
-# /match/<match_id>
-# /teams/england
-# /refined_events
-# /run-goal-stats
-# /get_shots/<match_id>
-# /get_passes/<match_id>
-# /match_player_stats/<match_id>
-# /top_scorers
-# /england_events/match/<match_id>
-# /matchAnalysis/<match_id>/<team_name>
-# /get_image
-# /top-teams/wins
-# /top-teams/losses
-# /top-teams/goal-difference
-# /top-teams/goals-for
-# /top-teams/goals-against
-# /match_events/<match_id>
 
 
 def load_config():
@@ -533,8 +506,9 @@ def get_passes(match_id):
         # 오류 처리
         return jsonify({'error': str(e)})
 
-
 # 한 경기에 대한 전체 정보
+
+
 @app.route('/match_player_stats/<int:match_id>', methods=['GET'])
 def get_player_stats(match_id):
     try:
@@ -687,53 +661,6 @@ def get_player_stats(match_id):
         # JSON으로 변환
         result = player_stats.to_json(orient='records')
 
-        return jsonify({'data': result})
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
-
-
-# 득점왕 조져보자
-@app.route('/top_scorers', methods=['GET'])
-def top_scorers():
-    try:
-        # Match 테이블의 모든 데이터를 조회합니다.
-        matches = Match.query.all()
-
-        # 데이터를 Pandas DataFrame으로 변환합니다.
-        match_df = pd.DataFrame([
-            {
-                'match_id': match.match_id,
-                'gameweek': match.gameweek,
-                'datetime': match.datetime,
-                'venue': match.venue,
-                'team1_id': match.team1_id,
-                'team1_name': match.team1_name,
-                'team1_goals': match.team1_goals,
-                'team2_id': match.team2_id,
-                'team2_name': match.team2_name,
-                'team2_goals': match.team2_goals,
-                'duration': match.duration
-            }
-            for match in matches
-        ])
-
-        stats_list = []
-        for match_id in match_df.index:
-            match_player_stats = generate_player_stats(match_id)
-            stats_list.append(match_player_stats)
-        player_stats = pd.concat(stats_list, ignore_index=True)
-
-        grouped = player_stats.groupby(
-            ['team_id', 'team_name', 'player_id', 'player_name'])
-        player_stats_accum = grouped[player_stats.columns[5:-1]].sum()
-        player_stats_accum['pass_accuracy'] = (
-            player_stats_accum['acc_passes'] / player_stats_accum['total_passes']).round(2)
-        player_stats_accum['matches'] = grouped['match_id'].count()
-        player_stats_accum = player_stats_accum[[
-            'matches'] + player_stats.columns[5:-1].tolist()].reset_index()
-
-        # JSON으로 변환합니다.
-        result = player_stats_accum.to_json(orient='records')
         return jsonify({'data': result})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -1217,6 +1144,138 @@ def get_touch_map_endpoint(match_id, player_id):
         return send_file(buf, mimetype='image/png')
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+
+@app.route('/top-scorers')
+def top_scorers():
+    # 득점을 기준으로 선수들을 그룹화하고 정렬하여 상위 10명 추출
+    top_scorers = db.session.query(
+        PlayerStats.player_id, PlayerStats.player_name, PlayerStats.team_name, func.sum(
+            PlayerStats.goals).label('total_goals')
+    ).group_by(
+        PlayerStats.player_id, PlayerStats.player_name, PlayerStats.team_name
+    ).order_by(
+        func.sum(PlayerStats.goals).desc()
+    ).limit(10).all()
+
+    results = [
+        {
+            'rank': index + 1,
+            'player_id': scorer.player_id,
+            'name': scorer.player_name,
+            'team': scorer.team_name,
+            'score': scorer.total_goals
+        } for index, scorer in enumerate(top_scorers)
+    ]
+
+    return jsonify(results)
+
+
+@app.route('/top-assisters')
+def top_assisters():
+    # 어시스트를 기준으로 선수들을 그룹화하고 정렬하여 상위 10명 추출
+    top_assisters = db.session.query(
+        PlayerStats.player_id, PlayerStats.player_name, PlayerStats.team_name, func.sum(
+            PlayerStats.assists).label('total_assists')
+    ).group_by(
+        PlayerStats.player_id, PlayerStats.player_name, PlayerStats.team_name
+    ).order_by(
+        func.sum(PlayerStats.assists).desc()
+    ).limit(10).all()
+
+    results = [
+        {
+            'rank': index + 1,
+            'player_id': assister.player_id,
+            'name': assister.player_name,
+            'team': assister.team_name,
+            'score': assister.total_assists
+        } for index, assister in enumerate(top_assisters)
+    ]
+
+    return jsonify(results)
+
+
+@app.route('/top-passers')
+def top_passers():
+    # 성공한 패스를 기준으로 선수들을 그룹화하고 정렬하여 상위 10명 추출
+    top_passers = db.session.query(
+        PlayerStats.player_id, PlayerStats.player_name, PlayerStats.team_name,
+        func.sum(PlayerStats.acc_passes).label('total_successful_passes'),
+        func.sum(PlayerStats.total_passes).label('total_passes')
+    ).group_by(
+        PlayerStats.player_id, PlayerStats.player_name, PlayerStats.team_name
+    ).order_by(
+        func.sum(PlayerStats.acc_passes).desc()
+    ).limit(10).all()
+
+    results = [
+        {
+            'rank': index + 1,
+            'player_id': passer.player_id,
+            'name': passer.player_name,
+            'team': passer.team_name,
+            'score': passer.total_successful_passes,
+            'total_passes': passer.total_passes,
+            'pass_accuracy': round(passer.total_successful_passes / passer.total_passes * 100, 2) if passer.total_passes > 0 else 0
+        } for index, passer in enumerate(top_passers)
+    ]
+
+    return jsonify(results)
+
+
+@app.route('/top-played')
+def most_played_players():
+    # 출전시간을 기준으로 선수들을 그룹화하고 정렬하여 상위 10명 추출
+    most_played = db.session.query(
+        PlayerStats.player_id, PlayerStats.player_name, PlayerStats.team_name,
+        func.sum(PlayerStats.playing_time).label('total_playing_time')
+    ).group_by(
+        PlayerStats.player_id, PlayerStats.player_name, PlayerStats.team_name
+    ).order_by(
+        func.sum(PlayerStats.playing_time).desc()
+    ).limit(10).all()
+
+    results = [
+        {
+            'rank': index + 1,
+            'player_id': player.player_id,
+            'name': player.player_name,
+            'team': player.team_name,
+            # 소수점 버림
+            'score': int(player.total_playing_time),
+            # 시간 단위로 변환
+            'total_playing_time_hours': int(player.total_playing_time) // 60 // 60
+        } for index, player in enumerate(most_played)
+    ]
+
+    return jsonify(results)
+
+
+@app.route('/top-yellow-cards')
+def top_yellow_cards():
+    results = PlayerStats.query.with_entities(
+        PlayerStats.player_name,
+        PlayerStats.team_name,
+        db.func.sum(PlayerStats.yellow_cards).label('total_yellow_cards')
+    ).group_by(
+        PlayerStats.player_id,
+        PlayerStats.player_name,
+        PlayerStats.team_name
+    ).order_by(
+        db.desc('total_yellow_cards')
+    ).limit(10).all()
+
+    result = [
+        {
+            "name": result.player_name,
+            'rank': index + 1,
+            "team": result.team_name,
+            "score": result.total_yellow_cards
+        } for index, result in enumerate(results)
+    ]
+
+    return jsonify(result)
 
 
 @app.route('/')

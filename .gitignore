@@ -36,3 +36,6 @@ yarn-error.*
 
 # server address
 ./constants/config.js
+
+#__pycache__
+./api/postgres/__pycache__

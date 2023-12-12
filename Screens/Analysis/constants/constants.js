@@ -49,7 +49,7 @@ const SEASONS = [
   "2017/18",
 ];
 const CATEGORIES = {
-  PLAYER: ["Goals", "Assist", "Pass", "Shoot"],
+  PLAYER: ["득점", "어시스트", "Pass", "Most-Played", "Cards"],
   TEAMS: ["승리", "패배", "득실차", "득점", "실점"],
 };
 const positionColors = {
