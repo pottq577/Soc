@@ -1125,11 +1125,12 @@ def top_scorers():
 
     results = [
         {
+            'rank': index + 1,
             'player_id': scorer.player_id,
-            'player_name': scorer.player_name,
-            'team_name': scorer.team_name,
-            'total_goals': scorer.total_goals
-        } for scorer in top_scorers
+            'name': scorer.player_name,
+            'team': scorer.team_name,
+            'score': scorer.total_goals
+        } for index, scorer in enumerate(top_scorers)
     ]
 
     return jsonify(results)
@@ -1149,11 +1150,12 @@ def top_assisters():
 
     results = [
         {
+            'rank': index + 1,
             'player_id': assister.player_id,
-            'player_name': assister.player_name,
-            'team_name': assister.team_name,
-            'total_assists': assister.total_assists
-        } for assister in top_assisters
+            'name': assister.player_name,
+            'team': assister.team_name,
+            'score': assister.total_assists
+        } for index, assister in enumerate(top_assisters)
     ]
 
     return jsonify(results)
@@ -1174,13 +1176,14 @@ def top_passers():
 
     results = [
         {
+            'rank': index + 1,
             'player_id': passer.player_id,
-            'player_name': passer.player_name,
-            'team_name': passer.team_name,
-            'total_successful_passes': passer.total_successful_passes,
+            'name': passer.player_name,
+            'team': passer.team_name,
+            'score': passer.total_successful_passes,
             'total_passes': passer.total_passes,
             'pass_accuracy': round(passer.total_successful_passes / passer.total_passes * 100, 2) if passer.total_passes > 0 else 0
-        } for passer in top_passers
+        } for index, passer in enumerate(top_passers)
     ]
 
     return jsonify(results)
@@ -1200,14 +1203,15 @@ def most_played_players():
 
     results = [
         {
+            'rank': index + 1,
             'player_id': player.player_id,
-            'player_name': player.player_name,
-            'team_name': player.team_name,
+            'name': player.player_name,
+            'team': player.team_name,
             # 소수점 버림
-            'total_playing_time_minutes': int(player.total_playing_time),
+            'score': int(player.total_playing_time),
             # 시간 단위로 변환
             'total_playing_time_hours': int(player.total_playing_time) // 60 // 60
-        } for player in most_played
+        } for index, player in enumerate(most_played)
     ]
 
     return jsonify(results)
@@ -1227,13 +1231,16 @@ def top_yellow_cards():
         db.desc('total_yellow_cards')
     ).limit(10).all()
 
-    top_players = [
-        {"player_name": result.player_name, "team_name": result.team_name,
-            "yellow_cards": result.total_yellow_cards}
-        for result in results
+    result = [
+        {
+            "name": result.player_name,
+            'rank': index + 1,
+            "team": result.team_name,
+            "score": result.total_yellow_cards
+        } for index, result in enumerate(results)
     ]
 
-    return jsonify(top_players)
+    return jsonify(result)
 
 
 @app.route('/')

@@ -19,6 +19,9 @@ const TeamInfo = ({ playerData }) => (
  * @returns
  */
 const CardView = ({ category, data, isPlayer }) => {
+  console.log(data);
+  const isValidData = data && data.length > 0 && data[0].hasOwnProperty("rank");
+
   const navigation = useNavigation();
   /**
    * 사용자가 특정 선수 / 팀 선택 시 파라미터와 함께 Target.js(선수 / 팀 분석 화면)으로 네비게이션
@@ -30,6 +33,8 @@ const CardView = ({ category, data, isPlayer }) => {
 
   // 각 카테고리 별 1등인 선수 / 팀에 대한 정보 출력 (카드 형식)
   const renderFirst = (playerData, index) => {
+    if (!isValidData) return null; // 데이터가 유효하지 않으면 null 반환
+
     return (
       <TouchableOpacity
         onPress={() => handlePress(playerData)}
@@ -51,6 +56,8 @@ const CardView = ({ category, data, isPlayer }) => {
 
   // 각 카테고리 별 1등인 선수 / 팀을 제외한 나머지 목록 출력 (리스트 형식)
   const renderOthers = (playerData, index) => {
+    if (!isValidData) return null; // 데이터가 유효하지 않으면 null 반환
+
     return (
       <TouchableOpacity
         onPress={() => handlePress(playerData)}
