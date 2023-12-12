@@ -82,23 +82,14 @@ const RadarChart = ({ item }) => {
 
   const processedData = processChartData();
 
-  const mapLabelToMaxValueKey = (label) => {
-    const mapping = {
-      골: "max_goals",
-      어시스트: "max_assists",
-      유효슈팅: "max_shots_on_target",
-      유효패스: "max_acc_passes",
-      패스정확도: "max_avg_pass_accuracy",
-    };
-    return mapping[label];
-  };
-
   return (
     <View style={analysisStyle.container}>
       <Text style={analysisStyle.squad.headerFont.title}>스탯 (%)</Text>
       <View style={chartStyle.container}>
         {!playerData || !maxValues ? (
-          <ActivityIndicator size="large" color="#0000ff" />
+          <View style={{ padding: 100 }}>
+            <ActivityIndicator size="large" color="#0000ff" />
+          </View>
         ) : (
           <VictoryChart
             polar

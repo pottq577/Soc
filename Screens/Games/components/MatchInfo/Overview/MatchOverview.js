@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Text, View } from "react-native";
+import { Text, View, ActivityIndicator } from "react-native";
 import { analysisStyle } from "../../../constants/constants";
 import MatchTimeLine from "./MatchTimeLine";
 import MatchDetails from "./MatchDetails";
@@ -19,9 +19,11 @@ const MatchOverview = ({
   awayLogo,
 }) => {
   const [matchEvents, setMatchEvents] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchEvents = async () => {
+      setIsLoading(true); // 로딩 시작
       try {
         const response = await fetch(
           `${POSTGRES_SERVER_ADDRESS}/match_events/${match_id}`
@@ -40,6 +42,7 @@ const MatchOverview = ({
       } catch (error) {
         console.error("Error fetching events:", error);
       }
+      setIsLoading(false); // 로딩 완료
     };
 
     fetchEvents();
@@ -50,32 +53,46 @@ const MatchOverview = ({
       {/* 타임라인 카드 */}
       <View style={analysisStyle.container}>
         <Text style={analysisStyle.header}>타임라인</Text>
-        {matchEvents.map((event, index) => (
-          <MatchTimeLine
-            key={index}
-            event={event}
-            team1Name={matchDetails.team1_name}
-            team2Name={matchDetails.team2_name}
-          />
-        ))}
+        {isLoading ? (
+          <View style={{ padding: 100 }}>
+            <ActivityIndicator size="large" color="#0000ff" />
+          </View>
+        ) : (
+          <View>
+            {matchEvents.map((event, index) => (
+              <MatchTimeLine
+                key={index}
+                event={event}
+                team1Name={matchDetails.team1_name}
+                team2Name={matchDetails.team2_name}
+              />
+            ))}
+          </View>
+        )}
       </View>
       {/* 경기 세부 정보 카드 */}
       {/* <MatchDetails matchDetails={matchDetails} /> */}
       {/* 경기 라인 업 카드 */}
-      <MatchLineUp
-        match_id={match_id}
-        team1Name={matchDetails.team1_name}
-        team2Name={matchDetails.team2_name}
-        {...{
-          team1_name,
-          team1_goals,
-          team2_name,
-          team2_goals,
-          datetime,
-          homeLogo,
-          awayLogo,
-        }}
-      />
+      {isLoading ? (
+        <View style={{ padding: 100 }}>
+          <ActivityIndicator size="large" color="#0000ff" />
+        </View>
+      ) : (
+        <MatchLineUp
+          match_id={match_id}
+          team1Name={matchDetails.team1_name}
+          team2Name={matchDetails.team2_name}
+          {...{
+            team1_name,
+            team1_goals,
+            team2_name,
+            team2_goals,
+            datetime,
+            homeLogo,
+            awayLogo,
+          }}
+        />
+      )}
     </View>
   );
 };

@@ -38,7 +38,9 @@ const MapDisplay = ({ item, match_id, type }) => {
           {type === "pass" ? "패스맵" : "터치맵"}
         </Text>
         {isLoading ? (
-          <ActivityIndicator size="large" color="#0000ff" />
+          <View style={{ padding: 100 }}>
+            <ActivityIndicator size="large" color="#0000ff" />
+          </View>
         ) : mapUrl ? (
           <Image
             source={{ uri: mapUrl }}

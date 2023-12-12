@@ -1,12 +1,19 @@
 import React, { useState } from "react";
-import { View, ScrollView, Image, Text, TouchableOpacity } from "react-native";
+import {
+  View,
+  ScrollView,
+  Image,
+  Text,
+  TouchableOpacity,
+  ActivityIndicator,
+} from "react-native";
 import { matchAnalysisStyle, IMAGES } from "../../../constants/constants";
 import RenderTable from "./RenderTable";
 import useFetchGameData from "../../../hooks/fetchGameData";
 import Space from "../../../../../components/Space";
 
 const AnalysisTeam = ({ matchDetails, match_id, team }) => {
-  const { imageData, playerStats } = useFetchGameData(
+  const { imageData, playerStats, isLoading } = useFetchGameData(
     matchDetails,
     match_id,
     team
@@ -16,10 +23,13 @@ const AnalysisTeam = ({ matchDetails, match_id, team }) => {
     setToggleTable(!toggleTable); // 현재 상태를 반전
   };
   // console.log( "Get Image Data URL: ", `../matchAnalysis/${match_id}/${team}`);
-
   return (
     <View>
-      {imageData && (
+      {isLoading ? (
+        <View style={{ padding: 100 }}>
+          <ActivityIndicator size="large" color="#0000ff" />
+        </View>
+      ) : (
         <Image
           source={{ uri: imageData }}
           resizeMode="contain"
@@ -27,16 +37,10 @@ const AnalysisTeam = ({ matchDetails, match_id, team }) => {
         />
       )}
       <TouchableOpacity onPress={handleToggle}>
+        {/* toggle */}
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           {toggleTable ? (
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                width: 150,
-                justifyContent: "space-between",
-              }}
-            >
+            <View style={matchAnalysisStyle.passNetworkTableContainer}>
               <Text style={{ fontSize: 22, fontWeight: "600" }}>
                 테이블 접기
               </Text>
@@ -47,14 +51,7 @@ const AnalysisTeam = ({ matchDetails, match_id, team }) => {
               />
             </View>
           ) : (
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                width: 150,
-                justifyContent: "space-between",
-              }}
-            >
+            <View style={matchAnalysisStyle.passNetworkTableContainer}>
               <Text style={{ fontSize: 22, fontWeight: "600" }}>
                 테이블 펼치기
               </Text>

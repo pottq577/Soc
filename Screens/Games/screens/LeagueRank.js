@@ -1,5 +1,5 @@
 import React from "react";
-import { View, ScrollView, Text, Image } from "react-native";
+import { View, ScrollView, Text, Image, ActivityIndicator } from "react-native";
 import { rankingStyle } from "../constants/constants";
 import useFetchLeagueRank from "../hooks/fetchLeagueRank";
 import { TEAMS } from "../../Analysis/constants/constants";
@@ -29,7 +29,7 @@ const teamNameMapping = {
 };
 
 const LeagueRank = () => {
-  const teams = useFetchLeagueRank();
+  const { teams, isLoading } = useFetchLeagueRank();
   // console.log(teams);
 
   const mapTeamLogo = (teamName) => {
@@ -38,31 +38,42 @@ const LeagueRank = () => {
   };
 
   return (
-    <ScrollView style={{ marginBottom: 140 }}>
-      <View style={rankingStyle.headerRow}>
-        <Text style={rankingStyle.headerCell}>순위</Text>
-        <Text style={rankingStyle.headerCellTeamName}>팀명</Text>
-        <Text style={rankingStyle.headerCell}></Text>
-        <Text style={rankingStyle.headerCell}>승</Text>
-        <Text style={rankingStyle.headerCell}>무</Text>
-        <Text style={rankingStyle.headerCell}>패</Text>
-        <Text style={rankingStyle.headerCell}>득실차</Text>
-        <Text style={rankingStyle.headerCell}>승점</Text>
-      </View>
-      {teams.map((team, index) => (
-        <View key={index} style={rankingStyle.row}>
-          <Text style={rankingStyle.cell}>{team.rank}</Text>
-          <Image source={mapTeamLogo(team.team)} style={rankingStyle.logo} />
-          <Space paddingHorizontal={3} />
-          <Text style={rankingStyle.cellTeamName}>{team.team}</Text>
-          <Text style={rankingStyle.cell}>{team.wins}</Text>
-          <Text style={rankingStyle.cell}>{team.draws}</Text>
-          <Text style={rankingStyle.cell}>{team.losses}</Text>
-          <Text style={rankingStyle.cell}>{team.goal_difference}</Text>
-          <Text style={rankingStyle.cell}>{team.points}</Text>
+    <View>
+      {isLoading ? (
+        <View style={{ padding: 100 }}>
+          <ActivityIndicator size="large" color="#0000ff" />
         </View>
-      ))}
-    </ScrollView>
+      ) : (
+        <ScrollView style={{ marginBottom: 140 }}>
+          <View style={rankingStyle.headerRow}>
+            <Text style={rankingStyle.headerCell}>순위</Text>
+            <Text style={rankingStyle.headerCellTeamName}>팀명</Text>
+            <Text style={rankingStyle.headerCell}></Text>
+            <Text style={rankingStyle.headerCell}>승</Text>
+            <Text style={rankingStyle.headerCell}>무</Text>
+            <Text style={rankingStyle.headerCell}>패</Text>
+            <Text style={rankingStyle.headerCell}>득실차</Text>
+            <Text style={rankingStyle.headerCell}>승점</Text>
+          </View>
+          {teams.map((team, index) => (
+            <View key={index} style={rankingStyle.row}>
+              <Text style={rankingStyle.cell}>{team.rank}</Text>
+              <Image
+                source={mapTeamLogo(team.team)}
+                style={rankingStyle.logo}
+              />
+              <Space paddingHorizontal={3} />
+              <Text style={rankingStyle.cellTeamName}>{team.team}</Text>
+              <Text style={rankingStyle.cell}>{team.wins}</Text>
+              <Text style={rankingStyle.cell}>{team.draws}</Text>
+              <Text style={rankingStyle.cell}>{team.losses}</Text>
+              <Text style={rankingStyle.cell}>{team.goal_difference}</Text>
+              <Text style={rankingStyle.cell}>{team.points}</Text>
+            </View>
+          ))}
+        </ScrollView>
+      )}
+    </View>
   );
 };
 

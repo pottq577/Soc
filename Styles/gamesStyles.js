@@ -264,6 +264,12 @@ const matchAnalysisStyle = {
     height: 300, // 이미지의 높이를 조절합니다.
     alignSelf: "stretch",
   },
+  passNetworkTableContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    width: 150,
+    justifyContent: "space-between",
+  },
   tableRowHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
