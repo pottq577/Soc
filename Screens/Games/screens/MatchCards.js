@@ -57,7 +57,7 @@ const MatchCards = () => {
         </View>
       ) : (
         <ScrollView
-          style={{ padding: 10, marginHorizontal: 10, marginBottom: 200 }}
+          style={{ padding: 10, marginHorizontal: 10, marginBottom: 350 }}
         >
           {weekDates.length === 0 ? (
             <NotSelected />

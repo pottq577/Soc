@@ -44,7 +44,7 @@ const LeagueRank = () => {
           <ActivityIndicator size="large" color="#0000ff" />
         </View>
       ) : (
-        <ScrollView style={{ marginBottom: 140 }}>
+        <ScrollView style={{ marginBottom: 300 }}>
           <View style={rankingStyle.headerRow}>
             <Text style={rankingStyle.headerCell}>순위</Text>
             <Text style={rankingStyle.headerCellTeamName}>팀명</Text>
