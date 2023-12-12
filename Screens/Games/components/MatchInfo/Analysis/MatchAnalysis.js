@@ -3,7 +3,8 @@ import { View, ScrollView, Text } from "react-native";
 import SegmentedControlTab from "react-native-segmented-control-tab";
 import { useGames } from "../../../hooks/useGames";
 import { analysisStyle, switchStyle } from "../../../constants/constants";
-import AnalysisTeam from "./AnalysisTeam";
+import PassNetworkView from "./PassNetworkView";
+import GoalSequenceView from "./GoalSequenceView";
 
 const MatchAnalysis = ({ matchDetails, match_id }) => {
   const { selectedTabIndex, setSelectedTabIndex } = useGames();
@@ -29,7 +30,7 @@ const MatchAnalysis = ({ matchDetails, match_id }) => {
       <View style={analysisStyle.container}>
         <Text style={analysisStyle.header}>패스 네트워크</Text>
         <ControlTab />
-        <AnalysisTeam
+        <PassNetworkView
           matchDetails={matchDetails}
           match_id={match_id}
           team={team}
@@ -43,7 +44,7 @@ const MatchAnalysis = ({ matchDetails, match_id }) => {
       <View style={{ padding: 10 }}>
         <View style={analysisStyle.container}>
           <Text style={analysisStyle.header}>골 경로</Text>
-          <ControlTab />
+          <GoalSequenceView match_id={match_id} />
         </View>
       </View>
     );

@@ -12,7 +12,7 @@ import RenderTable from "./RenderTable";
 import useFetchGameData from "../../../hooks/fetchGameData";
 import Space from "../../../../../components/Space";
 
-const AnalysisTeam = ({ matchDetails, match_id, team }) => {
+const PassNetworkView = ({ matchDetails, match_id, team }) => {
   const { imageData, playerStats, isLoading } = useFetchGameData(
     matchDetails,
     match_id,
@@ -73,4 +73,4 @@ const AnalysisTeam = ({ matchDetails, match_id, team }) => {
   );
 };
 
-export default AnalysisTeam;
+export default PassNetworkView;
