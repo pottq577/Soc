@@ -1111,6 +1111,41 @@ def get_pass_map_endpoint(match_id, player_id):
         return jsonify({'error': str(e)}), 500
 
 
+def get_touch_map(match_id, player_id):
+    # 데이터 로드
+    match_events = pd.read_pickle(
+        f'Analysis/data/refined_events/England/{match_id}.pkl')
+
+    # 특정 선수의 이벤트만 필터링
+    player_events = match_events[match_events['player_id'] == player_id]
+
+    # 경기장 그리기 준비
+    fig, ax = plt.subplots()
+    draw_pitch('white', 'black', size_x=18, size_y=12)
+
+    # 선수의 이벤트 위치 시각화
+    plt.scatter(
+        player_events['start_x'], player_events['start_y'], c='blue', edgecolors='k', alpha=0.7,
+        label=f'Player {player_id}: {len(player_events)} events'
+    )
+
+    # 결과 저장
+    buf = io.BytesIO()
+    plt.savefig(buf, format='png', bbox_inches='tight')
+    buf.seek(0)
+    plt.close(fig)
+    return buf
+
+
+@app.route('/get_touch_map/<int:match_id>/<int:player_id>', methods=['GET'])
+def get_touch_map_endpoint(match_id, player_id):
+    try:
+        buf = get_touch_map(match_id, player_id)
+        return send_file(buf, mimetype='image/png')
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
 @app.route('/top-scorers')
 def top_scorers():
     # 득점을 기준으로 선수들을 그룹화하고 정렬하여 상위 10명 추출
